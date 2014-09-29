@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <rl>
+    <n>Plant</n>
+  </rl>
+  <rl>
+    <n>Corridor</n>
+  </rl>
+  <rl>
+    <n>Entrance</n>
+  </rl>
+  <bp>
+    <n>Head</n>
+  </bp>
+  <bp>
+    <n>Eyes</n>
+  </bp>
+  <bp>
+    <n>Arms</n>
+  </bp>
+  <bp>
+    <n>Face</n>
+  </bp>
+  <bp>
+    <n>Ears</n>
+  </bp>
+  <bp>
+    <n>Nose</n>
+  </bp>
+  <bp>
+    <n>Shoulders</n>
+  </bp>
+  <bp>
+    <n>Hands</n>
+  </bp>
+</Parameters>

@@ -1,0 +1,12 @@
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/RiskHuntingAppTest.dll.mdb
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/RiskHuntingAppTest.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/obj/Debug/RiskHuntingAppTest.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/obj/Debug/RiskHuntingAppTest.dll.mdb
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/Elmah.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/NLP.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/Newtonsoft.Json.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/WaterMarkTextBox.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/WordNet.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/XmlProc.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/System.Data.SQLite.dll

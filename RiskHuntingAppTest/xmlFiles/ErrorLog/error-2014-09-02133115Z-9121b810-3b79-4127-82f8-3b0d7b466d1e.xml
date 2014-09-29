@@ -1,0 +1,162 @@
+﻿<error errorId="9121b810-3b79-4127-82f8-3b0d7b466d1e" application="/" host="konstannossmbp2" type="System.Xml.XmlException" message="Text node cannot appear in this state.  Line 79, position 18." source="System.Xml" detail="System.Web.HttpUnhandledException: Exception of type 'System.Web.HttpUnhandledException' was thrown. ---&gt; System.Xml.XmlException: Text node cannot appear in this state.  Line 79, position 18.&#xA;  at Mono.Xml2.XmlTextReader.ReadText (Boolean notWhitespace) [0x0000c] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1587 &#xA;  at Mono.Xml2.XmlTextReader.ReadContent () [0x0015a] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1295 &#xA;  at Mono.Xml2.XmlTextReader.Read () [0x00141] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:573 &#xA;  at System.Xml.XmlTextReader.Read () [0x0006b] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader2.cs:566 &#xA;  at System.Xml.XmlReader.ReadEndElement () [0x00030] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlReader.cs:706 &#xA;  at System.Xml.Serialization.XmlSerializationReader.ReadEndElement () [0x00040] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReader.cs:420 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadClassInstance (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x000fd] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:233 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadObject (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x00031] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:193 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot (System.Xml.Serialization.XmlTypeMapping rootMap) [0x00057] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:184 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot () [0x00028] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:87 &#xA;  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.Serialization.XmlSerializationReader reader) [0x0001c] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializer.cs:359 &#xA;  --- End of inner exception stack trace ---&#xA;  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web.UI/Page.cs:1304 &#xA;  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web.UI/Page.cs:1281 &#xA;  at System.Web.HttpApplication+&lt;Pipeline&gt;c__Iterator1.MoveNext () [0x00e1f] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 &#xA;  at System.Web.HttpApplication.Tick () [0x00000] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 " time="2014-09-02T13:31:15.7585870Z" statusCode="500" webHostHtmlMessage="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xA;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&#xA;&lt;head&gt;&#xA;&lt;style type=&quot;text/css&quot;&gt;&#xA;body { background-color: #FFFFFF; font-size: .75em; font-family: Verdana, Helvetica, Sans-Serif; margin: 0; padding: 0;	color: #696969; }&#xA;a:link { color: #000000; text-decoration: underline; }&#xA;a:visited { color: #000000; }&#xA;a:hover { color: #000000; text-decoration: none; }&#xA;a:active { color: #12eb87; }&#xA;p, ul {	margin-bottom: 20px; line-height: 1.6em; }&#xA;pre { font-size: 1.2em;	margin-left: 20px; margin-top: 0px; }&#xA;h1, h2, h3, h4, h5, h6 { font-size: 1.6em; color: #000;	font-family: Arial, Helvetica, sans-serif; }&#xA;h1 { font-weight: bold;	margin-bottom: 0; margin-top: 0; padding-bottom: 0; }&#xA;h2 { font-size: 1em; padding: 0 0 0px 0; color: #696969; font-weight: normal; margin-top: 0; margin-bottom: 20px; }&#xA;h2.exceptionMessage { white-space: pre; }&#xA;h3 { font-size: 1.2em; }&#xA;h4 { font-size: 1.1em; }&#xA;h5, h6 { font-size: 1em; }&#xA;#header { position: relative; margin-bottom: 0px; color: #000; padding: 0; background-color: #5c87b2; height: 38px; padding-left: 10px; }&#xA;#header h1 { font-weight: bold;	padding: 5px 0;	margin: 0; color: #fff;	border: none; line-height: 2em;	font-family: Arial, Helvetica, sans-serif; font-size: 32px !important; }&#xA;#header-image { float: left; padding: 3px; margin-left: 1px; margin-right: 1px; }&#xA;#header-text { color: #fff; font-size: 1.4em; line-height: 38px; font-weight: bold; }&#xA;#main {	padding: 20px 20px 15px 20px; background-color: #fff; _height: 1px; }&#xA;#footer { color: #999; padding: 5px 0; text-align: left; line-height: normal; margin: 20px 0px 0px 0px;	font-size: .9em; border-top: solid 1px #5C87B2; }&#xA;#footer-powered-by { float: right; }&#xA;.details { font-family: monospace; border: solid 1px #e8eef4; white-space: pre; font-size: 1.2em; overflow: auto; padding: 6px; margin-top: 6px; background-color: #eeeeff; color: 555555 }&#xA;.details-wrapped { white-space: normal }&#xA;.details-header { margin-top: 1.5em }&#xA;.details-header a { font-weight: bold; text-decoration: none }&#xA;p { margin-bottom: 0.3em; margin-top: 0.1em }&#xA;.sourceErrorLine { color: #770000; font-weight: bold; }&#xA;&lt;/style&gt;&#xA;&lt;script type=&quot;text/javascript&quot;&gt;&#xA;	var hideElementsById = new Array ();&#xA;	window.onload = function () {&#xA;		if (!hideElementsById || hideElementsById.length &lt; 1)&#xA;			return;&#xA;		for (index in hideElementsById)&#xA;			toggle (hideElementsById [index]);&#xA;	}&#xA;	&#xA;	function toggle (divId)&#xA;	{&#xA;		var e = document.getElementById (divId);&#xA;		if (!e)&#xA;			return;&#xA;		var h = document.getElementById (divId + &quot;Hint&quot;);&#xA;		if (e.style.display == &quot;block&quot; || e.style.display == &quot;&quot;) {&#xA;			e.style.display = &quot;none&quot;;&#xA;			if (h)&#xA;				h.innerHTML = &quot; (click to show)&quot;;&#xA;		} else {&#xA;			e.style.display = &quot;block&quot;;&#xA;			if (h)&#xA;				h.innerHTML = &quot; (click to hide)&quot;;&#xA;		}&#xA;	}&#xA;&lt;/script&gt;&#xA;&lt;title&gt;Error 500&lt;/title&gt;&#xA;&lt;/head&gt;&#xA;&lt;body&gt;&#xA;&lt;div class=&quot;page&quot;&gt;&#xA;&lt;div id=&quot;header&quot;&gt;&#xA;&lt;div id=&quot;header-text&quot;&gt;Application Exception&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div id=&quot;main&quot;&gt;&#xA;  &lt;h1&gt;System.Xml.XmlException&lt;/h1&gt;&#xA;  &lt;h2 class=&quot;exceptionMessage&quot;&gt;Text node cannot appear in this state.  Line 79, position 18.&lt;/h2&gt;&#xA;  &lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt; HTTP 500.Error processing request.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Details:&lt;/strong&gt; Non-web exception. Exception origin (name of application or object): System.Xml.&lt;/p&gt;&#xA;&lt;div&gt;&lt;strong&gt;Exception stack trace:&lt;/strong&gt;&lt;/div&gt;&#xA;&lt;div class=&quot;details&quot;&gt;  at Mono.Xml2.XmlTextReader.ReadText (Boolean notWhitespace) [0x0000c] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1587 &#xA;  at Mono.Xml2.XmlTextReader.ReadContent () [0x0015a] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1295 &#xA;  at Mono.Xml2.XmlTextReader.Read () [0x00141] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:573 &#xA;  at System.Xml.XmlTextReader.Read () [0x0006b] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader2.cs:566 &#xA;  at System.Xml.XmlReader.ReadEndElement () [0x00030] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlReader.cs:706 &#xA;  at System.Xml.Serialization.XmlSerializationReader.ReadEndElement () [0x00040] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReader.cs:420 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadClassInstance (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x000fd] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:233 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadObject (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x00031] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:193 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot (System.Xml.Serialization.XmlTypeMapping rootMap) [0x00057] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:184 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot () [0x00028] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:87 &#xA;  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.Serialization.XmlSerializationReader reader) [0x0001c] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializer.cs:359 &lt;/div&gt;&lt;div id=&quot;footer&quot;&gt;&#xA;  &lt;div style=&quot;color:Black;&quot;&gt;&lt;strong&gt;Version Information:&lt;/strong&gt; &lt;tt&gt;3.6.0 ((no/f540f8a Tue Jul 15 19:37:27 EDT 2014)&lt;/tt&gt;; ASP.NET Version: &lt;tt&gt;4.0.30319.17020&lt;/tt&gt;&lt;/div&gt;&#xA;  &lt;div id=&quot;footer-powered-by&quot;&gt;Powered by &lt;a href=&quot;http://mono-project.com/&quot;&gt;Mono&lt;/a&gt;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/body&gt;&#xA;&lt;/html&gt;&#xA;&#xD;&#xA;&lt;!--&#xD;&#xA;[System.Web.HttpUnhandledException]: Exception of type &amp;#39;System.Web.HttpUnhandledException&amp;#39; was thrown.&#xD;&#xA;  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web.UI/Page.cs:1304 &#xA;  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web.UI/Page.cs:1281 &#xA;  at System.Web.HttpApplication+&lt;Pipeline&gt;c__Iterator1.MoveNext () [0x00e1f] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 &#xA;  at System.Web.HttpApplication.Tick () [0x00000] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 &#xD;&#xA;&#xD;&#xA;[System.Xml.XmlException]: Text node cannot appear in this state.  Line 79, position 18.&#xD;&#xA;  at Mono.Xml2.XmlTextReader.ReadText (Boolean notWhitespace) [0x0000c] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1587 &#xA;  at Mono.Xml2.XmlTextReader.ReadContent () [0x0015a] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1295 &#xA;  at Mono.Xml2.XmlTextReader.Read () [0x00141] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:573 &#xA;  at System.Xml.XmlTextReader.Read () [0x0006b] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlTextReader2.cs:566 &#xA;  at System.Xml.XmlReader.ReadEndElement () [0x00030] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml/XmlReader.cs:706 &#xA;  at System.Xml.Serialization.XmlSerializationReader.ReadEndElement () [0x00040] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReader.cs:420 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadClassInstance (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x000fd] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:233 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadObject (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x00031] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:193 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot (System.Xml.Serialization.XmlTypeMapping rootMap) [0x00057] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:184 &#xA;  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot () [0x00028] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:87 &#xA;  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.Serialization.XmlSerializationReader reader) [0x0001c] in /Volumes/build-root-ramdisk/mono-3.6.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializer.cs:359 &#xD;&#xA;--&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-us&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=61F3D82DA66527C20B697B8D&#xD;&#xA;HTTP_HOST:127.0.0.1:8080&#xD;&#xA;HTTP_REFERER:http://127.0.0.1:8080/&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2&#xD;&#xA;HTTP_ORIGIN:http://127.0.0.1:8080&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: en-us&#xD;&#xA;Cookie: ASP.NET_SessionId=61F3D82DA66527C20B697B8D&#xD;&#xA;Host: 127.0.0.1:8080&#xD;&#xA;Referer: http://127.0.0.1:8080/&#xD;&#xA;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2&#xD;&#xA;Origin: http://127.0.0.1:8080&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/SearchResults.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="56393" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/SearchResults.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="8080" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.0" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Mono.WebServer2/0.4.0.0" />
+    </item>
+    <item name="URL">
+      <value string="/SearchResults.aspx" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-us" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=61F3D82DA66527C20B697B8D" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="127.0.0.1:8080" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://127.0.0.1:8080/" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://127.0.0.1:8080" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="61F3D82DA66527C20B697B8D" />
+    </item>
+  </cookies>
+</error>

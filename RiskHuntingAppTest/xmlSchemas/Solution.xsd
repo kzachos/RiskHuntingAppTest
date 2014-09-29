@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="LanguageSpecificSpecification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FacetType" type="xs:string" />
+        <xs:element name="FacetSpecificationLanguage" type="xs:string" />
+        <xs:element name="Author" type="xs:string" />
+        <xs:element name="LaunchDate" type="xs:string" />
+        <xs:element name="SourceSpecificationLastEdited" type="xs:string" />
+        <xs:element name="FacetSpecificationData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Content" type="xs:string" />
+              <xs:element name="Miscellaneous" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

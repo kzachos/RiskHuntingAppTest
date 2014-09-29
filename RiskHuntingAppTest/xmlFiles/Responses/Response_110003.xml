@@ -1,0 +1,830 @@
+<?xml version="1.0"?>
+<MatchedSources responseId="" similarityType="" dataSourceType="">
+    <MatchedSource>
+        <SourceId>112202</SourceId>
+        <SourceName>6640</SourceName>
+        <Content>[Domain]: Risk[Content]: Employee (Agency Worker) never received induction [InjuryNature]: None [LocationDetail]: Admin 2nd Floor [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: False [ShiftType]: Day [Title]: SMAT/Inspections - Resulting UA or UC [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 28/02/2013 15:48:10 [DateIncidentOccurred]: 26/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Induction to be completed immediately];[Corrective Actions: Induction completed];[Countermeasures: None]</Content>
+        <OverallMatchValue>95</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112103</SourceId>
+        <SourceName>6541</SourceName>
+        <Content>[Domain]: Risk[Content]: sub assembly worker walking throgh cab-lift area [InjuryNature]:  [LocationDetail]: Cab-lift [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/02/2013 [DateIncidentOccurred]: 11/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: signs are there - if not named no action can be taken];[Countermeasures: None]</Content>
+        <OverallMatchValue>95</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114291</SourceId>
+        <SourceName>8741</SourceName>
+        <Content>[Domain]: Risk[Content]: workers working in or around hoods should have bump caps [InjuryNature]: None [LocationDetail]: ped line Z1 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 05/11/2013 10:44:48 [DateIncidentOccurred]: 23/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: issue bump caps];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>95</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112696</SourceId>
+        <SourceName>7137</SourceName>
+        <Content>[Domain]: Risk[Content]: office worker walked between rack and stock as FLT was loading rack [InjuryNature]: None [LocationDetail]: U5 Ped Line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 14/05/2013 11:07:03 [DateIncidentOccurred]: 01/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: educate office workers re FLT];[Corrective Actions: office workers know about FLTs - employee not named so no action taken];[Countermeasures: None]</Content>
+        <OverallMatchValue>95</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110487</SourceId>
+        <SourceName>4925</SourceName>
+        <Content>[Domain]: Risk[Content]: yet again another bolt flys up the line missing the workers. [InjuryNature]:  [LocationDetail]: Start Up &amp; PDI [BodyPart]:  [InjuryCause]:  [IncidentPriority]: 2-Medium [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Near Miss Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 10/05/2012 [DateIncidentOccurred]: 05/04/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: rectify problem];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>95</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110749</SourceId>
+        <SourceName>5187</SourceName>
+        <Content>[Domain]: Risk[Content]: Emmissions from floor scrubber/ Fleet No: 127.
+Every time this is used in the plant, tyres steam and chocking from exaust gases. [InjuryNature]:  [LocationDetail]: D2 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 26/07/2012 [DateIncidentOccurred]: 12/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Scrubber has to be used on some occassions to clear spillages.  Budget not available to buy replacement.  Scrubber has a planned maintenance scheduke];[Countermeasures: None]</Content>
+        <OverallMatchValue>82</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110819</SourceId>
+        <SourceName>5257</SourceName>
+        <Content>[Domain]: Risk[Content]: Gravel / debis in road to effluent plant [InjuryNature]:  [LocationDetail]: Road to Effluent Plant [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 09/07/2012 [DateIncidentOccurred]: 29/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112349</SourceId>
+        <SourceName>6789</SourceName>
+        <Content>[Domain]: Risk[Content]: walkway on M&amp;A1 roof leading away from Plant Room 1 is badly broken and causing a trip hazard [InjuryNature]: None [LocationDetail]: M&amp;A1 roof [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 29/10/2013 [DateIncidentOccurred]: 07/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Steve, I know replacing all the walkways is a separate project, but might be worth checking this out. ];[Corrective Actions: Walkway installation in progress, all existing hazards have been removed.];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112893</SourceId>
+        <SourceName>7334</SourceName>
+        <Content>[Domain]: Risk[Content]: there are so many small metal parts on the roads (and aisles) around the plant that it can damage the tyres of all vehicles [InjuryNature]: None [LocationDetail]: plantwide [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/05/2013 [DateIncidentOccurred]: 08/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: attach magnets to the underside of the Voith buggies - cleaning the floor and increasing the recycled metal];[Corrective Actions: Magnetts have been order by H&amp;S to fit to tow buggy];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110791</SourceId>
+        <SourceName>5229</SourceName>
+        <Content>[Domain]: Risk[Content]: Two minibuses who had brought visitors to the plant used the cab park as a roundabout, risking collision with other vehicles in the area. There are no signs prohibiting this act. [InjuryNature]:  [LocationDetail]: Cab Yard [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 25/06/2012 [DateIncidentOccurred]: 21/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: This action is not prohibited. FLT drivers are aware of vehicle movement and minibus drivers were driving slowly and with caution];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113215</SourceId>
+        <SourceName>7657</SourceName>
+        <Content>[Domain]: Risk[Content]: visitors on a plant tour were led past a trailer string being unloaded - any rack falling off the trailers would have hit the visitors [InjuryNature]: None [LocationDetail]: hoods sub-assembly [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Resolved [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 01/07/2013 [DateIncidentOccurred]: 17/04/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: stop tours entering an area where FLTs and buggies are operating];[Corrective Actions: Please re-assign to Sam Gibson PED LINE];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110870</SourceId>
+        <SourceName>5308</SourceName>
+        <Content>[Domain]: Risk[Content]: No Pedestrian walk ways marked to effluent plant [InjuryNature]:  [LocationDetail]: Road to Effluent Plant [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 01/08/2012 [DateIncidentOccurred]: 19/07/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Should be addresse as part of Wokplace Transport Project (Road and Pedestrian Signage).];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110784</SourceId>
+        <SourceName>5222</SourceName>
+        <Content>[Domain]: Risk[Content]: Heat exchangers in the degreasing plant and spray booths water systems should be cleaned in response to any increase in water temperatures above the required parameters without any undue delay. [InjuryNature]:  [LocationDetail]: Site-wide [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/06/2012 [DateIncidentOccurred]: 21/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Heat Exchangers cleaned];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110737</SourceId>
+        <SourceName>5175</SourceName>
+        <Content>[Domain]: Risk[Content]: Main plant aisle accident involving an oversize load hitting the monorail guarding. Roy Churchly tractor string driver, Phil Cole FLT driver. [InjuryNature]:  [LocationDetail]: Miscellaneous [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Near Miss Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 11/06/2012 [DateIncidentOccurred]: 11/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Drivers taken off of normal duties pending investigation];[Corrective Actions: Please reassign to L Victory W/H];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113941</SourceId>
+        <SourceName>8387</SourceName>
+        <Content>[Domain]: Risk[Content]: tractors being driven into plant with work lamps on blinding other drivers [InjuryNature]: None [LocationDetail]: garage [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 27/02/2014 [DateIncidentOccurred]: 02/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: make sure drivers turn off lights when driving inside  the plant ];[Corrective Actions: 5mph limit.  More of an anoyance than safety.  Closed).
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110789</SourceId>
+        <SourceName>5227</SourceName>
+        <Content>[Domain]: Risk[Content]: A plant specific, audit protocol and report should be developed for internal audits of the water treatment systems. The frequency of internal audits should be initially quarterly and the frequency reappraised in light of audit findings. [InjuryNature]:  [LocationDetail]: Site-wide [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/10/2012 [DateIncidentOccurred]: 21/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: dealt with through CARS system];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114530</SourceId>
+        <SourceName>8980</SourceName>
+        <Content>[Domain]: Risk[Content]: debris falling from inside plant roof - loose fittings and brackets holding old pipes [InjuryNature]: None [LocationDetail]: slat line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: regular maint required in roof areas];[Corrective Actions: ongoing issue];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110512</SourceId>
+        <SourceName>4950</SourceName>
+        <Content>[Domain]: Risk[Content]: Oil is leaking from the filter above the head onto the floor. A person can slip on the leaking oil, and hurt themselves [InjuryNature]:  [LocationDetail]: H9 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 18/04/2012 [DateIncidentOccurred]: 12/04/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: filter was replaced];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114513</SourceId>
+        <SourceName>8963</SourceName>
+        <Content>[Domain]: Risk[Content]: oil on floor caused me to slip - almost banged my head on a tracyor, put my arm out to prevent this and hurt my shoulder [InjuryNature]: None [LocationDetail]: pre-paint [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Resolved [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 28/02/2014 [DateIncidentOccurred]: 03/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: make sure oil spills are cleaned up];[Corrective Actions: New masking in position to stop oil dripping and fllor cleaned  daily
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>78</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114043</SourceId>
+        <SourceName>8493</SourceName>
+        <Content>[Domain]: Risk[Content]: keep nearly hitting my head on the chains when fitting harness looms [InjuryNature]: None [LocationDetail]: paintfloor [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 2-Medium [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 01/11/2013 [DateIncidentOccurred]: 17/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: move job further up the line ];[Corrective Actions: Unable to move job up line as this would increase the risk of an accident with bar axle process. Bump caps have now been issued to operators in on this job.];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113847</SourceId>
+        <SourceName>8293</SourceName>
+        <Content>[Domain]: Risk[Content]: swarf and metal bit came off overhead line and hit me on the head [InjuryNature]: None [LocationDetail]: E3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/01/2014 [DateIncidentOccurred]: 05/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: maintain the monorail more reularly];[Corrective Actions: Monorail is maintained on a regular basis, Cleaning regime has been increased ];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113731</SourceId>
+        <SourceName>8176</SourceName>
+        <Content>[Domain]: Risk[Content]: sharp ends on header of parked combine harvester are at head height and impact could result in a serious injury [InjuryNature]: None [LocationDetail]: outside training centre [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 19/11/2013 [DateIncidentOccurred]: 28/08/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: cover the ends or lift header above head height];[Corrective Actions: not considered a real risk];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110420</SourceId>
+        <SourceName>4858</SourceName>
+        <Content>[Domain]: Risk[Content]: Extractor fell down from holder and nearly hit me on the head.. this happened whilst pulling it across to the other side [InjuryNature]:  [LocationDetail]: Road Test &amp; Garage [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Near Miss Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/03/2012 [DateIncidentOccurred]: 12/03/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: double jubilee clip to hold it up correctly and safely, safety chain through the metal holder incase that might fall down aswell like in the past..];[Corrective Actions: Repaired, Operator instructed in the correct use.];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113269</SourceId>
+        <SourceName>7711</SourceName>
+        <Content>[Domain]: Risk[Content]: Rachael Ojo walking through garage with no safety footwear and with her glasses on top of her head [InjuryNature]: None [LocationDetail]: garage [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 28/06/2013 07:39:10 [DateIncidentOccurred]: 12/06/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: train her in the need for and correct use of PPE];[Corrective Actions: I will explain teh importance of PPE];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113823</SourceId>
+        <SourceName>8269</SourceName>
+        <Content>[Domain]: Risk[Content]: Large beam fell on the back of Jack's head missing the hard hat [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]: Warehouse [BodyPart]: Head [InjuryCause]: Struck By Object [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Competence-Knowledge [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/10/2013 [DateIncidentOccurred]: 30/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Risk Assessment Updated.
+Apprentices talked to about Safety
+Maintenance Staff reminded about responsibility when supervising apprentices];[Countermeasures: OPL, Training, Safety Talks]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114277</SourceId>
+        <SourceName>8727</SourceName>
+        <Content>[Domain]: Risk[Content]: 4 operators involved in decking the cabs should wear bump caps to prevent head injury [InjuryNature]: None [LocationDetail]: ped line Z3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/02/2014 [DateIncidentOccurred]: 23/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: issue bump caps];[Corrective Actions: All operators within cab drop area trained with 2 points of contact stabalising cab process is being monitored for this ];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114501</SourceId>
+        <SourceName>8951</SourceName>
+        <Content>[Domain]: Risk[Content]: T-junction has curved blocks that encourage the entering driver to cut the corner, but this sets them on the wrong side of the road and there is a great risk of a head-on collision with an exiting vwhicle [InjuryNature]: None [LocationDetail]: outside M&amp;A3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/10/2013 [DateIncidentOccurred]: 17/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: square-off the curved wall but widen the entrance so the entering vehicle has enough space to swing round];[Corrective Actions: The corner was put in place to enable the large vehicle to turn safely. No action required];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110741</SourceId>
+        <SourceName>5179</SourceName>
+        <Content>[Domain]: Risk[Content]: Roy Churchly drove off from hood area with an overloaded trailer without checking the height of the load, resulting in the loss of the load when hitting the over head monorail guard in the central main aisle. [InjuryNature]:  [LocationDetail]: Roy Churchly [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: SMAT/Inspections - Resulting UA or UC [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/06/2012 [DateIncidentOccurred]: 11/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Mr Churchley was dismissed for gross misconduct after ignoring instructions given previously to check his load height. Components have been procured to build a light barrier which will alert the driver if a load that is too high passes through it. Closing incident];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112658</SourceId>
+        <SourceName>7099</SourceName>
+        <Content>[Domain]: Risk[Content]: sledge hammer with loose head still being used - scrap it! [InjuryNature]: None [LocationDetail]: Wheel &amp; Tyre [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 03/05/2013 08:30:14 [DateIncidentOccurred]: 06/04/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: already reported on 7009];[Corrective Actions: already reported on 7009];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113085</SourceId>
+        <SourceName>7527</SourceName>
+        <Content>[Domain]: Risk[Content]: Operator was releasing the arm hoist and as he turned around he banged his head [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]: Ped Line Zoe 4 [BodyPart]: Head [InjuryCause]: Machinery [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Precautions-Attention [RoutineWork]: True [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/05/2013 07:47:28 [DateIncidentOccurred]: 23/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Bump caps to be worn 100% when working within wheel fitting area .
+Area on manipulator were head was bumped also protected ];[Countermeasures: Coaching]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114662</SourceId>
+        <SourceName>9112</SourceName>
+        <Content>[Domain]: Risk[Content]: hoists are continually swinging to and fro across the line almost hitting operators on the head [InjuryNature]: None [LocationDetail]: pre paint [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Active [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 14/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: install a method of securing hoists];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112928</SourceId>
+        <SourceName>7369</SourceName>
+        <Content>[Domain]: Risk[Content]: operator wearing safety glasses on top of head while lifting drivelines off trailers [InjuryNature]: None [LocationDetail]: AGV [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 13/05/2013 14:04:29 [DateIncidentOccurred]: 13/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: operator not named];[Corrective Actions: operator not named so no action to be taken];[Countermeasures: None]</Content>
+        <OverallMatchValue>74</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111525</SourceId>
+        <SourceName>5963</SourceName>
+        <Content>[Domain]: Risk[Content]: There is a hole in the waerhouse floor at Zone 5K04 when the reach fork truck goes over the hole it causes the truck to band which causes the load on forks to move.Also this causes problems for the fork truck driver's back as it is the driver wheel that goes down the hole [InjuryNature]:  [LocationDetail]: Warehouse Zone 5 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/12/2012 [DateIncidentOccurred]: 01/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: visit by MB - temporary repair in place, permanent repair imminent];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114186</SourceId>
+        <SourceName>8636</SourceName>
+        <Content>[Domain]: Risk[Content]: part number 84198243 was too heavy at 8 kilo for location Z02H24A005 which is a floor location [InjuryNature]: None [LocationDetail]: Daventry warehouse location Z02H24A005 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 31/10/2013 09:56:59 [DateIncidentOccurred]: 30/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: to have all stock moved to a more suitable location for picking and putting away process];[Corrective Actions: stock has now been relocated to Z02D25E004 which is a bigger location and easier to pick from ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110767</SourceId>
+        <SourceName>5205</SourceName>
+        <Content>[Domain]: Risk[Content]: Oil on floor when taking off maskings after paint from trans clr pipes [InjuryNature]:  [LocationDetail]: Paint Facility [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 19/06/2012 [DateIncidentOccurred]: 19/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: All pipes moved to pre paint where oil can be contained];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114800</SourceId>
+        <SourceName>9250</SourceName>
+        <Content>[Domain]: Risk[Content]: since moving jobs around on line, markings on floor are now incorrect resulting in racks being too close together [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 25/11/2013 [DateIncidentOccurred]: 30/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: remark zones];[Corrective Actions: zones have been remarked for the audit];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111806</SourceId>
+        <SourceName>6244</SourceName>
+        <Content>[Domain]: Risk[Content]: oil spilt all over floor when putting into bund - contaminated rags left as well - environmental and trip hazard
+Paul, apart from obvious clean up required, can we find out who's done this? Surely this isn't acceptable. [InjuryNature]:  [LocationDetail]: Garage [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 09/02/2013 [DateIncidentOccurred]: 04/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Tried to investigate but got nowhere.  If I find out or see this happening again they will be disciplined.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112396</SourceId>
+        <SourceName>6837</SourceName>
+        <Content>[Domain]: Risk[Content]: stack of barrier / fence on floor - trip hazard [InjuryNature]: None [LocationDetail]: TLB door 27 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/03/2013 11:03:31 [DateIncidentOccurred]: 13/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: remove - not required to be there];[Corrective Actions: This has been removed.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112227</SourceId>
+        <SourceName>6665</SourceName>
+        <Content>[Domain]: Risk[Content]: several floor tiles broken or missing - trip hazard. [InjuryNature]: None [LocationDetail]: WC113 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 08/03/2013 08:50:43 [DateIncidentOccurred]: 21/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: raise tele-request];[Corrective Actions: tele-request 152094 raised];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112599</SourceId>
+        <SourceName>7040</SourceName>
+        <Content>[Domain]: Risk[Content]: No roller L/H plate bolts loose to floor - wheel plate for diff lock testing [InjuryNature]: None [LocationDetail]: Rolling Road [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 01/05/2013 13:48:43 [DateIncidentOccurred]: 05/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed - if you understand all the jargon above!];[Corrective Actions: actioned - now complete - as per weekly report 100613];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111332</SourceId>
+        <SourceName>5770</SourceName>
+        <Content>[Domain]: Risk[Content]: Damaged floor between slat &amp; ped [InjuryNature]:  [LocationDetail]: Slat Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/10/2012 [DateIncidentOccurred]: 10/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: duplicated on 1169];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114487</SourceId>
+        <SourceName>8937</SourceName>
+        <Content>[Domain]: Risk[Content]: water is dripping through the skylight and forming a puddle on the floor - slip hazard [InjuryNature]: None [LocationDetail]: G8 washroom [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 07/11/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: repair skylight];[Corrective Actions: order raised];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112357</SourceId>
+        <SourceName>6797</SourceName>
+        <Content>[Domain]: Risk[Content]: coating of PE workshop floor breaking up causing a trip hazard [InjuryNature]: None [LocationDetail]: PE workshop [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 13/03/2013 [DateIncidentOccurred]: 08/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: tele-request required];[Corrective Actions: damage to floor coating is not a risk hazard, but is not best-practice. A PR has been raised to repair the floor surface.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111944</SourceId>
+        <SourceName>6382</SourceName>
+        <Content>[Domain]: Risk[Content]: grease on floor at PDI air-con [InjuryNature]:  [LocationDetail]: PDI [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 11/02/2013 [DateIncidentOccurred]: 09/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: cleaned up];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111066</SourceId>
+        <SourceName>5504</SourceName>
+        <Content>[Domain]: Risk[Content]: Oil leak on the floor [InjuryNature]:  [LocationDetail]: M&amp;A1 - WCM Temple M4 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 21/09/2012 [DateIncidentOccurred]: 20/09/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Cleaned up spill, operators reminded to clean immediately, housekeeping];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112450</SourceId>
+        <SourceName>6891</SourceName>
+        <Content>[Domain]: Risk[Content]: holes in floor need filling in - see photo [InjuryNature]: None [LocationDetail]: Rig Shop at PE [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 01/04/2013 [DateIncidentOccurred]: 13/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: Assigned to VH];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114620</SourceId>
+        <SourceName>9070</SourceName>
+        <Content>[Domain]: Risk[Content]: hole in floor [InjuryNature]: None [LocationDetail]: Q10 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Resolved [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 26/11/2013 [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: fill/repair];[Corrective Actions: AMPM carried out floor repairs
+Work Sheet 26447];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112657</SourceId>
+        <SourceName>7098</SourceName>
+        <Content>[Domain]: Risk[Content]: floor breaking up - trip hazard [InjuryNature]: None [LocationDetail]: PE Worhshop [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 03/05/2013 08:23:17 [DateIncidentOccurred]: 06/04/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: already reported on 6797];[Corrective Actions: already reported on 6797
+It is not a trip hazard, but is unsightly.
+Order raised to repair floor.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114110</SourceId>
+        <SourceName>8560</SourceName>
+        <Content>[Domain]: Risk[Content]: roof leak at F3 - water on floor [InjuryNature]: None [LocationDetail]: med line F3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 30/10/2013 10:19:56 [DateIncidentOccurred]: 02/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: already reported];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114901</SourceId>
+        <SourceName>9351</SourceName>
+        <Content>[Domain]: Risk[Content]: oil on floor - can't find a spill kit [InjuryNature]: None [LocationDetail]: garage [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 09/01/2014 [DateIncidentOccurred]: 09/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: maintain availability of spill kits better];[Corrective Actions: Spill kits supplied at various locations in garage.  this is now communicated to the workforce.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111045</SourceId>
+        <SourceName>5483</SourceName>
+        <Content>[Domain]: Risk[Content]: Walking on moving line causing oil to be spread on floor [InjuryNature]:  [LocationDetail]: Ped Line Zone 1 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 21/09/2012 [DateIncidentOccurred]: 19/09/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Cleaned area];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112498</SourceId>
+        <SourceName>6939</SourceName>
+        <Content>[Domain]: Risk[Content]: pothole in floor that causes a danger of reach-trucks loosing their load [InjuryNature]: None [LocationDetail]: T22 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 10/04/2013 [DateIncidentOccurred]: 20/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: Assigned to VH];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110063</SourceId>
+        <SourceName>4500</SourceName>
+        <Content>[Domain]: Risk[Content]: G5 - Slipped Over On Oily Floor Slightly Hurt My Back [InjuryNature]:  [LocationDetail]: G5 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 13/06/2012 [DateIncidentOccurred]: 10/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: tel request = maintenance to fit air lines off floor.Neil Victory currently working on this 13/6/12. CLosing incident as oil problem has been resolved by regular cleaning];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110722</SourceId>
+        <SourceName>5160</SourceName>
+        <Content>[Domain]: Risk[Content]: There is a yellow airline that is trailing across the floor. Someone might fall over the trailing air line [InjuryNature]:  [LocationDetail]: H4 - H5 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 07/06/2012 [DateIncidentOccurred]: 31/05/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: tele request 0000133825];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114939</SourceId>
+        <SourceName>9389</SourceName>
+        <Content>[Domain]: Risk[Content]: extension lead trailing across floor - trip hazard [InjuryNature]: None [LocationDetail]: PTO 2 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/11/2013 [DateIncidentOccurred]: 24/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: install a permanent power socket on wall supplied from above];[Corrective Actions: 19/11/2013 Currently at quotation stage for installation of power socket to eleiviate need for trailing lead.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113263</SourceId>
+        <SourceName>7705</SourceName>
+        <Content>[Domain]: Risk[Content]: leaking accumulator bottle when statrting engine - all over the floor - now cleaned [InjuryNature]: None [LocationDetail]: FAI line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 08/07/2013 [DateIncidentOccurred]: 12/06/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: contact and recharge supplier];[Corrective Actions: supplier contacted all parts on site checked as ok];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110918</SourceId>
+        <SourceName>5356</SourceName>
+        <Content>[Domain]: Risk[Content]: Oil on floor from units going over to paint floor 
+Have put this in before? Put tele-request in for floor to be cleaned. [InjuryNature]:  [LocationDetail]: Paint Facility [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 25/07/2012 [DateIncidentOccurred]: 25/07/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Floor cleaned and matting on bridge changed as heavily contaminated];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114772</SourceId>
+        <SourceName>9222</SourceName>
+        <Content>[Domain]: Risk[Content]: rainwater coming in by air con unit - puddles on floor - slip hazard [InjuryNature]: None [LocationDetail]: F13 toilets [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 14/11/2013 11:43:35 [DateIncidentOccurred]: 17/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: fix leak];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114656</SourceId>
+        <SourceName>9106</SourceName>
+        <Content>[Domain]: Risk[Content]: holes in floor at U21, U22, R22, T22, Q18, S20, R19, X17 [InjuryNature]: None [LocationDetail]: warehouse [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 08/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: completed];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114534</SourceId>
+        <SourceName>8984</SourceName>
+        <Content>[Domain]: Risk[Content]: the paint floor's contaminated waste has not been collected for over a week [InjuryNature]: None [LocationDetail]: K15 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 01/10/2013 [DateIncidentOccurred]: 21/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: needs to be collected more regularly and be kept separate from general waste as it has paint and solvent on it];[Corrective Actions: VOITH request to empty mroe frequently];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113054</SourceId>
+        <SourceName>7496</SourceName>
+        <Content>[Domain]: Risk[Content]: floor tiles not secure causing a trip hazard [InjuryNature]: None [LocationDetail]: canteen [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 23/05/2013 10:51:24 [DateIncidentOccurred]: 22/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: duplicate of 6387];[Corrective Actions: duplicate of 6387];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114674</SourceId>
+        <SourceName>9124</SourceName>
+        <Content>[Domain]: Risk[Content]: manhole cover raised from floor - catches trolley [InjuryNature]: None [LocationDetail]: N8 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 13/11/2013 12:18:09 [DateIncidentOccurred]: 24/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: telerequest 168190 raised];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114553</SourceId>
+        <SourceName>9003</SourceName>
+        <Content>[Domain]: Risk[Content]: 4203 box lids scattered over the floor [InjuryNature]: None [LocationDetail]: decant area [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 11/11/2013 12:27:29 [DateIncidentOccurred]: 12/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: send boxes and lids to the compound];[Corrective Actions: done];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114213</SourceId>
+        <SourceName>8663</SourceName>
+        <Content>[Domain]: Risk[Content]: bat trays with isolator being put on the floor rather than being delivered in racks [InjuryNature]: None [LocationDetail]: med line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 05/11/2013 [DateIncidentOccurred]: 16/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: have WCM provide the correct equipment (lean-tek)];[Corrective Actions: now being delieverd on batt beam dollies.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111442</SourceId>
+        <SourceName>5880</SourceName>
+        <Content>[Domain]: Risk[Content]: Oily floor [InjuryNature]:  [LocationDetail]: Loop [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 27/10/2012 [DateIncidentOccurred]: 16/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Cleaned area and given environmental training with Garry Catton.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112626</SourceId>
+        <SourceName>7067</SourceName>
+        <Content>[Domain]: Risk[Content]: damaged floor and aisleway - top layer lifting causing a trip hazard [InjuryNature]: None [LocationDetail]: P/E Workshop [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 03/05/2013 [DateIncidentOccurred]: 22/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: already reported on 6797];[Corrective Actions: already reported on 6797];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112281</SourceId>
+        <SourceName>6719</SourceName>
+        <Content>[Domain]: Risk[Content]: hole in floor needs repairing [InjuryNature]: None [LocationDetail]: W19 - W20 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 12/03/2013 14:45:47 [DateIncidentOccurred]: 19/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: tele-request already raised];[Corrective Actions: tele-request already raised];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111397</SourceId>
+        <SourceName>5835</SourceName>
+        <Content>[Domain]: Risk[Content]: oily floor by loop [InjuryNature]:  [LocationDetail]: Slat Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/10/2012 [DateIncidentOccurred]: 11/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ongoing problem when wash is not working - consolidated into 1184];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113997</SourceId>
+        <SourceName>8447</SourceName>
+        <Content>[Domain]: Risk[Content]: nearly slipped on the plastic cover on the floor [InjuryNature]: None [LocationDetail]: AGV [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 16/10/2013 09:06:12 [DateIncidentOccurred]: 14/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: improved housekeeping];[Corrective Actions: Pre-work inspection of the area in place, operators checking their own working area];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113175</SourceId>
+        <SourceName>7617</SourceName>
+        <Content>[Domain]: Risk[Content]: airline left on floor at X3 - needs a hook to hang it on [InjuryNature]: None [LocationDetail]: X3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 18/06/2013 15:52:23 [DateIncidentOccurred]: 07/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: too similar to 6508];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110305</SourceId>
+        <SourceName>4743</SourceName>
+        <Content>[Domain]: Risk[Content]: Battery charger on floor [InjuryNature]:  [LocationDetail]: Sub Assembly [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/03/2012 [DateIncidentOccurred]: 17/02/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112845</SourceId>
+        <SourceName>7286</SourceName>
+        <Content>[Domain]: Risk[Content]: oil, gloves, litter and metal left on the floor at oil farm - needs regular cleaning schedule [InjuryNature]: None [LocationDetail]: oil farm [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 27/02/2014 [DateIncidentOccurred]: 02/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: part of Voith's work?];[Corrective Actions: To be controlled by local Area
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112447</SourceId>
+        <SourceName>6888</SourceName>
+        <Content>[Domain]: Risk[Content]: diesel leaking into cabinet and onto floor - needs fitter to investigate [InjuryNature]: None [LocationDetail]: ext diesel fill-up [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 25/03/2013 12:15:38 [DateIncidentOccurred]: 12/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Mr O'Connell will ring in a telerequest];[Corrective Actions: Mr O'Connell will ring in a telerequest];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113994</SourceId>
+        <SourceName>8444</SourceName>
+        <Content>[Domain]: Risk[Content]: The daventry warehouse received 98pc's of p/n 87314381, Jez Ennis H730 put the parts into location Z02H36B001 causing the location to be over filled, this could have resorted in stock falling out of the location onto the floor or onto people walking past the location [InjuryNature]: None [LocationDetail]: Daventry warehouse picking location Z02H36B001 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: Attitude-Behaviour [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/10/2013 13:08:32 [DateIncidentOccurred]: 22/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: to show Jez Ennis what he had done wrong and to explain to him that if he gets too much stock for a location he should ask for a bigger location or split the stock so that some of the stock is placed into a reserve location ];[Corrective Actions: we removed 30pc's of p/n 87314381 from the over filled location Z02H36B001 and transferred them into a reserve location Z02F36G002.];[Countermeasures: OPL, Training, Safety Talks]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110066</SourceId>
+        <SourceName>4503</SourceName>
+        <Content>[Domain]: Risk[Content]: pre paint - slipped on oily floor, slightly hurt my back [InjuryNature]:  [LocationDetail]: S McBride [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/03/2012 [DateIncidentOccurred]: 10/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112296</SourceId>
+        <SourceName>6734</SourceName>
+        <Content>[Domain]: Risk[Content]: floor breaking up at Z4 causing trip and slip hazard [InjuryNature]: None [LocationDetail]: Z4 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/08/2013 [DateIncidentOccurred]: 27/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: tele-request required];[Corrective Actions: telerequest in placce];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111615</SourceId>
+        <SourceName>6053</SourceName>
+        <Content>[Domain]: Risk[Content]: rubbish and small oil spills across floor [InjuryNature]:  [LocationDetail]: FAI [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: SMAT/Inspections - Resulting UA or UC [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 11/12/2012 [DateIncidentOccurred]: 28/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: General housekeeping improving in area.  leaks reduced by 80% since introduction of inspection on Med line.  All leaks reported and cleaned asap.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113066</SourceId>
+        <SourceName>7508</SourceName>
+        <Content>[Domain]: Risk[Content]: raised floor plate presenting a trip hazard [InjuryNature]: None [LocationDetail]: Ped Line Z1 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 23/05/2013 15:45:34 [DateIncidentOccurred]: 14/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: duplicate of 6486];[Corrective Actions: duplicate of 6486];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110100</SourceId>
+        <SourceName>4537</SourceName>
+        <Content>[Domain]: Risk[Content]: Oil Leaking From Top Up Gun, Constantly Leaking Oil On To The Floor And Causing Are Slip Hazard [InjuryNature]:  [LocationDetail]: BB12 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 21/06/2012 [DateIncidentOccurred]: 15/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Closed. item repaired.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114644</SourceId>
+        <SourceName>9094</SourceName>
+        <Content>[Domain]: Risk[Content]: uneven floor running alongside reject crib where barrier has been removed - trip hazard and could affect vehicle movement - relay floor [InjuryNature]: None [LocationDetail]: reject crib walkway [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 01/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: floors repaired on a priority basis];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112872</SourceId>
+        <SourceName>7313</SourceName>
+        <Content>[Domain]: Risk[Content]: pothole in floor - trip hazard [InjuryNature]: None [LocationDetail]: Z14 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/06/2013 [DateIncidentOccurred]: 04/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: repaired.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111051</SourceId>
+        <SourceName>5489</SourceName>
+        <Content>[Domain]: Risk[Content]: bird droppings over floor area [InjuryNature]:  [LocationDetail]: BB20 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 19/09/2012 [DateIncidentOccurred]: 19/09/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: 27/2 C Treece];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111280</SourceId>
+        <SourceName>5718</SourceName>
+        <Content>[Domain]: Risk[Content]: Oily floor slip hazard [InjuryNature]:  [LocationDetail]: Slat Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/10/2012 [DateIncidentOccurred]: 09/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ongoing problem if wash not working - consolidated into 1184];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113704</SourceId>
+        <SourceName>8149</SourceName>
+        <Content>[Domain]: Risk[Content]: paint on floor - slip hazard [InjuryNature]: None [LocationDetail]: pre-paint [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 20/09/2013 10:07:40 [DateIncidentOccurred]: 23/08/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: clean up];[Corrective Actions: done];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114156</SourceId>
+        <SourceName>8606</SourceName>
+        <Content>[Domain]: Risk[Content]: pipe leaking at D22 causing a puddle on the floor [InjuryNature]: None [LocationDetail]: D22 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/01/2014 [DateIncidentOccurred]: 22/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: Repaired];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110367</SourceId>
+        <SourceName>4805</SourceName>
+        <Content>[Domain]: Risk[Content]: Hole in floor [InjuryNature]:  [LocationDetail]: Pre-Paint [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/06/2012 [DateIncidentOccurred]: 25/02/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: telerequest no = 0000133762 to fix floor];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111575</SourceId>
+        <SourceName>6013</SourceName>
+        <Content>[Domain]: Risk[Content]: entered cab and slipped on loose floor plate [InjuryNature]:  [LocationDetail]: Start Up [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/11/2012 [DateIncidentOccurred]: 15/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: This is now written on the travel card.  Advising the drivers of fitting floor.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111803</SourceId>
+        <SourceName>6241</SourceName>
+        <Content>[Domain]: Risk[Content]: Floor surface in both office areas and halt chamber with broken tiles.
+Tiles now fitted by KAD, awaiting AMPM to finish [InjuryNature]:  [LocationDetail]: Halt Chamber [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 25/02/2013 [DateIncidentOccurred]: 31/01/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112608</SourceId>
+        <SourceName>7049</SourceName>
+        <Content>[Domain]: Risk[Content]: slat line floor plate needs bolting down [InjuryNature]: None [LocationDetail]: BB5 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 01/05/2013 15:07:46 [DateIncidentOccurred]: 12/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: already reported on 7034];[Corrective Actions: already reported on 7034];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111227</SourceId>
+        <SourceName>5665</SourceName>
+        <Content>[Domain]: Risk[Content]: Rain Water on floor [InjuryNature]:  [LocationDetail]: Slat Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 05/10/2012 [DateIncidentOccurred]: 05/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: caused by roof leak - now cleaned up];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114624</SourceId>
+        <SourceName>9074</SourceName>
+        <Content>[Domain]: Risk[Content]: hole in floor [InjuryNature]: None [LocationDetail]: T22 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Active [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: fix/repair];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112384</SourceId>
+        <SourceName>6825</SourceName>
+        <Content>[Domain]: Risk[Content]: Floor uneven at location W13 [InjuryNature]: None [LocationDetail]: W13 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 3-High [IncidentStatus]: Resolved [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: SMAT/Inspections - Resulting UA or UC [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 10/03/2014 [DateIncidentOccurred]: 14/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Floor need to be at the same level (trip hazard)];[Corrective Actions: Floor Repairs undertaken on a Risk Basis];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112856</SourceId>
+        <SourceName>7297</SourceName>
+        <Content>[Domain]: Risk[Content]: stand should be bolted to the floor [InjuryNature]: None [LocationDetail]: V6 sub-assy [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 10/05/2013 07:36:26 [DateIncidentOccurred]: 02/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Please re assigne to Sam Gibson Ped line.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111831</SourceId>
+        <SourceName>6269</SourceName>
+        <Content>[Domain]: Risk[Content]: bolt sticking out of PDI booth floor that tears the tyres [InjuryNature]:  [LocationDetail]: PDI booth [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 04/02/2013 [DateIncidentOccurred]: 01/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112831</SourceId>
+        <SourceName>7272</SourceName>
+        <Content>[Domain]: Risk[Content]: the GR9 Grease Clip-Top is not containing the grease - grease is on top of drum, on floor and trigger is laid on the floor [InjuryNature]: None [LocationDetail]: X5 Ped Line Z4 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/06/2013 [DateIncidentOccurred]: 01/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: make holster for trigger and improve housekeeping ];[Corrective Actions: Holster in place and clean up rags provided ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111583</SourceId>
+        <SourceName>6021</SourceName>
+        <Content>[Domain]: Risk[Content]: Cardboard boxes for decals stored on floor causing a trip hazard [InjuryNature]:  [LocationDetail]: Ped Line Z3 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 08/01/2013 [DateIncidentOccurred]: 16/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Leantek racks been made all stock is now on racks ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110271</SourceId>
+        <SourceName>4709</SourceName>
+        <Content>[Domain]: Risk[Content]: Floor Grating loose at end of APM. Investigate possible alternative material. [InjuryNature]:  [LocationDetail]: APM Zone 4 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 12/03/2012 [DateIncidentOccurred]: 15/02/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112651</SourceId>
+        <SourceName>7092</SourceName>
+        <Content>[Domain]: Risk[Content]: no access to fire hose on T13 due to stock on floor [InjuryNature]: None [LocationDetail]: Sub-Assembly T14 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 03/05/2013 07:50:08 [DateIncidentOccurred]: 05/04/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: keep access to fire equipment clear
+];[Corrective Actions: stock now moved];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112353</SourceId>
+        <SourceName>6793</SourceName>
+        <Content>[Domain]: Risk[Content]: hole in floor at H22 [InjuryNature]: None [LocationDetail]: H22 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 08/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: tele-request required];[Corrective Actions: completed];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114412</SourceId>
+        <SourceName>8862</SourceName>
+        <Content>[Domain]: Risk[Content]: garage floor should be cleaned of oil, grease and debris each night [InjuryNature]: None [LocationDetail]: garage [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 27/02/2014 [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: AM schedule with theses doors cleaned monthly. (Closed).
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111392</SourceId>
+        <SourceName>5830</SourceName>
+        <Content>[Domain]: Risk[Content]: damaged floor between ped line and slat line [InjuryNature]:  [LocationDetail]: Slat Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/10/2012 [DateIncidentOccurred]: 11/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: duplicated on 1169];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114092</SourceId>
+        <SourceName>8542</SourceName>
+        <Content>[Domain]: Risk[Content]: hole in floor where we use our lift for bar axles and when we go over it the ezy lift tips [InjuryNature]: None [LocationDetail]: M10 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 2-Medium [IncidentStatus]: Active [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 29/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: sort out before someone gets hurt tele request (0000170433];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111381</SourceId>
+        <SourceName>5819</SourceName>
+        <Content>[Domain]: Risk[Content]: damaged floor between ped/slat line [InjuryNature]:  [LocationDetail]: Slat Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/10/2012 [DateIncidentOccurred]: 11/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: duplicated on 1169];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114549</SourceId>
+        <SourceName>8999</SourceName>
+        <Content>[Domain]: Risk[Content]: leak in roof allowing water in to form puddle on floor by buggy charger by 'W' racking [InjuryNature]: None [LocationDetail]: warehouse W-racking [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 12/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: no fault found];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114543</SourceId>
+        <SourceName>8993</SourceName>
+        <Content>[Domain]: Risk[Content]: stock dumped all over the floor [InjuryNature]: None [LocationDetail]: D8 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: Precautions-Attention [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 11/11/2013 10:35:58 [DateIncidentOccurred]: 16/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: instal racking];[Corrective Actions: Racking is not required. I have instructed the feeder NOT to order excessive stock,
+current stock will be reduced in the back up area.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113660</SourceId>
+        <SourceName>8105</SourceName>
+        <Content>[Domain]: Risk[Content]: hole in floor needs repairing - currently covered by a cone [InjuryNature]: None [LocationDetail]: K21-K22 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 19/09/2013 [DateIncidentOccurred]: 20/08/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest required];[Corrective Actions: Flooring repairs being repaired on a risk basis];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111205</SourceId>
+        <SourceName>5643</SourceName>
+        <Content>[Domain]: Risk[Content]: Poor floor covering bits coming up + trapping black light board + breaking up when floor is cleaned [InjuryNature]:  [LocationDetail]: Z10 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 24/10/2012 [DateIncidentOccurred]: 04/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: duplicated on 1041];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113482</SourceId>
+        <SourceName>7925</SourceName>
+        <Content>[Domain]: Risk[Content]: banding tape left on floor - trip hazard [InjuryNature]: None [LocationDetail]: S18 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: Attitude-Behaviour [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 15/08/2013 10:12:05 [DateIncidentOccurred]: 09/07/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: put unwanted materials in the appropriate bin];[Corrective Actions: item removed];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111954</SourceId>
+        <SourceName>6392</SourceName>
+        <Content>[Domain]: Risk[Content]: overhead pipework Y9-Y10 leaking onto floor below [InjuryNature]:  [LocationDetail]: Y9-Y10 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 11/02/2013 [DateIncidentOccurred]: 06/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112330</SourceId>
+        <SourceName>6768</SourceName>
+        <Content>[Domain]: Risk[Content]: oil leaking from bridge from pre-paint to paint floor causing a very oily floor [InjuryNature]: None [LocationDetail]: G7 - G8 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 27/02/2014 [DateIncidentOccurred]: 05/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: clean and repair - tele-request needed?];[Corrective Actions: Fixed
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112071</SourceId>
+        <SourceName>6509</SourceName>
+        <Content>[Domain]: Risk[Content]: coiled airline on floor at U4 (or V?) presents a trip hazard - needs to be fixed or hooked to wall / stanchion
+Telerequest required. [InjuryNature]:  [LocationDetail]: U4 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 09/09/2013 [DateIncidentOccurred]: 14/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: telerequest submitted];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114997</SourceId>
+        <SourceName>9447</SourceName>
+        <Content>[Domain]: Risk[Content]: buggy drivers leave stock on the floor - trip hazard [InjuryNature]: None [LocationDetail]: pre-paint [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 20/11/2013 09:56:54 [DateIncidentOccurred]: 15/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: feeders should put stock on the racks];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114411</SourceId>
+        <SourceName>8861</SourceName>
+        <Content>[Domain]: Risk[Content]: floor breaking up at BB5 - trip hazard [InjuryNature]: None [LocationDetail]: BB5 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: completed];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113862</SourceId>
+        <SourceName>8308</SourceName>
+        <Content>[Domain]: Risk[Content]: raised and uneven floor - trip hazard [InjuryNature]: None [LocationDetail]: V10-W10 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/01/2014 [DateIncidentOccurred]: 09/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: Floor repairs are completed on a Risk BAsis];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114652</SourceId>
+        <SourceName>9102</SourceName>
+        <Content>[Domain]: Risk[Content]: water on floor from packaging at front of drive shaft - slip hazard [InjuryNature]: None [LocationDetail]: C3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 13/11/2013 [DateIncidentOccurred]: 09/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: remove packaging before it reaches the line];[Corrective Actions: Trials currently being carried out in pre paint with replacing bags with maskings.
+operator told to place bin under unit while bag is being removed .
+Group leader to monitor and enforce .];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110097</SourceId>
+        <SourceName>4534</SourceName>
+        <Content>[Domain]: Risk[Content]: Antifreeze Top Up Leaks, Has To Be Turned Off At Tap To Use Guns Have Been Changed,but Still Leaks On To Floor Area [InjuryNature]:  [LocationDetail]: BB17 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/10/2012 [DateIncidentOccurred]: 15/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Kaizen in place to change guns and pipe to ensure not dripping and trailing on the floor. Spoke with PC on 22/10/2012 - all completed];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112342</SourceId>
+        <SourceName>6782</SourceName>
+        <Content>[Domain]: Risk[Content]: airlines left loose on floor across walkway - trip hazard [InjuryNature]: None [LocationDetail]: X3 - V3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 03/10/2013 [DateIncidentOccurred]: 06/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: recoilable airlines or hooks to hang lines on 
+tele-request needed];[Corrective Actions: cab line moving will re address then
+operators instructed to keep airlines tidy];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114210</SourceId>
+        <SourceName>8660</SourceName>
+        <Content>[Domain]: Risk[Content]: plastic packaging left on aisle collects water and when moved gets the floor wet causing a slip hazard [InjuryNature]: None [LocationDetail]: A5 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 01/11/2013 07:28:41 [DateIncidentOccurred]: 14/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: improve housekeeping - put packaging in bins];[Corrective Actions: done];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112348</SourceId>
+        <SourceName>6788</SourceName>
+        <Content>[Domain]: Risk[Content]: where parts are not tagged-up oil has seaped onto floor causing a slip-hazard [InjuryNature]: None [LocationDetail]: road-test computer on slat line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/03/2013 07:08:11 [DateIncidentOccurred]: 07/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: clean it up
+Paul, surely this is just routine housekeeping isn't it?];[Corrective Actions: This area has been cleaned and all items put into bag before shipping back to sister plant.  They were just boxed before and oil seeped onto floor.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112828</SourceId>
+        <SourceName>7269</SourceName>
+        <Content>[Domain]: Risk[Content]: lump of grease or oil left on floor caused me to slip over [InjuryNature]: None [LocationDetail]: Z4 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 09/05/2013 11:11:03 [DateIncidentOccurred]: 30/04/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: improve housekeeping];[Corrective Actions: oil/grease now cleaned by GC];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111535</SourceId>
+        <SourceName>5973</SourceName>
+        <Content>[Domain]: Risk[Content]: warehouse floors need repairing - too many holes cause uncomfortable / dangerous driving [InjuryNature]:  [LocationDetail]: Daventry warehouse [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 12/11/2012 [DateIncidentOccurred]: 06/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: duplicate of 1333];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112892</SourceId>
+        <SourceName>7333</SourceName>
+        <Content>[Domain]: Risk[Content]: water dripping from roof onto floor - slip hazard [InjuryNature]: None [LocationDetail]: AA18 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/06/2013 [DateIncidentOccurred]: 08/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: Telerequest put in.];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110896</SourceId>
+        <SourceName>5334</SourceName>
+        <Content>[Domain]: Risk[Content]: Abestos tiles on floor broken [InjuryNature]:  [LocationDetail]: Battery bay area [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 07/09/2012 [DateIncidentOccurred]: 22/07/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: not battery bay but old offices on south wall. Cleared on jib no CNH1928 on 07/09/12];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112271</SourceId>
+        <SourceName>6709</SourceName>
+        <Content>[Domain]: Risk[Content]: hole in floor needs repairing [InjuryNature]: None [LocationDetail]: K20 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 12/03/2013 11:41:44 [DateIncidentOccurred]: 01/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: tele-request already raised];[Corrective Actions: tele-request already raised];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112478</SourceId>
+        <SourceName>6919</SourceName>
+        <Content>[Domain]: Risk[Content]: loose grill on floor - danger of tripping or foot going down hole [InjuryNature]: None [LocationDetail]: MBU toilet area [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 10/04/2013 [DateIncidentOccurred]: 14/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: Assigned to VH];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110025</SourceId>
+        <SourceName>4462</SourceName>
+        <Content>[Domain]: Risk[Content]: S3 - Trip Hazard/ Floor Plates  Needs To Be Repared [InjuryNature]:  [LocationDetail]: S3 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 02/02/2012 [DateIncidentOccurred]: 06/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111949</SourceId>
+        <SourceName>6387</SourceName>
+        <Content>[Domain]: Risk[Content]: some floor tiles in canteen need relaying / replacing - trip hazard [InjuryNature]:  [LocationDetail]: Canteen [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/02/2013 [DateIncidentOccurred]: 06/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Tiles relayed];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114430</SourceId>
+        <SourceName>8880</SourceName>
+        <Content>[Domain]: Risk[Content]: roof leak at F3 causing a slippery floor [InjuryNature]: None [LocationDetail]: F3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 18/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: fixed];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114977</SourceId>
+        <SourceName>9427</SourceName>
+        <Content>[Domain]: Risk[Content]: parts pack left on floor of cab - trip hazard [InjuryNature]: None [LocationDetail]: cab floor [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 20/11/2013 08:28:31 [DateIncidentOccurred]: 30/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: fit parts pack after PDI];[Corrective Actions: already suggested];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111592</SourceId>
+        <SourceName>6030</SourceName>
+        <Content>[Domain]: Risk[Content]: 1 meter section of wear strip became detached from medical line monorail  and was carried to pedestal line befor e falling from chains onto tractor and the the floor [InjuryNature]:  [LocationDetail]: Medical Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Near Miss Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 21/11/2012 [DateIncidentOccurred]: 20/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Sewo issued for root cause analysis.];[Corrective Actions: Near Miss investigated];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114004</SourceId>
+        <SourceName>8454</SourceName>
+        <Content>[Domain]: Risk[Content]: reject rack untidy stock on floor [InjuryNature]: None [LocationDetail]: W13 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/01/2014 [DateIncidentOccurred]: 15/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: tidy up rack (stock off floor)];[Corrective Actions: Not Maintenance - Asked for re-assignment 24/10/13 S Tween];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114121</SourceId>
+        <SourceName>8571</SourceName>
+        <Content>[Domain]: Risk[Content]: hoist tipped over owing to pothole in damaged floor [InjuryNature]: None [LocationDetail]: M11/M12 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/11/2013 [DateIncidentOccurred]: 26/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest to repair floor];[Corrective Actions: Changed lifting equipment to new level with longer chain No 12648];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114767</SourceId>
+        <SourceName>9217</SourceName>
+        <Content>[Domain]: Risk[Content]: infast not removing empty stock boxes causing a trip hazard on the floor [InjuryNature]: None [LocationDetail]: N9 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 14/11/2013 11:33:17 [DateIncidentOccurred]: 08/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: arrange collection];[Corrective Actions: done];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114548</SourceId>
+        <SourceName>8998</SourceName>
+        <Content>[Domain]: Risk[Content]: pothole on floor of warehouse at the end of 'N' racking [InjuryNature]: None [LocationDetail]: warehouse - end of N-racking [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 12/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: floors repaired on a priority basis];[Countermeasures: None]</Content>
+        <OverallMatchValue>41</OverallMatchValue>
+    </MatchedSource>
+</MatchedSources>

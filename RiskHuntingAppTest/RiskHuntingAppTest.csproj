@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{E59D1208-73DF-4B7B-AE5D-2A5E29C2C5B1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RiskHuntingAppTest</RootNamespace>
+    <AssemblyName>RiskHuntingAppTest</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Elmah">
+      <HintPath>bin\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="NLP">
+      <HintPath>bin\NLP.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WaterMarkTextBox">
+      <HintPath>bin\WaterMarkTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="WordNet">
+      <HintPath>bin\WordNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="XmlProc">
+      <HintPath>bin\XmlProc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\eddie</RelPath>
+      <UpdateFromURL>http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\antique</RelPath>
+      <UpdateFromURL>http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\eddie\EddieService.disco" />
+    <None Include="Web References\eddie\EddieService.wsdl" />
+    <None Include="Web References\eddie\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\antique\AntiqueService.disco" />
+    <None Include="Web References\antique\AntiqueService.wsdl" />
+    <None Include="Web References\antique\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Web References\eddie\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\antique\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GenericCreativityPrompts.cs" />
+    <Compile Include="Classes\NLPData.cs" />
+    <Compile Include="Classes\Util.cs" />
+    <Compile Include="Classes\Randomize.cs" />
+    <Compile Include="Classes\Risk.cs" />
+    <Compile Include="Classes\Constants.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSource.aspx.cs">
+      <DependentUpon>CreateSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSource.aspx.designer.cs">
+      <DependentUpon>CreateSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteQueries.aspx.cs">
+      <DependentUpon>DeleteQueries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteQueries.aspx.designer.cs">
+      <DependentUpon>DeleteQueries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResponse_CreativeGuidance.aspx.cs">
+      <DependentUpon>DisplayResponse_CreativeGuidance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResponse_CreativeGuidance.aspx.designer.cs">
+      <DependentUpon>DisplayResponse_CreativeGuidance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResponse_Description.aspx.cs">
+      <DependentUpon>DisplayResponse_Description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResponse_Description.aspx.designer.cs">
+      <DependentUpon>DisplayResponse_Description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResponse_ResolutionsApplied.aspx.cs">
+      <DependentUpon>DisplayResponse_ResolutionsApplied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResponse_ResolutionsApplied.aspx.designer.cs">
+      <DependentUpon>DisplayResponse_ResolutionsApplied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterRisk.aspx.cs">
+      <DependentUpon>EnterRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnterRisk.aspx.designer.cs">
+      <DependentUpon>EnterRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.ascx.cs">
+      <DependentUpon>Feedback.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.ascx.designer.cs">
+      <DependentUpon>Feedback.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessSource.aspx.cs">
+      <DependentUpon>ProcessSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessSource.aspx.designer.cs">
+      <DependentUpon>ProcessSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryHistory.aspx.cs">
+      <DependentUpon>QueryHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QueryHistory.aspx.designer.cs">
+      <DependentUpon>QueryHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResolutionIdeas.aspx.cs">
+      <DependentUpon>ResolutionIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResolutionIdeas.aspx.designer.cs">
+      <DependentUpon>ResolutionIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsTool.cs" />
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\EnumLabel.cs" />
+    <Compile Include="ActionPlan.aspx.cs">
+      <DependentUpon>ActionPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActionPlan.aspx.designer.cs">
+      <DependentUpon>ActionPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreativeGuidanceForProblem.aspx.cs">
+      <DependentUpon>CreativeGuidanceForProblem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreativeGuidanceForProblem.aspx.designer.cs">
+      <DependentUpon>CreativeGuidanceForProblem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary.aspx.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Summary.aspx.designer.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution_ActionPlan.aspx.cs">
+      <DependentUpon>Solution_ActionPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution_ActionPlan.aspx.designer.cs">
+      <DependentUpon>Solution_ActionPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAction.aspx.cs">
+      <DependentUpon>AddAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAction.aspx.designer.cs">
+      <DependentUpon>AddAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAction.aspx.cs">
+      <DependentUpon>EditAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAction.aspx.designer.cs">
+      <DependentUpon>EditAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution_ResolutionIdeas.aspx.cs">
+      <DependentUpon>Solution_ResolutionIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Solution_ResolutionIdeas.aspx.designer.cs">
+      <DependentUpon>Solution_ResolutionIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditResolutionIdea.aspx.cs">
+      <DependentUpon>EditResolutionIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditResolutionIdea.aspx.designer.cs">
+      <DependentUpon>EditResolutionIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddResolutionIdea.aspx.cs">
+      <DependentUpon>AddResolutionIdea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddResolutionIdea.aspx.designer.cs">
+      <DependentUpon>AddResolutionIdea.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Theme\" />
+    <Folder Include="Theme\css\" />
+    <Folder Include="Theme\images\" />
+    <Folder Include="Theme\javascript\" />
+    <Folder Include="Theme\pics\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Theme\css\style.css" />
+    <Content Include="Theme\css\developer-style.css" />
+    <Content Include="Theme\images\0stars.png" />
+    <Content Include="Theme\images\0starsborder.png" />
+    <Content Include="Theme\images\1stars.png" />
+    <Content Include="Theme\images\1starsborder.png" />
+    <Content Include="Theme\images\2stars.png" />
+    <Content Include="Theme\images\2starsborder.png" />
+    <Content Include="Theme\images\3stars.png" />
+    <Content Include="Theme\images\3starsborder.png" />
+    <Content Include="Theme\images\4stars.png" />
+    <Content Include="Theme\images\4starsborder.png" />
+    <Content Include="Theme\images\5stars.png" />
+    <Content Include="Theme\images\arrow.png" />
+    <Content Include="Theme\images\checkbox.png" />
+    <Content Include="Theme\images\home.png" />
+    <Content Include="Theme\images\loader.gif" />
+    <Content Include="Theme\images\navbutton.png" />
+    <Content Include="Theme\images\navbuttonblack.png" />
+    <Content Include="Theme\images\navbuttonblue.png" />
+    <Content Include="Theme\images\navleft.png" />
+    <Content Include="Theme\images\navleftblack.png" />
+    <Content Include="Theme\images\navlinkleft.png" />
+    <Content Include="Theme\images\navlinkleftblack.png" />
+    <Content Include="Theme\images\navlinkright.png" />
+    <Content Include="Theme\images\navlinkrightblack.png" />
+    <Content Include="Theme\images\navright.png" />
+    <Content Include="Theme\images\navrightblack.png" />
+    <Content Include="Theme\images\play.gif" />
+    <Content Include="Theme\images\radiobutton.png" />
+    <Content Include="Theme\images\searchfield.png" />
+    <Content Include="Theme\images\tributton.png" />
+    <Content Include="Theme\javascript\actb.js" />
+    <Content Include="Theme\javascript\common.js" />
+    <Content Include="Theme\javascript\developer-functions.js" />
+    <Content Include="Theme\javascript\functions.js" />
+    <Content Include="Theme\pics\mirror_icon.gif" />
+    <Content Include="Theme\pics\mirror_startup.jpg" />
+    <Content Include="Theme\pics\mirror_startup.png" />
+    <Content Include="About.aspx" />
+    <Content Include="CreateSource.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DeleteQueries.aspx" />
+    <Content Include="DisplayResponse_CreativeGuidance.aspx" />
+    <Content Include="DisplayResponse_Description.aspx" />
+    <Content Include="DisplayResponse_ResolutionsApplied.aspx" />
+    <Content Include="EnterRisk.aspx" />
+    <Content Include="Feedback.ascx" />
+    <Content Include="Global.asax" />
+    <Content Include="loader.gif" />
+    <Content Include="ProcessSource.aspx" />
+    <Content Include="QueryHistory.aspx" />
+    <Content Include="ResolutionIdeas.aspx" />
+    <Content Include="SearchResults.aspx" />
+    <Content Include="Settings.aspx" />
+    <Content Include="web.config" />
+    <Content Include="ActionPlan.aspx" />
+    <Content Include="CreativeGuidanceForProblem.aspx" />
+    <Content Include="Summary.aspx" />
+    <Content Include="Solution_ActionPlan.aspx" />
+    <Content Include="AddAction.aspx" />
+    <Content Include="EditAction.aspx" />
+    <Content Include="Solution_ResolutionIdeas.aspx" />
+    <Content Include="EditResolutionIdea.aspx" />
+    <Content Include="AddResolutionIdea.aspx" />
+  </ItemGroup>
+</Project>

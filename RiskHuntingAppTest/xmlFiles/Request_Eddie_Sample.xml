@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Request requestId="1" xmlns="http://achernar.soi.city.ac.uk/xmlSchemas/Request">
+    <Registries>
+        <Registry type="Sources" name="-" />
+    </Registries>
+    <Properties>
+        <PartOfSpeech noun="1" verb="1" adjective="1" adverb="1" />
+        <TermExpansion synonym="1" hypernym="1" gloss="1" />
+        <MaxResults>100</MaxResults>
+    </Properties>
+  <DateTime>2007-01-30T12:25:30.2550548+00:00</DateTime>
+  <SimilarityType>Eddie</SimilarityType>
+  <DataSource>
+    <Type>Document</Type>
+    <Uri>n/a</Uri>
+  </DataSource>
+  <Target>
+    <TargetDescription>
+    	Patient has been confused this morning. He got up a lot later than usual and he said he was feeling tired.
+	</TargetDescription>
+  </Target>
+</Request>

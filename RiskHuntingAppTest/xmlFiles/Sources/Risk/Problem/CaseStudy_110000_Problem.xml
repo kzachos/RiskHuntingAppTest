@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageSpecificSpecification><FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>Dummy</Author>
+  <LaunchDate>Fri August 11 11:52:37 BST 2011</LaunchDate>
+  <SourceSpecificationLastEdited>Fri August 11 11:52:37 BST 2011</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>Dummy</Content>
+    <Observations><Observation id="1" launchDate="Fri January 30 23:52:37 BST 2011"/>
+    </Observations>
+    <ObservedBehaviour/>
+    <TreatmentType/>
+    <DateOfIncident>Fri January 30 23:52:37 BST 2011</DateOfIncident>
+    <AilmentType/>
+    <TriggeringEvent/>
+    <Miscellaneous/>
+    <MatchingDetails/>
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

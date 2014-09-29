@@ -1,0 +1,23 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RiskHuntingAppTest/web.config">
+    <Files>
+      <File FileName="RiskHuntingAppTest/Theme/css/style.css" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/AddAction.aspx" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/AddAction.aspx.cs" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/Solution_ResolutionIdeas.aspx" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/Solution_ResolutionIdeas.aspx.cs" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/Solution_ActionPlan.aspx" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/web.config" Line="35" Column="35" />
+      <File FileName="RiskHuntingAppTest/Classes/Util.cs" Line="3" Column="3" NotebookId="1" />
+      <File FileName="RiskHuntingAppTest/Default.aspx" Line="1" Column="1" NotebookId="1" />
+      <File FileName="RiskHuntingAppTest/Default.aspx.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="RiskHuntingAppTest/Classes/Risk.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="RiskHuntingAppTest/ResolutionIdeas.aspx.cs" Line="1" Column="1" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

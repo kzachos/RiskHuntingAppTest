@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageSpecificSpecification><FacetType>Additional</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>Dummy</Author>
+  <LaunchDate>Fri August 11 11:52:37 BST 2011</LaunchDate>
+  <SourceSpecificationLastEdited>Fri August 11 11:52:37 BST 2011</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+       <ApprovalLevel>Approval Level</ApprovalLevel>
+        <AssignedTo>Assigned to - Department</AssignedTo>        
+        <EmploymentType>Employment type</EmploymentType>
+        <Gender>Gender</Gender>
+        <HeinrichCategory>Heinrich Category</HeinrichCategory>
+        <IncidentShortCode>Incident ShortCode</IncidentShortCode>
+        <Modified>Modified</Modified>
+        <Multiples>Multiples</Multiples>
+        <NotifyMail>NotifyMail</NotifyMail>
+        <PersonInvolved>Person Involved - Dept</PersonInvolved>
+        <ReportedTo>Reported to-Department</ReportedTo>
+        <RiddorReportNumber>RIDDOR Report Number</RiddorReportNumber>
+        <SEWONumber>S-EWO Number</SEWONumber>
+        <TotalDaysLost>Total Days lost</TotalDaysLost>
+        <DateReturnedToWork>Date Returned to work</DateReturnedToWork>
+        <DateRiddorReported>Date RIDDOR reported</DateRiddorReported>
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>
