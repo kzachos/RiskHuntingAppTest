@@ -21,6 +21,8 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance;
+		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl SubmitReport;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl RiskName;

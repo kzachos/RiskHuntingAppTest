@@ -12,6 +12,8 @@ namespace RiskHuntingAppTest
 {
 	public partial class DisplayResponse_CreativeGuidance : System.Web.UI.Page
 	{
+		const string defaultProcessGuidance = "Create new resolutions for your risk. Select from the guidance below";
+
 		const string Tag1 = "<li class=\"checkbox\">";
 		const string Tag2 = "<span class=\"name\">";
 		const string Tag3 = "</span>";
@@ -88,6 +90,9 @@ namespace RiskHuntingAppTest
 
 			}
 			Topbar_Problem_Search_Solution ();
+
+			var processGuidanceText = Util.GenerateProcessGuidance ("creativeGuidance");
+			creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
 		}
 
 		protected void Page_Load(object sender, EventArgs e)

@@ -27,10 +27,16 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl divIdeas;
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl AddNewIdeaDiv;
+		
 		protected System.Web.UI.WebControls.Button AddNewIdea;
 		
 		protected System.Web.UI.WebControls.Label statusLabel;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl content2;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl GoBackDiv;
+		
+		protected System.Web.UI.WebControls.Button GoBack;
 	}
 }

@@ -46,5 +46,7 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl previousrisks;
 
 		protected System.Web.UI.WebControls.Button previousrisksButton;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance;
 	}
 }

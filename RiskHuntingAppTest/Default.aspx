@@ -10,6 +10,7 @@
  <link href="Theme/pics/mirror_icon.gif" rel="apple-touch-icon" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <%--<link href="Theme/css/style2.css" rel="stylesheet" media="screen" type="text/css" />--%>
   <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
@@ -35,6 +36,15 @@
     $('form').live("submit", function () {
         ShowProgress();
     });
+
+    $(document).on('click','.close',function(){ 
+	    $(this).parent().fadeTo(300,0,function(){ 
+	          $(this).remove(); 
+	    }); 
+	});
+
+
+
 </script>
 </head>
 <body>
@@ -60,6 +70,9 @@
 			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-icon.png" /> Solution
 			</a>
+			<%--<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Summary
+			</a>--%>
 		</div>
 	</div>
 </div>
@@ -84,8 +97,11 @@
 			<a href="javascript:doLoad('SearchResults.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-icon.png" /> Search
 			</a>
-			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
+			<a href="javascript:doLoad('ResolutionIdeas.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Solution
+			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-icon.png" /> Summary
 			</a>
 		</div>
 	</div>
@@ -103,10 +119,12 @@
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
+	<!--
 	<asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 
     <asp:Timer ID="Timer1" runat="server"  Interval="10000" ontick="Timer1_Tick"></asp:Timer>  
+    -->
 
 	<!--<span class="maintitle">SELECT EXISTING RISK</span>
 	<ul class="pageitem">
@@ -125,10 +143,14 @@
 	<span class="darkredboldtitle">OR</span><br><br>
 	-->
 
-	<!--<span class="maintitle">ENTER NEW RISK</span>-->
-	<div id="errorMsg" runat="server">
-	
-	</div>	
+	<div class="alert-box notice">
+		<span>hint: </span>
+		<div id="creativeGuidance" style="display: inline" runat="server"></div>
+		<div class="close">&times;</div>
+	</div>
+	<br>
+
+	<div id="errorMsg" runat="server"></div>	
 	<span class="maintitle">Risk Name</span>
 	<ul class="pageitem">
 		<li class="label">
@@ -169,9 +191,20 @@
 
 	<ul class="pageitembutton">
 		<li class="button3">
+			<asp:Button id="save" runat="server" text="SAVE CHANGES" onclick="saveClicked"></asp:Button>
+		</li>
+		<li class="button">
 			<asp:Button id="submit" runat="server" text="FIND SIMILAR RISKS" onclick="submitClicked"></asp:Button>
 		</li>
+
 	</ul>
+
+
+	<!--<ul class="pageitembutton">
+		<li class="button3">
+			<asp:Button id="reset" runat="server" text="RESET VALUES" onclick="resetClicked"></asp:Button>
+		</li>
+	</ul>-->
 
 
 <!--<div id="previousrisks" runat="server">

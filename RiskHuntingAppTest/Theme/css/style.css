@@ -967,6 +967,26 @@ li:last-child.store .image, .store:last-child a {
 	text-shadow: #FFF 0 1px 0;
 	padding: 1px 0 3px 8px;
 }
+.maintitle2 {
+	position: relative;
+	font-weight: normal;
+	font-size: 20px;
+	right: 20px;
+	left: 9px;
+	color: green;
+	text-shadow: #FFF 0 1px 0;
+	padding: 1px 0 3px 8px;
+}
+.maintitle2Bold {
+	position: relative;
+	font-weight: bold;
+	font-size: 20px;
+	right: 20px;
+	left: 9px;
+	color: green;
+	text-shadow: #FFF 0 1px 0;
+	padding: 1px 0 3px 8px;
+}
 .maintitlesmall {
 	position: relative;
 	font-size: 15px;
@@ -1622,3 +1642,4 @@ smallselect .name {
 .mysmallfield:last-child input {
    -webkit-border-bottom-right-radius: 8px;
 }
+

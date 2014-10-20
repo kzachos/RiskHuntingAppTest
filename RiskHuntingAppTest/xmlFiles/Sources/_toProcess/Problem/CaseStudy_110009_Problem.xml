@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>asds</Author>
+  <LaunchDate>20/10/2014 13:46:07</LaunchDate>
+  <SourceSpecificationLastEdited>20/10/2014 13:46:07</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>asaaasas dfggfg</Content>
+    <Observations />
+    <ObservedBehaviour />
+    <TreatmentType />
+    <DateOfIncident />
+    <AilmentType />
+    <TriggeringEvent />
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

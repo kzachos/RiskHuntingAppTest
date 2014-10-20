@@ -62,20 +62,31 @@ namespace RiskHuntingAppTest
 		protected void Page_Load(object sender, EventArgs e)
 		{			
 			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString();	
-			RetrieveCurrentRisk ();
+				this.sourceId = Session ["CURRENT_RISK"].ToString ();
+			else
+				this.sourceId = String.Empty;
 
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
 
-				RetrieveNLData ();
-				GenerateIdeaList ();
+				if (!this.sourceId.Equals (String.Empty)) {
+					Topbar_Problem_Search_Solution ();
+					GoBackDiv.Visible = false;
+					RetrieveCurrentRisk ();
+					RetrieveNLData ();
+					GenerateIdeaList ();
+				} else {
+					Topbar_Problem_Solution ();
+					topbar_v2.Visible = false;
+					AddNewIdeaDiv.Visible = false;
+					statusLabel.Text = "First, enter a problem description and either press 'SAVE CHANGES' or 'FIND SIMILAR RISKS'";
+				}
 
 			}
 			else {
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
 			}
-			Topbar_Problem_Search_Solution ();
+
 		}
 
 
@@ -165,6 +176,11 @@ namespace RiskHuntingAppTest
 		public virtual void addNewIdeaClicked(object sender, EventArgs args)
 		{
 			Response.Redirect ("AddResolutionIdea.aspx");
+		}
+
+		public virtual void goBackClicked(object sender, EventArgs args)
+		{
+			Response.Redirect ("Default.aspx");
 		}
 
 		#region Html related

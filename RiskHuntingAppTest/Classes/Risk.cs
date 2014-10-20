@@ -36,6 +36,7 @@ namespace RiskHuntingAppTest
 		public int Id { get; set; }
 		public string Name { get; set; }
 		public DateTime LaunchDate { get; set; }
+		public DateTime LastEdited { get; set; }
 		public string Author { get; set; }
 
 		public string Content { get; set; }
@@ -73,6 +74,7 @@ namespace RiskHuntingAppTest
 			Id = ss.SourceId;
 			Name = ss.SourceName;
 			LaunchDate = Util.ConvertDateTime (ss.LaunchDate);
+			LastEdited = Util.ConvertDateTime (ss.SourceSpecificationLastEdited);
 			Author = ss.Facet [0].Author;
 
 			switch (ss.SourceType)
@@ -89,7 +91,7 @@ namespace RiskHuntingAppTest
 			}
 
 
-			SimilarCasesFound = false;
+			SimilarCasesFound = ss.Filename.Equals("Found")?true:false;
 
 			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData pf = p.FacetSpecificationData;
 			if (!pf.Content.Equals (String.Empty)) {

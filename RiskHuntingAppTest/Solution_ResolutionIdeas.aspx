@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Inherits="RiskHuntingAppTest.Solution_ResolutionIdeas" %>
+﻿<%@ Page Language="C#" Inherits="RiskHuntingAppTest.Solution_ResolutionIdeas" Async="true"%>
 <%@ Register Assembly="WaterMarkTextBox" Namespace="World.Code.WebControls" TagPrefix="cc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -94,11 +94,13 @@ var todaysDate=new Date()
 
 		</div>
 	</ul>
-	<ul class="pageitembutton">
-		<li class="button">
-			<asp:Button id="AddNewIdea" runat="server" text="ADD NEW IDEA" onclick="addNewIdeaClicked"></asp:Button>
-		</li>
-	</ul>
+	<div id="AddNewIdeaDiv" runat="server">
+		<ul class="pageitembutton">
+			<li class="button">
+				<asp:Button id="AddNewIdea" runat="server" text="ADD NEW IDEA" onclick="addNewIdeaClicked"></asp:Button>
+			</li>
+		</ul>
+	</div>
 	<ul class="pageitem">
 		<li class="textbox">
 			<asp:Label id="statusLabel" runat="server"></asp:Label>
@@ -110,8 +112,14 @@ var todaysDate=new Date()
 	
 		</div>   
 	</ul>
-		
 
+	<div id="GoBackDiv" runat="server">
+		<ul class="pageitembutton">
+			<li class="button3">
+				<asp:Button id="GoBack" runat="server" text="GO BACK TO PROBLEM" onclick="goBackClicked"></asp:Button>
+			</li>
+		</ul>
+	</div>
 		
 
 

@@ -18,6 +18,8 @@ namespace RiskHuntingAppTest
 
 	public partial class DisplayResponse_Description : System.Web.UI.Page
 	{
+		const string defaultProcessGuidance = "Read this previous risk description. If relevant to your risk, view how it was resolved";
+
 		const string SpanStartTagHeader = "<span class=header>";
 		const string SpanEndTag = "</span>";
 		
@@ -73,6 +75,9 @@ namespace RiskHuntingAppTest
 					}
 				}
 				Topbar_Problem_Search_Solution ();
+
+				var processGuidanceText = Util.GenerateProcessGuidance ("riskDescription");
+				creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
 			}
 
 		}

@@ -6,8 +6,17 @@
  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).on('click','.close',function(){ 
+	    $(this).parent().fadeTo(300,0,function(){ 
+	          $(this).remove(); 
+	    }); 
+	});
+</script>
 </head>
 <body>
 
@@ -55,6 +64,13 @@
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
+
+	<div class="alert-box notice">
+		<span>hint: </span>
+		<div id="creativeGuidance" style="display: inline" runat="server"></div>
+		<div class="close">&times;</div>
+	</div>
+
 	<div id="SubmitReport" runat="server">
 	
 	</div>

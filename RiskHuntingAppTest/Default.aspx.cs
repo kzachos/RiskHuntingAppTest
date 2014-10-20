@@ -32,6 +32,8 @@ namespace RiskHuntingAppTest
 		protected const string ADDITIONAL = "Additional";
 		protected const string PROCESSFOLDER = "_toProcess";
 
+		const string defaultProcessGuidance = "Define all elements of the danger in the web form. Ask a colleague to check these elements.";
+
 		protected const string SOURCE_TYPE = Constants.CASEREF;
 		protected const string CASE_TYPE = "Risk";
 
@@ -73,6 +75,9 @@ namespace RiskHuntingAppTest
 			Session.Remove ("CURRENT_PROBLEM_DESC");
 			Session.Remove ("CREATIVITY_PROMPTS");
 
+			InitTextElements();
+			InitParametersDropDown ();
+
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
 
@@ -80,11 +85,11 @@ namespace RiskHuntingAppTest
 					sourceId = Session ["CURRENT_RISK"].ToString ();
 					
 				this.responseUri = DetermineResponseUri ();
+				Console.WriteLine ("Default - this.responseUri: " + this.responseUri);
 
 				this.requestId = DetermineID ();
 
 				if (!this.requestId.Equals (String.Empty)) {
-					Topbar_Problem_Search_Solution ();
 //					previousrisks.Visible = true;
 					//					navigationbar.Visible = true;
 
@@ -95,11 +100,8 @@ namespace RiskHuntingAppTest
 					RetrieveRiskXml ("Solution");
 					Console.WriteLine (this.requestId);
 					Session ["CURRENT_RISK"] = this.sourceId;
-				} else {
-					Topbar_Problem_Solution ();
-//					previousrisks.Visible = false;
-					//					navigationbar.Visible = false;
-				}
+
+				} 
 
 				//queryText.Text = "temp";
 				//				InitDropDownLists();
@@ -113,6 +115,19 @@ namespace RiskHuntingAppTest
 				if (Session ["CURRENT_RISK"] != null) {
 					sourceId = Session ["CURRENT_RISK"].ToString ();
 				}
+				this.responseUri = String.Empty;
+
+				this.requestId = DetermineID ();
+
+				if (!this.requestId.Equals (String.Empty)) {
+					RetrieveRiskXml ("SourceSpecification");
+					RetrieveRiskXml ("Problem");
+					RetrieveRiskXml ("Solution");
+					Console.WriteLine (this.requestId);
+					Session ["CURRENT_RISK"] = this.sourceId;
+				}
+					
+
 			}
 		}
 
@@ -124,13 +139,18 @@ namespace RiskHuntingAppTest
 
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
+	
 
 			} else {
 				Console.WriteLine ("Page_Load - Page.IsPostBack");
 
 			}
-			PopulateElements();
-			PopulateParametersDropDown ();
+			InitCreativeGuidance ();
+
+			if (File.Exists (responsePath + "Response_" + this.requestId + ".xml"))
+				Topbar_Problem_Search_Solution ();
+			else
+				Topbar_Problem_Solution ();
 		}
 
 
@@ -141,9 +161,9 @@ namespace RiskHuntingAppTest
 				responseUri = Session["CurrentResponseUri"].ToString();
 			else
 			{
-				if (Request.QueryString["path"] != null)
+				if (Request.QueryString["id"] != null)
 				{
-					responseUri = Request.QueryString["path"];
+					responseUri = responsePath + "Response_" + Request.QueryString["id"] + ".xml";
 					Session["CurrentResponseUri"] = responseUri;
 				}
 			}
@@ -191,17 +211,22 @@ namespace RiskHuntingAppTest
 			TopbarProblemSearchSolution.Visible = true;
 		}
 
-		private void PopulateElements()
+		private void InitCreativeGuidance()
 		{
+			var processGuidanceText = Util.GenerateProcessGuidance ("problemDescription");
+			creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
+		}
 
-			RiskDescription.WatermarkText = DESC_WATERMARK;
+		private void InitTextElements()
+		{
 			RiskName.WatermarkText = NAME_WATERMARK;
+			RiskDescription.WatermarkText = DESC_WATERMARK;
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
 //			RiskLocation.WatermarkText = LOCATION_WATERMARK;
 //			RiskBodyParts.WatermarkText = BODYPARTS_WATERMARK;
 		}
 
-		private void PopulateParametersDropDown()
+		private void InitParametersDropDown()
 		{
 			var doc = XDocument.Load(xmlFilesPath + "Parameters.xml", LoadOptions.None); 
 			RiskLocation.Items.Clear();
@@ -214,6 +239,8 @@ namespace RiskHuntingAppTest
 				foreach (XElement xe in doc.Descendants("bp"))
 					RiskBodyParts.Items.Add(new ListItem(xe.Element("n").Value));    
 		}
+
+
 
 		#endregion
 
@@ -342,24 +369,24 @@ namespace RiskHuntingAppTest
 			}
 		}
 
-		private void CreateRisk (bool search)
+		private void CreateRisk (bool initiateNewSearch, bool searchResults)
 		{
-			if (search) {
+			if (initiateNewSearch) {
 				this.maxId = GetNewSourceId ();
 				this.sourceId = GetNewSourceId ().ToString ();
 				Session ["CURRENT_RISK"] = this.sourceId;
-				this.currentRisk = NewRisk (search);
+				this.currentRisk = NewRisk (searchResults);
 			} else {
 				if (Session ["CURRENT_RISK"] == null) {
 					this.maxId = GetNewSourceId ();
 					this.sourceId = GetNewSourceId ().ToString ();
 					Session ["CURRENT_RISK"] = this.sourceId;
-					this.currentRisk = NewRisk (search);
+					this.currentRisk = NewRisk (searchResults);
 				} else {
 					this.sourceId = Session ["CURRENT_RISK"].ToString();
 					Console.WriteLine ("this.sourceId (CreateRisk): " + this.sourceId.ToString ());
 					RetrieveCurrentRisk ();
-					UpdateRisk (search);
+					UpdateRisk (searchResults);
 
 				}
 			}
@@ -463,7 +490,7 @@ namespace RiskHuntingAppTest
 
 //					if (Session ["CURRENT_RISK"] == null)
 //					{
-						CreateRisk (true);
+						CreateRisk (true, true);
 //					}
 //					else
 //						UpdateRisk ();
@@ -590,15 +617,27 @@ namespace RiskHuntingAppTest
 			//Here we only move the between two textboxes to show that it works
 			if (Session ["CURRENT_RISK"] == null) {
 				Console.WriteLine ("new");
-				AutoSaveLabel.Text = "Last Auto-Saved and created on " + DateTime.Now;
+				AutoSaveLabel.Text = "Saved and created on " + DateTime.Now;
 			} else {
 				Console.WriteLine ("update");
-				AutoSaveLabel.Text = "Last Auto-Saved and updated on " + DateTime.Now;
+				AutoSaveLabel.Text = "Last saved and updated on " + DateTime.Now;
 			}
-			CreateRisk (false);
+			if (this.responseUri.Equals (String.Empty))
+				CreateRisk (false, false);
+			else
+				CreateRisk (false, true);
 		}
 			
+		public virtual void resetClicked(object sender, EventArgs args)
+		{
 
+		}
+
+		public virtual void saveClicked(object sender, EventArgs args)
+		{
+			if (!CheckTextBoxContent(RiskName, NAME_WATERMARK).Equals(String.Empty) && !CheckTextBoxContent(RiskDescription, DESC_WATERMARK).Equals(String.Empty))
+				Save();
+		}
 
 		#region Generate and Extract content 
 

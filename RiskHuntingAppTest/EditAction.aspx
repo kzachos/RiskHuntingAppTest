@@ -16,7 +16,7 @@
 <div id="TopbarProblemIdeas" runat="server">
 	<div id="topbar2">
 		<div id="leftbutton">
-			<a href="javascript:doLoad('Solution_ActionPlan.aspx');" >
+			<a href="javascript:history.go(-1)" >
 				cancel
 			</a> 
 		</div>

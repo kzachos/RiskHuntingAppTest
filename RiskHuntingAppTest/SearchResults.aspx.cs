@@ -33,6 +33,8 @@ namespace RiskHuntingAppTest
 		const string Tag12 = "</li>";
 		const string DATEANDLOCATION = "March 15th 2013, Basilldon (UK)";
 
+		const string defaultProcessGuidance = "Select a risk resolution similar to your risk. Browse each short description below";
+
 
 		//		<li class="store">
 		//			<a class="noeffect" href="javascript:doLoad('DisplayResponse_Description.aspx?id=1000');">
@@ -52,6 +54,7 @@ namespace RiskHuntingAppTest
 			//            {
 			hide.Visible = false;
 			string responseUri = DetermineResponseUri();
+			Console.WriteLine ("responseUri: " + responseUri);
 			if (!responseUri.Equals(String.Empty))
 			{
 				Session.Remove ("CURRENT_RISK_DESC");
@@ -69,6 +72,10 @@ namespace RiskHuntingAppTest
 			}
 			//            }
 			Topbar_Problem_Search_Solution ();
+
+			var processGuidanceText = Util.GenerateProcessGuidance ("riskResolutions");
+			creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
+
 		}
 
 		#region Initializing

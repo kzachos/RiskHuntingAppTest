@@ -53,6 +53,9 @@
       <HintPath>bin\XmlProc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="itextsharp">
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -248,6 +251,8 @@
     <Compile Include="AddResolutionIdea.aspx.designer.cs">
       <DependentUpon>AddResolutionIdea.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ProcessGuidance.cs" />
+    <Compile Include="Classes\PDFCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
@@ -323,5 +328,10 @@
     <Content Include="Solution_ResolutionIdeas.aspx" />
     <Content Include="EditResolutionIdea.aspx" />
     <Content Include="AddResolutionIdea.aspx" />
+    <Content Include="Theme\css\box.css" />
+    <Content Include="Theme\images\error.png" />
+    <Content Include="Theme\images\notice.png" />
+    <Content Include="Theme\images\success.png" />
+    <Content Include="Theme\images\warning.png" />
   </ItemGroup>
 </Project>

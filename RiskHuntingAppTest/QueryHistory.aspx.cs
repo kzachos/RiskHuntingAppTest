@@ -89,6 +89,8 @@ namespace RiskHuntingAppTest
 			else
 				statusLabel.Text = "No risk queries available.";
 
+			if (Session["CurrentResponseUri"] != null) 
+				Session.Remove("CurrentResponseUri");
 		}
 
 		Risk RetrieveCurrentRisk (string locSpec, string locProblem, string locSolution)
@@ -107,12 +109,14 @@ namespace RiskHuntingAppTest
 		private string GenerateQueryHtml(Risk risk)
 		{
 			string responseXmlUri = responsePath + "Response_" + risk.Id + ".xml";
-			string path = "&path=" + responseXmlUri;
+//			string path = "&path=" + responseXmlUri;
+			string path = String.Empty;
+			Console.WriteLine ("risk.SimilarCasesFound: " + risk.SimilarCasesFound);
 			string search = risk.SimilarCasesFound?path:String.Empty;
 			return Tag1 + Tag2 + risk.Id + search + Tag3 + Tag4 + risk.Name + Tag5 + 
 				Tag6 + risk.Content + Tag7 + 
 				Tag8 + "Status: " + Util.GetEnumDescription(risk.State) + 
-				"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + " Last Modified: " + Util.FormatDate (risk.LaunchDate) + Tag9 + Tag10 + Tag11 + Tag12;
+				"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + " Last Modified: " + Util.FormatDate (risk.LastEdited) + Tag9 + Tag10 + Tag11 + Tag12;
 		}
 
 		private OrderedDictionary GetFilesFromDirectorySortedList4(string dirPath, int max)

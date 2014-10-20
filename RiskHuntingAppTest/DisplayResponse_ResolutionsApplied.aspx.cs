@@ -11,6 +11,8 @@ namespace RiskHuntingAppTest
 
 	public partial class DisplayResponse_ResolutionsApplied : System.Web.UI.Page
 	{
+		const string defaultProcessGuidance = "Select any of the following that apply to your risk. Be open-minded";
+
 		const string Tag1 = "<li class=\"checkbox\">";
 		const string Tag2 = "<span class=\"name\">";
 		const string Tag3 = "</span>";
@@ -62,6 +64,9 @@ namespace RiskHuntingAppTest
 				GenerateContent ();
 			}
 			Topbar_Problem_Search_Solution ();
+	
+			var processGuidanceText = Util.GenerateProcessGuidance ("riskResolutionsApplied");
+			creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
 		}
 
 //		protected void On_Init (object sender, EventArgs e)

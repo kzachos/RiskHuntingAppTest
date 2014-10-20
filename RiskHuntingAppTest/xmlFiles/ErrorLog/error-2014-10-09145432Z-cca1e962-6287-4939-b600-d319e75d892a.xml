@@ -1,0 +1,156 @@
+﻿<error errorId="cca1e962-6287-4939-b600-d319e75d892a" application="/" host="kos" type="System.InvalidOperationException" message="No handler for the current request." source="System.Web" detail="System.InvalidOperationException: No handler for the current request.&#xA;  at System.Web.HttpApplication+&lt;Pipeline&gt;c__Iterator1.MoveNext () [0x00df2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1371 &#xA;  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 " time="2014-10-09T14:54:32.3109790Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-us&#xD;&#xA;HTTP_COOKIE:ASP.NET_SessionId=9A6064BC995EB2B41E3C48EA&#xD;&#xA;HTTP_HOST:127.0.0.1:8080&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/7.1 Safari/537.85.10&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: en-us&#xD;&#xA;Cookie: ASP.NET_SessionId=9A6064BC995EB2B41E3C48EA&#xD;&#xA;Host: 127.0.0.1:8080&#xD;&#xA;User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/7.1 Safari/537.85.10&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/summary.aspx" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="64142" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/summary.aspx" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="8080" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.0" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Mono.WebServer2/0.4.0.0" />
+    </item>
+    <item name="URL">
+      <value string="/summary.aspx" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-us" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="ASP.NET_SessionId=9A6064BC995EB2B41E3C48EA" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="127.0.0.1:8080" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/7.1 Safari/537.85.10" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="ASP.NET_SessionId">
+      <value string="9A6064BC995EB2B41E3C48EA" />
+    </item>
+  </cookies>
+</error>

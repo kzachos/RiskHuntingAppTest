@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace RiskHuntingAppTest
 {
@@ -142,6 +145,11 @@ namespace RiskHuntingAppTest
 
 		public static DateTime ConvertDateTime(string date)
 		{
+//			var gb = new System.Globalization.CultureInfo("en-GB");
+//			string format = "dd/MM/yyyy HH:mm:ss";
+//			IFormatProvider culture = new System.Globalization.CultureInfo("en-GB", true);
+//			DateTime dt = DateTime.ParseExact (date, format, gb);
+
 			// Specify exactly how to interpret the string.
 			IFormatProvider culture = new System.Globalization.CultureInfo("en-GB", true);
 			DateTime dt = DateTime.Parse(date, culture, System.Globalization.DateTimeStyles.AssumeLocal);
@@ -342,13 +350,29 @@ namespace RiskHuntingAppTest
 		{
 
 			if (DateTime.Today == date.Date) {
-				return "today " + date.ToString ("hh:mm");
+				return "today " + date.ToString ("HH:mm");
 			} else if ((DateTime.Today - date.Date).TotalDays < 7) {
-				return date.ToString ("ddd hh:mm");
+				return date.ToString ("ddd HH:mm");
 			} else
 			{
 				return date.ToShortDateString ();			
 			}
+		}
+
+		public static string GenerateProcessGuidance(string elementName)
+		{
+			List<string> problemDescriptions = new List<string> ();
+			var doc = XDocument.Load(SettingsTool.GetApplicationPath() + "xmlFiles/" + "ProcessGuidance.xml", LoadOptions.None); 
+			if (doc.Descendants(elementName).Count() > 0)
+				foreach (XElement xe in doc.Descendants(elementName))
+					problemDescriptions.Add(xe.Element("n").Value);    
+
+			if (problemDescriptions.Count > 0) {
+				problemDescriptions.Shuffle ();
+				Console.WriteLine ("problemDescriptions [0]: " + problemDescriptions [0]);
+				return problemDescriptions [0];
+			} else
+				return String.Empty;
 		}
 	}
 }

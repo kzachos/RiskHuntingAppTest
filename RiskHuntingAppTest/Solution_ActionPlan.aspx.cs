@@ -46,7 +46,6 @@ namespace RiskHuntingAppTest
 		protected int maxId;
 		protected string sourceId;
 		protected Risk currentRisk;
-		protected Action selectedAction;
 
 
 		protected void Page_Load(object sender, EventArgs e)
