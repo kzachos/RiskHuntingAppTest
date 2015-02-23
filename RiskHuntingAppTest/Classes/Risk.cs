@@ -10,10 +10,12 @@ namespace RiskHuntingAppTest
 		ProblemDescribed,
 		[Description("Ideas Generated")]
 		IdeasGenerated,
-		[Description("Resolutions Found")]
-		ResolutionsFound,
-		[Description("Solved")]
-		Solved
+//		[Description("Similar risks found")]
+//		SimilarRisksFound,
+		[Description("Actions Formulated")]
+		ActionsFormulated,
+		[Description("Risk Resolved")]
+		RiskResolved
 	}
 
 	public enum RiskResolutionType {
@@ -85,8 +87,11 @@ namespace RiskHuntingAppTest
 			case "IdeasGenerated":
 				State = RiskQueryState.IdeasGenerated;
 				break;
-			case "ResolutionsFound":
-				State = RiskQueryState.ResolutionsFound;
+			case "ActionsFormulated":
+				State = RiskQueryState.ActionsFormulated;
+				break;
+			case "RiskResolved":
+				State = RiskQueryState.RiskResolved;
 				break;
 			}
 
@@ -94,11 +99,10 @@ namespace RiskHuntingAppTest
 			SimilarCasesFound = ss.Filename.Equals("Found")?true:false;
 
 			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData pf = p.FacetSpecificationData;
-			if (!pf.Content.Equals (String.Empty)) {
-				Content = pf.Content;
-			} else
-				Content = String.Empty;
-//			InjuryNature = p
+			Content = !pf.Content.Equals (String.Empty) ? pf.Content : String.Empty;
+			LocationDetail = !pf.ObservedBehaviour.Equals (String.Empty) ? pf.ObservedBehaviour : String.Empty;
+			BodyPart = !pf.TreatmentType.Equals (String.Empty) ? pf.TreatmentType : String.Empty;
+
 			Recommendations = new ArrayList ();
 			Actions = new List<Action> ();
 			XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData sf = s.FacetSpecificationData;
@@ -109,10 +113,10 @@ namespace RiskHuntingAppTest
 //				char[] delim = new char[] {';'};
 //				Resolutions.AddRange(content.Split(delim));
 				Recommendations = Util.ResolutionsStringToArray (sf.Content, "Recommendation");
-				Console.WriteLine ("Recommendations.Count: " + Recommendations.Count.ToString ());
+//				Console.WriteLine ("Recommendations.Count: " + Recommendations.Count.ToString ());
 
 				var allActionsString = Util.ResolutionsStringToArray (sf.Content, "Corrective Actions");
-				Console.WriteLine ("allActionsString.Count: " + allActionsString.Count);
+//				Console.WriteLine ("allActionsString.Count: " + allActionsString.Count);
 				if (allActionsString.Count > 0)
 					foreach (var a in allActionsString)
 						Actions.Add (Util.ActionStringToObject (a.ToString()));

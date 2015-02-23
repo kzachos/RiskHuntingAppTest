@@ -73,16 +73,16 @@ public class SettingsTool
 		if (applicationPath.Equals (String.Empty))
 			applicationPath = GetApplicationPathMac();
 		else
-			applicationPath += "SearchApp\\";
+			applicationPath += "RiskHuntingAppTest\\";
         return applicationPath;
     }
 
     public static string GetVirtualPath(string url)
     {
-        if (HttpContext.Current.Request.ApplicationPath == "/")
-        {
-            return "~" + url;
-        }
+//        if (HttpContext.Current.Request.ApplicationPath == "/")
+//        {
+//            return "~" + url;
+//        }
 
         return Regex.Replace(url, "^" +
                        HttpContext.Current.Request.ApplicationPath + "(.+)$", "~$1");

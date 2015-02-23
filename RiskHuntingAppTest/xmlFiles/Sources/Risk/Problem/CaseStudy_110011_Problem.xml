@@ -3,13 +3,13 @@
   <FacetType>Problem</FacetType>
   <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
   <Author>kos</Author>
-  <LaunchDate>20/10/2014 14:12:53</LaunchDate>
-  <SourceSpecificationLastEdited>20/10/2014 14:12:53</SourceSpecificationLastEdited>
+  <LaunchDate>20/10/2014 15:49:26</LaunchDate>
+  <SourceSpecificationLastEdited>20/10/2014 15:49:26</SourceSpecificationLastEdited>
   <FacetSpecificationData>
     <Content>DESC</Content>
     <Observations />
-    <ObservedBehaviour />
-    <TreatmentType />
+    <ObservedBehaviour>Corridor</ObservedBehaviour>
+    <TreatmentType>Shoulders</TreatmentType>
     <DateOfIncident />
     <AilmentType />
     <TriggeringEvent />

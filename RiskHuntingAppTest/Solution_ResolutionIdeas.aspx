@@ -41,7 +41,34 @@ var todaysDate=new Date()
 		</div>
 	</div>
 </div>
-<div id="TopbarProblemSearchSolution" runat="server">
+<div id="TopbarProblemSolutionSummary" runat="server">
+	<div id="topbar2">
+		<div id="leftbutton">
+			<a href="javascript:doLoad('Settings.aspx');" >
+				<%--<img alt="home" src="Theme/images/home.png" />--%>
+				Feedback
+			</a> 
+		</div>
+		<div id="rightbutton">
+			<a href="javascript:doLoad('QueryHistory.aspx');">
+				<%--<img alt="home" src="Theme/images/home.png" />--%>
+				Risk History
+			</a> 
+		</div>
+		<div id="multiselectionbuttons">
+			<a href="javascript:doLoad('Default.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-1-icon.png" /> Problem
+			</a>
+			<a id="pressed" href="">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-filled-icon.png" /> Solution
+			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Summary
+			</a>
+		</div>
+	</div>
+</div>
+<div id="TopbarProblemSearchSolutionSummary" runat="server">
 	<div id="topbar2">
 		<div id="leftbutton">
 			<a href="javascript:doLoad('Settings.aspx');" >
@@ -64,6 +91,9 @@ var todaysDate=new Date()
 			</a>
 			<a id="pressed" href="" >
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-filled-icon.png" /> Solution
+			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-icon.png" /> Summary
 			</a>
 		</div>
 	</div>
@@ -94,6 +124,11 @@ var todaysDate=new Date()
 
 		</div>
 	</ul>
+	<ul class="pageitem">
+		<li class="textbox">
+			<asp:Label id="statusLabel" runat="server"></asp:Label>
+		</li>
+	</ul>
 	<div id="AddNewIdeaDiv" runat="server">
 		<ul class="pageitembutton">
 			<li class="button">
@@ -101,11 +136,7 @@ var todaysDate=new Date()
 			</li>
 		</ul>
 	</div>
-	<ul class="pageitem">
-		<li class="textbox">
-			<asp:Label id="statusLabel" runat="server"></asp:Label>
-		</li>
-	</ul>
+
 
 	<ul class="pageitem">
 		<div id="content2" runat="server">

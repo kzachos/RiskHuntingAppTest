@@ -15,7 +15,7 @@ namespace RiskHuntingAppTest
 {
     public partial class CreateSource : System.Web.UI.Page
     {
-        protected string sourcesPath = SettingsTool.GetApplicationPath() + "SearchApp/xmlFiles/Sources/";
+		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "SearchApp", "xmlFiles", "Sources");
         protected const string SOURCESPECIFICATION = "SourceSpecification";
         protected const string PROBLEM = "Problem";
         protected const string SOLUTION = "Solution";
@@ -155,7 +155,7 @@ namespace RiskHuntingAppTest
                     GenerateXml("Solution");
                     if (!DomainDropDown.SelectedItem.Text.Equals("Healthcare"))
                     {
-                        antique.AntiqueService ant = new RiskHuntingAppTest.antique.AntiqueService();
+                        antiqueService.AntiqueService ant = new RiskHuntingAppTest.antiqueService.AntiqueService();
                         ant.GeneratePredicates(NameTextBox.Text, maxId.ToString(), SourceTextBox.Text, Convert.ToInt32(DomainDropDown.SelectedItem.Value), ProblemDescrTextBox.Text, SolutionDescrTextBox.Text, MiscellaneousTextBox.Text);
                     }
                     ResetErrorMessages();
@@ -315,7 +315,7 @@ namespace RiskHuntingAppTest
         {
             string path = String.Empty;
             // get your files (names)
-            string[] fileNames = Directory.GetFiles(sourcesPath + DomainDropDown.SelectedItem.Text + "/" + SOURCESPECIFICATION + "/", "*.*");
+			string[] fileNames = Directory.GetFiles(Path.Combine (sourcesPath, DomainDropDown.SelectedItem.Text, SOURCESPECIFICATION), "*.*");
             if (fileNames.Length > 0)
             {
                 // Now read the creation time for each file

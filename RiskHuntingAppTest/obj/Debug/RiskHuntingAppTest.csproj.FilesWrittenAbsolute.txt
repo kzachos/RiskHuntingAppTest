@@ -11,3 +11,4 @@
 /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/XmlProc.dll
 /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/System.Data.SQLite.dll
 /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/itextsharp.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/AnLogger.dll

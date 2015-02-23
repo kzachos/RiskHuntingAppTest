@@ -13,6 +13,8 @@ namespace RiskHuntingAppTest {
 
 	public partial class Default {
 
+		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSolutionNoSummary;
+
 		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSolution;
 
 		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSearchSolution;
@@ -45,8 +47,18 @@ namespace RiskHuntingAppTest {
 
 		protected System.Web.UI.HtmlControls.HtmlGenericControl previousrisks;
 
+		protected System.Web.UI.HtmlControls.HtmlGenericControl deleteRiskDiv;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_success;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_error;
+
 		protected System.Web.UI.WebControls.Button previousrisksButton;
 
 		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl successMessage;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 	}
 }

@@ -30,14 +30,15 @@ namespace RiskHuntingAppTest
 		const string Tag11a = "</a>";
 		const string Tag12a = "</li>";
 
-		protected string sourcesPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/";
+		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Requests");
+		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
 		protected const string SOURCESPECIFICATION = "SourceSpecification";
 		protected const string PROBLEM = "Problem";
 		protected const string SOLUTION = "Solution";
 		protected const string ADDITIONAL = "Additional";
 		protected const string PROCESSFOLDER = "_toProcess";
 
-		protected string processPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/_toProcess/";
+		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
 
 		protected const string SOURCE_TYPE = Constants.CASEREF;
 		protected const string CASE_TYPE = "Risk";
@@ -85,25 +86,24 @@ namespace RiskHuntingAppTest
 
 			if (this.currentRisk.Actions.Count > 0) {
 				for (int i = 0; i < this.currentRisk.Actions.Count; i++) {
-					divActions.InnerHtml += GenerateHtml (this.currentRisk.Actions[i]);
+					divActions.InnerHtml += GenerateHtml (this.currentRisk.Actions [i]);
 				}
-			}
-			else
+			} else {
 				statusLabel.Text = "No actions available.";
-
+			}
 		}
 
 		void RetrieveCurrentRisk ()
 		{
 			string location = String.Empty;
 
-			location = processPath + "SourceSpecification" + "/" + Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml";
+			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
 			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = processPath + "Problem" + "/" + Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml";
+			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
 			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = processPath + "Solution" + "/" + Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
+			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
 			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
 			this.currentRisk = new Risk (ss, problem, solution);

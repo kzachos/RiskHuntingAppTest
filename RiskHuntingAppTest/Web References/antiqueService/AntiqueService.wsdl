@@ -1,0 +1,1421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="NLParser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="toCreate" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NLParserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="NLParserResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateRequestXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="xml" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateRequestXmlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValidateRequestXmlResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateRequestXmlUri">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="xmlUri" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateRequestXmlUriResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValidateRequestXmlUriResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="xml" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="schemaNamespace" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="schemaUri" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateXmlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValidateXmlResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateXmlUri">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="xmlUri" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="schemaNamespace" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="schemaUri" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateXmlUriResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValidateXmlUriResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveRequestXmlSchema">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveRequestXmlSchemaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveRequestXmlSchemaResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveRequestXmlSample">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveRequestXmlSampleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveRequestXmlSampleResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveResponseXmlSchema">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveResponseXmlSchemaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveResponseXmlSchemaResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveResponseDetailedXmlSchema">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveResponseDetailedXmlSchemaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveResponseDetailedXmlSchemaResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CalculateSimilarity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="text1" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="text2" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CalculateSimilarityResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CalculateSimilarityResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConvertToNewDomain">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="targetDomain" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="sourceDomain" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConvertToNewDomainResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ConvertToNewDomainResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenerateCreativityPrompts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenerateCreativityPromptsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GenerateCreativityPromptsResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeneratePredicatesFromDocument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="documentUri" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="domainID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeneratePredicatesFromDocumentResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GeneratePredicates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="assignedID" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="author" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="domainID" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="problem" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="solution" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="keywords" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeneratePredicatesResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveAllSources">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveAllSourcesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveAllSourcesResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformAntique">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="antiqueRequestXml" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformAntiqueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="PerformAntiqueResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformAntiqueSample">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="PerformAntiqueSampleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="PerformAntiqueSampleResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="string" nillable="true" type="xs:string" />
+    </xs:schema>
+  </types>
+  <message name="NLParserSoapIn">
+    <part name="parameters" element="tns:NLParser" />
+  </message>
+  <message name="NLParserSoapOut">
+    <part name="parameters" element="tns:NLParserResponse" />
+  </message>
+  <message name="ValidateRequestXmlSoapIn">
+    <part name="parameters" element="tns:ValidateRequestXml" />
+  </message>
+  <message name="ValidateRequestXmlSoapOut">
+    <part name="parameters" element="tns:ValidateRequestXmlResponse" />
+  </message>
+  <message name="ValidateRequestXmlUriSoapIn">
+    <part name="parameters" element="tns:ValidateRequestXmlUri" />
+  </message>
+  <message name="ValidateRequestXmlUriSoapOut">
+    <part name="parameters" element="tns:ValidateRequestXmlUriResponse" />
+  </message>
+  <message name="ValidateXmlSoapIn">
+    <part name="parameters" element="tns:ValidateXml" />
+  </message>
+  <message name="ValidateXmlSoapOut">
+    <part name="parameters" element="tns:ValidateXmlResponse" />
+  </message>
+  <message name="ValidateXmlUriSoapIn">
+    <part name="parameters" element="tns:ValidateXmlUri" />
+  </message>
+  <message name="ValidateXmlUriSoapOut">
+    <part name="parameters" element="tns:ValidateXmlUriResponse" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaSoapIn">
+    <part name="parameters" element="tns:RetrieveRequestXmlSchema" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaSoapOut">
+    <part name="parameters" element="tns:RetrieveRequestXmlSchemaResponse" />
+  </message>
+  <message name="RetrieveRequestXmlSampleSoapIn">
+    <part name="parameters" element="tns:RetrieveRequestXmlSample" />
+  </message>
+  <message name="RetrieveRequestXmlSampleSoapOut">
+    <part name="parameters" element="tns:RetrieveRequestXmlSampleResponse" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaSoapIn">
+    <part name="parameters" element="tns:RetrieveResponseXmlSchema" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaSoapOut">
+    <part name="parameters" element="tns:RetrieveResponseXmlSchemaResponse" />
+  </message>
+  <message name="RetrieveResponseDetailedXmlSchemaSoapIn">
+    <part name="parameters" element="tns:RetrieveResponseDetailedXmlSchema" />
+  </message>
+  <message name="RetrieveResponseDetailedXmlSchemaSoapOut">
+    <part name="parameters" element="tns:RetrieveResponseDetailedXmlSchemaResponse" />
+  </message>
+  <message name="CalculateSimilaritySoapIn">
+    <part name="parameters" element="tns:CalculateSimilarity" />
+  </message>
+  <message name="CalculateSimilaritySoapOut">
+    <part name="parameters" element="tns:CalculateSimilarityResponse" />
+  </message>
+  <message name="ConvertToNewDomainSoapIn">
+    <part name="parameters" element="tns:ConvertToNewDomain" />
+  </message>
+  <message name="ConvertToNewDomainSoapOut">
+    <part name="parameters" element="tns:ConvertToNewDomainResponse" />
+  </message>
+  <message name="GenerateCreativityPromptsSoapIn">
+    <part name="parameters" element="tns:GenerateCreativityPrompts" />
+  </message>
+  <message name="GenerateCreativityPromptsSoapOut">
+    <part name="parameters" element="tns:GenerateCreativityPromptsResponse" />
+  </message>
+  <message name="GeneratePredicatesFromDocumentSoapIn">
+    <part name="parameters" element="tns:GeneratePredicatesFromDocument" />
+  </message>
+  <message name="GeneratePredicatesFromDocumentSoapOut">
+    <part name="parameters" element="tns:GeneratePredicatesFromDocumentResponse" />
+  </message>
+  <message name="GeneratePredicatesSoapIn">
+    <part name="parameters" element="tns:GeneratePredicates" />
+  </message>
+  <message name="GeneratePredicatesSoapOut">
+    <part name="parameters" element="tns:GeneratePredicatesResponse" />
+  </message>
+  <message name="RetrieveAllSourcesSoapIn">
+    <part name="parameters" element="tns:RetrieveAllSources" />
+  </message>
+  <message name="RetrieveAllSourcesSoapOut">
+    <part name="parameters" element="tns:RetrieveAllSourcesResponse" />
+  </message>
+  <message name="PerformAntiqueSoapIn">
+    <part name="parameters" element="tns:PerformAntique" />
+  </message>
+  <message name="PerformAntiqueSoapOut">
+    <part name="parameters" element="tns:PerformAntiqueResponse" />
+  </message>
+  <message name="PerformAntiqueSampleSoapIn">
+    <part name="parameters" element="tns:PerformAntiqueSample" />
+  </message>
+  <message name="PerformAntiqueSampleSoapOut">
+    <part name="parameters" element="tns:PerformAntiqueSampleResponse" />
+  </message>
+  <message name="NLParserHttpGetIn">
+    <part name="toCreate" type="s:string" />
+  </message>
+  <message name="NLParserHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpGetIn">
+    <part name="xml" type="s:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateRequestXmlUriHttpGetIn">
+    <part name="xmlUri" type="s:string" />
+  </message>
+  <message name="ValidateRequestXmlUriHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateXmlHttpGetIn">
+    <part name="xml" type="s:string" />
+    <part name="schemaNamespace" type="s:string" />
+    <part name="schemaUri" type="s:string" />
+  </message>
+  <message name="ValidateXmlHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateXmlUriHttpGetIn">
+    <part name="xmlUri" type="s:string" />
+    <part name="schemaNamespace" type="s:string" />
+    <part name="schemaUri" type="s:string" />
+  </message>
+  <message name="ValidateXmlUriHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaHttpGetIn" />
+  <message name="RetrieveRequestXmlSchemaHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveRequestXmlSampleHttpGetIn" />
+  <message name="RetrieveRequestXmlSampleHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaHttpGetIn" />
+  <message name="RetrieveResponseXmlSchemaHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveResponseDetailedXmlSchemaHttpGetIn" />
+  <message name="RetrieveResponseDetailedXmlSchemaHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="CalculateSimilarityHttpGetIn">
+    <part name="text1" type="s:string" />
+    <part name="text2" type="s:string" />
+  </message>
+  <message name="CalculateSimilarityHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ConvertToNewDomainHttpGetIn">
+    <part name="text" type="s:string" />
+    <part name="targetDomain" type="s:string" />
+    <part name="sourceDomain" type="s:string" />
+  </message>
+  <message name="ConvertToNewDomainHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="GenerateCreativityPromptsHttpGetIn">
+    <part name="text" type="s:string" />
+  </message>
+  <message name="GenerateCreativityPromptsHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="GeneratePredicatesFromDocumentHttpGetIn">
+    <part name="documentUri" type="s:string" />
+    <part name="domainID" type="s:string" />
+  </message>
+  <message name="GeneratePredicatesFromDocumentHttpGetOut" />
+  <message name="GeneratePredicatesHttpGetIn">
+    <part name="name" type="s:string" />
+    <part name="assignedID" type="s:string" />
+    <part name="author" type="s:string" />
+    <part name="domainID" type="s:string" />
+    <part name="problem" type="s:string" />
+    <part name="solution" type="s:string" />
+    <part name="keywords" type="s:string" />
+  </message>
+  <message name="GeneratePredicatesHttpGetOut" />
+  <message name="RetrieveAllSourcesHttpGetIn" />
+  <message name="RetrieveAllSourcesHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformAntiqueHttpGetIn">
+    <part name="antiqueRequestXml" type="s:string" />
+  </message>
+  <message name="PerformAntiqueHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformAntiqueSampleHttpGetIn" />
+  <message name="PerformAntiqueSampleHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="NLParserHttpPostIn">
+    <part name="toCreate" type="s:string" />
+  </message>
+  <message name="NLParserHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpPostIn">
+    <part name="xml" type="s:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateRequestXmlUriHttpPostIn">
+    <part name="xmlUri" type="s:string" />
+  </message>
+  <message name="ValidateRequestXmlUriHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateXmlHttpPostIn">
+    <part name="xml" type="s:string" />
+    <part name="schemaNamespace" type="s:string" />
+    <part name="schemaUri" type="s:string" />
+  </message>
+  <message name="ValidateXmlHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateXmlUriHttpPostIn">
+    <part name="xmlUri" type="s:string" />
+    <part name="schemaNamespace" type="s:string" />
+    <part name="schemaUri" type="s:string" />
+  </message>
+  <message name="ValidateXmlUriHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaHttpPostIn" />
+  <message name="RetrieveRequestXmlSchemaHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveRequestXmlSampleHttpPostIn" />
+  <message name="RetrieveRequestXmlSampleHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaHttpPostIn" />
+  <message name="RetrieveResponseXmlSchemaHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveResponseDetailedXmlSchemaHttpPostIn" />
+  <message name="RetrieveResponseDetailedXmlSchemaHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="CalculateSimilarityHttpPostIn">
+    <part name="text1" type="s:string" />
+    <part name="text2" type="s:string" />
+  </message>
+  <message name="CalculateSimilarityHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ConvertToNewDomainHttpPostIn">
+    <part name="text" type="s:string" />
+    <part name="targetDomain" type="s:string" />
+    <part name="sourceDomain" type="s:string" />
+  </message>
+  <message name="ConvertToNewDomainHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="GenerateCreativityPromptsHttpPostIn">
+    <part name="text" type="s:string" />
+  </message>
+  <message name="GenerateCreativityPromptsHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="GeneratePredicatesFromDocumentHttpPostIn">
+    <part name="documentUri" type="s:string" />
+    <part name="domainID" type="s:string" />
+  </message>
+  <message name="GeneratePredicatesFromDocumentHttpPostOut" />
+  <message name="GeneratePredicatesHttpPostIn">
+    <part name="name" type="s:string" />
+    <part name="assignedID" type="s:string" />
+    <part name="author" type="s:string" />
+    <part name="domainID" type="s:string" />
+    <part name="problem" type="s:string" />
+    <part name="solution" type="s:string" />
+    <part name="keywords" type="s:string" />
+  </message>
+  <message name="GeneratePredicatesHttpPostOut" />
+  <message name="RetrieveAllSourcesHttpPostIn" />
+  <message name="RetrieveAllSourcesHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformAntiqueHttpPostIn">
+    <part name="antiqueRequestXml" type="s:string" />
+  </message>
+  <message name="PerformAntiqueHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformAntiqueSampleHttpPostIn" />
+  <message name="PerformAntiqueSampleHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <portType name="AntiqueServiceSoap">
+    <operation name="NLParser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a natural language text&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  A JSON string containing two types of terms: objects (or noun phrases (NP)) and activities (or verb phrases (VP)). Terms are described as follows: &lt;b&gt;TermID&lt;/b&gt;, &lt;b&gt;TermValue&lt;/b&gt;, &lt;b&gt;Occurrence&lt;/b&gt;, &lt;b&gt;Pos&lt;/b&gt;, &lt;b&gt;Wnsn&lt;/b&gt;, &lt;b&gt;RefTerm&lt;/b&gt;, &lt;b&gt;ExpType&lt;/b&gt;, &lt;b&gt;ExpWeight&lt;/b&gt;, &lt;b&gt;MatchValue&lt;/b&gt;, &lt;b&gt;RefTermValue&lt;/b&gt;, &lt;b&gt;InGlossary&lt;/b&gt;&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A simple natural language parser that processes a input text by (1) splitting into sentences and word tokens, (2) identifying complex nominals based on term definitions in WordNet, (3) identifying and removing all terms defined in a list of stop words (e.g. prepositions and pronouns), (4) tagging each word with their corresponding part-of-speech (e.g. singular common noun, comparative adjective, etc.) and classified accordingly using an improved version of the Brill Tagger.  </wsdl:documentation>
+      <input message="tns:NLParserSoapIn" />
+      <output message="tns:NLParserSoapOut" />
+    </operation>
+    <operation name="ValidateRequestXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlSoapIn" />
+      <output message="tns:ValidateRequestXmlSoapOut" />
+    </operation>
+    <operation name="ValidateRequestXmlUri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the URI of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlUriSoapIn" />
+      <output message="tns:ValidateRequestXmlUriSoapOut" />
+    </operation>
+    <operation name="ValidateXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against a XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateXmlSoapIn" />
+      <output message="tns:ValidateXmlSoapOut" />
+    </operation>
+    <operation name="ValidateXmlUri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against a XML Schema by taking the URI of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateXmlUriSoapIn" />
+      <output message="tns:ValidateXmlUriSoapOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Request XML Schema currently used for constructing Request Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSchemaSoapIn" />
+      <output message="tns:RetrieveRequestXmlSchemaSoapOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve a sample of a Request XML corresponding to the Request XML Schema currently used</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSampleSoapIn" />
+      <output message="tns:RetrieveRequestXmlSampleSoapOut" />
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Response XML Schema currently used for constructing Response Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseXmlSchemaSoapIn" />
+      <output message="tns:RetrieveResponseXmlSchemaSoapOut" />
+    </operation>
+    <operation name="RetrieveResponseDetailedXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Responsedetailed XML Schema currently used for constructing ResponseDetailed Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseDetailedXmlSchemaSoapIn" />
+      <output message="tns:RetrieveResponseDetailedXmlSchemaSoapOut" />
+    </operation>
+    <operation name="CalculateSimilarity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculate similarity between two sentences.</wsdl:documentation>
+      <input message="tns:CalculateSimilaritySoapIn" />
+      <output message="tns:CalculateSimilaritySoapOut" />
+    </operation>
+    <operation name="ConvertToNewDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Substitute domain terms from a given text to generate creativity prompts.</wsdl:documentation>
+      <input message="tns:ConvertToNewDomainSoapIn" />
+      <output message="tns:ConvertToNewDomainSoapOut" />
+    </operation>
+    <operation name="GenerateCreativityPrompts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate creativity prompts from a given text</wsdl:documentation>
+      <input message="tns:GenerateCreativityPromptsSoapIn" />
+      <output message="tns:GenerateCreativityPromptsSoapOut" />
+    </operation>
+    <operation name="GeneratePredicatesFromDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extract text from a document's URL and generate predicates.</wsdl:documentation>
+      <input message="tns:GeneratePredicatesFromDocumentSoapIn" />
+      <output message="tns:GeneratePredicatesFromDocumentSoapOut" />
+    </operation>
+    <operation name="GeneratePredicates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate predicates from a given text.</wsdl:documentation>
+      <input message="tns:GeneratePredicatesSoapIn" />
+      <output message="tns:GeneratePredicatesSoapOut" />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve all sources from DB</wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesSoapIn" />
+      <output message="tns:RetrieveAllSourcesSoapOut" />
+    </operation>
+    <operation name="PerformAntique">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Perform a search using AnTiQue</wsdl:documentation>
+      <input message="tns:PerformAntiqueSoapIn" />
+      <output message="tns:PerformAntiqueSoapOut" />
+    </operation>
+    <operation name="PerformAntiqueSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Perform a search using AnTiQue based on a example request</wsdl:documentation>
+      <input message="tns:PerformAntiqueSampleSoapIn" />
+      <output message="tns:PerformAntiqueSampleSoapOut" />
+    </operation>
+  </portType>
+  <portType name="AntiqueServiceHttpGet">
+    <operation name="NLParser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a natural language text&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  A JSON string containing two types of terms: objects (or noun phrases (NP)) and activities (or verb phrases (VP)). Terms are described as follows: &lt;b&gt;TermID&lt;/b&gt;, &lt;b&gt;TermValue&lt;/b&gt;, &lt;b&gt;Occurrence&lt;/b&gt;, &lt;b&gt;Pos&lt;/b&gt;, &lt;b&gt;Wnsn&lt;/b&gt;, &lt;b&gt;RefTerm&lt;/b&gt;, &lt;b&gt;ExpType&lt;/b&gt;, &lt;b&gt;ExpWeight&lt;/b&gt;, &lt;b&gt;MatchValue&lt;/b&gt;, &lt;b&gt;RefTermValue&lt;/b&gt;, &lt;b&gt;InGlossary&lt;/b&gt;&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A simple natural language parser that processes a input text by (1) splitting into sentences and word tokens, (2) identifying complex nominals based on term definitions in WordNet, (3) identifying and removing all terms defined in a list of stop words (e.g. prepositions and pronouns), (4) tagging each word with their corresponding part-of-speech (e.g. singular common noun, comparative adjective, etc.) and classified accordingly using an improved version of the Brill Tagger.  </wsdl:documentation>
+      <input message="tns:NLParserHttpGetIn" />
+      <output message="tns:NLParserHttpGetOut" />
+    </operation>
+    <operation name="ValidateRequestXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlHttpGetIn" />
+      <output message="tns:ValidateRequestXmlHttpGetOut" />
+    </operation>
+    <operation name="ValidateRequestXmlUri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the URI of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlUriHttpGetIn" />
+      <output message="tns:ValidateRequestXmlUriHttpGetOut" />
+    </operation>
+    <operation name="ValidateXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against a XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateXmlHttpGetIn" />
+      <output message="tns:ValidateXmlHttpGetOut" />
+    </operation>
+    <operation name="ValidateXmlUri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against a XML Schema by taking the URI of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateXmlUriHttpGetIn" />
+      <output message="tns:ValidateXmlUriHttpGetOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Request XML Schema currently used for constructing Request Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSchemaHttpGetIn" />
+      <output message="tns:RetrieveRequestXmlSchemaHttpGetOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve a sample of a Request XML corresponding to the Request XML Schema currently used</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSampleHttpGetIn" />
+      <output message="tns:RetrieveRequestXmlSampleHttpGetOut" />
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Response XML Schema currently used for constructing Response Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseXmlSchemaHttpGetIn" />
+      <output message="tns:RetrieveResponseXmlSchemaHttpGetOut" />
+    </operation>
+    <operation name="RetrieveResponseDetailedXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Responsedetailed XML Schema currently used for constructing ResponseDetailed Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseDetailedXmlSchemaHttpGetIn" />
+      <output message="tns:RetrieveResponseDetailedXmlSchemaHttpGetOut" />
+    </operation>
+    <operation name="CalculateSimilarity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculate similarity between two sentences.</wsdl:documentation>
+      <input message="tns:CalculateSimilarityHttpGetIn" />
+      <output message="tns:CalculateSimilarityHttpGetOut" />
+    </operation>
+    <operation name="ConvertToNewDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Substitute domain terms from a given text to generate creativity prompts.</wsdl:documentation>
+      <input message="tns:ConvertToNewDomainHttpGetIn" />
+      <output message="tns:ConvertToNewDomainHttpGetOut" />
+    </operation>
+    <operation name="GenerateCreativityPrompts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate creativity prompts from a given text</wsdl:documentation>
+      <input message="tns:GenerateCreativityPromptsHttpGetIn" />
+      <output message="tns:GenerateCreativityPromptsHttpGetOut" />
+    </operation>
+    <operation name="GeneratePredicatesFromDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extract text from a document's URL and generate predicates.</wsdl:documentation>
+      <input message="tns:GeneratePredicatesFromDocumentHttpGetIn" />
+      <output message="tns:GeneratePredicatesFromDocumentHttpGetOut" />
+    </operation>
+    <operation name="GeneratePredicates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate predicates from a given text.</wsdl:documentation>
+      <input message="tns:GeneratePredicatesHttpGetIn" />
+      <output message="tns:GeneratePredicatesHttpGetOut" />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve all sources from DB</wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesHttpGetIn" />
+      <output message="tns:RetrieveAllSourcesHttpGetOut" />
+    </operation>
+    <operation name="PerformAntique">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Perform a search using AnTiQue</wsdl:documentation>
+      <input message="tns:PerformAntiqueHttpGetIn" />
+      <output message="tns:PerformAntiqueHttpGetOut" />
+    </operation>
+    <operation name="PerformAntiqueSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Perform a search using AnTiQue based on a example request</wsdl:documentation>
+      <input message="tns:PerformAntiqueSampleHttpGetIn" />
+      <output message="tns:PerformAntiqueSampleHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="AntiqueServiceHttpPost">
+    <operation name="NLParser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a natural language text&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  A JSON string containing two types of terms: objects (or noun phrases (NP)) and activities (or verb phrases (VP)). Terms are described as follows: &lt;b&gt;TermID&lt;/b&gt;, &lt;b&gt;TermValue&lt;/b&gt;, &lt;b&gt;Occurrence&lt;/b&gt;, &lt;b&gt;Pos&lt;/b&gt;, &lt;b&gt;Wnsn&lt;/b&gt;, &lt;b&gt;RefTerm&lt;/b&gt;, &lt;b&gt;ExpType&lt;/b&gt;, &lt;b&gt;ExpWeight&lt;/b&gt;, &lt;b&gt;MatchValue&lt;/b&gt;, &lt;b&gt;RefTermValue&lt;/b&gt;, &lt;b&gt;InGlossary&lt;/b&gt;&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A simple natural language parser that processes a input text by (1) splitting into sentences and word tokens, (2) identifying complex nominals based on term definitions in WordNet, (3) identifying and removing all terms defined in a list of stop words (e.g. prepositions and pronouns), (4) tagging each word with their corresponding part-of-speech (e.g. singular common noun, comparative adjective, etc.) and classified accordingly using an improved version of the Brill Tagger.  </wsdl:documentation>
+      <input message="tns:NLParserHttpPostIn" />
+      <output message="tns:NLParserHttpPostOut" />
+    </operation>
+    <operation name="ValidateRequestXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlHttpPostIn" />
+      <output message="tns:ValidateRequestXmlHttpPostOut" />
+    </operation>
+    <operation name="ValidateRequestXmlUri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the URI of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlUriHttpPostIn" />
+      <output message="tns:ValidateRequestXmlUriHttpPostOut" />
+    </operation>
+    <operation name="ValidateXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against a XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateXmlHttpPostIn" />
+      <output message="tns:ValidateXmlHttpPostOut" />
+    </operation>
+    <operation name="ValidateXmlUri">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against a XML Schema by taking the URI of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateXmlUriHttpPostIn" />
+      <output message="tns:ValidateXmlUriHttpPostOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Request XML Schema currently used for constructing Request Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSchemaHttpPostIn" />
+      <output message="tns:RetrieveRequestXmlSchemaHttpPostOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve a sample of a Request XML corresponding to the Request XML Schema currently used</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSampleHttpPostIn" />
+      <output message="tns:RetrieveRequestXmlSampleHttpPostOut" />
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Response XML Schema currently used for constructing Response Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseXmlSchemaHttpPostIn" />
+      <output message="tns:RetrieveResponseXmlSchemaHttpPostOut" />
+    </operation>
+    <operation name="RetrieveResponseDetailedXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Responsedetailed XML Schema currently used for constructing ResponseDetailed Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseDetailedXmlSchemaHttpPostIn" />
+      <output message="tns:RetrieveResponseDetailedXmlSchemaHttpPostOut" />
+    </operation>
+    <operation name="CalculateSimilarity">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculate similarity between two sentences.</wsdl:documentation>
+      <input message="tns:CalculateSimilarityHttpPostIn" />
+      <output message="tns:CalculateSimilarityHttpPostOut" />
+    </operation>
+    <operation name="ConvertToNewDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Substitute domain terms from a given text to generate creativity prompts.</wsdl:documentation>
+      <input message="tns:ConvertToNewDomainHttpPostIn" />
+      <output message="tns:ConvertToNewDomainHttpPostOut" />
+    </operation>
+    <operation name="GenerateCreativityPrompts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate creativity prompts from a given text</wsdl:documentation>
+      <input message="tns:GenerateCreativityPromptsHttpPostIn" />
+      <output message="tns:GenerateCreativityPromptsHttpPostOut" />
+    </operation>
+    <operation name="GeneratePredicatesFromDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extract text from a document's URL and generate predicates.</wsdl:documentation>
+      <input message="tns:GeneratePredicatesFromDocumentHttpPostIn" />
+      <output message="tns:GeneratePredicatesFromDocumentHttpPostOut" />
+    </operation>
+    <operation name="GeneratePredicates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate predicates from a given text.</wsdl:documentation>
+      <input message="tns:GeneratePredicatesHttpPostIn" />
+      <output message="tns:GeneratePredicatesHttpPostOut" />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve all sources from DB</wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesHttpPostIn" />
+      <output message="tns:RetrieveAllSourcesHttpPostOut" />
+    </operation>
+    <operation name="PerformAntique">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Perform a search using AnTiQue</wsdl:documentation>
+      <input message="tns:PerformAntiqueHttpPostIn" />
+      <output message="tns:PerformAntiqueHttpPostOut" />
+    </operation>
+    <operation name="PerformAntiqueSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Perform a search using AnTiQue based on a example request</wsdl:documentation>
+      <input message="tns:PerformAntiqueSampleHttpPostIn" />
+      <output message="tns:PerformAntiqueSampleHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="AntiqueServiceSoap" type="tns:AntiqueServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="NLParser">
+      <soap:operation soapAction="http://tempuri.org/NLParser" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <soap:operation soapAction="http://tempuri.org/ValidateRequestXml" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXmlUri">
+      <soap:operation soapAction="http://tempuri.org/ValidateRequestXmlUri" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateXml">
+      <soap:operation soapAction="http://tempuri.org/ValidateXml" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateXmlUri">
+      <soap:operation soapAction="http://tempuri.org/ValidateXmlUri" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <soap:operation soapAction="http://tempuri.org/RetrieveRequestXmlSchema" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSample">
+      <soap:operation soapAction="http://tempuri.org/RetrieveRequestXmlSample" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <soap:operation soapAction="http://tempuri.org/RetrieveResponseXmlSchema" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseDetailedXmlSchema">
+      <soap:operation soapAction="http://tempuri.org/RetrieveResponseDetailedXmlSchema" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CalculateSimilarity">
+      <soap:operation soapAction="http://tempuri.org/CalculateSimilarity" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConvertToNewDomain">
+      <soap:operation soapAction="http://tempuri.org/ConvertToNewDomain" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GenerateCreativityPrompts">
+      <soap:operation soapAction="http://tempuri.org/GenerateCreativityPrompts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GeneratePredicatesFromDocument">
+      <soap:operation soapAction="http://tempuri.org/GeneratePredicatesFromDocument" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GeneratePredicates">
+      <soap:operation soapAction="http://tempuri.org/GeneratePredicates" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSources">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAllSources" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformAntique">
+      <soap:operation soapAction="http://tempuri.org/PerformAntique" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformAntiqueSample">
+      <soap:operation soapAction="http://tempuri.org/PerformAntiqueSample" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AntiqueServiceSoap12" type="tns:AntiqueServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="NLParser">
+      <soap12:operation soapAction="http://tempuri.org/NLParser" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <soap12:operation soapAction="http://tempuri.org/ValidateRequestXml" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXmlUri">
+      <soap12:operation soapAction="http://tempuri.org/ValidateRequestXmlUri" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateXml">
+      <soap12:operation soapAction="http://tempuri.org/ValidateXml" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateXmlUri">
+      <soap12:operation soapAction="http://tempuri.org/ValidateXmlUri" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveRequestXmlSchema" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSample">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveRequestXmlSample" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveResponseXmlSchema" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseDetailedXmlSchema">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveResponseDetailedXmlSchema" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CalculateSimilarity">
+      <soap12:operation soapAction="http://tempuri.org/CalculateSimilarity" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConvertToNewDomain">
+      <soap12:operation soapAction="http://tempuri.org/ConvertToNewDomain" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GenerateCreativityPrompts">
+      <soap12:operation soapAction="http://tempuri.org/GenerateCreativityPrompts" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GeneratePredicatesFromDocument">
+      <soap12:operation soapAction="http://tempuri.org/GeneratePredicatesFromDocument" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GeneratePredicates">
+      <soap12:operation soapAction="http://tempuri.org/GeneratePredicates" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSources">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAllSources" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformAntique">
+      <soap12:operation soapAction="http://tempuri.org/PerformAntique" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformAntiqueSample">
+      <soap12:operation soapAction="http://tempuri.org/PerformAntiqueSample" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AntiqueServiceHttpGet" type="tns:AntiqueServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="NLParser">
+      <http:operation location="/NLParser" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <http:operation location="/ValidateRequestXml" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXmlUri">
+      <http:operation location="/ValidateRequestXmlUri" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateXml">
+      <http:operation location="/ValidateXml" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateXmlUri">
+      <http:operation location="/ValidateXmlUri" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <http:operation location="/RetrieveRequestXmlSchema" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSample">
+      <http:operation location="/RetrieveRequestXmlSample" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <http:operation location="/RetrieveResponseXmlSchema" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseDetailedXmlSchema">
+      <http:operation location="/RetrieveResponseDetailedXmlSchema" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="CalculateSimilarity">
+      <http:operation location="/CalculateSimilarity" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ConvertToNewDomain">
+      <http:operation location="/ConvertToNewDomain" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GenerateCreativityPrompts">
+      <http:operation location="/GenerateCreativityPrompts" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GeneratePredicatesFromDocument">
+      <http:operation location="/GeneratePredicatesFromDocument" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+    <operation name="GeneratePredicates">
+      <http:operation location="/GeneratePredicates" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <http:operation location="/RetrieveAllSources" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformAntique">
+      <http:operation location="/PerformAntique" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformAntiqueSample">
+      <http:operation location="/PerformAntiqueSample" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AntiqueServiceHttpPost" type="tns:AntiqueServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="NLParser">
+      <http:operation location="/NLParser" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <http:operation location="/ValidateRequestXml" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXmlUri">
+      <http:operation location="/ValidateRequestXmlUri" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateXml">
+      <http:operation location="/ValidateXml" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateXmlUri">
+      <http:operation location="/ValidateXmlUri" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <http:operation location="/RetrieveRequestXmlSchema" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSample">
+      <http:operation location="/RetrieveRequestXmlSample" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <http:operation location="/RetrieveResponseXmlSchema" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseDetailedXmlSchema">
+      <http:operation location="/RetrieveResponseDetailedXmlSchema" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="CalculateSimilarity">
+      <http:operation location="/CalculateSimilarity" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ConvertToNewDomain">
+      <http:operation location="/ConvertToNewDomain" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GenerateCreativityPrompts">
+      <http:operation location="/GenerateCreativityPrompts" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GeneratePredicatesFromDocument">
+      <http:operation location="/GeneratePredicatesFromDocument" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+    <operation name="GeneratePredicates">
+      <http:operation location="/GeneratePredicates" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <http:operation location="/RetrieveAllSources" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformAntique">
+      <http:operation location="/PerformAntique" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformAntiqueSample">
+      <http:operation location="/PerformAntiqueSample" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AntiqueService">
+    <port name="AntiqueServiceSoap" binding="tns:AntiqueServiceSoap">
+      <soap:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+    </port>
+    <port name="AntiqueServiceSoap12" binding="tns:AntiqueServiceSoap12">
+      <soap12:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+    </port>
+    <port name="AntiqueServiceHttpGet" binding="tns:AntiqueServiceHttpGet">
+      <http:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+    </port>
+    <port name="AntiqueServiceHttpPost" binding="tns:AntiqueServiceHttpPost">
+      <http:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+    </port>
+  </service>
+</definitions>

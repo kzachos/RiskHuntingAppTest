@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>sdfsdf</Author>
+  <LaunchDate>01/12/2014 19:18:10</LaunchDate>
+  <SourceSpecificationLastEdited>01/12/2014 19:18:10</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content> Install a new, single site version of WordPress, including creating an admin account. This is important because, since users are managed by multisite in a much different way, the roles will not transfer and you won’t be able to log in using a migrated role initially. Later you can reassign roles as necessary (see below).  Install a new, single site version of WordPress, including creating an admin account. This is important because, since users are managed by multisite in a much different way, the roles will not transfer and you won’t be able to log in using a migrated role initially. Later you can reassign roles as necessary (see below).</Content>
+    <Observations />
+    <ObservedBehaviour>Plant</ObservedBehaviour>
+    <TreatmentType>Head</TreatmentType>
+    <DateOfIncident />
+    <AilmentType />
+    <TriggeringEvent />
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

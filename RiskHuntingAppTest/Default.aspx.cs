@@ -39,11 +39,11 @@ namespace RiskHuntingAppTest
 
 //		protected const string AUTHOR = "Bassildon Trial";
 
-		protected string xmlFilesPath = SettingsTool.GetApplicationPath() + "xmlFiles/";
-		protected string requestPath = SettingsTool.GetApplicationPath() + "xmlFiles/Requests/";
-		protected string responsePath = SettingsTool.GetApplicationPath() + "xmlFiles/Responses/";
-		protected string sourcesPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/";
-		protected string processPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/_toProcess/";
+		protected string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
+		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Requests");
+		protected string responsePath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Responses");
+		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
+		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
 
 		protected string requestId, responseUri;
 
@@ -65,6 +65,8 @@ namespace RiskHuntingAppTest
 		protected const string LOCATION_WATERMARK = "[Enter the risk location]";
 		protected const string BODYPARTS_WATERMARK = "[Enter the body parts that are at risk, e.g. feet]";
 
+		protected const string ERROR_MESSAGE_REQUIRED = "One or more fields are empty.";
+
 		//		const string StartTagNav = "<div id=duobutton>";
 		//		const string Mid1TagNav = "<div class=links>";
 		//		const string Mid2TagNav = "<a id=\"pressed\" href=\"#\">Risk description</a><a href=\"javascript:doLoad('ResolutionIdeas.aspx');\">Risk resolutions</a>";
@@ -77,6 +79,8 @@ namespace RiskHuntingAppTest
 
 			InitTextElements();
 			InitParametersDropDown ();
+			alert_message_success.Visible = false;
+			alert_message_error.Visible = false;
 
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
@@ -90,6 +94,7 @@ namespace RiskHuntingAppTest
 				this.requestId = DetermineID ();
 
 				if (!this.requestId.Equals (String.Empty)) {
+					deleteRiskDiv.Visible = true;
 //					previousrisks.Visible = true;
 					//					navigationbar.Visible = true;
 
@@ -101,7 +106,8 @@ namespace RiskHuntingAppTest
 					Console.WriteLine (this.requestId);
 					Session ["CURRENT_RISK"] = this.sourceId;
 
-				} 
+				} else
+					deleteRiskDiv.Visible = false;
 
 				//queryText.Text = "temp";
 				//				InitDropDownLists();
@@ -120,13 +126,14 @@ namespace RiskHuntingAppTest
 				this.requestId = DetermineID ();
 
 				if (!this.requestId.Equals (String.Empty)) {
+					deleteRiskDiv.Visible = true;
 					RetrieveRiskXml ("SourceSpecification");
 					RetrieveRiskXml ("Problem");
 					RetrieveRiskXml ("Solution");
 					Console.WriteLine (this.requestId);
 					Session ["CURRENT_RISK"] = this.sourceId;
-				}
-					
+				} else
+					deleteRiskDiv.Visible = false;
 
 			}
 		}
@@ -147,10 +154,14 @@ namespace RiskHuntingAppTest
 			}
 			InitCreativeGuidance ();
 
-			if (File.Exists (responsePath + "Response_" + this.requestId + ".xml"))
-				Topbar_Problem_Search_Solution ();
+			if (Session ["CURRENT_RISK"] != null) {
+				if (File.Exists (Path.Combine (responsePath, "Response_" + this.requestId + ".xml")))
+					Topbar_Problem_Search_Solution ();
+				else
+					Topbar_Problem_Solution ();
+			}
 			else
-				Topbar_Problem_Solution ();
+				Topbar_Problem_Solution_NoSummary ();
 		}
 
 
@@ -163,7 +174,7 @@ namespace RiskHuntingAppTest
 			{
 				if (Request.QueryString["id"] != null)
 				{
-					responseUri = responsePath + "Response_" + Request.QueryString["id"] + ".xml";
+					responseUri = Path.Combine (responsePath, "Response_" + Request.QueryString["id"] + ".xml");
 					Session["CurrentResponseUri"] = responseUri;
 				}
 			}
@@ -199,14 +210,22 @@ namespace RiskHuntingAppTest
 			
 
 		#region Initializing
+		private void Topbar_Problem_Solution_NoSummary ()
+		{
+			TopbarProblemSolutionNoSummary.Visible = true;
+			TopbarProblemSolution.Visible = false;
+			TopbarProblemSearchSolution.Visible = false;
+		}
 		private void Topbar_Problem_Solution ()
 		{
+			TopbarProblemSolutionNoSummary.Visible = false;
 			TopbarProblemSolution.Visible = true;
 			TopbarProblemSearchSolution.Visible = false;
 		}
 
 		private void Topbar_Problem_Search_Solution ()
 		{
+			TopbarProblemSolutionNoSummary.Visible = false;
 			TopbarProblemSolution.Visible = false;
 			TopbarProblemSearchSolution.Visible = true;
 		}
@@ -228,7 +247,7 @@ namespace RiskHuntingAppTest
 
 		private void InitParametersDropDown()
 		{
-			var doc = XDocument.Load(xmlFilesPath + "Parameters.xml", LoadOptions.None); 
+			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
 			RiskLocation.Items.Clear();
 			if (doc.Descendants("rl").Count() > 0)
 				foreach (XElement xe in doc.Descendants("rl"))
@@ -254,6 +273,18 @@ namespace RiskHuntingAppTest
 			else
 			{
 				errorMsg.InnerHtml = String.Empty;
+				return true;
+			}
+		}
+
+		bool CheckTextBox(WatermarkedTextBox textbox, string watermarkText)
+		{
+			if (textbox.Text.Equals(String.Empty) || textbox.Text.Equals(watermarkText))
+			{
+				return false;
+			}
+			else
+			{
 				return true;
 			}
 		}
@@ -423,7 +454,7 @@ namespace RiskHuntingAppTest
 
 			string responseRef = "Response_" + this.requestId + ".xml";
 			//string responseRef = "Response_201131_153042.xml";
-			string responseXmlUri = responsePath + responseRef;
+			string responseXmlUri = Path.Combine (responsePath, responseRef);
 			FileStream responseStream = new FileStream(responseXmlUri, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
 			StreamWriter responseStreamWriter = new StreamWriter(responseStream, Encoding.ASCII);
 			responseStreamWriter.Write(responseXml);
@@ -433,7 +464,7 @@ namespace RiskHuntingAppTest
 
 			this.responseUri = responseXmlUri;
 			Session["CurrentResponseUri"] = responseXmlUri;
-			Response.Redirect("SearchResults.aspx");
+			Response.Redirect("SearchResults.aspx", false);
 		}
 
 		private Risk NewRisk (bool search)
@@ -511,10 +542,10 @@ namespace RiskHuntingAppTest
 
 		private string PerformEddie()
 		{
-			XmlProc.RequestSerialized.Request request = CreateEddieRequestWithNewRequestId(xmlFilesPath + "EddieRequest_template.xml");
+			XmlProc.RequestSerialized.Request request = CreateEddieRequestWithNewRequestId(Path.Combine (xmlFilesPath, "EddieRequest_template.xml"));
 
 			string requestRef = "Request_" + this.requestId + ".xml";
-			string requestXmlUri = requestPath + requestRef;
+			string requestXmlUri = Path.Combine (requestPath, requestRef);
 
 			XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Save(request, requestXmlUri);
 
@@ -527,7 +558,7 @@ namespace RiskHuntingAppTest
 
 			var watch = Stopwatch.StartNew();
 
-			RiskHuntingAppTest.eddie.EDDiEWebService eddie = new RiskHuntingAppTest.eddie.EDDiEWebService();
+			RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
 			eddie.Timeout = 3000000;
 			string eddieResponseXml = eddie.PerformEddieDomain(requestXml, "Risk");
 
@@ -607,8 +638,9 @@ namespace RiskHuntingAppTest
 
 		protected void Timer1_Tick(object sender, EventArgs e)
 		{
-			if (!CheckTextBoxContent(RiskName, NAME_WATERMARK).Equals(String.Empty) && !CheckTextBoxContent(RiskDescription, DESC_WATERMARK).Equals(String.Empty))
-				Save();
+			if (CheckTextBox (RiskName, NAME_WATERMARK) && CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
+				Save ();
+			}
 		}
 
 		private void Save()
@@ -628,15 +660,56 @@ namespace RiskHuntingAppTest
 				CreateRisk (false, true);
 		}
 			
+		private void ResetForm ()
+		{
+			Session.Remove("CURRENT_RISK");
+			RiskName.Text = String.Empty;
+			RiskName.WatermarkText = NAME_WATERMARK;
+			RiskDescription.Text = String.Empty;
+			RiskDescription.WatermarkText = DESC_WATERMARK;
+			RiskAuthor.Text = String.Empty;
+			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
+			RiskLocation.SelectedIndex = -1;
+			RiskBodyParts.SelectedIndex = -1;
+			Response.Redirect("Default.aspx");
+		}
+
 		public virtual void resetClicked(object sender, EventArgs args)
 		{
-
+			ResetForm ();
 		}
 
 		public virtual void saveClicked(object sender, EventArgs args)
 		{
-			if (!CheckTextBoxContent(RiskName, NAME_WATERMARK).Equals(String.Empty) && !CheckTextBoxContent(RiskDescription, DESC_WATERMARK).Equals(String.Empty))
-				Save();
+			if (CheckTextBox (RiskName, NAME_WATERMARK) && CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
+				Save ();
+				successMessage.InnerHtml = "Saved successfully!";
+				alert_message_error.Visible = false;
+				alert_message_success.Visible = true;
+				deleteRiskDiv.Visible = true;
+				Topbar_Problem_Solution ();
+			} else {
+				errorMessage.InnerHtml = ERROR_MESSAGE_REQUIRED;
+				alert_message_error.Visible = true;
+				alert_message_success.Visible = false;
+			}
+		}
+
+		public virtual void deleteClicked(object sender, EventArgs args)
+		{
+			string confirmValue = Request.Form["confirm_value"];
+			if (confirmValue == "Yes") {
+				string filesToDelete = @"*" + this.sourceId + "*.xml";   // Only delete xml files containing *sourceID* in their filenames
+				string[] fileList = System.IO.Directory.GetFiles (xmlFilesPath, filesToDelete, System.IO.SearchOption.AllDirectories);
+//				Debug.WriteLine (filesToDelete);
+				foreach (string file in fileList) {
+					Debug.WriteLine (file + " will be deleted");
+					File.Delete (file);
+				}
+				Session.Remove("CURRENT_RISK");
+				Response.Redirect("Default.aspx");
+			}
+
 		}
 
 		#region Generate and Extract content 
@@ -709,13 +782,13 @@ namespace RiskHuntingAppTest
 		{
 			string location = String.Empty;
 
-			location = processPath + "SourceSpecification" + "/" + Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml";
+			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
 			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = processPath + "Problem" + "/" + Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml";
+			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
 			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = processPath + "Solution" + "/" + Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
+			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
 			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
 //			this.currentRisk = new Risk ();
@@ -758,23 +831,33 @@ namespace RiskHuntingAppTest
 			string location = String.Empty;
 			if (componentType.Equals("SourceSpecification"))
 			{
-				location = processPath + componentType + "/" + Constants.CASEREF + this.sourceId + "_" + componentType + ".xml";
+				location = Path.Combine (processPath, componentType, Constants.CASEREF + this.sourceId + "_" + componentType + ".xml");
 				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 				RiskName.Text = ss.SourceName;
 			}
 			else if (componentType.Equals("Problem"))
 			{
-				location = processPath + componentType + "/" + Constants.CASEREF + this.sourceId + "_" + componentType + ".xml";
+				location = Path.Combine (processPath, componentType, Constants.CASEREF + this.sourceId + "_" + componentType + ".xml");
 				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 				XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData problemFacet = problem.FacetSpecificationData;
 				RiskDescription.Text = problemFacet.Content;
 				RiskAuthor.Text = problem.Author;
-//				RiskLocation.Text = String.Empty;
-//				RiskBodyParts.Text = String.Empty;
+
+				var id1 = Util.GetHtmlSelectIdForLocation (problemFacet.ObservedBehaviour);
+				if (id1 > -1)
+					RiskLocation.SelectedIndex = id1;
+
+				var id2 = Util.GetHtmlSelectIdForBodyPart (problemFacet.TreatmentType);
+//				Console.WriteLine ("id2: " + id2);
+//				Console.WriteLine ("value: " + problemFacet.TreatmentType);
+				if (id2 > -1)
+					RiskBodyParts.SelectedIndex = id2;
+
+
 			}
 			else if (componentType.Equals("Solution"))
 			{
-				location = processPath + componentType + "/" + Constants.CASEREF + this.sourceId + "_" + componentType + ".xml";
+				location = Path.Combine (processPath, componentType, Constants.CASEREF + this.sourceId + "_" + componentType + ".xml");
 				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 				XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData solutionFacet = solution.FacetSpecificationData;
 			}
@@ -790,8 +873,8 @@ namespace RiskHuntingAppTest
 				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = Util.CreateSourceSpecificationXml(this.currentRisk);
 //				Console.WriteLine ("this.sourceId (GenerateXml): " + this.sourceId.ToString ());
 				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = sourcesPath + CASE_TYPE + "/" + SOURCESPECIFICATION + "/" + Ref;
-				xmlUri2 = sourcesPath + PROCESSFOLDER + "/" + SOURCESPECIFICATION + "/" + Ref;
+				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, SOURCESPECIFICATION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, SOURCESPECIFICATION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri2);
 			}
@@ -799,8 +882,8 @@ namespace RiskHuntingAppTest
 			{
 				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = Util.CreateProblemXml(this.currentRisk);
 				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = sourcesPath + CASE_TYPE + "/" + PROBLEM + "/" + Ref;
-				xmlUri2 = sourcesPath + PROCESSFOLDER + "/" + PROBLEM + "/" + Ref;
+				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, PROBLEM, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, PROBLEM, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri2);
 			}
@@ -808,8 +891,8 @@ namespace RiskHuntingAppTest
 			{
 				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml(this.currentRisk);
 				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = sourcesPath + CASE_TYPE + "/" + SOLUTION + "/" + Ref;
-				xmlUri2 = sourcesPath + PROCESSFOLDER + "/" + SOLUTION + "/" + Ref;
+				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, SOLUTION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, SOLUTION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
 			}
@@ -1019,7 +1102,7 @@ namespace RiskHuntingAppTest
 			int maxId = 0;
 //			if (Session ["CURRENT_RISK"] == null) {
 //				string path = FindLatestSourcePath ();
-			string path = GetFilesFromDirectorySortedList4 (sourcesPath + CASE_TYPE + "/" + SOURCESPECIFICATION + "/");
+			string path = GetFilesFromDirectorySortedList4 (Path.Combine (sourcesPath, CASE_TYPE, SOURCESPECIFICATION));
 			Console.WriteLine ("path: " + path);
 				if (!path.Equals (String.Empty)) {
 					if (File.Exists (path)) {
@@ -1038,7 +1121,7 @@ namespace RiskHuntingAppTest
 		{
 			string path = String.Empty;
 			// get your files (names)
-			string[] fileNames = Directory.GetFiles(sourcesPath + CASE_TYPE + "/" + SOURCESPECIFICATION + "/", "*.*");
+			string[] fileNames = Directory.GetFiles(Path.Combine (sourcesPath, CASE_TYPE, SOURCESPECIFICATION), "*.*");
 			if (fileNames.Length > 0)
 			{
 				// Now read the creation time for each file

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Reflection;
 using System.ComponentModel;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace RiskHuntingAppTest
 {
 	public static class Util
 	{
+		static string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
 
 		#region Extract content 
 
@@ -218,8 +220,8 @@ namespace RiskHuntingAppTest
 			//obs.Value = "n/A";
 			//fsd.Observations.Add(obs);
 			fsd.Observations = String.Empty;
-			fsd.ObservedBehaviour = String.Empty;
-			fsd.TreatmentType = String.Empty;
+			fsd.ObservedBehaviour = risk.LocationDetail;
+			fsd.TreatmentType = risk.BodyPart;
 			fsd.DateOfIncident = String.Empty;
 			fsd.AilmentType = String.Empty;
 			fsd.TriggeringEvent = String.Empty;
@@ -362,7 +364,7 @@ namespace RiskHuntingAppTest
 		public static string GenerateProcessGuidance(string elementName)
 		{
 			List<string> problemDescriptions = new List<string> ();
-			var doc = XDocument.Load(SettingsTool.GetApplicationPath() + "xmlFiles/" + "ProcessGuidance.xml", LoadOptions.None); 
+				var doc = XDocument.Load(Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "ProcessGuidance.xml"), LoadOptions.None); 
 			if (doc.Descendants(elementName).Count() > 0)
 				foreach (XElement xe in doc.Descendants(elementName))
 					problemDescriptions.Add(xe.Element("n").Value);    
@@ -373,6 +375,48 @@ namespace RiskHuntingAppTest
 				return problemDescriptions [0];
 			} else
 				return String.Empty;
+		}
+
+		public static int GetHtmlSelectIdForLocation (string searchValue)
+		{
+			int id = 0;
+			bool found = false;
+			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("rl").Count () > 0)
+				foreach (XElement xe in doc.Descendants("rl")) {
+					if (xe.Element ("n").Value.Equals (searchValue)) {
+						found = true;
+						break;
+					}
+					else
+						id++;
+				}
+			if (found)
+				return id;
+			else
+				return -1;
+
+		}
+
+		public static int GetHtmlSelectIdForBodyPart (string searchValue)
+		{
+			int id = 0;
+			bool found = false;
+			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("bp").Count () > 0)
+				foreach (XElement xe in doc.Descendants("bp")) {
+					if (xe.Element ("n").Value.Equals (searchValue)) {
+						found = true;
+						break;
+					}
+					else
+						id++;
+				}
+			if (found)
+				return id;
+			else
+				return -1;
+
 		}
 	}
 }

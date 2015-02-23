@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using iTextSharp.text;
@@ -7,7 +8,7 @@ namespace RiskHuntingAppTest
 {
     public class PDFCreator
     {
-		protected string xmlFilesPath = SettingsTool.GetApplicationPath() + "xmlFiles/";
+		protected string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
 
         // Set up the fonts to be used on the pages
         private iTextSharp.text.Font _largeFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
@@ -23,7 +24,7 @@ namespace RiskHuntingAppTest
                 // Initialize the PDF document
                 doc = new Document();
                 iTextSharp.text.pdf.PdfWriter writer = iTextSharp.text.pdf.PdfWriter.GetInstance(doc,
-					new System.IO.FileStream(xmlFilesPath + "test.pdf",
+					new System.IO.FileStream(Path.Combine (xmlFilesPath, "test.pdf"),
                         System.IO.FileMode.Create));
 
                 // Set the margins and page size

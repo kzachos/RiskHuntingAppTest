@@ -15,6 +15,8 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlHead Head1;
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl Topbar;
+		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
 		protected RiskHuntingAppTest.Feedback SendMail1;

@@ -15,9 +15,9 @@ namespace RiskHuntingAppTest
 {
     public partial class DeleteQueries : System.Web.UI.Page
     {
-        protected string xmlFilesPath = SettingsTool.GetApplicationPath() + "SearchApp/xmlFiles/";
-        protected string requestPath = SettingsTool.GetApplicationPath() + "SearchApp/xmlFiles/Requests/";
-        protected string responsePath = SettingsTool.GetApplicationPath() + "SearchApp/xmlFiles/Responses/";
+		protected string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "SearchApp", "xmlFiles");
+		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "SearchApp", "xmlFiles", "Requests");
+		protected string responsePath = Path.Combine (SettingsTool.GetApplicationPath(), "SearchApp", "xmlFiles", "Responses");
 
         const string SpanStartTagName = "<span class=name>";
         const string SpanEndTag = "</span>";

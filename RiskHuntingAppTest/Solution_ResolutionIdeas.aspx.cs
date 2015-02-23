@@ -41,14 +41,15 @@ namespace RiskHuntingAppTest
 		const string aEndTag = "</a>";
 
 
-		protected string sourcesPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/";
+		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Requests");
+		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
 		protected const string SOURCESPECIFICATION = "SourceSpecification";
 		protected const string PROBLEM = "Problem";
 		protected const string SOLUTION = "Solution";
 		protected const string ADDITIONAL = "Additional";
 		protected const string PROCESSFOLDER = "_toProcess";
 
-		protected string processPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/_toProcess/";
+		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
 
 		protected const string SOURCE_TYPE = Constants.CASEREF;
 		protected const string CASE_TYPE = "Risk";
@@ -70,18 +71,21 @@ namespace RiskHuntingAppTest
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
 
 				if (!this.sourceId.Equals (String.Empty)) {
-					Topbar_Problem_Search_Solution ();
 					GoBackDiv.Visible = false;
 					RetrieveCurrentRisk ();
 					RetrieveNLData ();
 					GenerateIdeaList ();
+					if (File.Exists (Path.Combine (requestPath, "Request_" + this.sourceId + ".xml")))
+						Topbar_Problem_Search_Solution_Summary ();
+					else
+						Topbar_Problem_Solution_Summary ();
 				} else {
 					Topbar_Problem_Solution ();
 					topbar_v2.Visible = false;
 					AddNewIdeaDiv.Visible = false;
 					statusLabel.Text = "First, enter a problem description and either press 'SAVE CHANGES' or 'FIND SIMILAR RISKS'";
 				}
-
+					
 			}
 			else {
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
@@ -95,12 +99,20 @@ namespace RiskHuntingAppTest
 		private void Topbar_Problem_Solution ()
 		{
 			TopbarProblemSolution.Visible = true;
-			TopbarProblemSearchSolution.Visible = false;
+			TopbarProblemSolutionSummary.Visible = false;
+			TopbarProblemSearchSolutionSummary.Visible = false;
 		}
-		private void Topbar_Problem_Search_Solution ()
+		private void Topbar_Problem_Solution_Summary ()
 		{
 			TopbarProblemSolution.Visible = false;
-			TopbarProblemSearchSolution.Visible = true;
+			TopbarProblemSolutionSummary.Visible = true;
+			TopbarProblemSearchSolutionSummary.Visible = false;
+		}
+		private void Topbar_Problem_Search_Solution_Summary ()
+		{
+			TopbarProblemSolution.Visible = false;
+			TopbarProblemSolutionSummary.Visible = false;
+			TopbarProblemSearchSolutionSummary.Visible = true;
 		}
 		#endregion
 
@@ -114,8 +126,8 @@ namespace RiskHuntingAppTest
 			//				riskDescription = Session ["CURRENT_PROBLEM_DESC"].ToString ();
 
 			try {
-				RiskHuntingAppTest.antique.AntiqueService antique = new RiskHuntingAppTest.antique.AntiqueService ();
-				antique.NLParserCompleted += new RiskHuntingAppTest.antique.NLParserCompletedEventHandler (objAntique_NLParserCompleted);
+				RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
+				antique.NLParserCompleted += new RiskHuntingAppTest.antiqueService.NLParserCompletedEventHandler (objAntique_NLParserCompleted);
 				antique.NLParserAsync (this.currentRisk.Content);
 			}
 			finally {
@@ -133,7 +145,7 @@ namespace RiskHuntingAppTest
 		}
 
 		void objAntique_NLParserCompleted(object sender, 
-			RiskHuntingAppTest.antique.NLParserCompletedEventArgs e)
+			RiskHuntingAppTest.antiqueService.NLParserCompletedEventArgs e)
 		{
 			Console.WriteLine (e.Result);
 			var NLResponse = Util.DeserializeNLResponse (e.Result);
@@ -147,12 +159,13 @@ namespace RiskHuntingAppTest
 		{
 
 			if (this.currentRisk.Recommendations.Count > 0) {
+				this.currentRisk.State = RiskQueryState.IdeasGenerated;
 				for (int i = 0; i < this.currentRisk.Recommendations.Count; i++) {
-					divIdeas.InnerHtml += GenerateHtml (this.currentRisk.Recommendations[i].ToString());
+					divIdeas.InnerHtml += GenerateHtml (this.currentRisk.Recommendations [i].ToString ());
 				}
-			}
-			else
+			} else {
 				statusLabel.Text = "No resolution ideas available.";
+				}
 
 		}
 
@@ -160,13 +173,13 @@ namespace RiskHuntingAppTest
 		{
 			string location = String.Empty;
 
-			location = processPath + "SourceSpecification" + "/" + Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml";
+			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
 			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = processPath + "Problem" + "/" + Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml";
+			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
 			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = processPath + "Solution" + "/" + Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
+			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
 			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
 			this.currentRisk = new Risk (ss, problem, solution);

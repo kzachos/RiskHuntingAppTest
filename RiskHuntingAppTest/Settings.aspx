@@ -13,11 +13,18 @@
 </head>
 <body>
 
-<div id="topbar">
-  <div id="title">Feedback area</div>
-  <div id="leftnav">
-	  <a href="javascript:doLoad('Default.aspx');">back</a>
-  </div>
+<div id="Topbar" runat="server">
+	<div id="topbar2">
+		<div id="leftbutton">
+			<a href="javascript:doLoad('Default.aspx');" >
+				back
+			</a> 
+		</div>
+		<div id="multiselectionbuttons">
+				Feedback area
+		</div>
+
+	</div>
 </div>
 <span id="loading"></span>
 <div id="content">

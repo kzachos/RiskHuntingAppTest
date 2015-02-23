@@ -42,6 +42,9 @@
 			<a id="pressed" href="">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-filled-icon.png" /> Solution
 			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Summary
+			</a>
 		</div>
 	</div>
 </div>
@@ -68,6 +71,9 @@
 			</a>
 			<a id="pressed" href="" >
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-filled-icon.png" /> Solution
+			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-icon.png" /> Summary
 			</a>
 		</div>
 	</div>

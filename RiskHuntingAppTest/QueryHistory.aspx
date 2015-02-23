@@ -22,6 +22,7 @@
 		<div id="multiselectionbuttons">
 				Risk History
 		</div>
+
 	</div>
 </div>
 
@@ -29,6 +30,20 @@
 <div id="content">
 <form id="form1" runat="server">
 	<%--<span class="maintitle">Previous queries</span>--%>
+	<div id="SortDiv" runat="server">
+		<span class="maintitle">Sort by: </span>
+		<ul class="pageitem">
+			<li class="select" >
+				<asp:DropDownList ID="SortDropDown" EnableViewState="true" AutoPostBack="true" OnSelectedIndexChanged="itemSelected" runat="Server">
+	                <asp:ListItem Text="Date" Value="0" />
+	                <asp:ListItem Text="Status" Value="1" />
+	                <asp:ListItem Text="Name" Value="2" />
+	                <asp:ListItem Text="Author" Value="3" />
+	   			</asp:DropDownList>
+				<span class="arrow"></span>
+			</li>
+		</ul> <br>
+	</div>
 	<ul class="pageitem">
 		<div id="queries" runat="server">
 

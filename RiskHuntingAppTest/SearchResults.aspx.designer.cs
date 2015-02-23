@@ -24,5 +24,9 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl hide;
 		
 		protected System.Web.UI.WebControls.Label statusLabel;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance2;
+		
+		protected System.Web.UI.WebControls.Button creativeGuidanceButton;
 	}
 }

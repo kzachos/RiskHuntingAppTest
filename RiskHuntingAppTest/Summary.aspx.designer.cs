@@ -13,6 +13,8 @@ namespace RiskHuntingAppTest {
 	
 	public partial class Summary {
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSolution;
+		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSearchSolution;
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
@@ -20,6 +22,8 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl sourceDiv;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl divIdeas;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl divActions;
 		

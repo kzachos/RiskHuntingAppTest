@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Web;
+using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
@@ -32,7 +33,7 @@ namespace RiskHuntingAppTest
 
 		protected string Expression = "Think about ";
 
-		protected string processPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/_toProcess/";
+		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
 
 		protected IList<string> CreativityPromptsFeed;
 		protected string sourceId;
@@ -186,10 +187,52 @@ namespace RiskHuntingAppTest
 			return ps;
 		}
 
+		List<string> GenerateGenericCreativityPromptsStatic()
+		{
+			List<NLResponseToken> NLResponseTrimmed = new List<NLResponseToken> () ;
+			foreach(var item in NLResponse)
+			{
+				if (!item.TermValue.Equals (String.Empty))
+					NLResponseTrimmed.Add (item);
+			}
+
+			int count = 0;
+			List<string> ps = new List<string> ();
+			NLResponseTrimmed.Shuffle ();
+
+			string[] valuesNP = new string[4] {"water", "floor", "operators", "snow"};
+			string[] valuesVP = new string[1] {"fit the tyres"};
+
+			foreach (var item in valuesNP) {
+				if (!item.Equals (String.Empty)) {
+					GenericCreativityPrompts g = new GenericCreativityPrompts (item, "NP");
+					foreach (string s in  g.genericCPs) {
+						//							Console.WriteLine (s);
+						ps.Add (Expression + s);
+						count++;
+					}
+				}
+			}
+
+			foreach (var item in valuesVP) {
+				if (!item.Equals (String.Empty)) {
+					GenericCreativityPrompts g = new GenericCreativityPrompts (item, "VP");
+					foreach (string s in  g.genericCPs) {
+						//							Console.WriteLine (s);
+						ps.Add (Expression + s);
+						count++;
+					}
+				}
+			}
+			Console.WriteLine ("ps.Count: " + ps.Count);
+			return ps;
+		}
+
 		void PrepareData ()
 		{
 			if (!Page.IsPostBack) {
 				CreativityPromptsFeed = GenerateGenericCreativityPrompts ();
+//				CreativityPromptsFeed = GenerateGenericCreativityPromptsStatic ();
 				CreativityPromptsFeed.Shuffle ();
 
 				Console.WriteLine ("****** PrepareData *******");
@@ -213,12 +256,16 @@ namespace RiskHuntingAppTest
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("****** PopulateData *******");
 				this.total = CreativityPromptsFeed.Count < maxPromptsAtATime ? CreativityPromptsFeed.Count : maxPromptsAtATime;
-				int counter = 0;
-				for (int i = 0; i < this.total; i++) {
-					GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
-					Console.WriteLine (CreativityPromptsFeed [i]);
+				if (this.total > 0) {
+					int counter = 0;
+					for (int i = 0; i < this.total; i++) {
+						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
+						Console.WriteLine (CreativityPromptsFeed [i]);
+					}
+					Session ["CREATIVITY_PROMPTS"] = CreativityPromptsFeed;
 				}
-				Session ["CREATIVITY_PROMPTS"] = CreativityPromptsFeed;
+				else
+					GenerateHtml3 ("No prompts avaiable", String.Empty);
 			} else {
 				Console.WriteLine ("PopulateData");
 				if (Session ["CREATIVITY_PROMPTS"] != null) {
@@ -276,6 +323,21 @@ namespace RiskHuntingAppTest
 			content2.Controls.Add (new LiteralControl (Tag3));
 
 			content2.Controls.Add (CreateCheckboxControl (id.ToString (), main));
+
+			content2.Controls.Add (new LiteralControl (Tag6));
+			content2.Controls.Add (new LiteralControl (Tag7));
+			content2.Controls.Add (new LiteralControl (Tag8));
+			content2.Controls.Add (new LiteralControl (second));
+			content2.Controls.Add (new LiteralControl (Tag9));
+			content2.Controls.Add (new LiteralControl (Tag10));
+		}
+
+		private void GenerateHtml3 (string main, string second)
+		{
+			content2.Controls.Add (new LiteralControl (Tag1)); 
+			content2.Controls.Add (new LiteralControl (Tag2));
+			content2.Controls.Add (new LiteralControl (main));
+			content2.Controls.Add (new LiteralControl (Tag3));
 
 			content2.Controls.Add (new LiteralControl (Tag6));
 			content2.Controls.Add (new LiteralControl (Tag7));
@@ -381,13 +443,13 @@ namespace RiskHuntingAppTest
 		{
 			string location = String.Empty;
 
-			location = processPath + "SourceSpecification" + "/" + Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml";
+			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
 			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = processPath + "Problem" + "/" + Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml";
+			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
 			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = processPath + "Solution" + "/" + Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
+			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
 			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
 			this.currentRisk = new Risk (ss, problem, solution);
@@ -401,7 +463,7 @@ namespace RiskHuntingAppTest
 
 			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml (this.currentRisk);
 			Ref = Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
-			xmlUri = processPath + "/" + "Solution" + "/" + Ref;
+			xmlUri = Path.Combine (processPath, "Solution", Ref);
 			XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
 
 		}

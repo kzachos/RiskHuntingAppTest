@@ -53,6 +53,7 @@ namespace RiskHuntingAppTest
 			//            if (!Page.IsPostBack)
 			//            {
 			hide.Visible = false;
+			creativeGuidance2.Visible = false;
 			string responseUri = DetermineResponseUri();
 			Console.WriteLine ("responseUri: " + responseUri);
 			if (!responseUri.Equals(String.Empty))
@@ -108,23 +109,24 @@ namespace RiskHuntingAppTest
 			XmlProc.ResponseSerialized.MatchedSources response = XmlProc.ObjectXMLSerializer<XmlProc.ResponseSerialized.MatchedSources>.Load(responseUri);
 
 			List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource> matchedSources = (List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource>)response.MatchedSource;
-			if (matchedSources.Count > 0)
-			{
-				if (matchedSources.Count-1 < max)
-					max = matchedSources.Count-1;
+			if (matchedSources.Count > 0) {
+				if (matchedSources.Count - 1 < max)
+					max = matchedSources.Count - 1;
 
-				for (int i = 0; i <= max; i++)
-				{
-					XmlProc.ResponseSerialized.MatchedSourcesMatchedSource matchedSource = matchedSources[i];
+				for (int i = 0; i <= max; i++) {
+					XmlProc.ResponseSerialized.MatchedSourcesMatchedSource matchedSource = matchedSources [i];
 					if (Convert.ToDouble (matchedSource.OverallMatchValue) >= THRESHOLD)
-						responses.InnerHtml += GenerateMatchedSourceHtml(matchedSource);
+						responses.InnerHtml += GenerateMatchedSourceHtml (matchedSource);
 				}
 				Console.WriteLine (responses.InnerHtml);
-				if (responses.InnerHtml.Trim().Equals (String.Empty))
+				if (responses.InnerHtml.Trim ().Equals (String.Empty)) {
 					statusLabel.Text = "No cases have been found.";
-			}
-			else
+					creativeGuidance2.Visible = true;
+				}
+			} else {
 				statusLabel.Text = "No cases have been found.";
+				creativeGuidance2.Visible = true;
+			}
 		}
 
 		private string GenerateMatchedSourceHtml(XmlProc.ResponseSerialized.MatchedSourcesMatchedSource matchedSource)
@@ -134,7 +136,10 @@ namespace RiskHuntingAppTest
 				Util.ExtractAttributeContentFromString (matchedSource.Content, "Content") + Tag7 + Tag8 + DATEANDLOCATION + Tag9 + Tag10 + Tag11 + Tag12;
 		}
 
-
+		public virtual void creativeGuidanceClicked(object sender, EventArgs args)
+		{
+			Response.Redirect ("Solution_ResolutionIdeas.aspx");
+		}
 	}
 }
 

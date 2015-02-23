@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A web service that performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. Query matching is in 2 steps: (i) XQuery text-searching functions to discover an initial set of case descriptions that satisfy global search constraints (CoarseGrainedMatching); (ii) traditional vector-space model IR, enhanced with WordNet, to further refine and assess the quality of the candidate case set (FineGrainedMatching).</wsdl:documentation>
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="RetrieveTerms">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveTermsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveTermsResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateRequestXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="xml" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateRequestXmlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValidateRequestXmlResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateResponseXml">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="xml" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ValidateResponseXmlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="ValidateResponseXmlResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveRequestXmlSchema">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveRequestXmlSchemaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveRequestXmlSchemaResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveResponseXmlSchema">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveResponseXmlSchemaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveResponseXmlSchemaResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveAllSources">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveAllSourcesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveAllSourcesResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveAllSourcesDomain">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="domain" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveAllSourcesDomainResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveAllSourcesDomainResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformEddieDomain">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="eddieRequestXml" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="domain" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformEddieDomainResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="PerformEddieDomainResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformEddie">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="eddieRequestXml" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformEddieResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="PerformEddieResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformEddieSample">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="PerformEddieSampleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="PerformEddieSampleResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformEddieDomainSample">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="domain" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PerformEddieDomainSampleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="PerformEddieDomainSampleResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="string" nillable="true" type="xs:string" />
+    </xs:schema>
+  </types>
+  <message name="RetrieveTermsSoapIn">
+    <part name="parameters" element="tns:RetrieveTerms" />
+  </message>
+  <message name="RetrieveTermsSoapOut">
+    <part name="parameters" element="tns:RetrieveTermsResponse" />
+  </message>
+  <message name="ValidateRequestXmlSoapIn">
+    <part name="parameters" element="tns:ValidateRequestXml" />
+  </message>
+  <message name="ValidateRequestXmlSoapOut">
+    <part name="parameters" element="tns:ValidateRequestXmlResponse" />
+  </message>
+  <message name="ValidateResponseXmlSoapIn">
+    <part name="parameters" element="tns:ValidateResponseXml" />
+  </message>
+  <message name="ValidateResponseXmlSoapOut">
+    <part name="parameters" element="tns:ValidateResponseXmlResponse" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaSoapIn">
+    <part name="parameters" element="tns:RetrieveRequestXmlSchema" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaSoapOut">
+    <part name="parameters" element="tns:RetrieveRequestXmlSchemaResponse" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaSoapIn">
+    <part name="parameters" element="tns:RetrieveResponseXmlSchema" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaSoapOut">
+    <part name="parameters" element="tns:RetrieveResponseXmlSchemaResponse" />
+  </message>
+  <message name="RetrieveAllSourcesSoapIn">
+    <part name="parameters" element="tns:RetrieveAllSources" />
+  </message>
+  <message name="RetrieveAllSourcesSoapOut">
+    <part name="parameters" element="tns:RetrieveAllSourcesResponse" />
+  </message>
+  <message name="RetrieveAllSourcesDomainSoapIn">
+    <part name="parameters" element="tns:RetrieveAllSourcesDomain" />
+  </message>
+  <message name="RetrieveAllSourcesDomainSoapOut">
+    <part name="parameters" element="tns:RetrieveAllSourcesDomainResponse" />
+  </message>
+  <message name="PerformEddieDomainSoapIn">
+    <part name="parameters" element="tns:PerformEddieDomain" />
+  </message>
+  <message name="PerformEddieDomainSoapOut">
+    <part name="parameters" element="tns:PerformEddieDomainResponse" />
+  </message>
+  <message name="PerformEddieSoapIn">
+    <part name="parameters" element="tns:PerformEddie" />
+  </message>
+  <message name="PerformEddieSoapOut">
+    <part name="parameters" element="tns:PerformEddieResponse" />
+  </message>
+  <message name="PerformEddieSampleSoapIn">
+    <part name="parameters" element="tns:PerformEddieSample" />
+  </message>
+  <message name="PerformEddieSampleSoapOut">
+    <part name="parameters" element="tns:PerformEddieSampleResponse" />
+  </message>
+  <message name="PerformEddieDomainSampleSoapIn">
+    <part name="parameters" element="tns:PerformEddieDomainSample" />
+  </message>
+  <message name="PerformEddieDomainSampleSoapOut">
+    <part name="parameters" element="tns:PerformEddieDomainSampleResponse" />
+  </message>
+  <message name="RetrieveTermsHttpGetIn" />
+  <message name="RetrieveTermsHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpGetIn">
+    <part name="xml" type="s:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateResponseXmlHttpGetIn">
+    <part name="xml" type="s:string" />
+  </message>
+  <message name="ValidateResponseXmlHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaHttpGetIn" />
+  <message name="RetrieveRequestXmlSchemaHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaHttpGetIn" />
+  <message name="RetrieveResponseXmlSchemaHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveAllSourcesHttpGetIn" />
+  <message name="RetrieveAllSourcesHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveAllSourcesDomainHttpGetIn">
+    <part name="domain" type="s:string" />
+  </message>
+  <message name="RetrieveAllSourcesDomainHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieDomainHttpGetIn">
+    <part name="eddieRequestXml" type="s:string" />
+    <part name="domain" type="s:string" />
+  </message>
+  <message name="PerformEddieDomainHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieHttpGetIn">
+    <part name="eddieRequestXml" type="s:string" />
+  </message>
+  <message name="PerformEddieHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieSampleHttpGetIn" />
+  <message name="PerformEddieSampleHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieDomainSampleHttpGetIn">
+    <part name="domain" type="s:string" />
+  </message>
+  <message name="PerformEddieDomainSampleHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveTermsHttpPostIn" />
+  <message name="RetrieveTermsHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpPostIn">
+    <part name="xml" type="s:string" />
+  </message>
+  <message name="ValidateRequestXmlHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="ValidateResponseXmlHttpPostIn">
+    <part name="xml" type="s:string" />
+  </message>
+  <message name="ValidateResponseXmlHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveRequestXmlSchemaHttpPostIn" />
+  <message name="RetrieveRequestXmlSchemaHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveResponseXmlSchemaHttpPostIn" />
+  <message name="RetrieveResponseXmlSchemaHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveAllSourcesHttpPostIn" />
+  <message name="RetrieveAllSourcesHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveAllSourcesDomainHttpPostIn">
+    <part name="domain" type="s:string" />
+  </message>
+  <message name="RetrieveAllSourcesDomainHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieDomainHttpPostIn">
+    <part name="eddieRequestXml" type="s:string" />
+    <part name="domain" type="s:string" />
+  </message>
+  <message name="PerformEddieDomainHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieHttpPostIn">
+    <part name="eddieRequestXml" type="s:string" />
+  </message>
+  <message name="PerformEddieHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieSampleHttpPostIn" />
+  <message name="PerformEddieSampleHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="PerformEddieDomainSampleHttpPostIn">
+    <part name="domain" type="s:string" />
+  </message>
+  <message name="PerformEddieDomainSampleHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <portType name="EDDiE_x0020_Web_x0020_ServiceSoap">
+    <operation name="RetrieveTerms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: none&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The list of terms currently in the database. </wsdl:documentation>
+      <input message="tns:RetrieveTermsSoapIn" />
+      <output message="tns:RetrieveTermsSoapOut" />
+    </operation>
+    <operation name="ValidateRequestXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlSoapIn" />
+      <output message="tns:ValidateRequestXmlSoapOut" />
+    </operation>
+    <operation name="ValidateResponseXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Response XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateResponseXmlSoapIn" />
+      <output message="tns:ValidateResponseXmlSoapOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Request XML Schema currently used for constructing EddieRequest Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSchemaSoapIn" />
+      <output message="tns:RetrieveRequestXmlSchemaSoapOut" />
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Response XML Schema currently used for constructing EddieResponse Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseXmlSchemaSoapIn" />
+      <output message="tns:RetrieveResponseXmlSchemaSoapOut" />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  Retrieve all sources that exists in the database. </wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesSoapIn" />
+      <output message="tns:RetrieveAllSourcesSoapOut" />
+    </operation>
+    <operation name="RetrieveAllSourcesDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  Retrieve all sources that exists in the database. </wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesDomainSoapIn" />
+      <output message="tns:RetrieveAllSourcesDomainSoapOut" />
+    </operation>
+    <operation name="PerformEddieDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a Request xml that is based on the Request XML schema (available using &lt;i&gt;RetrieveRequestXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service that performs natural languge discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. </wsdl:documentation>
+      <input message="tns:PerformEddieDomainSoapIn" />
+      <output message="tns:PerformEddieDomainSoapOut" />
+    </operation>
+    <operation name="PerformEddie">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a Request xml that is based on the Request XML schema (available using &lt;i&gt;RetrieveRequestXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service that performs natural languge discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. </wsdl:documentation>
+      <input message="tns:PerformEddieSoapIn" />
+      <output message="tns:PerformEddieSoapOut" />
+    </operation>
+    <operation name="PerformEddieSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service which performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm using a sample request. </wsdl:documentation>
+      <input message="tns:PerformEddieSampleSoapIn" />
+      <output message="tns:PerformEddieSampleSoapOut" />
+    </operation>
+    <operation name="PerformEddieDomainSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The domain name that results should only search for, e.g. 'Healthcare' or 'Risk'&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service which performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm using a sample request. </wsdl:documentation>
+      <input message="tns:PerformEddieDomainSampleSoapIn" />
+      <output message="tns:PerformEddieDomainSampleSoapOut" />
+    </operation>
+  </portType>
+  <portType name="EDDiE_x0020_Web_x0020_ServiceHttpGet">
+    <operation name="RetrieveTerms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: none&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The list of terms currently in the database. </wsdl:documentation>
+      <input message="tns:RetrieveTermsHttpGetIn" />
+      <output message="tns:RetrieveTermsHttpGetOut" />
+    </operation>
+    <operation name="ValidateRequestXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlHttpGetIn" />
+      <output message="tns:ValidateRequestXmlHttpGetOut" />
+    </operation>
+    <operation name="ValidateResponseXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Response XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateResponseXmlHttpGetIn" />
+      <output message="tns:ValidateResponseXmlHttpGetOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Request XML Schema currently used for constructing EddieRequest Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSchemaHttpGetIn" />
+      <output message="tns:RetrieveRequestXmlSchemaHttpGetOut" />
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Response XML Schema currently used for constructing EddieResponse Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseXmlSchemaHttpGetIn" />
+      <output message="tns:RetrieveResponseXmlSchemaHttpGetOut" />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  Retrieve all sources that exists in the database. </wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesHttpGetIn" />
+      <output message="tns:RetrieveAllSourcesHttpGetOut" />
+    </operation>
+    <operation name="RetrieveAllSourcesDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  Retrieve all sources that exists in the database. </wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesDomainHttpGetIn" />
+      <output message="tns:RetrieveAllSourcesDomainHttpGetOut" />
+    </operation>
+    <operation name="PerformEddieDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a Request xml that is based on the Request XML schema (available using &lt;i&gt;RetrieveRequestXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service that performs natural languge discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. </wsdl:documentation>
+      <input message="tns:PerformEddieDomainHttpGetIn" />
+      <output message="tns:PerformEddieDomainHttpGetOut" />
+    </operation>
+    <operation name="PerformEddie">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a Request xml that is based on the Request XML schema (available using &lt;i&gt;RetrieveRequestXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service that performs natural languge discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. </wsdl:documentation>
+      <input message="tns:PerformEddieHttpGetIn" />
+      <output message="tns:PerformEddieHttpGetOut" />
+    </operation>
+    <operation name="PerformEddieSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service which performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm using a sample request. </wsdl:documentation>
+      <input message="tns:PerformEddieSampleHttpGetIn" />
+      <output message="tns:PerformEddieSampleHttpGetOut" />
+    </operation>
+    <operation name="PerformEddieDomainSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The domain name that results should only search for, e.g. 'Healthcare' or 'Risk'&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service which performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm using a sample request. </wsdl:documentation>
+      <input message="tns:PerformEddieDomainSampleHttpGetIn" />
+      <output message="tns:PerformEddieDomainSampleHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="EDDiE_x0020_Web_x0020_ServiceHttpPost">
+    <operation name="RetrieveTerms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: none&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The list of terms currently in the database. </wsdl:documentation>
+      <input message="tns:RetrieveTermsHttpPostIn" />
+      <output message="tns:RetrieveTermsHttpPostOut" />
+    </operation>
+    <operation name="ValidateRequestXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Request XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateRequestXmlHttpPostIn" />
+      <output message="tns:ValidateRequestXmlHttpPostOut" />
+    </operation>
+    <operation name="ValidateResponseXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validate a XML Document against the Response XML Schema by taking the actual content of the XML Document</wsdl:documentation>
+      <input message="tns:ValidateResponseXmlHttpPostIn" />
+      <output message="tns:ValidateResponseXmlHttpPostOut" />
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Request XML Schema currently used for constructing EddieRequest Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveRequestXmlSchemaHttpPostIn" />
+      <output message="tns:RetrieveRequestXmlSchemaHttpPostOut" />
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieve the Response XML Schema currently used for constructing EddieResponse Xml documents</wsdl:documentation>
+      <input message="tns:RetrieveResponseXmlSchemaHttpPostIn" />
+      <output message="tns:RetrieveResponseXmlSchemaHttpPostOut" />
+    </operation>
+    <operation name="RetrieveAllSources">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  Retrieve all sources that exists in the database. </wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesHttpPostIn" />
+      <output message="tns:RetrieveAllSourcesHttpPostOut" />
+    </operation>
+    <operation name="RetrieveAllSourcesDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  Retrieve all sources that exists in the database. </wsdl:documentation>
+      <input message="tns:RetrieveAllSourcesDomainHttpPostIn" />
+      <output message="tns:RetrieveAllSourcesDomainHttpPostOut" />
+    </operation>
+    <operation name="PerformEddieDomain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a Request xml that is based on the Request XML schema (available using &lt;i&gt;RetrieveRequestXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service that performs natural languge discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. </wsdl:documentation>
+      <input message="tns:PerformEddieDomainHttpPostIn" />
+      <output message="tns:PerformEddieDomainHttpPostOut" />
+    </operation>
+    <operation name="PerformEddie">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The content of a Request xml that is based on the Request XML schema (available using &lt;i&gt;RetrieveRequestXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service that performs natural languge discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. </wsdl:documentation>
+      <input message="tns:PerformEddieHttpPostIn" />
+      <output message="tns:PerformEddieHttpPostOut" />
+    </operation>
+    <operation name="PerformEddieSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service which performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm using a sample request. </wsdl:documentation>
+      <input message="tns:PerformEddieSampleHttpPostIn" />
+      <output message="tns:PerformEddieSampleHttpPostOut" />
+    </operation>
+    <operation name="PerformEddieDomainSample">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  The domain name that results should only search for, e.g. 'Healthcare' or 'Risk'&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The content of the resulting ordered Response XML that contains ONLY the basic information - based on the Response XML schema (available using &lt;i&gt;RetrieveResponseXmlSchema()&lt;/i&gt; method).&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: A web service which performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm using a sample request. </wsdl:documentation>
+      <input message="tns:PerformEddieDomainSampleHttpPostIn" />
+      <output message="tns:PerformEddieDomainSampleHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="EDDiE_x0020_Web_x0020_ServiceSoap" type="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="RetrieveTerms">
+      <soap:operation soapAction="http://tempuri.org/RetrieveTerms" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <soap:operation soapAction="http://tempuri.org/ValidateRequestXml" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateResponseXml">
+      <soap:operation soapAction="http://tempuri.org/ValidateResponseXml" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <soap:operation soapAction="http://tempuri.org/RetrieveRequestXmlSchema" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <soap:operation soapAction="http://tempuri.org/RetrieveResponseXmlSchema" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSources">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAllSources" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSourcesDomain">
+      <soap:operation soapAction="http://tempuri.org/RetrieveAllSourcesDomain" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomain">
+      <soap:operation soapAction="http://tempuri.org/PerformEddieDomain" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddie">
+      <soap:operation soapAction="http://tempuri.org/PerformEddie" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddieSample">
+      <soap:operation soapAction="http://tempuri.org/PerformEddieSample" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomainSample">
+      <soap:operation soapAction="http://tempuri.org/PerformEddieDomainSample" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="EDDiE_x0020_Web_x0020_ServiceSoap12" type="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="RetrieveTerms">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveTerms" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <soap12:operation soapAction="http://tempuri.org/ValidateRequestXml" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidateResponseXml">
+      <soap12:operation soapAction="http://tempuri.org/ValidateResponseXml" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveRequestXmlSchema" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveResponseXmlSchema" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSources">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAllSources" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSourcesDomain">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveAllSourcesDomain" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomain">
+      <soap12:operation soapAction="http://tempuri.org/PerformEddieDomain" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddie">
+      <soap12:operation soapAction="http://tempuri.org/PerformEddie" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddieSample">
+      <soap12:operation soapAction="http://tempuri.org/PerformEddieSample" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomainSample">
+      <soap12:operation soapAction="http://tempuri.org/PerformEddieDomainSample" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="EDDiE_x0020_Web_x0020_ServiceHttpGet" type="tns:EDDiE_x0020_Web_x0020_ServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="RetrieveTerms">
+      <http:operation location="/RetrieveTerms" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <http:operation location="/ValidateRequestXml" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateResponseXml">
+      <http:operation location="/ValidateResponseXml" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <http:operation location="/RetrieveRequestXmlSchema" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <http:operation location="/RetrieveResponseXmlSchema" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSources">
+      <http:operation location="/RetrieveAllSources" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSourcesDomain">
+      <http:operation location="/RetrieveAllSourcesDomain" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomain">
+      <http:operation location="/PerformEddieDomain" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddie">
+      <http:operation location="/PerformEddie" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddieSample">
+      <http:operation location="/PerformEddieSample" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomainSample">
+      <http:operation location="/PerformEddieDomainSample" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="EDDiE_x0020_Web_x0020_ServiceHttpPost" type="tns:EDDiE_x0020_Web_x0020_ServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="RetrieveTerms">
+      <http:operation location="/RetrieveTerms" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateRequestXml">
+      <http:operation location="/ValidateRequestXml" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="ValidateResponseXml">
+      <http:operation location="/ValidateResponseXml" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveRequestXmlSchema">
+      <http:operation location="/RetrieveRequestXmlSchema" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveResponseXmlSchema">
+      <http:operation location="/RetrieveResponseXmlSchema" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSources">
+      <http:operation location="/RetrieveAllSources" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllSourcesDomain">
+      <http:operation location="/RetrieveAllSourcesDomain" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomain">
+      <http:operation location="/PerformEddieDomain" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddie">
+      <http:operation location="/PerformEddie" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddieSample">
+      <http:operation location="/PerformEddieSample" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="PerformEddieDomainSample">
+      <http:operation location="/PerformEddieDomainSample" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EDDiE_x0020_Web_x0020_Service">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A web service that performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. Query matching is in 2 steps: (i) XQuery text-searching functions to discover an initial set of case descriptions that satisfy global search constraints (CoarseGrainedMatching); (ii) traditional vector-space model IR, enhanced with WordNet, to further refine and assess the quality of the candidate case set (FineGrainedMatching).</wsdl:documentation>
+    <port name="EDDiE_x0020_Web_x0020_ServiceSoap" binding="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
+      <soap:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+    </port>
+    <port name="EDDiE_x0020_Web_x0020_ServiceSoap12" binding="tns:EDDiE_x0020_Web_x0020_ServiceSoap12">
+      <soap12:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+    </port>
+    <port name="EDDiE_x0020_Web_x0020_ServiceHttpGet" binding="tns:EDDiE_x0020_Web_x0020_ServiceHttpGet">
+      <http:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+    </port>
+    <port name="EDDiE_x0020_Web_x0020_ServiceHttpPost" binding="tns:EDDiE_x0020_Web_x0020_ServiceHttpPost">
+      <http:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+    </port>
+  </service>
+</definitions>

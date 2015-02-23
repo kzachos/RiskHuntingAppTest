@@ -27,9 +27,9 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl divActions;
 		
-		protected System.Web.UI.WebControls.Button AddNewAction;
-		
 		protected System.Web.UI.WebControls.Label statusLabel;
+		
+		protected System.Web.UI.WebControls.Button AddNewAction;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl content2;
 	}

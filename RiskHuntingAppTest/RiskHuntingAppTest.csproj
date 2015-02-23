@@ -56,9 +56,12 @@
     <Reference Include="itextsharp">
       <HintPath>bin\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Condition="false" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
@@ -70,38 +73,32 @@
     <WebReferences Include="Web References" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx">
+    <WebReferenceUrl Include="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\eddie</RelPath>
-      <UpdateFromURL>http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx</UpdateFromURL>
+      <RelPath>Web References\antiqueService</RelPath>
+      <UpdateFromURL>http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx</UpdateFromURL>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx">
+    <WebReferenceUrl Include="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\antique</RelPath>
-      <UpdateFromURL>http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx</UpdateFromURL>
+      <RelPath>Web References\eddieService</RelPath>
+      <UpdateFromURL>http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx</UpdateFromURL>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\eddie\EddieService.disco" />
-    <None Include="Web References\eddie\EddieService.wsdl" />
-    <None Include="Web References\eddie\Reference.map">
+    <None Include="Web References\antiqueService\AntiqueService.wsdl" />
+    <None Include="Web References\antiqueService\AntiqueService.disco" />
+    <None Include="Web References\antiqueService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\antique\AntiqueService.disco" />
-    <None Include="Web References\antique\AntiqueService.wsdl" />
-    <None Include="Web References\antique\Reference.map">
+    <None Include="Web References\eddieService\EddieService.wsdl" />
+    <None Include="Web References\eddieService\EddieService.disco" />
+    <None Include="Web References\eddieService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Web References\eddie\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\antique\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="Classes\GenericCreativityPrompts.cs" />
     <Compile Include="Classes\NLPData.cs" />
     <Compile Include="Classes\Util.cs" />
@@ -174,12 +171,6 @@
     <Compile Include="QueryHistory.aspx.designer.cs">
       <DependentUpon>QueryHistory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ResolutionIdeas.aspx.cs">
-      <DependentUpon>ResolutionIdeas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ResolutionIdeas.aspx.designer.cs">
-      <DependentUpon>ResolutionIdeas.aspx</DependentUpon>
-    </Compile>
     <Compile Include="SearchResults.aspx.cs">
       <DependentUpon>SearchResults.aspx</DependentUpon>
     </Compile>
@@ -197,12 +188,6 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\EnumLabel.cs" />
-    <Compile Include="ActionPlan.aspx.cs">
-      <DependentUpon>ActionPlan.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ActionPlan.aspx.designer.cs">
-      <DependentUpon>ActionPlan.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CreativeGuidanceForProblem.aspx.cs">
       <DependentUpon>CreativeGuidanceForProblem.aspx</DependentUpon>
     </Compile>
@@ -253,6 +238,25 @@
     </Compile>
     <Compile Include="Classes\ProcessGuidance.cs" />
     <Compile Include="Classes\PDFCreator.cs" />
+    <Compile Include="CreateRisk.aspx.cs">
+      <DependentUpon>CreateRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateRisk.aspx.designer.cs">
+      <DependentUpon>CreateRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\antiqueService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\eddieService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorHandling\DefaultRedirectErrorPage.aspx.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorHandling\DefaultRedirectErrorPage.aspx.designer.cs">
+      <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorHandling\ExceptionUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
@@ -261,6 +265,7 @@
     <Folder Include="Theme\images\" />
     <Folder Include="Theme\javascript\" />
     <Folder Include="Theme\pics\" />
+    <Folder Include="ErrorHandling\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Theme\css\style.css" />
@@ -315,11 +320,9 @@
     <Content Include="loader.gif" />
     <Content Include="ProcessSource.aspx" />
     <Content Include="QueryHistory.aspx" />
-    <Content Include="ResolutionIdeas.aspx" />
     <Content Include="SearchResults.aspx" />
     <Content Include="Settings.aspx" />
     <Content Include="web.config" />
-    <Content Include="ActionPlan.aspx" />
     <Content Include="CreativeGuidanceForProblem.aspx" />
     <Content Include="Summary.aspx" />
     <Content Include="Solution_ActionPlan.aspx" />
@@ -333,5 +336,11 @@
     <Content Include="Theme\images\notice.png" />
     <Content Include="Theme\images\success.png" />
     <Content Include="Theme\images\warning.png" />
+    <Content Include="CreateRisk.aspx" />
+    <Content Include="ErrorHandling\DefaultRedirectErrorPage.aspx" />
+    <Content Include="ErrorHandling\GenericErrorPage.aspx" />
+    <Content Include="ErrorHandling\Http404ErrorPage.aspx" />
+    <Content Include="ErrorHandling\HttpErrorPage.aspx" />
+    <Content Include="Theme\css\style2.css" />
   </ItemGroup>
 </Project>

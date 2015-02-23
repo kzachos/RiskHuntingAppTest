@@ -10,6 +10,23 @@
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
  <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	    
+function Confirm() {
+    var confirm_value = document.createElement("INPUT");
+    confirm_value.type = "hidden";
+    confirm_value.name = "confirm_value";
+    if (confirm("Are you sure you want to delete the idea?")) {
+        confirm_value.value = "Yes";
+    } else {
+        confirm_value.value = "No";
+    }
+    document.forms[0].appendChild(confirm_value);
+}
+
+
+</script>
 </head>
 <body>
 
@@ -41,7 +58,7 @@
 			<asp:Button id="UpdateIdea" runat="server" text="UPDATE RESOLUTION IDEA" onclick="updateClicked"></asp:Button>
 		</li>
 		<li class="button2">
-			<asp:Button id="DeleteIdea" runat="server" text="DELETE RESOLUTION IDEA" onclick="deleteClicked"></asp:Button>
+			<asp:Button id="DeleteIdea" runat="server" text="DELETE RESOLUTION IDEA" onclick="deleteClicked"  onClientclick="Confirm();"></asp:Button>
 		</li>
 	</ul>
 </form>

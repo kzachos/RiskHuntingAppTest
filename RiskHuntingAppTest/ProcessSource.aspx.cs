@@ -15,7 +15,7 @@ namespace RiskHuntingAppTest
 {
     public partial class ProcessSource : System.Web.UI.Page
     {
-        protected string sourcesPath = SettingsTool.GetApplicationPath() + "SearchApp/xmlFiles/Sources/";
+		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "SearchApp", "xmlFiles", "Sources");
         protected const string PROCESSFOLDER = "_toProcess"; 
         protected const string SOURCESPECIFICATION = "SourceSpecification";
         protected const string PROBLEM = "Problem";
@@ -88,7 +88,7 @@ namespace RiskHuntingAppTest
 				domainID = 1;
 				break;
 			}
-            RiskHuntingAppTest.antique.AntiqueService antique = new RiskHuntingAppTest.antique.AntiqueService();
+            RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService();
             antique.GeneratePredicates (spec.SourceName, spec.SourceId.ToString(), problem.Author, domainID, problem.FacetSpecificationData.Content, solution.FacetSpecificationData.Content, String.Empty);
 
         }

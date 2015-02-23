@@ -2,11 +2,11 @@
 <SourceSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceId>110005</SourceId>
   <SourceName>ttetetete</SourceName>
-  <SourceType>ProblemDescribed</SourceType>
+  <SourceType>ResolutionsFound</SourceType>
   <Domain>Risk</Domain>
   <Filename>Found</Filename>
-  <LaunchDate>09/10/2014 12:57:58</LaunchDate>
-  <SourceSpecificationLastEdited>09/10/2014 12:57:58</SourceSpecificationLastEdited>
+  <LaunchDate>24/11/2014 12:24:10</LaunchDate>
+  <SourceSpecificationLastEdited>24/11/2014 12:24:10</SourceSpecificationLastEdited>
   <Facet>
     <FacetType>Problem</FacetType>
     <Author />

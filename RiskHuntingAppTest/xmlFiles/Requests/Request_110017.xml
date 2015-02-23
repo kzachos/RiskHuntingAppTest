@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" requestId="110018" xmlns="http://achernar.soi.city.ac.uk/xmlSchemas/Request">
+  <Registries>
+    <Registry type="Sources" name="-" />
+  </Registries>
+  <Properties>
+    <PartOfSpeech adjective="0" adverb="0" verb="1" noun="1" />
+    <TermExpansion synonym="0" hypernym="0" gloss="0" />
+    <MaxResults>100</MaxResults>
+  </Properties>
+  <DateTime>28/10/2014 13:03:20</DateTime>
+  <SimilarityType>Eddie</SimilarityType>
+  <DataSource>
+    <Type>Document</Type>
+    <Uri>n/a</Uri>
+  </DataSource>
+  <Target>
+    <TargetDescription>[InjuryNature]:  [LocationDetail]: Plant [Content]: the worker is falling down constantly on the floor [BodyPart]: Head</TargetDescription>
+  </Target>
+</Request>

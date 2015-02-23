@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,8 +15,8 @@ namespace RiskHuntingAppTest
 {
     public partial class Settings : System.Web.UI.Page
     {
-        protected string xmlFilesPath = SettingsTool.GetApplicationPath() + "SearchApp/xmlFiles/";
-        protected string requestPath = SettingsTool.GetApplicationPath() + "SearchApp/xmlFiles/Requests/";
+		protected string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "SearchApp", "xmlFiles");
+		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "SearchApp", "xmlFiles", "Requests");
 
         protected void Page_Load(object sender, EventArgs e)
         {

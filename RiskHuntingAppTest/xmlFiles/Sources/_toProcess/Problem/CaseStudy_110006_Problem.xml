@@ -3,13 +3,13 @@
   <FacetType>Problem</FacetType>
   <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
   <Author />
-  <LaunchDate>20/10/2014 13:48:47</LaunchDate>
-  <SourceSpecificationLastEdited>20/10/2014 13:48:47</SourceSpecificationLastEdited>
+  <LaunchDate>01/12/2014 19:04:01</LaunchDate>
+  <SourceSpecificationLastEdited>01/12/2014 19:04:01</SourceSpecificationLastEdited>
   <FacetSpecificationData>
-    <Content>the worker is falling down constantly on the floor and cannot get up</Content>
+    <Content>the worker is falling down constantly on the floor and cannot get up the worker is falling down constantly on the floor and cannot get up the worker is falling down constantly on the floor and cannot get up the worker is falling down constantly on the floor and cannot get up the worker is falling down constantly on the floor and cannot get up the worker is falling down constantly on the floor and cannot get up the worker is falling down constantly on the floor and cannot get up</Content>
     <Observations />
-    <ObservedBehaviour />
-    <TreatmentType />
+    <ObservedBehaviour>Plant</ObservedBehaviour>
+    <TreatmentType>Head</TreatmentType>
     <DateOfIncident />
     <AilmentType />
     <TriggeringEvent />

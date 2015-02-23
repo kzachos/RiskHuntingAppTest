@@ -39,6 +39,9 @@ var todaysDate=new Date()
 			<a id="pressed" href="">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-filled-icon.png" /> Solution
 			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Summary
+			</a>
 		</div>
 	</div>
 </div>
@@ -65,6 +68,9 @@ var todaysDate=new Date()
 			</a>
 			<a id="pressed" href="" >
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-filled-icon.png" /> Solution
+			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-icon.png" /> Summary
 			</a>
 		</div>
 	</div>
@@ -95,16 +101,17 @@ var todaysDate=new Date()
 
 		</div>
 	</ul>
-	<ul class="pageitembutton">
-		<li class="button">
-			<asp:Button id="AddNewAction" runat="server" text="ADD NEW ACTION" onclick="addNewActionClicked"></asp:Button>
-		</li>
-	</ul>
 	<ul class="pageitem">
 		<li class="textbox">
 			<asp:Label id="statusLabel" runat="server"></asp:Label>
 		</li>
 	</ul>
+	<ul class="pageitembutton">
+		<li class="button">
+			<asp:Button id="AddNewAction" runat="server" text="ADD NEW ACTION" onclick="addNewActionClicked"></asp:Button>
+		</li>
+	</ul>
+
 
 	<ul class="pageitem">
 		<div id="content2" runat="server">

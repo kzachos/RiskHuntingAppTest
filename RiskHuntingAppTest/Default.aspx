@@ -19,8 +19,8 @@
 <style type="text/css">
 
 </style>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">
     function ShowProgress() {
         setTimeout(function () {
             var modal = $('<div />');
@@ -42,12 +42,70 @@
 	          $(this).remove(); 
 	    }); 
 	});
+	    
 
+function Confirm() {
+    var confirm_value = document.createElement("INPUT");
+    confirm_value.type = "hidden";
+    confirm_value.name = "confirm_value";
+    if (confirm("Are you sure you want to delete the risk permanently?")) {
+        confirm_value.value = "Yes";
+    } else {
+        confirm_value.value = "No";
+    }
+    document.forms[0].appendChild(confirm_value);
+}
 
+function AutoExpand(txtbox) {
+    txtbox.style.height = "1px";
+    txtbox.style.height = (7 + txtbox.scrollHeight) + "px";
+}
+
+window.setTimeout(function() {
+  $("#alert_message_success").fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove(); 
+  });
+}, 3000);
+window.setTimeout(function() {
+  $("#alert_message_error").fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove(); 
+  });
+}, 3000);
 
 </script>
 </head>
-<body>
+<body onload="AutoExpand(RiskDescription)">
+
+<div id="topbar3">
+    <center>
+	    <img alt="home" src="Theme/images/CareNshare_logo8.png" width="30%" />
+    </center>
+</div>
+
+<div id="TopbarProblemSolutionNoSummary" runat="server">
+	<div id="topbar2">
+		<div id="leftbutton">
+			<a href="javascript:doLoad('Settings.aspx');" >
+				<%--<img alt="home" src="Theme/images/home.png" />--%>
+				Feedback
+			</a> 
+		</div>
+		<div id="rightbutton">
+			<a href="javascript:doLoad('QueryHistory.aspx');">
+				<%--<img alt="home" src="Theme/images/home.png" />--%>
+				Risk History
+			</a> 
+		</div>
+		<div id="multiselectionbuttons">
+			<a id="pressed" href="">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-1-filled-icon.png" /> Problem
+			</a>
+			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-icon.png" /> Solution
+			</a>
+		</div>
+	</div>
+</div>
 
 <div id="TopbarProblemSolution" runat="server">
 	<div id="topbar2">
@@ -70,9 +128,9 @@
 			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-icon.png" /> Solution
 			</a>
-			<%--<a href="javascript:doLoad('Summary.aspx');">
+			<a href="javascript:doLoad('Summary.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Summary
-			</a>--%>
+			</a>
 		</div>
 	</div>
 </div>
@@ -97,7 +155,7 @@
 			<a href="javascript:doLoad('SearchResults.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-icon.png" /> Search
 			</a>
-			<a href="javascript:doLoad('ResolutionIdeas.aspx');">
+			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Solution
 			</a>
 			<a href="javascript:doLoad('Summary.aspx');">
@@ -119,12 +177,12 @@
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
-	<!--
+
 	<asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 
     <asp:Timer ID="Timer1" runat="server"  Interval="10000" ontick="Timer1_Tick"></asp:Timer>  
-    -->
+
 
 	<!--<span class="maintitle">SELECT EXISTING RISK</span>
 	<ul class="pageitem">
@@ -142,32 +200,44 @@
 
 	<span class="darkredboldtitle">OR</span><br><br>
 	-->
+	<div id="alert_message_success" runat="server">
+		<div class="alert-box success">
+			<div id="successMessage" style="display: inline" runat="server"></div>
+		</div>
+	</div>
+	<div id="alert_message_error" runat="server">
+		<div class="alert-box error">
+			<div id="errorMessage" style="display: inline" runat="server"></div>
+		</div>
+	</div>
 
 	<div class="alert-box notice">
 		<span>hint: </span>
 		<div id="creativeGuidance" style="display: inline" runat="server"></div>
 		<div class="close">&times;</div>
 	</div>
-	<br>
+
 
 	<div id="errorMsg" runat="server"></div>	
 	<span class="maintitle">Risk Name</span>
+	<span class="maintitlesmall">(required)</span>
 	<ul class="pageitem">
 		<li class="label">
-			<cc1:WatermarkedTextBox id="RiskName" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="40" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			<cc1:WatermarkedTextBox id="RiskName" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="30" cssclass="txtbox"></cc1:WatermarkedTextBox>
 		</li>
 	</ul>
 	<span class="maintitle">Description</span>
-	<span class="maintitlesmall">(this field is required)</span>
+	<span class="maintitlesmall">(required)</span>
 	<ul class="pageitem">
 		<li class="label">
-			<cc1:WatermarkedTextBox ID="RiskDescription" Font-Size="Larger" runat="server" TextMode="Multiline" Width="100%" Height="73" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			<cc1:WatermarkedTextBox ID="RiskDescription" Font-Size="Larger" runat="server" TextMode="Multiline" Width="100%" cssclass="txtbox" onkeyup="AutoExpand(this)" Rows="3"></cc1:WatermarkedTextBox>
 		</li>
 	</ul>
 	<span class="maintitle">Name of person reporting the risk</span>
+	<span class="maintitlesmall">(required)</span>
 	<ul class="pageitem">
 		<li class="label">
-			<cc1:WatermarkedTextBox id="RiskAuthor" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="40" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			<cc1:WatermarkedTextBox id="RiskAuthor" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="30" cssclass="txtbox" ></cc1:WatermarkedTextBox>
 		</li>
 	</ul>
 	<span class="maintitle">Location</span>
@@ -190,21 +260,23 @@
 
 
 	<ul class="pageitembutton">
-		<li class="button3">
+		<li class="buttonGrey">
 			<asp:Button id="save" runat="server" text="SAVE CHANGES" onclick="saveClicked"></asp:Button>
 		</li>
 		<li class="button">
-			<asp:Button id="submit" runat="server" text="FIND SIMILAR RISKS" onclick="submitClicked"></asp:Button>
+			<asp:button id="reset" runat="server" text="CREATE NEW RISK" onclick="resetClicked"></asp:button>
 		</li>
-
-	</ul>
-
-
-	<!--<ul class="pageitembutton">
+		<div id="deleteRiskDiv" runat="server">
+				<li class="button2">
+					<asp:Button id="delete" runat="server" text="DELETE RISK" onclick="deleteClicked" onClientclick="Confirm();"></asp:Button>
+				</li>
+		</div>	
 		<li class="button3">
-			<asp:Button id="reset" runat="server" text="RESET VALUES" onclick="resetClicked"></asp:Button>
-		</li>
-	</ul>-->
+			<asp:Button id="submit" runat="server" text="FIND SIMILAR RISKS" onclick="submitClicked"></asp:Button>
+		</li>	
+	</ul>
+		
+
 
 
 <!--<div id="previousrisks" runat="server">

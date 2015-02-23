@@ -169,6 +169,13 @@ a:hover .arrow {
 	position: relative;
 	width:100%;
 }
+#topbar3 {
+	height:100px;
+	line-height:100px;
+	background: #ffffff;
+	position: relative;
+	width:100%;
+}
 #multiselectionbuttons {
 	color:#5B5B5B;
 	text-align:center;
@@ -642,7 +649,7 @@ fieldset {
 .pageitembutton li:first-child, .pageitembutton li.form:first-child {
 	border-top: 0;
 }
-.menu, .radiobutton, .select, li.button, li.button2, li.button3, li.bigfield, li.smallfield {
+.menu, .radiobutton, .select, li.button, li.button2, li.button3, li.buttonGrey, li.bigfield, li.smallfield {
 	position: relative;
 	list-style-type: none;
 	display: block;
@@ -666,19 +673,19 @@ fieldset {
 	border-top: 1px solid #878787;
 	width: auto;
 }
-.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, .bigfield:first-child input {
+.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-top-right-radius: 8px;
 }
-.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, .bigfield:first-child input {
+.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-top-right-radius: 8px;
 }
-.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, .bigfield:last-child input {
+.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
 	-webkit-border-bottom-left-radius: 8px;
 	-webkit-border-bottom-right-radius: 8px;
 }
-.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, .bigfield:last-child input {
+.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
 	-webkit-border-bottom-left-radius: 8px;
 	-webkit-border-bottom-right-radius: 8px;
 }
@@ -908,7 +915,7 @@ li:last-child.store .image, .store:last-child a {
 .starcomment {
 	position: absolute;
 	left: 20px;
-	top: 56px;
+	top: 66px;
 	font-size: 12px;
 	color: #7f7f7f;
 	font-weight: lighter;
@@ -1478,6 +1485,20 @@ select {
     white-space: nowrap;
     overflow: hidden;
     background: #87AFED;
+}
+.buttonGrey input {
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    border: 2;
+    -webkit-border-radius: 0;
+    font-weight: bold;
+    font-size: 17px;
+    color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #787878;
 }
 .textbox textarea {
 	padding: 0;

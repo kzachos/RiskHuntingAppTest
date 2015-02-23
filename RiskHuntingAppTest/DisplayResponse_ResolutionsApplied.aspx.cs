@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -28,7 +29,7 @@ namespace RiskHuntingAppTest
 		const string Tab4b = "\" AutoPostBack=\"True\" type=\"checkbox\" name=\"CheckBox";
 		const string Tag4c = "\" />";
 
-		protected string processPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/_toProcess/";
+		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
 
 		protected string sourceId;
 		SortedList categoryIDList;
@@ -155,19 +156,19 @@ namespace RiskHuntingAppTest
 //						title.InnerHtml = String.Empty;
 
 						var recommendation = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Recommendation").Trim();
-						if (!recommendation.Equals (String.Empty))
+						if (!recommendation.Trim().Equals (String.Empty))
 							GenerateHtml3 (recommendation, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml3 (recommendation, String.Empty, 0);
 
 						var correctiveActions = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Corrective Actions");
-						if (!correctiveActions.Equals (String.Empty))
+						if (!correctiveActions.Trim().Equals (String.Empty))
 							GenerateHtml3 (correctiveActions, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml3 (correctiveActions, String.Empty, 0);
 
 						string ignoreWord = "None";
 						var countermeasures = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Countermeasures");
 						if (!countermeasures.Equals (String.Empty) 
-							&& !countermeasures.ToLower().Contains (ignoreWord.ToLower())
+							&& !countermeasures.Trim().ToLower().Contains (ignoreWord.ToLower())
 						)
 							GenerateHtml3 (countermeasures, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml2 (countermeasures, String.Empty, 0);
@@ -306,13 +307,13 @@ namespace RiskHuntingAppTest
 		{
 			string location = String.Empty;
 
-			location = processPath + "SourceSpecification" + "/" + Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml";
+			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
 			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = processPath + "Problem" + "/" + Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml";
+			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
 			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = processPath + "Solution" + "/" + Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
+			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
 			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
 			this.currentRisk = new Risk (ss, problem, solution);
@@ -326,7 +327,7 @@ namespace RiskHuntingAppTest
 
 			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml (this.currentRisk);
 			Ref = Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
-			xmlUri = processPath + "/" + "Solution" + "/" + Ref;
+			xmlUri = Path.Combine (processPath, "Solution", Ref);
 			XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
 
 		}

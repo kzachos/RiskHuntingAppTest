@@ -1,20 +1,40 @@
-﻿<Properties>
+﻿<Properties StartupItem="RiskHuntingAppTest/RiskHuntingAppTest.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RiskHuntingAppTest/Summary.aspx.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RiskHuntingAppTest/CreativeGuidanceForProblem.aspx.cs">
     <Files>
-      <File FileName="RiskHuntingAppTest/Solution_ResolutionIdeas.aspx" Line="1" Column="1" />
-      <File FileName="RiskHuntingAppTest/Solution_ResolutionIdeas.aspx.cs" Line="1" Column="1" />
-      <File FileName="RiskHuntingAppTest/Summary.aspx" Line="1" Column="1" />
-      <File FileName="RiskHuntingAppTest/Summary.aspx.cs" Line="15" Column="15" />
-      <File FileName="RiskHuntingAppTest/Classes/PDFCreator.cs" Line="1" Column="1" />
-      <File FileName="RiskHuntingAppTest/Default.aspx" Line="1" Column="1" NotebookId="1" />
-      <File FileName="RiskHuntingAppTest/Theme/css/style.css" Line="1" Column="1" NotebookId="1" />
-      <File FileName="RiskHuntingAppTest/ResolutionIdeas.aspx" Line="1" Column="1" NotebookId="1" />
-      <File FileName="RiskHuntingAppTest/ResolutionIdeas.aspx.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="RiskHuntingAppTest/DisplayResponse_Description.aspx" Line="1" Column="1" NotebookId="1" />
-      <File FileName="RiskHuntingAppTest/Solution_ActionPlan.aspx" Line="1" Column="1" NotebookId="1" />
-      <File FileName="RiskHuntingAppTest/Solution_ActionPlan.aspx.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="RiskHuntingAppTest/EditResolutionIdea.aspx" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/EditResolutionIdea.aspx.cs" Line="3" Column="3" />
+      <File FileName="RiskHuntingAppTest/EditResolutionIdea.aspx.designer.cs" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/EditAction.aspx.cs" Line="32" Column="32" />
+      <File FileName="RiskHuntingAppTest/EditAction.aspx" Line="1" Column="1" />
+      <File FileName="RiskHuntingAppTest/Solution_ActionPlan.aspx.cs" Line="4" Column="4" />
+      <File FileName="RiskHuntingAppTest/Solution_ResolutionIdeas.aspx" Line="7" Column="7" />
+      <File FileName="RiskHuntingAppTest/Solution_ResolutionIdeas.aspx.cs" Line="26" Column="26" />
+      <File FileName="RiskHuntingAppTest/Solution_ActionPlan.aspx.designer.cs" Line="70" Column="70" />
+      <File FileName="RiskHuntingAppTest/Classes/Util.cs" Line="4" Column="4" />
+      <File FileName="RiskHuntingAppTest/CreativeGuidanceForProblem.aspx" Line="10" Column="10" />
+      <File FileName="RiskHuntingAppTest/CreativeGuidanceForProblem.aspx.cs" Line="19" Column="19" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="RiskHuntingAppTest" expanded="True">
+            <Node name="Classes" expanded="True" />
+            <Node name="Theme" expanded="True">
+              <Node name="css" expanded="True" />
+            </Node>
+            <Node name="CreativeGuidanceForProblem.aspx" expanded="True">
+              <Node name="CreativeGuidanceForProblem.aspx.cs" selected="True" />
+            </Node>
+            <Node name="DisplayResponse_CreativeGuidance.aspx" expanded="True" />
+            <Node name="EditAction.aspx" expanded="True" />
+            <Node name="EditResolutionIdea.aspx" expanded="True" />
+            <Node name="Solution_ActionPlan.aspx" expanded="True" />
+            <Node name="Solution_ResolutionIdeas.aspx" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

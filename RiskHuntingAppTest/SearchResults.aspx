@@ -45,6 +45,9 @@
 			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Solution
 			</a>
+			<a href="javascript:doLoad('Summary.aspx');">
+				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-icon.png" /> Summary
+			</a>
 		</div>
 	</div>
 </div>
@@ -54,14 +57,14 @@
 <div id="content">
 <form id="form1" runat="server">
 
-		<div class="alert-box notice">
-			<span>hint: </span>
-		<div id="creativeGuidance" style="display: inline" runat="server"></div>
-			<div class="close">&times;</div>
-		</div>
-		<br>
+	<div class="alert-box notice">
+		<span>hint: </span>
+	<div id="creativeGuidance" style="display: inline" runat="server"></div>
+		<div class="close">&times;</div>
+	</div>
+	<br>
 
-		<ul class="pageitem">
+	<ul class="pageitem">
 		<div id="responses" runat="server">
 	
 		</div>
@@ -78,11 +81,20 @@
 			</li>
 		</div>
 	</ul>
+
 	<ul class="pageitem">
 		<li class="textbox">
 			<asp:Label id="statusLabel" runat="server"></asp:Label>
 		</li>
 	</ul>
+
+	<div id="creativeGuidance2" runat="server">
+		<ul class="pageitembutton">
+			<li class="button3">
+				<asp:Button id="creativeGuidanceButton" runat="server" text="VIEW CREATIVE GUIDANCE FOR PROBLEM" onclick="creativeGuidanceClicked"></asp:Button>
+			</li>
+		</ul>
+	</div>
 </form>
 
 

@@ -1,14 +1,12 @@
-﻿
+﻿using System;
+using System.Web.Mail;
+using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
+
 namespace RiskHuntingAppTest
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Web;
-	using System.Web.UI;
-	using System.Web.UI.WebControls;
-	using System.Web.Mail;
-	using System.Net;
+
 
 	
 	public partial class Feedback : System.Web.UI.UserControl
@@ -20,25 +18,36 @@ namespace RiskHuntingAppTest
 
 		protected void SendMail()
 		{
-			var fromAddress = "koszachos@gmail.com";// Gmail Address from where you send the mail
-//			var toAddress = YourEmail.Text.ToString(); 
-			var toAddress = "kzachos@gmail.com"; 
-			const string fromPassword = "eljefe12";//Password of your gmail address
-//			string subject = YourSubject.Text.ToString();
-			string body = "From: " + YourName.Text + "\n";
-//			body += "Email: " + YourEmail.Text + "\n";
-//			body += "Subject: " + YourSubject.Text + "\n";
-			body += "Feedback: \n" + Comments.Text + "\n";
-			var smtp = new System.Net.Mail.SmtpClient();
+			try
 			{
-				smtp.Host = "smtp.gmail.com";
-				smtp.Port = 587;
-				smtp.EnableSsl = true;
-				smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-				smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
-				smtp.Timeout = 20000;
+				var fromAddress = "koszachos@gmail.com";// Gmail Address from where you send the mail
+	//			var toAddress = YourEmail.Text.ToString(); 
+				var toAddress = "kzachos@gmail.com"; 
+				const string fromPassword = "gSectime13!";//Password of your gmail address
+	//			string subject = YourSubject.Text.ToString();
+				string body = "From: " + YourName.Text + "\n";
+	//			body += "Email: " + YourEmail.Text + "\n";
+	//			body += "Subject: " + YourSubject.Text + "\n";
+				body += "Feedback: \n" + Comments.Text + "\n";
+				var smtp = new System.Net.Mail.SmtpClient();
+				{
+					smtp.Host = "smtp.gmail.com";
+					smtp.Port = 587;
+					smtp.EnableSsl = true;
+					smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+					smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
+					smtp.Timeout = 20000;
+				}
+				ServicePointManager.ServerCertificateValidationCallback = 
+					delegate(object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) 
+				{ return true; };
+				smtp.Send(fromAddress, toAddress, "Feedback", body);
+
 			}
-			smtp.Send(fromAddress, toAddress, "Feedback", body);
+			catch (Exception e) { 
+				Console.WriteLine (e.ToString());
+			}
+
 		}
 
 		protected void Button1_Click(object sender, EventArgs e)
@@ -53,7 +62,7 @@ namespace RiskHuntingAppTest
 				YourName.Text = "";
 				Comments.Text = "";
 			}
-			catch (Exception) { }
+			catch (Exception ex) {Console.WriteLine (ex.ToString()); }
 		}
 	}
 }

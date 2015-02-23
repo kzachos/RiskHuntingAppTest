@@ -104,8 +104,8 @@ namespace RiskHuntingAppTest
 
 
 			try {
-				RiskHuntingAppTest.antique.AntiqueService antique = new RiskHuntingAppTest.antique.AntiqueService ();
-				antique.NLParserCompleted += new RiskHuntingAppTest.antique.NLParserCompletedEventHandler (objAntique_NLParserCompleted);
+				RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
+				antique.NLParserCompleted += new RiskHuntingAppTest.antiqueService.NLParserCompletedEventHandler (objAntique_NLParserCompleted);
 				antique.NLParserAsync (RiskDescription.Text);
 			}
 			finally {
@@ -124,7 +124,7 @@ namespace RiskHuntingAppTest
 		}
 
 		void objAntique_NLParserCompleted(object sender, 
-			RiskHuntingAppTest.antique.NLParserCompletedEventArgs e)
+			RiskHuntingAppTest.antiqueService.NLParserCompletedEventArgs e)
 		{
 			Console.WriteLine (e.Result);
 			var NLResponse = Util.DeserializeNLResponse (e.Result);

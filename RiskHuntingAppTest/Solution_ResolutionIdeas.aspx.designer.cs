@@ -17,7 +17,9 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSolution;
 		
-		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSearchSolution;
+		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSolutionSummary;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl TopbarProblemSearchSolutionSummary;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl topbar_v2;
 		
@@ -27,11 +29,11 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl divIdeas;
 		
+		protected System.Web.UI.WebControls.Label statusLabel;
+		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl AddNewIdeaDiv;
 		
 		protected System.Web.UI.WebControls.Button AddNewIdea;
-		
-		protected System.Web.UI.WebControls.Label statusLabel;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl content2;
 		

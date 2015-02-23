@@ -1,0 +1,1205 @@
+********** 28/11/2014 14:16:40 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:16:47 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:17:30 **********
+Inner Exception Type: System.Exception
+Inner Exception: Button 3 was clicked
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.DefaultTest.Submit_Click (System.Object sender, System.EventArgs e) [0x00096] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DefaultTest.aspx.cs:31 
+  at System.Web.UI.WebControls.Button.OnClick (System.EventArgs e) [0x00027] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:179 
+  at System.Web.UI.WebControls.Button.RaisePostBackEvent (System.String eventArgument) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:203 
+  at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent (System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:171 
+  at System.Web.UI.Page.RaisePostBackEvent (IPostBackEventHandler sourceControl, System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1633 
+  at System.Web.UI.Page.RaisePostBackEvents () [0x00024] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1583 
+  at System.Web.UI.Page.ProcessRaiseEvents () [0x0005b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1487 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001c5] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1429 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 14:17:37 **********
+Exception Type: System.ArgumentOutOfRangeException
+Exception: Argument is out of range.
+Parameter name: Button 2 was clicked
+Source: DefaultPage
+Stack Trace: 
+  at RiskHuntingAppTest.DefaultTest.Submit_Click (System.Object sender, System.EventArgs e) [0x0008a] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DefaultTest.aspx.cs:25 
+  at System.Web.UI.WebControls.Button.OnClick (System.EventArgs e) [0x00027] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:179 
+  at System.Web.UI.WebControls.Button.RaisePostBackEvent (System.String eventArgument) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:203 
+  at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent (System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:171 
+  at System.Web.UI.Page.RaisePostBackEvent (IPostBackEventHandler sourceControl, System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1633 
+  at System.Web.UI.Page.RaisePostBackEvents () [0x00024] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1583 
+  at System.Web.UI.Page.ProcessRaiseEvents () [0x0005b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1487 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001c5] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1429 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+
+********** 28/11/2014 14:17:40 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:21:58 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Summary.RetrieveCurrentRisk () [0x0002e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:200 
+  at RiskHuntingAppTest.Summary.Page_Init (System.Object sender, System.EventArgs e) [0x0007d] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:85 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 14:22:08 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:22:10 **********
+Exception Type: System.ArgumentOutOfRangeException
+Exception: Argument is out of range.
+Parameter name: Button 2 was clicked
+Source: DefaultPage
+Stack Trace: 
+  at RiskHuntingAppTest.DefaultTest.Submit_Click (System.Object sender, System.EventArgs e) [0x0008a] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DefaultTest.aspx.cs:25 
+  at System.Web.UI.WebControls.Button.OnClick (System.EventArgs e) [0x00027] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:179 
+  at System.Web.UI.WebControls.Button.RaisePostBackEvent (System.String eventArgument) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:203 
+  at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent (System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:171 
+  at System.Web.UI.Page.RaisePostBackEvent (IPostBackEventHandler sourceControl, System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1633 
+  at System.Web.UI.Page.RaisePostBackEvents () [0x00024] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1583 
+  at System.Web.UI.Page.ProcessRaiseEvents () [0x0005b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1487 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001c5] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1429 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+
+********** 28/11/2014 14:22:13 **********
+Inner Exception Type: System.Exception
+Inner Exception: Button 3 was clicked
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.DefaultTest.Submit_Click (System.Object sender, System.EventArgs e) [0x00096] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DefaultTest.aspx.cs:31 
+  at System.Web.UI.WebControls.Button.OnClick (System.EventArgs e) [0x00027] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:179 
+  at System.Web.UI.WebControls.Button.RaisePostBackEvent (System.String eventArgument) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:203 
+  at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent (System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:171 
+  at System.Web.UI.Page.RaisePostBackEvent (IPostBackEventHandler sourceControl, System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1633 
+  at System.Web.UI.Page.RaisePostBackEvents () [0x00024] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1583 
+  at System.Web.UI.Page.ProcessRaiseEvents () [0x0005b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1487 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001c5] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1429 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 14:22:36 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:22:43 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:43:40 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Summary.RetrieveCurrentRisk () [0x0002e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:200 
+  at RiskHuntingAppTest.Summary.Page_Init (System.Object sender, System.EventArgs e) [0x0007d] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:85 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 14:43:54 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:43:56 **********
+Exception Type: System.ArgumentOutOfRangeException
+Exception: Argument is out of range.
+Parameter name: Button 2 was clicked
+Source: DefaultPage
+Stack Trace: 
+  at RiskHuntingAppTest.DefaultTest.Submit_Click (System.Object sender, System.EventArgs e) [0x0008a] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DefaultTest.aspx.cs:25 
+  at System.Web.UI.WebControls.Button.OnClick (System.EventArgs e) [0x00027] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:179 
+  at System.Web.UI.WebControls.Button.RaisePostBackEvent (System.String eventArgument) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:203 
+  at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent (System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:171 
+  at System.Web.UI.Page.RaisePostBackEvent (IPostBackEventHandler sourceControl, System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1633 
+  at System.Web.UI.Page.RaisePostBackEvents () [0x00024] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1583 
+  at System.Web.UI.Page.ProcessRaiseEvents () [0x0005b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1487 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001c5] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1429 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+
+********** 28/11/2014 14:43:57 **********
+Inner Exception Type: System.Exception
+Inner Exception: Button 3 was clicked
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.DefaultTest.Submit_Click (System.Object sender, System.EventArgs e) [0x00096] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DefaultTest.aspx.cs:31 
+  at System.Web.UI.WebControls.Button.OnClick (System.EventArgs e) [0x00027] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:179 
+  at System.Web.UI.WebControls.Button.RaisePostBackEvent (System.String eventArgument) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:203 
+  at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent (System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.WebControls/Button.cs:171 
+  at System.Web.UI.Page.RaisePostBackEvent (IPostBackEventHandler sourceControl, System.String eventArgument) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1633 
+  at System.Web.UI.Page.RaisePostBackEvents () [0x00024] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1583 
+  at System.Web.UI.Page.ProcessRaiseEvents () [0x0005b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1487 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001c5] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1429 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 14:44:05 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:44:08 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:45:53 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:46:54 **********
+Exception Type: System.Web.HttpException
+Exception: defaultRedirect
+Source: Caught in DefaultRedirectErrorPage
+Stack Trace: 
+********** 28/11/2014 14:47:13 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Summary.RetrieveCurrentRisk () [0x0002e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:200 
+  at RiskHuntingAppTest.Summary.Page_Init (System.Object sender, System.EventArgs e) [0x0007d] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:85 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 14:47:47 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Summary.RetrieveCurrentRisk () [0x0002e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:200 
+  at RiskHuntingAppTest.Summary.Page_Init (System.Object sender, System.EventArgs e) [0x0007d] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:85 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 14:47:58 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Summary.RetrieveCurrentRisk () [0x0002e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:200 
+  at RiskHuntingAppTest.Summary.Page_Init (System.Object sender, System.EventArgs e) [0x0007d] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Summary.aspx.cs:85 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:34:41 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:34:51 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:35:01 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:35:11 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:35:22 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:35:32 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:35:44 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:35:55 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:36:06 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:36:17 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x00034] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:80 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 28/11/2014 16:36:29 **********
+Inner Exception Type: System.InvalidCastException
+Inner Exception: Cannot cast from source type to destination type.
+Inner Source: System.Web
+Inner Stack Trace: 
+  at System.Web.UI.StateBag.LoadViewState (System.Object savedState) [0x00007] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/StateBag.cs:85 
+  at System.Web.UI.Control.LoadViewState (System.Object savedState) [0x00006] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1133 
+  at System.Web.UI.HtmlControls.HtmlContainerControl.LoadViewState (System.Object savedState) [0x00006] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI.HtmlControls/HtmlContainerControl.cs:142 
+  at System.Web.UI.Control.LoadViewStateRecursive (System.Object savedState) [0x00033] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1846 
+  at System.Web.UI.Control.LoadViewStateRecursive (System.Object savedState) [0x00176] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1881 
+  at System.Web.UI.Control.LoadViewStateRecursive (System.Object savedState) [0x00176] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1881 
+  at System.Web.UI.Page.LoadPageViewState () [0x00046] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1770 
+  at System.Web.UI.Page.RestorePageState () [0x00051] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1448 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001b9] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1427 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 15:55:23 **********
+Inner Exception Type: System.Xml.XmlException
+Inner Exception: Text node cannot appear in this state.  Line 839, position 18.
+Inner Source: System.Xml
+Inner Stack Trace: 
+  at Mono.Xml2.XmlTextReader.ReadText (Boolean notWhitespace) [0x0000c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1587 
+  at Mono.Xml2.XmlTextReader.ReadContent () [0x0015a] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1295 
+  at Mono.Xml2.XmlTextReader.Read () [0x00141] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:573 
+  at System.Xml.XmlTextReader.Read () [0x0006b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader2.cs:566 
+  at System.Xml.XmlReader.ReadEndElement () [0x00034] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlReader.cs:706 
+  at System.Xml.Serialization.XmlSerializationReader.ReadEndElement () [0x00040] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReader.cs:420 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadClassInstance (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x000fd] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:233 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadObject (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:193 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot (System.Xml.Serialization.XmlTypeMapping rootMap) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:184 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot () [0x00028] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:87 
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.Serialization.XmlSerializationReader reader) [0x0001c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializer.cs:359 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 15:56:07 **********
+Inner Exception Type: System.Xml.XmlException
+Inner Exception: Text node cannot appear in this state.  Line 1066, position 18.
+Inner Source: System.Xml
+Inner Stack Trace: 
+  at Mono.Xml2.XmlTextReader.ReadText (Boolean notWhitespace) [0x0000c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1587 
+  at Mono.Xml2.XmlTextReader.ReadContent () [0x0015a] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1295 
+  at Mono.Xml2.XmlTextReader.Read () [0x00141] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:573 
+  at System.Xml.XmlTextReader.Read () [0x0006b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader2.cs:566 
+  at System.Xml.XmlReader.ReadEndElement () [0x00034] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlReader.cs:706 
+  at System.Xml.Serialization.XmlSerializationReader.ReadEndElement () [0x00040] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReader.cs:420 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadClassInstance (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x000fd] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:233 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadObject (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:193 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot (System.Xml.Serialization.XmlTypeMapping rootMap) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:184 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot () [0x00028] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:87 
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.Serialization.XmlSerializationReader reader) [0x0001c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializer.cs:359 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 16:31:31 **********
+Inner Exception Type: System.Xml.XmlException
+Inner Exception: Text node cannot appear in this state.  Line 908, position 18.
+Inner Source: System.Xml
+Inner Stack Trace: 
+  at Mono.Xml2.XmlTextReader.ReadText (Boolean notWhitespace) [0x0000c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1587 
+  at Mono.Xml2.XmlTextReader.ReadContent () [0x0015a] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:1295 
+  at Mono.Xml2.XmlTextReader.Read () [0x00141] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader.cs:573 
+  at System.Xml.XmlTextReader.Read () [0x0006b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlTextReader2.cs:566 
+  at System.Xml.XmlReader.ReadEndElement () [0x00034] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml/XmlReader.cs:706 
+  at System.Xml.Serialization.XmlSerializationReader.ReadEndElement () [0x00040] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReader.cs:420 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadClassInstance (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x000fd] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:233 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadObject (System.Xml.Serialization.XmlTypeMapping typeMap, Boolean isNullable, Boolean checkType) [0x00031] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:193 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot (System.Xml.Serialization.XmlTypeMapping rootMap) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:184 
+  at System.Xml.Serialization.XmlSerializationReaderInterpreter.ReadRoot () [0x00028] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializationReaderInterpreter.cs:87 
+  at System.Xml.Serialization.XmlSerializer.Deserialize (System.Xml.Serialization.XmlSerializationReader reader) [0x0001c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.XML/System.Xml.Serialization/XmlSerializer.cs:359 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 17:36:19 **********
+Inner Exception Type: System.Web.HttpException
+Inner Exception: Unable to validate data.
+Inner Source: System.Web
+Inner Stack Trace: 
+  at System.Web.UI.ObjectStateFormatter.Deserialize (System.String inputString) [0x0009f] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ObjectStateFormatter.cs:129 
+  at System.Web.UI.ClientScriptManager.RestoreEventValidationState (System.String fieldValue) [0x0002b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ClientScriptManager.cs:573 
+  at System.Web.UI.Page.RestorePageState () [0x00021] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1445 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001b9] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1427 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 17:36:31 **********
+Inner Exception Type: System.Web.HttpException
+Inner Exception: Unable to validate data.
+Inner Source: System.Web
+Inner Stack Trace: 
+  at System.Web.UI.ObjectStateFormatter.Deserialize (System.String inputString) [0x0009f] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ObjectStateFormatter.cs:129 
+  at System.Web.UI.ClientScriptManager.RestoreEventValidationState (System.String fieldValue) [0x0002b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ClientScriptManager.cs:573 
+  at System.Web.UI.Page.RestorePageState () [0x00021] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1445 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001b9] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1427 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 17:36:42 **********
+Inner Exception Type: System.Web.HttpException
+Inner Exception: Unable to validate data.
+Inner Source: System.Web
+Inner Stack Trace: 
+  at System.Web.UI.ObjectStateFormatter.Deserialize (System.String inputString) [0x0009f] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ObjectStateFormatter.cs:129 
+  at System.Web.UI.ClientScriptManager.RestoreEventValidationState (System.String fieldValue) [0x0002b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ClientScriptManager.cs:573 
+  at System.Web.UI.Page.RestorePageState () [0x00021] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1445 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001b9] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1427 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 17:36:53 **********
+Inner Exception Type: System.Web.HttpException
+Inner Exception: Unable to validate data.
+Inner Source: System.Web
+Inner Stack Trace: 
+  at System.Web.UI.ObjectStateFormatter.Deserialize (System.String inputString) [0x0009f] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ObjectStateFormatter.cs:129 
+  at System.Web.UI.ClientScriptManager.RestoreEventValidationState (System.String fieldValue) [0x0002b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ClientScriptManager.cs:573 
+  at System.Web.UI.Page.RestorePageState () [0x00021] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1445 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001b9] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1427 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 17:37:04 **********
+Inner Exception Type: System.Web.HttpException
+Inner Exception: Unable to validate data.
+Inner Source: System.Web
+Inner Stack Trace: 
+  at System.Web.UI.ObjectStateFormatter.Deserialize (System.String inputString) [0x0009f] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ObjectStateFormatter.cs:129 
+  at System.Web.UI.ClientScriptManager.RestoreEventValidationState (System.String fieldValue) [0x0002b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/ClientScriptManager.cs:573 
+  at System.Web.UI.Page.RestorePageState () [0x00021] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1445 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001b9] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1427 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:23:04 **********
+Exception Type: System.ArgumentException
+Exception: Key duplication when adding: authentication
+Source: DefaultPage
+Stack Trace: 
+  at System.Collections.Hashtable.PutImpl (System.Object key, System.Object value, Boolean overwrite) [0x00137] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.Collections/Hashtable.cs:737 
+  at System.Collections.Hashtable.Add (System.Object key, System.Object value) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.Collections/Hashtable.cs:400 
+  at System.Collections.Specialized.NameObjectCollectionBase.BaseAdd (System.String name, System.Object value) [0x0004c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System/System.Collections.Specialized/NameObjectCollectionBase.cs:426 
+  at System.Collections.Specialized.NameObjectCollectionBase.BaseSet (System.String name, System.Object value) [0x00030] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System/System.Collections.Specialized/NameObjectCollectionBase.cs:598 
+  at System.Configuration.ConfigurationSectionCollection.get_Item (System.String name) [0x00048] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Configuration/System.Configuration/ConfigurationSectionCollection.cs:69 
+  at System.Configuration.Configuration.GetSection (System.String path) [0x0006a] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Configuration/System.Configuration/Configuration.cs:261 
+  at System.Web.Configuration.WebConfigurationManager.GetSection (System.String sectionName, System.String path, System.Web.HttpContext context) [0x001d4] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.Configuration_2.0/WebConfigurationManager.cs:520 
+  at System.Web.Configuration.WebConfigurationManager.GetSection (System.String sectionName) [0x00006] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.Configuration_2.0/WebConfigurationManager.cs:430 
+  at System.Web.Security.FormsAuthenticationModule.InitConfig (System.Web.HttpContext context) [0x0000c] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.Security/FormsAuthenticationModule.cs:64 
+  at System.Web.Security.FormsAuthenticationModule.OnAuthenticateRequest (System.Object sender, System.EventArgs args) [0x0000e] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.Security/FormsAuthenticationModule.cs:96 
+  at System.Web.HttpApplication+<RunHooks>c__Iterator0.MoveNext () [0x001ba] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1050 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x0021d] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1219 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:23:06 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:28:16 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:28:27 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:28:38 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:28:49 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:29:00 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:29:11 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:29:22 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:29:33 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:29:44 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:29:55 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:30:06 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:30:17 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:30:28 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+
+********** 01/12/2014 19:30:39 **********
+Inner Exception Type: System.IO.FileNotFoundException
+Inner Exception: Could not find file "/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/xmlFiles/Sources/_toProcess/SourceSpecification/CaseStudy__SourceSpecification.xml".
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00211] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:275 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/FileStream.cs:132 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at System.IO.File.OpenRead (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/File.cs:341 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize) [0x00077] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:194 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/corlib/System.IO/StreamReader.cs:170 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader:.ctor (string)
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].CreateTextReader (System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder, System.String path) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].LoadFromDocumentFormat (System.Type[] extraTypes, System.String path, System.IO.IsolatedStorage.IsolatedStorageFile isolatedStorageFolder) [0x00000] in <filename unknown>:0 
+  at XmlProc.ObjectXMLSerializer`1[XmlProc.SourceSpecificationSerialized+SourceSpecification].Load (System.String path) [0x00000] in <filename unknown>:0 
+  at RiskHuntingAppTest.Default.RetrieveRiskXml (System.String componentType) [0x00056] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:835 
+  at RiskHuntingAppTest.Default.Page_Init (System.Object sender, System.EventArgs e) [0x001e5] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:130 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
+

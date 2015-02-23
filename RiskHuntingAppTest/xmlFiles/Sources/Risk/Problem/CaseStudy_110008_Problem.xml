@@ -3,13 +3,13 @@
   <FacetType>Problem</FacetType>
   <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
   <Author>sdd</Author>
-  <LaunchDate>20/10/2014 13:04:20</LaunchDate>
-  <SourceSpecificationLastEdited>20/10/2014 13:04:20</SourceSpecificationLastEdited>
+  <LaunchDate>01/12/2014 15:51:13</LaunchDate>
+  <SourceSpecificationLastEdited>01/12/2014 15:51:13</SourceSpecificationLastEdited>
   <FacetSpecificationData>
-    <Content>adsdd</Content>
+    <Content>this is a risk relating to slippery floors</Content>
     <Observations />
-    <ObservedBehaviour />
-    <TreatmentType />
+    <ObservedBehaviour>Plant</ObservedBehaviour>
+    <TreatmentType>Head</TreatmentType>
     <DateOfIncident />
     <AilmentType />
     <TriggeringEvent />

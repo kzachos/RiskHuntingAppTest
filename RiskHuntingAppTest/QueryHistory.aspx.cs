@@ -17,17 +17,18 @@ namespace RiskHuntingAppTest
 {
     public partial class QueryHistory : System.Web.UI.Page
     {
-		protected string xmlFilesPath = SettingsTool.GetApplicationPath() + "xmlFiles/";
-		protected string requestPath = SettingsTool.GetApplicationPath() + "xmlFiles/Requests/";
-		protected string responsePath = SettingsTool.GetApplicationPath() + "xmlFiles/Responses/";
+		protected string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
+		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Requests");
+		protected string responsePath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Responses");
 
-		protected string processPath = SettingsTool.GetApplicationPath() + "xmlFiles/Sources/_toProcess/";
+		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
 		protected const string SOURCESPECIFICATION = "SourceSpecification";
 		protected const string PROBLEM = "Problem";
 		protected const string SOLUTION = "Solution";
 		protected const string ADDITIONAL = "Additional";
 
 		protected int maxId;
+		protected string sortBy;
 
         const string SpanStartTagMenu = "<span class=menu>";
         const string SpanStartTagName = "<span class=name>";
@@ -56,18 +57,65 @@ namespace RiskHuntingAppTest
 		const string Tag12 = "</li>";
 		const string RISKSTATE = "Problem Described";
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
 			this.maxId = 1000;
-//			GenerateQueryHistory(xmlFilesPath, 1000);
-			GenerateQueryHistory();
+			if (!Page.IsPostBack) {
+				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
+				PopulateSortDropDown ();
+			} else {
+				Console.WriteLine ("Page_Init - Page.IsPostBack");
+
+			}
+
         }
+
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			if (!Page.IsPostBack) {
+				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
+				GenerateQueryHistory();
+			} else {
+				Console.WriteLine ("Page_Load - Page.IsPostBack");
+			}
+
+		}
+
+		protected void Page_PreRender (object sender, EventArgs e)
+		{
+			if (Page.IsPostBack) {
+				this.sortBy = DetermineSortAttribute ();
+//				Console.WriteLine ("SortBy (Page_PreRender): " + this.sortBy);
+				GenerateQueryHistory ();
+			}
+		}
+
+		string DetermineSortAttribute()
+		{
+			var sortBy = String.Empty;
+			if (Session ["SortBy"] != null)
+				sortBy = Session ["SortBy"].ToString();
+			return sortBy;
+		}
+
+		private void PopulateSortDropDown()
+		{
+//			SortDropDown.Items.Add (new ListItem("Date"));
+//			SortDropDown.Items.Add (new ListItem("Status"));
+//			SortDropDown.Items.Add (new ListItem("Name"));
+//			SortDropDown.Items.Add (new ListItem("Author"));
+			SortDropDown.SelectedValue = "0";
+		}
+
 
 		void GenerateQueryHistory ()
 		{
-			var allSpecs = GetFilesFromDirectoryList (processPath + SOURCESPECIFICATION + "/", this.maxId);
-			var allProblems = GetFilesFromDirectoryList (processPath + PROBLEM + "/", this.maxId);
-			var allSolutions = GetFilesFromDirectoryList (processPath + SOLUTION + "/", this.maxId);
+//			var allSpecs = GetFilesFromDirectoryList (processPath + SOURCESPECIFICATION + "/", this.maxId);
+//			var allProblems = GetFilesFromDirectoryList (processPath + PROBLEM + "/", this.maxId);
+//			var allSolutions = GetFilesFromDirectoryList (processPath + SOLUTION + "/", this.maxId);
+			var allSpecs = GetFilesFromDirectoryList (Path.Combine (processPath, SOURCESPECIFICATION), this.maxId);
+			var allProblems = GetFilesFromDirectoryList (Path.Combine (processPath, PROBLEM), this.maxId);
+			var allSolutions = GetFilesFromDirectoryList (Path.Combine (processPath, SOLUTION), this.maxId);
 
 //			var allPaths = GetFilesFromDirectorySortedList3(processPath + SOURCESPECIFICATION + "/", this.maxId);
 //			ICollection keyCollection = allPaths.Keys;
@@ -78,16 +126,41 @@ namespace RiskHuntingAppTest
 //			valueCollection.CopyTo(allPathsValues, 0);
 
 			if (allSpecs.Count > 0) {
+				List<Risk> risks = new List<Risk> ();
 				for (int i = 0; i < allSpecs.Count; i++) {
-					Console.WriteLine (allSpecs [i]);
-					var risk = RetrieveCurrentRisk (allSpecs [i], allProblems[i], allSolutions[i]);
-					queries.InnerHtml += GenerateQueryHtml (risk);
-					Console.WriteLine ("risk.State (GenerateQueryHistory): " + risk.State.ToString ());
-
+//					Console.WriteLine (allSpecs [i]);
+					var risk = RetrieveCurrentRisk (allSpecs [i], allProblems [i], allSolutions [i]);
+					risks.Add (risk);
 				}
+
+				List<Risk> sortedRisks = new List<Risk> ();
+				switch (this.sortBy) {
+				case "Status":
+					sortedRisks = risks.OrderBy (q => q.State).ToList ();
+					break;
+				case "Name":
+					sortedRisks = risks.OrderBy (q => q.Name).ToList ();
+					break;
+				case "Date":
+					sortedRisks = risks;
+					break;
+				case "Author":
+					sortedRisks = risks.OrderBy (q => q.Author).ToList ();
+					break;
+				default:
+					sortedRisks = risks;
+					break;
+				}
+
+				queries.InnerHtml = String.Empty;
+				foreach (var r in sortedRisks) {
+					queries.InnerHtml += GenerateQueryHtml (r);
+//					Console.WriteLine ("risk.State (GenerateQueryHistory): " + r.State.ToString ());
+				}
+			} else {
+				SortDiv.Visible = false;
+				statusLabel.Text = "No previous risk cases available.";
 			}
-			else
-				statusLabel.Text = "No risk queries available.";
 
 			if (Session["CurrentResponseUri"] != null) 
 				Session.Remove("CurrentResponseUri");
@@ -111,12 +184,22 @@ namespace RiskHuntingAppTest
 			string responseXmlUri = responsePath + "Response_" + risk.Id + ".xml";
 //			string path = "&path=" + responseXmlUri;
 			string path = String.Empty;
-			Console.WriteLine ("risk.SimilarCasesFound: " + risk.SimilarCasesFound);
+//			Console.WriteLine ("risk.SimilarCasesFound: " + risk.SimilarCasesFound);
 			string search = risk.SimilarCasesFound?path:String.Empty;
 			return Tag1 + Tag2 + risk.Id + search + Tag3 + Tag4 + risk.Name + Tag5 + 
 				Tag6 + risk.Content + Tag7 + 
-				Tag8 + "Status: " + Util.GetEnumDescription(risk.State) + 
-				"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + " Last Modified: " + Util.FormatDate (risk.LastEdited) + Tag9 + Tag10 + Tag11 + Tag12;
+				Tag8 + "<b>Status</b>: " + Util.GetEnumDescription(risk.State) + 
+				"&nbsp;&nbsp;&nbsp;" + "<b>Author</b>: " + risk.Author + 
+				"&nbsp;&nbsp;&nbsp;" + " <b>Last Modified</b>: " + Util.FormatDate (risk.LastEdited) + 
+				Tag9 + Tag10 + Tag11 + Tag12;
+		}
+
+		protected void itemSelected(object sender, EventArgs e)
+		{
+			DropDownList dropdown = (DropDownList) sender;  
+			Session ["SortBy"] = dropdown.SelectedItem.Text;
+//			Console.WriteLine ("SortBy (itemSelected): " + Session ["SortBy"].ToString ());
+
 		}
 
 		private OrderedDictionary GetFilesFromDirectorySortedList4(string dirPath, int max)
@@ -150,9 +233,9 @@ namespace RiskHuntingAppTest
 
         private void GenerateQueryHistory(string dirPath, int max)
         {
-			List<string> allResponsePaths = GetFilesFromDirectoryList(dirPath + "Responses/", max);
+			List<string> allResponsePaths = GetFilesFromDirectoryList(Path.Combine (dirPath, "Responses"), max);
 //			List<string> allResponsePaths = GetFilesFromDirectoryList2(dirPath, max);
-			var allRequestPaths = GetFilesFromDirectorySortedList3(dirPath + "Requests/", max);
+			var allRequestPaths = GetFilesFromDirectorySortedList3(Path.Combine (dirPath + "Requests"), max);
 			ICollection keyCollection = allRequestPaths.Keys;
 			ICollection valueCollection = allRequestPaths.Values;
 			String[] allRequestPathsKeys = new String[allRequestPaths.Count];

@@ -19,6 +19,10 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl SortDiv;
+		
+		protected System.Web.UI.WebControls.DropDownList SortDropDown;
+		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl queries;
 		
 		protected System.Web.UI.WebControls.Label statusLabel;
