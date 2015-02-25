@@ -17,7 +17,6 @@ namespace RiskHuntingAppTest
 
 	public partial class SearchResults : System.Web.UI.Page
 	{
-		protected const float THRESHOLD = 30.0f;
 
 		const string Tag1 = "<li class=\"store\">";
 		const string Tag2 = "<a class=\"noeffect\" href=\"javascript:doLoad('DisplayResponse_Description.aspx?id=";
@@ -61,8 +60,8 @@ namespace RiskHuntingAppTest
 				Session.Remove ("CURRENT_RISK_DESC");
 				Session.Remove ("CREATIVITY_PROMPTS");
 				int max;
-				if (Session["MaxResults"] != null)
-					max = Convert.ToInt32(Session["MaxResults"]);
+				if (Session ["MaxResults"] != null)
+					max = Convert.ToInt32(Session ["MaxResults"]);
 				else
 					max = 5;
 				GenerateMatchedSources(responseUri, max - 1);
@@ -91,14 +90,14 @@ namespace RiskHuntingAppTest
 		private string DetermineResponseUri()
 		{
 			string responseUri = String.Empty;
-			if (Session["CurrentResponseUri"] != null)
-				responseUri = Session["CurrentResponseUri"].ToString();
+			if (Session ["CurrentResponseUri"] != null)
+				responseUri = Session ["CurrentResponseUri"].ToString();
 			else
 			{
 				if (Request.QueryString["path"] != null)
 				{
 					responseUri = Request.QueryString["path"];
-					Session["CurrentResponseUri"] = responseUri;
+					Session ["CurrentResponseUri"] = responseUri;
 				}
 			}
 			return responseUri;
@@ -115,7 +114,7 @@ namespace RiskHuntingAppTest
 
 				for (int i = 0; i <= max; i++) {
 					XmlProc.ResponseSerialized.MatchedSourcesMatchedSource matchedSource = matchedSources [i];
-					if (Convert.ToDouble (matchedSource.OverallMatchValue) >= THRESHOLD)
+					if (Convert.ToDouble (matchedSource.OverallMatchValue) >= Constants.THRESHOLD)
 						responses.InnerHtml += GenerateMatchedSourceHtml (matchedSource);
 				}
 				Console.WriteLine (responses.InnerHtml);

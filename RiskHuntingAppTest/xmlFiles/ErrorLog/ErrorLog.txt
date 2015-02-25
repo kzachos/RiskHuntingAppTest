@@ -1203,3 +1203,163 @@ Stack Trace:
   at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1364 
   at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.10.0-branch/bockbuild-mono-3.10.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.10.0/mcs/class/System.Web/System.Web/HttpApplication.cs:932 
 
+********** 23/02/2015 14:09:14 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.Default.Topbar_Problem_Solution_NoSummary () [0x00008] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:215 
+  at RiskHuntingAppTest.Default.Page_Load (System.Object sender, System.EventArgs e) [0x0008c] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/Default.aspx.cs:164 
+  at System.Web.UI.Control.OnLoad (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1211 
+  at System.Web.UI.Control.LoadRecursive () [0x00031] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1641 
+  at System.Web.UI.Page.ProcessLoad () [0x0004a] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1476 
+  at System.Web.UI.Page.ProcessPostData () [0x0004d] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1461 
+  at System.Web.UI.Page.InternalProcessRequest () [0x001bf] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1428 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+
+********** 23/02/2015 14:45:01 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.GenerateGenericCreativityPrompts () [0x0000e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:143 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.PrepareData () [0x00014] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:225 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.RetrieveNLData () [0x000a1] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:124 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.Page_Init (System.Object sender, System.EventArgs e) [0x00065] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:53 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+
+********** 23/02/2015 15:04:02 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.GenerateGenericCreativityPrompts () [0x0000e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:143 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.PrepareData () [0x00014] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:225 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.RetrieveNLData () [0x000a1] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:124 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.Page_Init (System.Object sender, System.EventArgs e) [0x00065] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:53 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+
+********** 23/02/2015 15:04:22 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.GenerateGenericCreativityPrompts () [0x0000e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:143 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.PrepareData () [0x00014] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:225 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.RetrieveNLData () [0x000a1] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:124 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.Page_Init (System.Object sender, System.EventArgs e) [0x00065] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:53 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+
+********** 23/02/2015 15:05:00 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.GenerateGenericCreativityPrompts () [0x0000e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:143 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.PrepareData () [0x00014] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:225 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.RetrieveNLData () [0x000a1] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:124 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.Page_Init (System.Object sender, System.EventArgs e) [0x00065] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:53 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+
+********** 23/02/2015 15:05:55 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.GenerateGenericCreativityPrompts () [0x0000e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:143 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.PrepareData () [0x00014] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:225 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.RetrieveNLData () [0x000a1] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:124 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.Page_Init (System.Object sender, System.EventArgs e) [0x00065] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:53 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+
+********** 23/02/2015 15:09:41 **********
+Inner Exception Type: System.NullReferenceException
+Inner Exception: Object reference not set to an instance of an object
+Inner Source: RiskHuntingAppTest
+Inner Stack Trace: 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.GenerateGenericCreativityPrompts () [0x0000e] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:143 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.PrepareData () [0x00014] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:225 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.RetrieveNLData () [0x000a1] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:124 
+  at RiskHuntingAppTest.CreateIdeas_SameRisk.Page_Init (System.Object sender, System.EventArgs e) [0x00065] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs:53 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+

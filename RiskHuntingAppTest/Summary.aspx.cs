@@ -42,7 +42,7 @@ namespace RiskHuntingAppTest
 		const string SpanStartTagArrow = "<span class=arrow>";
 		const string SpanEndTag = "</span>";
 		const string LiStartTagMenu = "<li class=menu>";
-		const string aStartTag = "<a href=\"javascript:doLoad('EditResolutionIdea.aspx?content=";
+		const string aStartTag = "<a href=\"javascript:doLoad('EditResolutionIdea.aspx?from=Summary&content=";
 		const string aMidTag = "');\">";
 		const string aEndTag = "</a>";
 

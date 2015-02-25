@@ -47,8 +47,8 @@ namespace RiskHuntingAppTest
 
 
 //				categoryIDList = new SortedList();
-//				if (Session["CHECKED_ITEMS"] != null)
-//					categoryIDList = (SortedList)Session["CHECKED_ITEMS"];
+//				if (Session ["CHECKED_ITEMS"] != null)
+//					categoryIDList = (SortedList)Session ["CHECKED_ITEMS"];
 
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
 				GenerateContent ();
@@ -59,8 +59,8 @@ namespace RiskHuntingAppTest
 				content2.Controls.Clear ();
 
 //				categoryIDList = new SortedList();
-//				if (Session["CHECKED_ITEMS"] != null)
-//					categoryIDList = (SortedList)Session["CHECKED_ITEMS"];
+//				if (Session ["CHECKED_ITEMS"] != null)
+//					categoryIDList = (SortedList)Session ["CHECKED_ITEMS"];
 			
 				GenerateContent ();
 			}
@@ -127,7 +127,7 @@ namespace RiskHuntingAppTest
 						Console.WriteLine ("UnChecked");
 			}
 
-//			Table t = (Table) Session["MyTable"];
+//			Table t = (Table) Session ["MyTable"];
 //
 //			if (((CheckBox) t.Rows[0].Cells[0].Controls[0]).Checked)
 //				Console.WriteLine ("Checked");
@@ -190,12 +190,12 @@ namespace RiskHuntingAppTest
 			if (Request.QueryString["id"] != null)
 			{
 				id = Request.QueryString["id"];
-				Session["CurrentOriginalID"] = id;
+				Session ["CurrentOriginalID"] = id;
 			}
 			else
 			{
-				if (Session["CurrentOriginalID"] != null)
-					id = Session["CurrentOriginalID"].ToString();
+				if (Session ["CurrentOriginalID"] != null)
+					id = Session ["CurrentOriginalID"].ToString();
 			}
 			return id;
 		}
@@ -203,8 +203,8 @@ namespace RiskHuntingAppTest
 		private string DetermineResponseUri()
 		{
 			string responseUri = String.Empty;
-			if (Session["CurrentResponseUri"] != null)
-				responseUri = Session["CurrentResponseUri"].ToString();
+			if (Session ["CurrentResponseUri"] != null)
+				responseUri = Session ["CurrentResponseUri"].ToString();
 			else
 			{
 				if (Request.QueryString["path"] != null)
@@ -461,14 +461,14 @@ namespace RiskHuntingAppTest
 //
 //
 //			if (categoryIDList != null && categoryIDList.Count > 0)
-//				Session["CHECKED_ITEMS"] = categoryIDList;
+//				Session ["CHECKED_ITEMS"] = categoryIDList;
 //
 //
 //		}
 //
 //		private void RePopulateValues()
 //		{
-//			SortedList categoryIDList = (SortedList)Session["CHECKED_ITEMS"];
+//			SortedList categoryIDList = (SortedList)Session ["CHECKED_ITEMS"];
 //			if (categoryIDList != null && categoryIDList.Count > 0)
 //			{
 //				for (int i = 0; i < content2.Controls.Count; i++) 

@@ -20,7 +20,7 @@
 			</a> 
 		</div>
 		<div id="multiselectionbuttons">
-				Risk History
+				Our Previous Risks
 		</div>
 
 	</div>

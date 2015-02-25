@@ -120,7 +120,8 @@ namespace RiskHuntingAppTest
             for (int i = 0; i < fileParts.Count - 1; i++)
                 responseXmlUri += fileParts[i].ToString() + "\\\\";
             responseXmlUri += fileParts[fileParts.Count - 1].ToString();
-            if (Session["CurrentResponseUri"] != null) Session.Remove("CurrentResponseUri");
+            if (Session ["CurrentResponseUri"] != null) 
+				Session.Remove("CurrentResponseUri");
             return LiStartTag +
                 SpanStartTagName + requestId + ": " + requestDescr + SpanEndTag +
                 InputStartTag + requestId + InputMidTag + requestId + InputEndTag + LiEndTag;

@@ -4,12 +4,12 @@
   <SourceName>new 5</SourceName>
   <SourceType>ProblemDescribed</SourceType>
   <Domain>Risk</Domain>
-  <Filename>Found</Filename>
-  <LaunchDate>28/10/2014 12:05:55</LaunchDate>
-  <SourceSpecificationLastEdited>28/10/2014 12:05:55</SourceSpecificationLastEdited>
+  <Filename />
+  <LaunchDate>25/02/2015 16:52:28</LaunchDate>
+  <SourceSpecificationLastEdited>25/02/2015 16:52:28</SourceSpecificationLastEdited>
   <Facet>
     <FacetType>Problem</FacetType>
-    <Author />
+    <Author>fghfgh</Author>
     <FacetSpecification>
       <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
       <FacetSpecificationLink>CaseStudy_110016_Problem.xml</FacetSpecificationLink>
@@ -17,7 +17,7 @@
   </Facet>
   <Facet>
     <FacetType>Solution</FacetType>
-    <Author />
+    <Author>fghfgh</Author>
     <FacetSpecification>
       <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
       <FacetSpecificationLink>CaseStudy_110016_Solution.xml</FacetSpecificationLink>

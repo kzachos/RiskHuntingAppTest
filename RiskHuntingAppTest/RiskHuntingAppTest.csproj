@@ -73,27 +73,38 @@
     <WebReferences Include="Web References" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx">
+    <WebReferenceUrl Include="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\antiqueService</RelPath>
-      <UpdateFromURL>http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx</UpdateFromURL>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx">
+    <WebReferenceUrl Include="http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\eddieService</RelPath>
-      <UpdateFromURL>http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx</UpdateFromURL>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\hofService</RelPath>
+      <UpdateFromURL>http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx</UpdateFromURL>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\antiqueService\AntiqueService.wsdl" />
     <None Include="Web References\antiqueService\AntiqueService.disco" />
+    <None Include="Web References\antiqueService\AntiqueService.wsdl" />
     <None Include="Web References\antiqueService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\eddieService\EddieService.wsdl" />
     <None Include="Web References\eddieService\EddieService.disco" />
+    <None Include="Web References\eddieService\EddieService.wsdl" />
     <None Include="Web References\eddieService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\hofService\Service1.wsdl" />
+    <None Include="Web References\hofService\Service1.disco" />
+    <None Include="Web References\hofService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -244,12 +255,6 @@
     <Compile Include="CreateRisk.aspx.designer.cs">
       <DependentUpon>CreateRisk.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Web References\antiqueService\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\eddieService\Reference.cs">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="ErrorHandling\DefaultRedirectErrorPage.aspx.cs">
       <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
     </Compile>
@@ -257,6 +262,47 @@
       <DependentUpon>DefaultRedirectErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ErrorHandling\ExceptionUtility.cs" />
+    <Compile Include="CreateIdeas_SameRisk.aspx.cs">
+      <DependentUpon>CreateIdeas_SameRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_SameRisk.aspx.designer.cs">
+      <DependentUpon>CreateIdeas_SameRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ServiceAsync.cs" />
+    <Compile Include="Web References\antiqueService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_BrightSparks.aspx.cs">
+      <DependentUpon>CreateIdeas_BrightSparks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_BrightSparks.aspx.designer.cs">
+      <DependentUpon>CreateIdeas_BrightSparks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_PastRisks.aspx.cs">
+      <DependentUpon>CreateIdeas_PastRisks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_PastRisks.aspx.designer.cs">
+      <DependentUpon>CreateIdeas_PastRisks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\eddieService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_PastRisk.aspx.cs">
+      <DependentUpon>CreateIdeas_PastRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_PastRisk.aspx.designer.cs">
+      <DependentUpon>CreateIdeas_PastRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Sessions.cs" />
+    <Compile Include="ResolveRisk.aspx.cs">
+      <DependentUpon>ResolveRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResolveRisk.aspx.designer.cs">
+      <DependentUpon>ResolveRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\hofService\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
@@ -342,5 +388,10 @@
     <Content Include="ErrorHandling\Http404ErrorPage.aspx" />
     <Content Include="ErrorHandling\HttpErrorPage.aspx" />
     <Content Include="Theme\css\style2.css" />
+    <Content Include="CreateIdeas_SameRisk.aspx" />
+    <Content Include="CreateIdeas_BrightSparks.aspx" />
+    <Content Include="CreateIdeas_PastRisks.aspx" />
+    <Content Include="CreateIdeas_PastRisk.aspx" />
+    <Content Include="ResolveRisk.aspx" />
   </ItemGroup>
 </Project>

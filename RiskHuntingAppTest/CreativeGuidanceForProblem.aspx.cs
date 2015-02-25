@@ -283,12 +283,12 @@ namespace RiskHuntingAppTest
 			if (Request.QueryString["id"] != null)
 			{
 				id = Request.QueryString["id"];
-				Session["CurrentOriginalID"] = id;
+				Session ["CurrentOriginalID"] = id;
 			}
 			else
 			{
-				if (Session["CurrentOriginalID"] != null)
-					id = Session["CurrentOriginalID"].ToString();
+				if (Session ["CurrentOriginalID"] != null)
+					id = Session ["CurrentOriginalID"].ToString();
 			}
 			return id;
 		}
@@ -296,8 +296,8 @@ namespace RiskHuntingAppTest
 		private string DetermineResponseUri()
 		{
 			string responseUri = String.Empty;
-			if (Session["CurrentResponseUri"] != null)
-				responseUri = Session["CurrentResponseUri"].ToString();
+			if (Session ["CurrentResponseUri"] != null)
+				responseUri = Session ["CurrentResponseUri"].ToString();
 			else
 			{
 				if (Request.QueryString["path"] != null)

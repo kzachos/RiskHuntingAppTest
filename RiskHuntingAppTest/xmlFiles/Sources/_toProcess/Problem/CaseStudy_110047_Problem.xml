@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>Kos</Author>
+  <LaunchDate>25/02/2015 16:11:37</LaunchDate>
+  <SourceSpecificationLastEdited>25/02/2015 16:11:37</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>John pryke bottle weak spill no seal spillage</Content>
+    <Observations />
+    <ObservedBehaviour>Entrance</ObservedBehaviour>
+    <TreatmentType>Arms</TreatmentType>
+    <DateOfIncident />
+    <AilmentType />
+    <TriggeringEvent />
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

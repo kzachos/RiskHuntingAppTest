@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>kos</Author>
+  <LaunchDate>25/02/2015 15:13:55</LaunchDate>
+  <SourceSpecificationLastEdited>25/02/2015 15:13:55</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>Metal plate and clip left on rear of tractor.could easily fall off onto an operator as goes over bridge or comes down on other side again and again. </Content>
+    <Observations />
+    <ObservedBehaviour>Plant</ObservedBehaviour>
+    <TreatmentType>Head</TreatmentType>
+    <DateOfIncident />
+    <AilmentType />
+    <TriggeringEvent />
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

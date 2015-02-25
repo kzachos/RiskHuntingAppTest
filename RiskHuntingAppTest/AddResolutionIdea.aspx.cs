@@ -70,7 +70,7 @@ namespace RiskHuntingAppTest
 					GenerateXml("Problem");
 					GenerateXml("Solution");
 
-					Response.Redirect("Solution_ResolutionIdeas.aspx");
+					Response.Redirect("ResolveRisk.aspx");
 
 				}
 

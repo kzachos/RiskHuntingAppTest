@@ -31,16 +31,7 @@ function Confirm() {
 <body>
 
 <div id="TopbarProblemIdeas" runat="server">
-	<div id="topbar2">
-		<div id="leftbutton">
-			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');" >
-				cancel
-			</a> 
-		</div>
-		<div id="multiselectionbuttons">
-				Edit Resolution Idea
-		</div>
-	</div>
+
 </div>
 
 <span id="loading"></span>
@@ -49,7 +40,7 @@ function Confirm() {
 	<span class="maintitle">Resolution idea description</span>
 	<ul class="pageitem">
 		<li class="label">
-			<cc1:WatermarkedTextBox id="EditIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			<cc1:WatermarkedTextBox id="EditIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="80" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
 		</li>
 	</ul>
 

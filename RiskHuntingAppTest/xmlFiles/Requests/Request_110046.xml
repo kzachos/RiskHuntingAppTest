@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" requestId="110048" xmlns="http://achernar.soi.city.ac.uk/xmlSchemas/Request">
+  <Registries>
+    <Registry type="Sources" name="-" />
+  </Registries>
+  <Properties>
+    <PartOfSpeech adjective="0" adverb="0" verb="1" noun="1" />
+    <TermExpansion synonym="0" hypernym="0" gloss="0" />
+    <MaxResults>100</MaxResults>
+  </Properties>
+  <DateTime>24/02/2015 18:33:04</DateTime>
+  <SimilarityType>Eddie</SimilarityType>
+  <DataSource>
+    <Type>Document</Type>
+    <Uri>n/a</Uri>
+  </DataSource>
+  <Target>
+    <TargetDescription>[InjuryNature]:  [LocationDetail]: Plant [Content]: Metal plate and clip left on rear of tractor.could easily fall off onto an operator as goes over bridge or comes down on other side again and again.  [BodyPart]: Head</TargetDescription>
+  </Target>
+</Request>

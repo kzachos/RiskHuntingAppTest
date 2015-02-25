@@ -16,7 +16,7 @@
 <div id="TopbarProblemIdeas" runat="server">
 	<div id="topbar2">
 		<div id="leftbutton">
-			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');" >
+			<a href="javascript:doLoad('ResolveRisk.aspx');" >
 				cancel
 			</a> 
 		</div>
@@ -32,7 +32,7 @@
 	<span class="maintitle">Resolution idea description</span>
 	<ul class="pageitem">
 		<li class="label">
-			<cc1:WatermarkedTextBox id="AddIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			<cc1:WatermarkedTextBox id="AddIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="80" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
 		</li>
 	</ul>
 	<ul class="pageitembutton">

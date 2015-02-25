@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://10.200.51.10/" xmlns:tns="http://10.200.51.10/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://10.200.51.10/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The service combines and mixes a problem or idea with extreme persona selected from a static list of 100 personas or from the web. In particular, the service implements the Hall of Fame creativity technique which supports two types of creativity: (1) transformational creativity which encourages problem solvers to think about the space of possible ideas in a different (often larger) way; and  (2) exploratory creativity which enables problem solvers to explore new spaces more effectively with simple guidelines. </wsdl:documentation>
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://10.200.51.10/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="RetrievePersonaSimple">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrievePersonaSimpleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrievePersonaSimpleResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrievePersonaSimpleBroken">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrievePersonaSimpleBrokenResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrievePersonaSimpleBrokenResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrievePersonaAdvanced">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="searchCriteria" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrievePersonaAdvancedResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrievePersonaAdvancedResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RetrieveAllPersonas">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="RetrieveAllPersonasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveAllPersonasResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="string" nillable="true" type="xs:string" />
+    </xs:schema>
+  </types>
+  <message name="RetrievePersonaSimpleSoapIn">
+    <part name="parameters" element="tns:RetrievePersonaSimple" />
+  </message>
+  <message name="RetrievePersonaSimpleSoapOut">
+    <part name="parameters" element="tns:RetrievePersonaSimpleResponse" />
+  </message>
+  <message name="RetrievePersonaSimpleBrokenSoapIn">
+    <part name="parameters" element="tns:RetrievePersonaSimpleBroken" />
+  </message>
+  <message name="RetrievePersonaSimpleBrokenSoapOut">
+    <part name="parameters" element="tns:RetrievePersonaSimpleBrokenResponse" />
+  </message>
+  <message name="RetrievePersonaAdvancedSoapIn">
+    <part name="parameters" element="tns:RetrievePersonaAdvanced" />
+  </message>
+  <message name="RetrievePersonaAdvancedSoapOut">
+    <part name="parameters" element="tns:RetrievePersonaAdvancedResponse" />
+  </message>
+  <message name="RetrieveAllPersonasSoapIn">
+    <part name="parameters" element="tns:RetrieveAllPersonas" />
+  </message>
+  <message name="RetrieveAllPersonasSoapOut">
+    <part name="parameters" element="tns:RetrieveAllPersonasResponse" />
+  </message>
+  <message name="RetrievePersonaSimpleHttpGetIn" />
+  <message name="RetrievePersonaSimpleHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrievePersonaSimpleBrokenHttpGetIn" />
+  <message name="RetrievePersonaSimpleBrokenHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrievePersonaAdvancedHttpGetIn">
+    <part name="searchCriteria" type="s:string" />
+  </message>
+  <message name="RetrievePersonaAdvancedHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveAllPersonasHttpGetIn" />
+  <message name="RetrieveAllPersonasHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrievePersonaSimpleHttpPostIn" />
+  <message name="RetrievePersonaSimpleHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrievePersonaSimpleBrokenHttpPostIn" />
+  <message name="RetrievePersonaSimpleBrokenHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrievePersonaAdvancedHttpPostIn">
+    <part name="searchCriteria" type="s:string" />
+  </message>
+  <message name="RetrievePersonaAdvancedHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RetrieveAllPersonasHttpPostIn" />
+  <message name="RetrieveAllPersonasHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <portType name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap">
+    <operation name="RetrievePersonaSimple">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaSimpleSoapIn" />
+      <output message="tns:RetrievePersonaSimpleSoapOut" />
+    </operation>
+    <operation name="RetrievePersonaSimpleBroken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaSimpleBrokenSoapIn" />
+      <output message="tns:RetrievePersonaSimpleBrokenSoapOut" />
+    </operation>
+    <operation name="RetrievePersonaAdvanced">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  Takes as input simple search criteria &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaAdvancedSoapIn" />
+      <output message="tns:RetrievePersonaAdvancedSoapOut" />
+    </operation>
+    <operation name="RetrieveAllPersonas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting all current characters with image(s) and natural language statements describing attributes of the characters &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrieveAllPersonasSoapIn" />
+      <output message="tns:RetrieveAllPersonasSoapOut" />
+    </operation>
+  </portType>
+  <portType name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpGet">
+    <operation name="RetrievePersonaSimple">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaSimpleHttpGetIn" />
+      <output message="tns:RetrievePersonaSimpleHttpGetOut" />
+    </operation>
+    <operation name="RetrievePersonaSimpleBroken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaSimpleBrokenHttpGetIn" />
+      <output message="tns:RetrievePersonaSimpleBrokenHttpGetOut" />
+    </operation>
+    <operation name="RetrievePersonaAdvanced">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  Takes as input simple search criteria &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaAdvancedHttpGetIn" />
+      <output message="tns:RetrievePersonaAdvancedHttpGetOut" />
+    </operation>
+    <operation name="RetrieveAllPersonas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting all current characters with image(s) and natural language statements describing attributes of the characters &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrieveAllPersonasHttpGetIn" />
+      <output message="tns:RetrieveAllPersonasHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpPost">
+    <operation name="RetrievePersonaSimple">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaSimpleHttpPostIn" />
+      <output message="tns:RetrievePersonaSimpleHttpPostOut" />
+    </operation>
+    <operation name="RetrievePersonaSimpleBroken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaSimpleBrokenHttpPostIn" />
+      <output message="tns:RetrievePersonaSimpleBrokenHttpPostOut" />
+    </operation>
+    <operation name="RetrievePersonaAdvanced">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  Takes as input simple search criteria &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrievePersonaAdvancedHttpPostIn" />
+      <output message="tns:RetrievePersonaAdvancedHttpPostOut" />
+    </operation>
+    <operation name="RetrieveAllPersonas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  No input required &lt;br&gt;&lt;b&gt;Output&lt;/b&gt;: returns a JSON containting all current characters with image(s) and natural language statements describing attributes of the characters &lt;br&gt;&lt;b&gt;Description&lt;/b&gt;:   </wsdl:documentation>
+      <input message="tns:RetrieveAllPersonasHttpPostIn" />
+      <output message="tns:RetrieveAllPersonasHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap" type="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="RetrievePersonaSimple">
+      <soap:operation soapAction="http://10.200.51.10/RetrievePersonaSimple" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaSimpleBroken">
+      <soap:operation soapAction="http://10.200.51.10/RetrievePersonaSimpleBroken" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaAdvanced">
+      <soap:operation soapAction="http://10.200.51.10/RetrievePersonaAdvanced" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllPersonas">
+      <soap:operation soapAction="http://10.200.51.10/RetrieveAllPersonas" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap12" type="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="RetrievePersonaSimple">
+      <soap12:operation soapAction="http://10.200.51.10/RetrievePersonaSimple" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaSimpleBroken">
+      <soap12:operation soapAction="http://10.200.51.10/RetrievePersonaSimpleBroken" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaAdvanced">
+      <soap12:operation soapAction="http://10.200.51.10/RetrievePersonaAdvanced" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllPersonas">
+      <soap12:operation soapAction="http://10.200.51.10/RetrieveAllPersonas" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpGet" type="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="RetrievePersonaSimple">
+      <http:operation location="/RetrievePersonaSimple" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaSimpleBroken">
+      <http:operation location="/RetrievePersonaSimpleBroken" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaAdvanced">
+      <http:operation location="/RetrievePersonaAdvanced" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllPersonas">
+      <http:operation location="/RetrieveAllPersonas" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpPost" type="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="RetrievePersonaSimple">
+      <http:operation location="/RetrievePersonaSimple" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaSimpleBroken">
+      <http:operation location="/RetrievePersonaSimpleBroken" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrievePersonaAdvanced">
+      <http:operation location="/RetrievePersonaAdvanced" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RetrieveAllPersonas">
+      <http:operation location="/RetrieveAllPersonas" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_Service">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The service combines and mixes a problem or idea with extreme persona selected from a static list of 100 personas or from the web. In particular, the service implements the Hall of Fame creativity technique which supports two types of creativity: (1) transformational creativity which encourages problem solvers to think about the space of possible ideas in a different (often larger) way; and  (2) exploratory creativity which enables problem solvers to explore new spaces more effectively with simple guidelines. </wsdl:documentation>
+    <port name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap" binding="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap">
+      <soap:address location="http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx" />
+    </port>
+    <port name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap12" binding="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceSoap12">
+      <soap12:address location="http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx" />
+    </port>
+    <port name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpGet" binding="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpGet">
+      <http:address location="http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx" />
+    </port>
+    <port name="Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpPost" binding="tns:Web-Based_x0020_Hall_x0020_of_x0020_Fame_x0020_ServiceHttpPost">
+      <http:address location="http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx" />
+    </port>
+  </service>
+</definitions>

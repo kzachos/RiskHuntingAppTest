@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>dsfsdfsdf</Author>
+  <LaunchDate>23/02/2015 14:03:35</LaunchDate>
+  <SourceSpecificationLastEdited>23/02/2015 14:03:35</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>dfdfdf</Content>
+    <Observations />
+    <ObservedBehaviour>Corridor</ObservedBehaviour>
+    <TreatmentType>Head</TreatmentType>
+    <DateOfIncident />
+    <AilmentType />
+    <TriggeringEvent />
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

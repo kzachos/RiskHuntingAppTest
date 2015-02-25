@@ -12,6 +12,18 @@ namespace RiskHuntingAppTest
 	
 	public partial class EditResolutionIdea : System.Web.UI.Page
 	{
+		const string Tag1a = "<div id=\"topbar2\">";
+		const string Tag2a = "<div id=\"leftbutton\">";
+		const string Tag3a = "<a href=\"javascript:doLoad('";
+		const string Tag3b = ".aspx');\" >";
+		const string Tag4a = "cancel";
+		const string Tag5a = "</a>";
+		const string Tag6a = "</div>";
+		const string Tag7a = "<div id=\"multiselectionbuttons\">";
+		const string Tag8a = "Edit Resolution Idea";
+		const string Tag9a = "</div>";
+		const string Tag10a = "</div>";
+
 		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
 		protected const string SOURCESPECIFICATION = "SourceSpecification";
 		protected const string PROBLEM = "Problem";
@@ -38,6 +50,8 @@ namespace RiskHuntingAppTest
 				this.sourceId = Session ["CURRENT_RISK"].ToString();	
 			RetrieveCurrentRisk ();
 
+			TopbarProblemIdeas.InnerHtml = GenerateHtml (DetermineFrom ());
+
 			//			if (!Page.IsPostBack) {
 			this.requestContent = DetermineContent ();
 			if (!this.requestContent.Equals (String.Empty)) {
@@ -60,6 +74,16 @@ namespace RiskHuntingAppTest
 				id = Request.QueryString["content"];
 			}
 			return id;
+		}
+
+		private string DetermineFrom()
+		{
+			string f = String.Empty;
+			if (Request.QueryString["from"] != null)
+			{
+				f = Request.QueryString["from"];
+			}
+			return f;
 		}
 
 		void RetrieveCurrentRisk ()
@@ -109,7 +133,7 @@ namespace RiskHuntingAppTest
 					GenerateXml("Problem");
 					GenerateXml("Solution");
 
-					Response.Redirect("Solution_ResolutionIdeas.aspx");
+					Response.Redirect(DetermineFrom () + ".aspx");
 				}
 			}
 		}
@@ -131,9 +155,15 @@ namespace RiskHuntingAppTest
 					GenerateXml ("Problem");
 					GenerateXml ("Solution");
 
-					Response.Redirect ("Solution_ResolutionIdeas.aspx");
+					Response.Redirect (DetermineFrom () + ".aspx");
 				}
 			}
+		}
+
+		private string GenerateHtml(string from)
+		{
+			return Tag1a + Tag2a + Tag3a + from + Tag3b + Tag4a + Tag5a + 
+				Tag6a + Tag7a + Tag8a + Tag9a + Tag10a;
 		}
 
 		#region Xml generation

@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:scl="http://schemas.xmlsoap.org/disco/scl/" xmlns="http://schemas.xmlsoap.org/disco/">
-  <scl:contractRef docRef="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" ref="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx?wsdl" />
+  <scl:contractRef docRef="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" ref="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx?wsdl" />
 </discovery>

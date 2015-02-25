@@ -74,67 +74,34 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			Session.Remove ("CURRENT_PROBLEM_DESC");
-			Session.Remove ("CREATIVITY_PROMPTS");
+			if (Session ["CurrentResponseUri"] != null) 
+				Session.Remove ("CurrentResponseUri");
+			if (Session ["CURRENT_PROBLEM_DESC"] != null) 
+				Session.Remove ("CURRENT_PROBLEM_DESC");
+//			Session.Remove ("CREATIVITY_PROMPTS");
 
 			InitTextElements();
 			InitParametersDropDown ();
 			alert_message_success.Visible = false;
 			alert_message_error.Visible = false;
 
+
+			this.requestId = DetermineID ();
+			if (!this.requestId.Equals (String.Empty)) {
+				deleteRiskDiv.Visible = true;
+				this.sourceId = this.requestId;
+				RetrieveRiskXml ("SourceSpecification");
+				RetrieveRiskXml ("Problem");
+				RetrieveRiskXml ("Solution");
+				Session ["CURRENT_RISK"] = this.sourceId;
+
+			} else
+				deleteRiskDiv.Visible = false;
+
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
-
-				if (Session ["CURRENT_RISK"] != null)
-					sourceId = Session ["CURRENT_RISK"].ToString ();
-					
-				this.responseUri = DetermineResponseUri ();
-				Console.WriteLine ("Default - this.responseUri: " + this.responseUri);
-
-				this.requestId = DetermineID ();
-
-				if (!this.requestId.Equals (String.Empty)) {
-					deleteRiskDiv.Visible = true;
-//					previousrisks.Visible = true;
-					//					navigationbar.Visible = true;
-
-					//					PopulateRiskDetails(this.requestId);
-					this.sourceId = this.requestId;
-					RetrieveRiskXml ("SourceSpecification");
-					RetrieveRiskXml ("Problem");
-					RetrieveRiskXml ("Solution");
-					Console.WriteLine (this.requestId);
-					Session ["CURRENT_RISK"] = this.sourceId;
-
-				} else
-					deleteRiskDiv.Visible = false;
-
-				//queryText.Text = "temp";
-				//				InitDropDownLists();
-				EnableAutoComplete ();
-
-				string script = "$(document).ready(function () { $('[id*=submitClicked]').click(); });";
-				ClientScript.RegisterStartupScript (this.GetType (), "load", script, true);
 			} else {
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
-
-				if (Session ["CURRENT_RISK"] != null) {
-					sourceId = Session ["CURRENT_RISK"].ToString ();
-				}
-				this.responseUri = String.Empty;
-
-				this.requestId = DetermineID ();
-
-				if (!this.requestId.Equals (String.Empty)) {
-					deleteRiskDiv.Visible = true;
-					RetrieveRiskXml ("SourceSpecification");
-					RetrieveRiskXml ("Problem");
-					RetrieveRiskXml ("Solution");
-					Console.WriteLine (this.requestId);
-					Session ["CURRENT_RISK"] = this.sourceId;
-				} else
-					deleteRiskDiv.Visible = false;
-
 			}
 		}
 
@@ -154,14 +121,6 @@ namespace RiskHuntingAppTest
 			}
 			InitCreativeGuidance ();
 
-			if (Session ["CURRENT_RISK"] != null) {
-				if (File.Exists (Path.Combine (responsePath, "Response_" + this.requestId + ".xml")))
-					Topbar_Problem_Search_Solution ();
-				else
-					Topbar_Problem_Solution ();
-			}
-			else
-				Topbar_Problem_Solution_NoSummary ();
 		}
 
 
@@ -210,25 +169,6 @@ namespace RiskHuntingAppTest
 			
 
 		#region Initializing
-		private void Topbar_Problem_Solution_NoSummary ()
-		{
-			TopbarProblemSolutionNoSummary.Visible = true;
-			TopbarProblemSolution.Visible = false;
-			TopbarProblemSearchSolution.Visible = false;
-		}
-		private void Topbar_Problem_Solution ()
-		{
-			TopbarProblemSolutionNoSummary.Visible = false;
-			TopbarProblemSolution.Visible = true;
-			TopbarProblemSearchSolution.Visible = false;
-		}
-
-		private void Topbar_Problem_Search_Solution ()
-		{
-			TopbarProblemSolutionNoSummary.Visible = false;
-			TopbarProblemSolution.Visible = false;
-			TopbarProblemSearchSolution.Visible = true;
-		}
 
 		private void InitCreativeGuidance()
 		{
@@ -448,24 +388,24 @@ namespace RiskHuntingAppTest
 //			Response.Redirect("SearchResults.aspx");
 		}
 
-		private void FindRisks ()
-		{
-			string responseXml = PerformEddie();
-
-			string responseRef = "Response_" + this.requestId + ".xml";
-			//string responseRef = "Response_201131_153042.xml";
-			string responseXmlUri = Path.Combine (responsePath, responseRef);
-			FileStream responseStream = new FileStream(responseXmlUri, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
-			StreamWriter responseStreamWriter = new StreamWriter(responseStream, Encoding.ASCII);
-			responseStreamWriter.Write(responseXml);
-			responseStreamWriter.Flush();
-			responseStreamWriter.Close();
-			responseStream.Close();
-
-			this.responseUri = responseXmlUri;
-			Session["CurrentResponseUri"] = responseXmlUri;
-			Response.Redirect("SearchResults.aspx", false);
-		}
+//		private void FindRisks ()
+//		{
+//			string responseXml = PerformEddie();
+//
+//			string responseRef = "Response_" + this.requestId + ".xml";
+//			//string responseRef = "Response_201131_153042.xml";
+//			string responseXmlUri = Path.Combine (responsePath, responseRef);
+//			FileStream responseStream = new FileStream(responseXmlUri, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
+//			StreamWriter responseStreamWriter = new StreamWriter(responseStream, Encoding.ASCII);
+//			responseStreamWriter.Write(responseXml);
+//			responseStreamWriter.Flush();
+//			responseStreamWriter.Close();
+//			responseStream.Close();
+//
+//			this.responseUri = responseXmlUri;
+//			Session["CurrentResponseUri"] = responseXmlUri;
+//			Response.Redirect("SearchResults.aspx", false);
+//		}
 
 		private Risk NewRisk (bool search)
 		{
@@ -500,8 +440,13 @@ namespace RiskHuntingAppTest
 		{
 			Console.WriteLine ("this.currentRisk.Id (UpdateRisk): " + this.currentRisk.Id.ToString ());
 			Console.WriteLine ("this.sourceId (UpdateRisk): " + this.sourceId.ToString ());
+			if (!this.currentRisk.Content.Equals (RiskDescription.Text)) {
+				if (Session ["CREATIVITY_PROMPTS"] != null)
+					Session.Remove ("CREATIVITY_PROMPTS");
+			}
 			this.currentRisk.Content = RiskDescription.Text;
 			this.currentRisk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
+			this.currentRisk.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
 			//			risk.InjuryNature = CheckTextBoxContent(RiskDanger, DANGER_WATERMARK);
 			this.currentRisk.InjuryNature = String.Empty;
 			this.currentRisk.LocationDetail = RiskLocation.Value;
@@ -512,69 +457,33 @@ namespace RiskHuntingAppTest
 				this.currentRisk.SimilarCasesFound = false;
 		}
 
-		public virtual void submitClicked(object sender, EventArgs args)
-		{
-			if (CheckTextBox() == true)
-			{
-				try 
-				{
+//		public virtual void submitClicked(object sender, EventArgs args)
+//		{
+//			if (CheckTextBox() == true)
+//			{
+//				try 
+//				{
+//
+////					if (Session ["CURRENT_RISK"] == null)
+////					{
+//						CreateRisk (true, true);
+////					}
+////					else
+////						UpdateRisk ();
+//					FindRisks ();
+//				}
+//				catch(Exception ex)
+//				{
+//					Console.WriteLine (ex.ToString ());
+//				}
+//			}
+//			//			else
+//			//			{
+//			//				errorMsg.InnerHtml = "<span class=\"redtitle\">please enter a descriptoin of the risk encountered</span>";
+//			//			}
+//
+//		}
 
-//					if (Session ["CURRENT_RISK"] == null)
-//					{
-						CreateRisk (true, true);
-//					}
-//					else
-//						UpdateRisk ();
-					FindRisks ();
-				}
-				catch(Exception ex)
-				{
-					Console.WriteLine (ex.ToString ());
-				}
-			}
-			//			else
-			//			{
-			//				errorMsg.InnerHtml = "<span class=\"redtitle\">please enter a descriptoin of the risk encountered</span>";
-			//			}
-
-		}
-
-
-		private string PerformEddie()
-		{
-			XmlProc.RequestSerialized.Request request = CreateEddieRequestWithNewRequestId(Path.Combine (xmlFilesPath, "EddieRequest_template.xml"));
-
-			string requestRef = "Request_" + this.requestId + ".xml";
-			string requestXmlUri = Path.Combine (requestPath, requestRef);
-
-			XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Save(request, requestXmlUri);
-
-			FileStream cgStream1 = new FileStream(requestXmlUri, FileMode.Open, FileAccess.Read);
-			StreamReader cgStreamReader1 = new StreamReader(cgStream1);
-			string requestXml = cgStreamReader1.ReadToEnd();
-			cgStreamReader1.Close();
-
-			//errorLabel.Text = requestXml;
-
-			var watch = Stopwatch.StartNew();
-
-			RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
-			eddie.Timeout = 3000000;
-			string eddieResponseXml = eddie.PerformEddieDomain(requestXml, "Risk");
-
-			watch.Stop();
-			// Get the elapsed time as a TimeSpan value.
-			TimeSpan ts = watch.Elapsed;
-			// Format and display the TimeSpan value.
-			string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-				ts.Hours, ts.Minutes, ts.Seconds,
-				ts.Milliseconds / 10);
-			Console.WriteLine(elapsedTime, "RunTime");
-
-			return eddieResponseXml;
-
-
-		}
 
 		private XmlProc.RequestSerialized.Request CreateEddieRequestWithNewRequestId(string requestUri)
 		{
@@ -654,15 +563,17 @@ namespace RiskHuntingAppTest
 				Console.WriteLine ("update");
 				AutoSaveLabel.Text = "Last saved and updated on " + DateTime.Now;
 			}
-			if (this.responseUri.Equals (String.Empty))
+//			if (this.responseUri.Equals (String.Empty))
 				CreateRisk (false, false);
-			else
-				CreateRisk (false, true);
+//			else
+//				CreateRisk (false, true);
+//			Session ["CurrentRiskDescription"] = this.currentRisk.Content; 
 		}
 			
 		private void ResetForm ()
 		{
-			Session.Remove("CURRENT_RISK");
+			if (Session ["CURRENT_RISK"] != null) 
+				Session.Remove("CURRENT_RISK");
 			RiskName.Text = String.Empty;
 			RiskName.WatermarkText = NAME_WATERMARK;
 			RiskDescription.Text = String.Empty;
@@ -672,6 +583,21 @@ namespace RiskHuntingAppTest
 			RiskLocation.SelectedIndex = -1;
 			RiskBodyParts.SelectedIndex = -1;
 			Response.Redirect("Default.aspx");
+		}
+
+		public virtual void ideasClicked(object sender, EventArgs args)
+		{
+			if (CheckTextBox (RiskName, NAME_WATERMARK) && CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
+				Save ();
+				if (Session ["CREATIVITY_PROMPTS"] == null)
+					RetrieveNLData ();
+
+				Response.Redirect ("CreateIdeas_SameRisk.aspx");
+			} else {
+				errorMessage.InnerHtml = ERROR_MESSAGE_REQUIRED;
+				alert_message_error.Visible = true;
+				alert_message_success.Visible = false;
+			}
 		}
 
 		public virtual void resetClicked(object sender, EventArgs args)
@@ -687,7 +613,6 @@ namespace RiskHuntingAppTest
 				alert_message_error.Visible = false;
 				alert_message_success.Visible = true;
 				deleteRiskDiv.Visible = true;
-				Topbar_Problem_Solution ();
 			} else {
 				errorMessage.InnerHtml = ERROR_MESSAGE_REQUIRED;
 				alert_message_error.Visible = true;
@@ -706,11 +631,99 @@ namespace RiskHuntingAppTest
 					Debug.WriteLine (file + " will be deleted");
 					File.Delete (file);
 				}
-				Session.Remove("CURRENT_RISK");
+				if (Session ["CURRENT_RISK"] != null)
+					Session.Remove("CURRENT_RISK");
 				Response.Redirect("Default.aspx");
 			}
 
 		}
+
+		#region Service Call
+
+
+		private string PerformEddie()
+		{
+			XmlProc.RequestSerialized.Request request = CreateEddieRequestWithNewRequestId(Path.Combine (xmlFilesPath, "EddieRequest_template.xml"));
+
+			string requestRef = "Request_" + this.requestId + ".xml";
+			string requestXmlUri = Path.Combine (requestPath, requestRef);
+
+			XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Save(request, requestXmlUri);
+
+			FileStream cgStream1 = new FileStream(requestXmlUri, FileMode.Open, FileAccess.Read);
+			StreamReader cgStreamReader1 = new StreamReader(cgStream1);
+			string requestXml = cgStreamReader1.ReadToEnd();
+			cgStreamReader1.Close();
+
+			//errorLabel.Text = requestXml;
+
+			var watch = Stopwatch.StartNew();
+
+			RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
+			eddie.Timeout = 3000000;
+			string eddieResponseXml = eddie.PerformEddieDomain(requestXml, "Risk");
+
+			watch.Stop();
+			// Get the elapsed time as a TimeSpan value.
+			TimeSpan ts = watch.Elapsed;
+			// Format and display the TimeSpan value.
+			string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+				ts.Hours, ts.Minutes, ts.Seconds,
+				ts.Milliseconds / 10);
+			Console.WriteLine(elapsedTime, "RunTime");
+
+			return eddieResponseXml;
+
+
+		}
+
+		void RetrieveNLData ()
+		{
+			RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
+			System.Net.ServicePointManager.Expect100Continue = false;
+			var output = antique.NLParser (this.currentRisk.Content);
+			var NLResponse = Util.DeserializeNLResponse (output);
+			Session ["CURRENT_PROBLEM_DESC"] = NLResponse;
+		}
+
+		private void RetrieveNLDataAsync()
+		{
+			var watch = Stopwatch.StartNew();
+
+			//			string riskDescription = String.Empty;
+			//			if (Session ["CURRENT_PROBLEM_DESC"] != null)
+			//				riskDescription = Session ["CURRENT_PROBLEM_DESC"].ToString ();
+
+			try {
+				RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
+				antique.NLParserCompleted += objAntique_NLParserCompleted;
+				antique.NLParserAsync (this.currentRisk.Content);
+			}
+			finally {
+
+				watch.Stop ();
+				// Get the elapsed time as a TimeSpan value.
+				TimeSpan ts = watch.Elapsed;
+				// Format and display the TimeSpan value.
+				string elapsedTime = String.Format ("{0:00}:{1:00}:{2:00}.{3:00}",
+					ts.Hours, ts.Minutes, ts.Seconds,
+					ts.Milliseconds / 10);
+				Console.WriteLine (elapsedTime, "RunTime");
+				Response.Redirect ("CreateIdeas_SameRisk.aspx");
+			}
+
+		}
+
+		void objAntique_NLParserCompleted(object sender, 
+			RiskHuntingAppTest.antiqueService.NLParserCompletedEventArgs e)
+		{
+			Console.WriteLine (e.Result);
+			var NLResponse = Util.DeserializeNLResponse (e.Result);
+
+			Session ["CURRENT_PROBLEM_DESC"] = NLResponse;
+		}
+
+		#endregion
 
 		#region Generate and Extract content 
 
