@@ -53,7 +53,7 @@
 	<div id="topbar2Sub">
 		<div id="multiselectionbuttonsSub">
 			<a id="pressed" href="">Ideas from risk itself</a>
-			<a href="javascript:doLoad('CreateIdeas_BrightSparks.aspx');">Ideas from Superheroes</a>
+			<a href="javascript:doLoad('CreateIdeas_Superheroes.aspx');">Ideas from Superheroes</a>
 			<a href="javascript:doLoad('CreateIdeas_PastRisks.aspx');">Ideas from previous risks</a>
 		</div>
 	</div>
@@ -97,11 +97,11 @@
 				</div>
 			</ul>
 
-			<ul class="pageitembutton">
+			<!--<ul class="pageitembutton">
 				<li class="button">
 					<asp:Button id="SaveSelected" runat="server" text="SAVE SELECTED" onclick="submitClicked"></asp:Button>
 				</li>
-			</ul>
+			</ul>-->
 				
 		</form>
 	</div>

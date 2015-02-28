@@ -27,6 +27,11 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Load(object sender, EventArgs e)
 		{			
+			if (Session ["CURRENT_PERSONA"] != null) 
+				Session.Remove ("CURRENT_PERSONA");
+			if (Session ["CURRENT_PERSONAS"] != null) 
+				Session.Remove ("CURRENT_PERSONAS");
+
 			if (Session ["CURRENT_RISK"] != null)
 				this.sourceId = Session ["CURRENT_RISK"].ToString ();
 
@@ -57,7 +62,7 @@ namespace RiskHuntingAppTest
 					divIdeas.InnerHtml += GenerateHtml (this.currentRisk.Recommendations [i].ToString ());
 				}
 			} else {
-				statusLabel.Text = "No resolution ideas available.";
+				statusLabel.Text = "No ideas available.";
 			}
 
 		}
@@ -81,7 +86,7 @@ namespace RiskHuntingAppTest
 
 		public virtual void addNewIdeaClicked(object sender, EventArgs args)
 		{
-			Response.Redirect ("AddResolutionIdea.aspx");
+			Response.Redirect ("AddResolutionIdea.aspx?from=ResolveRisk.aspx");
 		}
 
 		public virtual void goBackClicked(object sender, EventArgs args)

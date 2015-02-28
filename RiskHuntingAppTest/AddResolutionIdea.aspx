@@ -14,22 +14,14 @@
 <body>
 
 <div id="TopbarProblemIdeas" runat="server">
-	<div id="topbar2">
-		<div id="leftbutton">
-			<a href="javascript:doLoad('ResolveRisk.aspx');" >
-				cancel
-			</a> 
-		</div>
-		<div id="multiselectionbuttons">
-				Add New Action
-		</div>
-	</div>
+
 </div>
+
 
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
-	<span class="maintitle">Resolution idea description</span>
+	<!--<span class="maintitle">Idea description</span>-->
 	<ul class="pageitem">
 		<li class="label">
 			<cc1:WatermarkedTextBox id="AddIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="80" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
@@ -37,7 +29,7 @@
 	</ul>
 	<ul class="pageitembutton">
 		<li class="button">
-			<asp:Button id="AddNewIdea" runat="server" text="ADD RESOLUTION IDEA" onclick="addClicked"></asp:Button>
+			<asp:Button id="AddNewIdea" runat="server" text="ADD IDEA" onclick="addClicked"></asp:Button>
 		</li>
 	</ul>
 </form>

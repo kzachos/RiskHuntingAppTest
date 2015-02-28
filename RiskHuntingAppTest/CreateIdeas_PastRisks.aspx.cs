@@ -43,12 +43,17 @@ namespace RiskHuntingAppTest
 		{
 			if (Session ["CURRENT_PAST_RISK_DESC"] != null) 
 				Session.Remove ("CURRENT_PAST_RISK_DESC");
+			if (Session ["CURRENT_PERSONA"] != null) 
+				Session.Remove ("CURRENT_PERSONA");
+			if (Session ["CURRENT_PERSONAS"] != null) 
+				Session.Remove ("CURRENT_PERSONAS");
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
 				creativeGuidance.Visible = false;
-				creativeGuidance2.Visible = false;
+//				creativeGuidance2.Visible = false;
 				alert_message_success.Visible = false;
 				alert_message_error.Visible = false;
+				alert_message_guidance.Visible = false;
 
 				this.sourceId = DetermineID ();
 				this.responseUri = DetermineResponseUri ();
@@ -63,7 +68,7 @@ namespace RiskHuntingAppTest
 			} else {
 				Console.WriteLine ("Page_Load - Page.IsPostBack");
 
-				creativeGuidance2.Visible = true;
+//				creativeGuidance2.Visible = true;
 				this.responseUri = DetermineResponseUri ();
 				if (!responseUri.Equals (String.Empty)) {
 					//				Session.Remove ("CURRENT_RISK_DESC");
@@ -291,6 +296,7 @@ namespace RiskHuntingAppTest
 
 			List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource> matchedSources = (List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource>)response.MatchedSource;
 			if (matchedSources.Count > 0) {
+				alert_message_guidance.Visible = true;
 				submit.Text = "FIND MORE RISKS";
 				if (matchedSources.Count - 1 < max)
 					max = matchedSources.Count - 1;
@@ -336,6 +342,9 @@ namespace RiskHuntingAppTest
 				RetrieveCurrentRisk ();
 				FindRisks ();
 				GenerateMatchedSources(responseUri, 0, Constants.MaxPastRisksAtATime - 1);
+				var processGuidanceText = Util.GenerateProcessGuidance ("riskResolutions");
+				creativeGuidance.Visible = true;
+				creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
 			}
 
 		}

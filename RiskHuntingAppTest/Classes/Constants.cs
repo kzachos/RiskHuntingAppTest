@@ -9,6 +9,9 @@ namespace RiskHuntingAppTest
 		public const string CASEREF = "CaseStudy_";
 		public const string SOURCE_TYPE = CASEREF;
 		public const string CASE_TYPE = "Risk";
+		public const string AUTHOR = "Bassildon Trial";
+
+		public const string PERSONA_TYPE = "Superhero";
 
 		public const string SOURCESPECIFICATION = "SourceSpecification";
 		public const string PROBLEM = "Problem";

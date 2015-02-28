@@ -53,7 +53,7 @@
 	<div id="topbar2Sub">
 		<div id="multiselectionbuttonsSub">
 			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">Ideas from risk itself</a>
-			<a href="javascript:doLoad('CreateIdeas_BrightSparks.aspx');">Ideas from Superheroes</a>
+			<a href="javascript:doLoad('CreateIdeas_Superheroes.aspx');">Ideas from Superheroes</a>
 			<a id="pressed" href="">Ideas from previous risks</a>
 		</div>
 	</div>
@@ -73,7 +73,7 @@
 				</div>
 			</div>
 
-			<div class="alert-box notice">
+			<div class="alert-box notice" id="alert_message_guidance" runat="server">
 				<span>hint: </span>
 				<div id="creativeGuidance" style="display: inline" runat="server"></div>
 				<div class="close">&times;</div>
@@ -94,13 +94,13 @@
 					</li>
 				</ul>
 			</div>
-			<div id="creativeGuidance2" runat="server">
+			<!--<div id="creativeGuidance2" runat="server">
 				<ul class="pageitembutton">
 					<li class="button3">
 						<asp:Button id="creativeGuidanceButton" runat="server" text="VIEW CREATIVE GUIDANCE FOR PROBLEM" onclick="creativeGuidanceClicked"></asp:Button>
 					</li>
 				</ul>
-			</div>
+			</div>-->
 				
 				
 		</form>

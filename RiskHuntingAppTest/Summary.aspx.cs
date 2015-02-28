@@ -85,7 +85,7 @@ namespace RiskHuntingAppTest
 			RetrieveCurrentRisk ();
 			PopulateElements ();
 			PopulateIdeaItems ();
-			PopulateActionItems ();
+//			PopulateActionItems ();
 		
 
 		}
@@ -145,36 +145,39 @@ namespace RiskHuntingAppTest
 
 		#endregion
 
-		public void PopulateActionItems ()
-		{
-			divActions.InnerHtml = String.Empty;
-			if (this.currentRisk.Actions.Count > 0) {
-				for (int i = 0; i < this.currentRisk.Actions.Count; i++) {
-					var item = this.currentRisk.Actions [i];
-//					if (i == 0)
+		#region Actions
+//		public void PopulateActionItems ()
+//		{
+//			divActions.InnerHtml = String.Empty;
+//			if (this.currentRisk.Actions.Count > 0) {
+//				for (int i = 0; i < this.currentRisk.Actions.Count; i++) {
+//					var item = this.currentRisk.Actions [i];
+////					if (i == 0)
+////						divActions.InnerHtml += GenerateHtml (item);
+////					else
 //						divActions.InnerHtml += GenerateHtml (item);
-//					else
-						divActions.InnerHtml += GenerateHtml (item);
-				}
-			}
-			else
-				divActions.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("--No actions available as yet--") +
-				LiEndTag;
-		}
+//				}
+//			}
+//			else
+//				divActions.InnerHtml += LiStartTagLabel +
+//				GenerateContentHtml ("--No actions available as yet--") +
+//				LiEndTag;
+//		}
+//
+//		void GenerateActionList ()
+//		{
+//			if (this.currentRisk.Actions.Count > 0) {
+//				for (int i = 0; i < this.currentRisk.Actions.Count; i++) {
+//					divActions.InnerHtml += GenerateHtml (this.currentRisk.Actions[i]);
+//				}
+//			}
+//			else
+//				divActions.InnerHtml += LiStartTagLabel +
+//					GenerateContentHtml ("--No actions available as yet--") +
+//					LiEndTag;
+//		}
 
-		void GenerateActionList ()
-		{
-			if (this.currentRisk.Actions.Count > 0) {
-				for (int i = 0; i < this.currentRisk.Actions.Count; i++) {
-					divActions.InnerHtml += GenerateHtml (this.currentRisk.Actions[i]);
-				}
-			}
-			else
-				divActions.InnerHtml += LiStartTagLabel +
-					GenerateContentHtml ("--No actions available as yet--") +
-					LiEndTag;
-		}
+		#endregion
 
 		void PopulateIdeaItems ()
 		{
@@ -186,7 +189,7 @@ namespace RiskHuntingAppTest
 			}
 			else
 				divIdeas.InnerHtml += LiStartTagLabel +
-					GenerateContentHtml ("--No ideas generated as yet--") +
+					GenerateContentHtml ("No ideas available") +
 					LiEndTag;
 		}
 
@@ -585,7 +588,46 @@ namespace RiskHuntingAppTest
 
 		#endregion
 
+		private void UpdateCase(string xmlUri, string componentType, string firstLine)
+		{
+			try
+			{
+				FileStream cgStream = new FileStream(xmlUri, FileMode.Open, FileAccess.Read);
+				var xmlContent = String.Empty;
+				using (StreamReader cgStreamReader = new StreamReader(cgStream))
+				{
+					string headerLine = cgStreamReader.ReadLine();
+					headerLine = cgStreamReader.ReadLine();
+					string line;
+					while ((line = cgStreamReader.ReadLine()) != null)
+					{
+						xmlContent += line;
+
+					}
+				}
+				cgStream.Close();
+				xmlContent = firstLine + xmlContent;
+				RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
+				Console.WriteLine(eddie.UpdateCase (xmlContent, componentType, this.sourceId));
+			}
+			catch {
+			}
+		}
+
 		public virtual void submitClicked(object sender, EventArgs args)
+		{
+			if (Page.IsValid) {
+				var Ref = Constants.CASEREF + this.sourceId + "_" + Constants.SOURCESPECIFICATION + ".xml";
+				var xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOURCESPECIFICATION, Ref);
+				UpdateCase (xmlUri, Constants.SOURCESPECIFICATION, "<SourceSpecification> ");
+				UpdateCase (xmlUri, Constants.PROBLEM, "<LanguageSpecificSpecification> ");
+				UpdateCase (xmlUri, Constants.SOLUTION, "<LanguageSpecificSpecification> ");
+				UpdateCase (xmlUri, Constants.ADDITIONAL, "<LanguageSpecificSpecification> ");
+			}
+
+		}
+
+		public virtual void exportClicked (object sender, EventArgs args)
 		{
 
 			BuildPdf ();

@@ -12,10 +12,10 @@ namespace RiskHuntingAppTest
 		IdeasGenerated,
 //		[Description("Similar risks found")]
 //		SimilarRisksFound,
-		[Description("Actions Formulated")]
-		ActionsFormulated,
-		[Description("Risk Resolved")]
-		RiskResolved
+//		[Description("Actions Formulated")]
+//		ActionsFormulated,
+//		[Description("Risk Resolved")]
+//		RiskResolved
 	}
 
 	public enum RiskResolutionType {
@@ -87,12 +87,12 @@ namespace RiskHuntingAppTest
 			case "IdeasGenerated":
 				State = RiskQueryState.IdeasGenerated;
 				break;
-			case "ActionsFormulated":
-				State = RiskQueryState.ActionsFormulated;
-				break;
-			case "RiskResolved":
-				State = RiskQueryState.RiskResolved;
-				break;
+//			case "ActionsFormulated":
+//				State = RiskQueryState.ActionsFormulated;
+//				break;
+//			case "RiskResolved":
+//				State = RiskQueryState.RiskResolved;
+//				break;
 			}
 
 

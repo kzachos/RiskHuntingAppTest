@@ -20,7 +20,7 @@ namespace RiskHuntingAppTest
 		const string Tag5a = "</a>";
 		const string Tag6a = "</div>";
 		const string Tag7a = "<div id=\"multiselectionbuttons\">";
-		const string Tag8a = "Edit Resolution Idea";
+		const string Tag8a = "Edit Idea";
 		const string Tag9a = "</div>";
 		const string Tag10a = "</div>";
 

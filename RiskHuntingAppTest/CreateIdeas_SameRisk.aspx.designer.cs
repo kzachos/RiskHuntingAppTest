@@ -20,6 +20,8 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl successMessage;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_error;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_guidance;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 		
@@ -30,7 +32,5 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl generatePrompts;
 		
 		protected System.Web.UI.WebControls.Button GenerateAgain;
-		
-		protected System.Web.UI.WebControls.Button SaveSelected;
 	}
 }

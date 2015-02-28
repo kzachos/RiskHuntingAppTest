@@ -272,12 +272,6 @@
     <Compile Include="Web References\antiqueService\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="CreateIdeas_BrightSparks.aspx.cs">
-      <DependentUpon>CreateIdeas_BrightSparks.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateIdeas_BrightSparks.aspx.designer.cs">
-      <DependentUpon>CreateIdeas_BrightSparks.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CreateIdeas_PastRisks.aspx.cs">
       <DependentUpon>CreateIdeas_PastRisks.aspx</DependentUpon>
     </Compile>
@@ -302,6 +296,19 @@
     </Compile>
     <Compile Include="Web References\hofService\Reference.cs">
       <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_Superheroes.aspx.cs">
+      <DependentUpon>CreateIdeas_Superheroes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateIdeas_Superheroes.aspx.designer.cs">
+      <DependentUpon>CreateIdeas_Superheroes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Persona.cs" />
+    <Compile Include="DescribeRisk.aspx.cs">
+      <DependentUpon>DescribeRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DescribeRisk.aspx.designer.cs">
+      <DependentUpon>DescribeRisk.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -389,9 +396,12 @@
     <Content Include="ErrorHandling\HttpErrorPage.aspx" />
     <Content Include="Theme\css\style2.css" />
     <Content Include="CreateIdeas_SameRisk.aspx" />
-    <Content Include="CreateIdeas_BrightSparks.aspx" />
     <Content Include="CreateIdeas_PastRisks.aspx" />
     <Content Include="CreateIdeas_PastRisk.aspx" />
     <Content Include="ResolveRisk.aspx" />
+    <Content Include="Theme\javascript\jquery.layout-latest.js" />
+    <Content Include="Theme\javascript\jquery-latest.js" />
+    <Content Include="CreateIdeas_Superheroes.aspx" />
+    <Content Include="DescribeRisk.aspx" />
   </ItemGroup>
 </Project>

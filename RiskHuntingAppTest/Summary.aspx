@@ -113,12 +113,12 @@
 
 	<br><br>
 
-	<span class="maintitle">Action Plan</span>
+	<!--<span class="maintitle">Action Plan</span>
 	<br><br>
 	<ul class="pageitemborder">
 		<div id="divActions" runat="server">
 		</div>
-	</ul>
+	</ul>-->
 
 	<!--<span class="maintitle">Risk Name</span>
 	<ul class="pageitem">
@@ -157,10 +157,15 @@
 			<asp:Label id="statusLabel" runat="server"></asp:Label>
 		</li>
 	</ul>
+	<ul class="pageitembutton">
+		<li class="button">
+			<asp:button id="submit" runat="server" text="SUBMIT CASE" onclick="submitClicked" onClientclick="needToConfirm = false;"></asp:button>
+		</li>
+	</ul>
 
 	<ul class="pageitembutton">
 		<li class="button3">
-			<asp:Button id="Export" runat="server" text="EXPORT" onclick="submitClicked"></asp:Button>
+			<asp:Button id="Export" runat="server" text="EXPORT" onclick="exportClicked"></asp:Button>
 		</li>
 	</ul>
 </form>

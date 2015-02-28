@@ -182,7 +182,6 @@ a:hover .arrow {
 	line-height: 44px;
 	height: 44px;
 	font-size: 16pt;
-	font-weight:bold;
 	text-shadow: #FFF 0px 1px 0px;
 	text-align: center;
 	text-overflow: ellipsis;
@@ -194,15 +193,8 @@ a:hover .arrow {
 }
 #multiselectionbuttonsSub {
 	text-align:center;
-	line-height: 33px;
-	height: 33px;
 	font-size: 12pt;
-	font-weight:bold;
-	text-shadow: #FFF 0px 1px 0px;
 	text-align: center;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
 }
 #multiselectionbuttonsSub a {
 	padding:15px;
@@ -514,12 +506,12 @@ a {
 #tributton a:hover, #duobutton a:hover {
 	background: #BA8D96;
 	color: white;
-	text-shadow: black 0 0px 0;
+	text-shadow: none;
 }
 #tributton a#pressed, #duobutton a#pressed {
 	background: #941830;
 	color: white;
-	text-shadow: black 0 0px 0;
+	text-shadow: none;
 }
 #triselectionbuttons, #duoselectionbuttons {
 /*	-webkit-border-image: url('../images/navbutton.png') 0 5 0 5;*/
@@ -559,7 +551,6 @@ a {
 #multiselectionbuttons a:hover, #multiselectionbuttonsSub a:hover, #multiselectionbuttons a#pressed, #multiselectionbuttonsSub a#pressed {
 	background: none;
 	color: #941830;
-	font-weight:bold;
 	text-decoration: none;
 }
 
@@ -1291,7 +1282,6 @@ li:last-child.store .image, .store:last-child a {
 	font-size: 14px;
 	top: 8px;
 	left: 9px;
-	font-weight: bold;
 }
 #leftnav, #leftbutton, #rightnav, #rightbutton, #blueleftbutton, #bluerightbutton {
 	z-index: 5000;
@@ -1300,11 +1290,9 @@ li:last-child.store .image, .store:last-child a {
 	display: block;
 	color: #787878;
 	text-decoration: none;
-	text-shadow: black 0 0px 0;
 }
 #leftnav a:hover, #leftnav a#pressed, #rightnav a:hover, #rightnav a#pressed, #leftbutton a:hover, #leftbutton a#pressed, #rightbutton a:hover, #rightbutton a#pressed {
 	color: #941830;
-	text-shadow: black 0 0px 0;
 }
 .black #leftnav a:first-child, .transparent #leftnav a:first-child {
 	-webkit-border-image: url("../images/navleftblack.png") 0 5 0 13;
@@ -1348,7 +1336,6 @@ li:last-child.store .image, .store:last-child a {
 	font-size: 14px;
 	top: 8px;
 	right: 9px;
-	font-weight: bold;
 }
 #rightnav a {
 /*	-webkit-border-image: url("../images/navlinkright1.png") 0 13 0 5;*/
@@ -1445,60 +1432,74 @@ select {
 	border-width: 10px;
 }
 .button input {
-	width: 100%;
-	height: 100%;
-	-webkit-appearance: none;
-	border: 2;
-	-webkit-border-radius: 0;
-	font-weight: bold;
-	font-size: 17px;
-	color: white;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	background: #7AB395;
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #2DCC70;
+  background-color: #2DCC70;
 }
+
+
 .button2 input {
-	width: 100%;
-	height: 100%;
-	-webkit-appearance: none;
-	border: 2;
-	-webkit-border-radius: 0;
-	font-weight: bold;
-	font-size: 17px;
-	color: white;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	background: #BF979F;
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #E54D42;
+  background-color: #E54D42;
 }
 .button3 input {
-    width: 100%;
-    height: 100%;
-    -webkit-appearance: none;
-    border: 2;
-    -webkit-border-radius: 0;
-    font-weight: bold;
-    font-size: 17px;
-    color: white;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    background: #87AFED;
+   width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #3598DC;
+  background-color: #3598DC;
 }
 .buttonGrey input {
     width: 100%;
-    height: 100%;
-    -webkit-appearance: none;
-    border: 2;
-    -webkit-border-radius: 0;
-    font-weight: bold;
-    font-size: 17px;
-    color: white;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    background: #787878;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #787878;
+  background-color: #787878;
 }
 .textbox textarea {
 	padding: 0;

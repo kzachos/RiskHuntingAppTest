@@ -23,6 +23,8 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_guidance;
+		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl responses;
@@ -30,9 +32,5 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl submitDiv;
 		
 		protected System.Web.UI.WebControls.Button submit;
-		
-		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance2;
-		
-		protected System.Web.UI.WebControls.Button creativeGuidanceButton;
 	}
 }

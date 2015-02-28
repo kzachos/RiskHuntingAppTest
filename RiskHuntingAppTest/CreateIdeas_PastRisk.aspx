@@ -38,6 +38,7 @@
 			</a> 
 		</div>
 		<div id="multiselectionbuttons">
+			Past Risk
 		</div>
 	</div>
 		
@@ -80,11 +81,11 @@
 				</div>
 			</ul>
 
-			<ul class="pageitembutton">
+			<!--<ul class="pageitembutton">
 				<li class="button">
 					<asp:Button id="SaveSelected" runat="server" text="SAVE SELECTED" onclick="submitClicked"></asp:Button>
 				</li>
-			</ul>
+			</ul>-->
 				
 			
 			<!--<ul class="pageitembutton">

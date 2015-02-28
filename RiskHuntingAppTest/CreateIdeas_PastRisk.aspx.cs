@@ -4,6 +4,7 @@ using System.Web.UI;
 using System.Collections.Generic;
 using System.IO;
 using System.Web.UI.WebControls;
+using System.Collections.Specialized;
 
 namespace RiskHuntingAppTest
 {
@@ -23,6 +24,17 @@ namespace RiskHuntingAppTest
 		const string Tag9 = "</asp:Label>";
 		const string Tag10 = "</li>";
 
+
+		const string SpanStartTagMenu = "<span class=menu>";
+		const string SpanStartTagName = "<span class=name>";
+		const string SpanStartTagArrow = "<span class=arrow>";
+		const string SpanEndTag = "</span>";
+		const string LiStartTagMenu = "<li class=menu>";
+		const string LiEndTag = "</li>";
+		const string aStartTag = "<a href=\"javascript:doLoad('AddResolutionIdea.aspx?from=CreateIdeas_PastRisk.aspx@id=";
+		const string aMidTag1 = "&content=";
+		const string aMidTag2 = "');\">";
+		const string aEndTag = "</a>";
 
 		int total;
 
@@ -51,7 +63,8 @@ namespace RiskHuntingAppTest
 //				if (Session ["CURRENT_PAST_RISK_DESC"] != null) 
 //					Session.Remove ("CURRENT_PAST_RISK_DESC");
 				CreativityPromptsFeed = (IList<string>) Session ["CREATIVITY_PROMPTS_PAST_RISK"];
-				CreativityPromptsFeed.Shuffle ();
+				if (DetermineFrom().Equals(String.Empty))
+					CreativityPromptsFeed.Shuffle ();
 				PopulateData ();
 			} else {
 //				if (Session ["CURRENT_PAST_RISK_DESC"] != null)
@@ -86,6 +99,18 @@ namespace RiskHuntingAppTest
 
 			if (Session ["CURRENT_RISK"] != null)
 				sourceId = Session ["CURRENT_RISK"].ToString();
+		}
+
+		private string DetermineFrom()
+		{
+			string c = String.Empty;
+			if (Request.QueryString["pb"] != null)
+			{
+				c = Request.QueryString["pb"];
+				NameValueCollection filtered = new NameValueCollection(Request.QueryString);
+				filtered.Remove("pb");			
+			}
+			return c;
 		}
 
 		#region Creativity Prompts
@@ -215,7 +240,8 @@ namespace RiskHuntingAppTest
 				if (this.total > 0)
 				{
 					for (int i = 0; i < this.total; i++) {
-						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
+						content2.InnerHtml += GenerateHtml (CreativityPromptsFeed [i]);
+//						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
 						Console.WriteLine (CreativityPromptsFeed [i]);
 					}
 					Session ["CREATIVITY_PROMPTS_PAST_RISK"] = CreativityPromptsFeed;
@@ -228,7 +254,8 @@ namespace RiskHuntingAppTest
 					this.total = CreativityPromptsFeed.Count < Constants.MaxPromptsAtATime ? CreativityPromptsFeed.Count : Constants.MaxPromptsAtATime;
 					int counter = 0;
 					for (int i = 0; i < this.total; i++) {
-						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
+						content2.InnerHtml += GenerateHtml (CreativityPromptsFeed [i]);
+//						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
 						Console.WriteLine (CreativityPromptsFeed [i]);
 					}
 				}
@@ -261,6 +288,8 @@ namespace RiskHuntingAppTest
 		public virtual void morePromptsClicked(object sender, EventArgs args)
 		{
 			if (Session ["CREATIVITY_PROMPTS_PAST_RISK"] != null) {
+				content2.Controls.Clear ();
+				GenerateContent ();
 				CreativityPromptsFeed = (IList<string>) Session ["CREATIVITY_PROMPTS_PAST_RISK"];
 				CreativityPromptsFeed.Shuffle ();
 				PopulateData ();
@@ -293,12 +322,14 @@ namespace RiskHuntingAppTest
 
 						var recommendation = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Recommendation").Trim();
 						if (!recommendation.Trim().Equals (String.Empty))
-							GenerateHtml2 (recommendation, String.Empty, counter++);
+							content2.InnerHtml += GenerateHtml (recommendation);
+//							GenerateHtml2 (recommendation, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml3 (recommendation, String.Empty, 0);
 
 						var correctiveActions = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Corrective Actions");
 						if (!correctiveActions.Trim().Equals (String.Empty))
-							GenerateHtml2 (correctiveActions, String.Empty, counter++);
+							content2.InnerHtml += GenerateHtml (correctiveActions);
+//							GenerateHtml2 (correctiveActions, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml3 (correctiveActions, String.Empty, 0);
 
 						string ignoreWord = "None";
@@ -306,7 +337,8 @@ namespace RiskHuntingAppTest
 						if (!countermeasures.Equals (String.Empty) 
 							&& !countermeasures.Trim().ToLower().Contains (ignoreWord.ToLower())
 						)
-							GenerateHtml2 (countermeasures, String.Empty, counter++);
+							content2.InnerHtml += GenerateHtml (countermeasures);
+//							GenerateHtml2 (countermeasures, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml2 (countermeasures, String.Empty, 0);
 
 						//							var c = new CheckBox ();
@@ -376,6 +408,14 @@ namespace RiskHuntingAppTest
 		}
 
 		#endregion
+
+		private string GenerateHtml(string idea)
+		{
+			return LiStartTagMenu +
+				aStartTag + DetermineID() + aMidTag1 + idea + aMidTag2 +
+				SpanStartTagName + idea + SpanEndTag +
+				SpanStartTagArrow + SpanEndTag + aEndTag + LiEndTag;
+		}
 
 		private CheckBox CreateCheckboxControl(string id, string content)
 		{

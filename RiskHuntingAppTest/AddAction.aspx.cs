@@ -102,7 +102,7 @@ namespace RiskHuntingAppTest
 			{
 				if (!AddActionDescription.Text.Equals(ADDACTION_WATERMARK)) {
 
-					this.currentRisk.State = RiskQueryState.ActionsFormulated;
+//					this.currentRisk.State = RiskQueryState.ActionsFormulated;
 					Action action = new Action ();
 					action.Id = Guid.NewGuid().ToString("N");
 					action.Content = AddActionDescription.Text;

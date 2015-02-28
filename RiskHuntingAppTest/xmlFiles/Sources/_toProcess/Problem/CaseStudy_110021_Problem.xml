@@ -3,13 +3,13 @@
   <FacetType>Problem</FacetType>
   <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
   <Author>Kos</Author>
-  <LaunchDate>07/11/2014 17:08:18</LaunchDate>
-  <SourceSpecificationLastEdited>07/11/2014 17:08:18</SourceSpecificationLastEdited>
+  <LaunchDate>28/02/2015 20:49:30</LaunchDate>
+  <SourceSpecificationLastEdited>28/02/2015 20:49:30</SourceSpecificationLastEdited>
   <FacetSpecificationData>
     <Content>the floor is wet and slippery</Content>
     <Observations />
-    <ObservedBehaviour>Plant</ObservedBehaviour>
-    <TreatmentType>Head</TreatmentType>
+    <ObservedBehaviour>Entrance</ObservedBehaviour>
+    <TreatmentType>Hands</TreatmentType>
     <DateOfIncident />
     <AilmentType />
     <TriggeringEvent />

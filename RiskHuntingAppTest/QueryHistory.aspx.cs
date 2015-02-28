@@ -59,6 +59,7 @@ namespace RiskHuntingAppTest
 
         protected void Page_Init(object sender, EventArgs e)
         {
+			Session.RemoveAll ();
 			this.maxId = 1000;
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");

@@ -19,6 +19,9 @@ namespace RiskHuntingAppTest
 		private const string creativityPromptsPastRisk = "CREATIVITY_PROMPTS_PAST_RISK";
 		private const string currentResponseUri = "CurrentResponseUri";
 		private const string currentOriginalID = "CurrentOriginalID";
+		private const string currentPersonas = "CURRENT_PERSONAS";
+		private const string currentPersona = "CURRENT_PERSONA";
+
 		//---------------------------------------------------------------------
 		#endregion
 
@@ -150,6 +153,36 @@ namespace RiskHuntingAppTest
 			set
 			{
 				HttpContext.Current.Session [currentOriginalID] = value;
+			}
+		}
+
+		public static string PersonaState
+		{
+			get {
+				var obj = HttpContext.Current.Session [currentPersona];
+				if (obj == null)
+					return String.Empty;
+				return (string)obj;
+			}
+
+			set
+			{
+				HttpContext.Current.Session [currentPersona] = value;
+			}
+		}
+
+		public static List<Persona> PersonasState
+		{
+			get {
+				var obj = HttpContext.Current.Session [currentPersonas];
+				if (obj == null)
+					return null;
+				return (List<Persona>)obj;
+			}
+
+			set
+			{
+				HttpContext.Current.Session [currentPersonas] = value;
 			}
 		}
 

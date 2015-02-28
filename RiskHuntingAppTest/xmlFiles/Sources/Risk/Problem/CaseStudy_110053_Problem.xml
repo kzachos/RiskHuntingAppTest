@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>Kos</Author>
+  <LaunchDate>27/02/2015 22:33:30</LaunchDate>
+  <SourceSpecificationLastEdited>27/02/2015 22:33:30</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>a child is under the tractor</Content>
+    <Observations />
+    <ObservedBehaviour>Entrance</ObservedBehaviour>
+    <TreatmentType>Hands</TreatmentType>
+    <DateOfIncident />
+    <AilmentType />
+    <TriggeringEvent />
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

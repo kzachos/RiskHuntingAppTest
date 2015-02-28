@@ -24,9 +24,15 @@ namespace RiskHuntingAppTest.hofService {
         
         private System.Threading.SendOrPostCallback RetrievePersonaSimpleBrokenOperationCompleted;
         
+        private System.Threading.SendOrPostCallback RetrievePersonaFromTypeSimpleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RetrieveSinglePersonaSimpleOperationCompleted;
+        
         private System.Threading.SendOrPostCallback RetrievePersonaAdvancedOperationCompleted;
         
         private System.Threading.SendOrPostCallback RetrieveAllPersonasOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RetrieveAllPersonasFromTypeOperationCompleted;
         
         public WebBasedHallofFameService() {
             this.Url = "http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx";
@@ -40,9 +46,15 @@ namespace RiskHuntingAppTest.hofService {
         
         public event RetrievePersonaSimpleBrokenCompletedEventHandler RetrievePersonaSimpleBrokenCompleted;
         
+        public event RetrievePersonaFromTypeSimpleCompletedEventHandler RetrievePersonaFromTypeSimpleCompleted;
+        
+        public event RetrieveSinglePersonaSimpleCompletedEventHandler RetrieveSinglePersonaSimpleCompleted;
+        
         public event RetrievePersonaAdvancedCompletedEventHandler RetrievePersonaAdvancedCompleted;
         
         public event RetrieveAllPersonasCompletedEventHandler RetrieveAllPersonasCompleted;
+        
+        public event RetrieveAllPersonasFromTypeCompletedEventHandler RetrieveAllPersonasFromTypeCompleted;
         
         /// <remarks>
 ///<b>Input</b>:  No input required <br><b>Output</b>: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character <br><b>Description</b>:   
@@ -113,6 +125,84 @@ namespace RiskHuntingAppTest.hofService {
             if ((this.RetrievePersonaSimpleBrokenCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.RetrievePersonaSimpleBrokenCompleted(this, new RetrievePersonaSimpleBrokenCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks>
+///<b>Input</b>:  Type of personas that should be returned, e.g. film or superheroes <br><b>Output</b>: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character <br><b>Description</b>:   
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://10.200.51.10/RetrievePersonaFromTypeSimple", RequestNamespace="http://10.200.51.10/", ResponseNamespace="http://10.200.51.10/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string RetrievePersonaFromTypeSimple(string type) {
+            object[] results = this.Invoke("RetrievePersonaFromTypeSimple", new object[] {
+                        type});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginRetrievePersonaFromTypeSimple(string type, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("RetrievePersonaFromTypeSimple", new object[] {
+                        type}, callback, asyncState);
+        }
+        
+        public string EndRetrievePersonaFromTypeSimple(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void RetrievePersonaFromTypeSimpleAsync(string type) {
+            this.RetrievePersonaFromTypeSimpleAsync(type, null);
+        }
+        
+        public void RetrievePersonaFromTypeSimpleAsync(string type, object userState) {
+            if ((this.RetrievePersonaFromTypeSimpleOperationCompleted == null)) {
+                this.RetrievePersonaFromTypeSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRetrievePersonaFromTypeSimpleCompleted);
+            }
+            this.InvokeAsync("RetrievePersonaFromTypeSimple", new object[] {
+                        type}, this.RetrievePersonaFromTypeSimpleOperationCompleted, userState);
+        }
+        
+        private void OnRetrievePersonaFromTypeSimpleCompleted(object arg) {
+            if ((this.RetrievePersonaFromTypeSimpleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RetrievePersonaFromTypeSimpleCompleted(this, new RetrievePersonaFromTypeSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks>
+///<b>Input</b>:  Name of persona that should be returned, e.g. superman <br><b>Output</b>: returns a JSON containting one character with image(s) and natural language statements describing attributes of the character <br><b>Description</b>:   
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://10.200.51.10/RetrieveSinglePersonaSimple", RequestNamespace="http://10.200.51.10/", ResponseNamespace="http://10.200.51.10/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string RetrieveSinglePersonaSimple(string name) {
+            object[] results = this.Invoke("RetrieveSinglePersonaSimple", new object[] {
+                        name});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginRetrieveSinglePersonaSimple(string name, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("RetrieveSinglePersonaSimple", new object[] {
+                        name}, callback, asyncState);
+        }
+        
+        public string EndRetrieveSinglePersonaSimple(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void RetrieveSinglePersonaSimpleAsync(string name) {
+            this.RetrieveSinglePersonaSimpleAsync(name, null);
+        }
+        
+        public void RetrieveSinglePersonaSimpleAsync(string name, object userState) {
+            if ((this.RetrieveSinglePersonaSimpleOperationCompleted == null)) {
+                this.RetrieveSinglePersonaSimpleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRetrieveSinglePersonaSimpleCompleted);
+            }
+            this.InvokeAsync("RetrieveSinglePersonaSimple", new object[] {
+                        name}, this.RetrieveSinglePersonaSimpleOperationCompleted, userState);
+        }
+        
+        private void OnRetrieveSinglePersonaSimpleCompleted(object arg) {
+            if ((this.RetrieveSinglePersonaSimpleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RetrieveSinglePersonaSimpleCompleted(this, new RetrieveSinglePersonaSimpleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -190,6 +280,45 @@ namespace RiskHuntingAppTest.hofService {
                 this.RetrieveAllPersonasCompleted(this, new RetrieveAllPersonasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
+        
+        /// <remarks>
+///<b>Input</b>:  No input required <br><b>Output</b>: returns a JSON containting all current characters with image(s) and natural language statements describing attributes of the characters <br><b>Description</b>:   
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://10.200.51.10/RetrieveAllPersonasFromType", RequestNamespace="http://10.200.51.10/", ResponseNamespace="http://10.200.51.10/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string RetrieveAllPersonasFromType(string type) {
+            object[] results = this.Invoke("RetrieveAllPersonasFromType", new object[] {
+                        type});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginRetrieveAllPersonasFromType(string type, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("RetrieveAllPersonasFromType", new object[] {
+                        type}, callback, asyncState);
+        }
+        
+        public string EndRetrieveAllPersonasFromType(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void RetrieveAllPersonasFromTypeAsync(string type) {
+            this.RetrieveAllPersonasFromTypeAsync(type, null);
+        }
+        
+        public void RetrieveAllPersonasFromTypeAsync(string type, object userState) {
+            if ((this.RetrieveAllPersonasFromTypeOperationCompleted == null)) {
+                this.RetrieveAllPersonasFromTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRetrieveAllPersonasFromTypeCompleted);
+            }
+            this.InvokeAsync("RetrieveAllPersonasFromType", new object[] {
+                        type}, this.RetrieveAllPersonasFromTypeOperationCompleted, userState);
+        }
+        
+        private void OnRetrieveAllPersonasFromTypeCompleted(object arg) {
+            if ((this.RetrieveAllPersonasFromTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RetrieveAllPersonasFromTypeCompleted(this, new RetrieveAllPersonasFromTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
     }
     
     public partial class RetrievePersonaSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -230,6 +359,44 @@ namespace RiskHuntingAppTest.hofService {
     
     public delegate void RetrievePersonaSimpleBrokenCompletedEventHandler(object sender, RetrievePersonaSimpleBrokenCompletedEventArgs args);
     
+    public partial class RetrievePersonaFromTypeSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RetrievePersonaFromTypeSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void RetrievePersonaFromTypeSimpleCompletedEventHandler(object sender, RetrievePersonaFromTypeSimpleCompletedEventArgs args);
+    
+    public partial class RetrieveSinglePersonaSimpleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RetrieveSinglePersonaSimpleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void RetrieveSinglePersonaSimpleCompletedEventHandler(object sender, RetrieveSinglePersonaSimpleCompletedEventArgs args);
+    
     public partial class RetrievePersonaAdvancedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -267,4 +434,23 @@ namespace RiskHuntingAppTest.hofService {
     }
     
     public delegate void RetrieveAllPersonasCompletedEventHandler(object sender, RetrieveAllPersonasCompletedEventArgs args);
+    
+    public partial class RetrieveAllPersonasFromTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RetrieveAllPersonasFromTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void RetrieveAllPersonasFromTypeCompletedEventHandler(object sender, RetrieveAllPersonasFromTypeCompletedEventArgs args);
 }

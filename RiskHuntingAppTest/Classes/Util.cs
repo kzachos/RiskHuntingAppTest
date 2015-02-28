@@ -322,12 +322,80 @@ namespace RiskHuntingAppTest
 
 		#endregion 
 
+		public static string GenerateAdaptedIdeaFromCreativityPrompt(string text)
+		{
+			string formattedText = String.Empty;
+			if (text.StartsWith("how to"))
+				formattedText = text.Replace ("how to ", String.Empty);
+				
+			if (text.StartsWith("if you can"))
+				formattedText = text.Replace ("if you can ", String.Empty);
+				
+			if (text.StartsWith("if it is possible to"))
+				formattedText = text.Replace ("if it is possible to ", String.Empty);
+				
+			if (text.StartsWith("how you"))
+				formattedText = text.Replace ("how you ", String.Empty);
+				
+			if (text.StartsWith("whether you can"))
+				formattedText = text.Replace ("whether you can ", String.Empty);
+				
+			if (text.StartsWith("how you might"))
+				formattedText = text.Replace ("how you might ", String.Empty);
+				
+			if (text.StartsWith("if you could"))
+				formattedText = text.Replace ("if you could ", String.Empty);
+				
+			if (text.StartsWith("whether it is possible to"))
+				formattedText = text.Replace ("whether it is possible to ", String.Empty);
+				
+			if (text.StartsWith("trying to"))
+				formattedText = text.Replace ("trying to ", String.Empty);
+				
+			if (text.StartsWith("either trying to"))
+				formattedText = text.Replace ("either trying to ", String.Empty);
+				
+			if (text.StartsWith("doing"))
+				formattedText = text.Replace ("doing", "do");
+				
+			if (text.StartsWith("making"))
+				formattedText = text.Replace ("making", "make");
+				
+			if (text.StartsWith("dividing"))
+				formattedText = text.Replace ("dividing", "divide");
+				
+			if (text.StartsWith("putting"))
+				formattedText = text.Replace ("putting", "put");
+				
+			if (text.StartsWith("deactivating"))
+				formattedText = text.Replace ("deactivating", "deactivate");
+				
+			if (text.StartsWith("using"))
+				formattedText = text.Replace ("using", "use");
+				
+			if (text.StartsWith("having"))
+				formattedText = text.Replace ("having", "have");
+				
+			return formattedText;
+		}
 
 		public static List<NLResponseToken> DeserializeNLResponse (string jsonString)
 		{
 			List<NLResponseToken> response = new List<NLResponseToken> ();
 			try {
 				response = JsonConvert.DeserializeObject<List<NLResponseToken>>(jsonString);
+
+			} catch (Exception ex) {
+				Debug.WriteLine ("ERROR deserializing downloaded NLParser JSON: " + ex);
+			}
+			return response;
+		}
+
+		public static List<Persona> DeserializeHofResponse (string jsonString)
+		{
+			List<Persona> response = new List<Persona> ();
+			try {
+				response = JsonConvert.DeserializeObject<List<Persona>>(jsonString);
 
 			} catch (Exception ex) {
 				Debug.WriteLine ("ERROR deserializing downloaded NLParser JSON: " + ex);
@@ -386,7 +454,7 @@ namespace RiskHuntingAppTest
 				foreach (XElement xe in doc.Descendants("rl")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
 						found = true;
-						break;
+						
 					}
 					else
 						id++;
@@ -407,7 +475,7 @@ namespace RiskHuntingAppTest
 				foreach (XElement xe in doc.Descendants("bp")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
 						found = true;
-						break;
+						
 					}
 					else
 						id++;

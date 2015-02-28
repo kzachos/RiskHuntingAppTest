@@ -37,7 +37,7 @@ function Confirm() {
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
-	<span class="maintitle">Resolution idea description</span>
+	<!--<span class="maintitle">Idea description</span>-->
 	<ul class="pageitem">
 		<li class="label">
 			<cc1:WatermarkedTextBox id="EditIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="80" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
@@ -46,10 +46,13 @@ function Confirm() {
 
 	<ul class="pageitembutton">
 		<li class="button">
-			<asp:Button id="UpdateIdea" runat="server" text="UPDATE RESOLUTION IDEA" onclick="updateClicked"></asp:Button>
+			<asp:Button id="UpdateIdea" runat="server" text="UPDATE IDEA" onclick="updateClicked"></asp:Button>
 		</li>
+	</ul>
+
+	<ul class="pageitembutton">
 		<li class="button2">
-			<asp:Button id="DeleteIdea" runat="server" text="DELETE RESOLUTION IDEA" onclick="deleteClicked"  onClientclick="Confirm();"></asp:Button>
+			<asp:Button id="DeleteIdea" runat="server" text="DELETE IDEA" onclick="deleteClicked"  onClientclick="Confirm();"></asp:Button>
 		</li>
 	</ul>
 </form>

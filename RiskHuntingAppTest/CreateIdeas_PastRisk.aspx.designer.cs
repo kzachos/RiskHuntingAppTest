@@ -32,7 +32,5 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl generatePrompts;
 		
 		protected System.Web.UI.WebControls.Button GenerateAgain;
-		
-		protected System.Web.UI.WebControls.Button SaveSelected;
 	}
 }

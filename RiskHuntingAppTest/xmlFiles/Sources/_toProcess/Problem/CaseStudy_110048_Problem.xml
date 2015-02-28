@@ -3,13 +3,13 @@
   <FacetType>Problem</FacetType>
   <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
   <Author>Kos 3</Author>
-  <LaunchDate>25/02/2015 18:53:33</LaunchDate>
-  <SourceSpecificationLastEdited>25/02/2015 18:53:33</SourceSpecificationLastEdited>
+  <LaunchDate>27/02/2015 17:26:44</LaunchDate>
+  <SourceSpecificationLastEdited>27/02/2015 17:26:44</SourceSpecificationLastEdited>
   <FacetSpecificationData>
     <Content>the worker fell on the floor and cannot get up</Content>
     <Observations />
     <ObservedBehaviour>Entrance</ObservedBehaviour>
-    <TreatmentType>Face</TreatmentType>
+    <TreatmentType>Hands</TreatmentType>
     <DateOfIncident />
     <AilmentType />
     <TriggeringEvent />
