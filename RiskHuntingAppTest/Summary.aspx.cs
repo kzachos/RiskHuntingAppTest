@@ -69,11 +69,6 @@ namespace RiskHuntingAppTest
 			else
 				this.sourceId = String.Empty;
 
-			if (File.Exists (Path.Combine (requestPath, "Request_" + this.sourceId + ".xml")))
-				Topbar_Problem_Search_Solution ();
-			else
-				Topbar_Problem_Solution ();
-
 			RetrieveCurrentRisk ();
 			PopulateElements ();
 			PopulateIdeaItems ();
@@ -89,17 +84,7 @@ namespace RiskHuntingAppTest
 		}
 
 		#region Initializing
-
-		private void Topbar_Problem_Solution ()
-		{
-			TopbarProblemSolution.Visible = true;
-			TopbarProblemSearchSolution.Visible = false;
-		}
-		private void Topbar_Problem_Search_Solution ()
-		{
-			TopbarProblemSolution.Visible = false;
-			TopbarProblemSearchSolution.Visible = true;
-		}
+	
 
 		private void PopulateElements()
 		{
@@ -203,8 +188,9 @@ namespace RiskHuntingAppTest
 			this.currentRisk = new Risk (ss, problem, solution);
 		}
 			
-		private void GenerateXml(string componentType)
+		private bool GenerateXml(string componentType)
 		{
+			bool success = false;
 			string Ref;
 			string xmlUri, xmlUri2;
 			if (componentType.Equals("SourceSpecification"))
@@ -215,11 +201,13 @@ namespace RiskHuntingAppTest
 				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOURCESPECIFICATION, Ref);
 				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOURCESPECIFICATION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri);
-				if (File.Exists(xmlUri2))
-					File.Delete (xmlUri2);
-//				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri2);
+//				if (File.Exists(xmlUri2))
+//					File.Delete (xmlUri2);
+				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri2);
 
-				UpdateCase (xmlUri, Constants.SOURCESPECIFICATION, "<SourceSpecification> ");
+				var output = UpdateCase (xmlUri, Constants.SOURCESPECIFICATION, "<SourceSpecification> ");
+				if (output.StartsWith ("Stored document", StringComparison.Ordinal))
+					success = true;
 			}
 			else if (componentType.Equals("Problem"))
 			{
@@ -228,11 +216,13 @@ namespace RiskHuntingAppTest
 				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.PROBLEM, Ref);
 				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.PROBLEM, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri);
-				if (File.Exists(xmlUri2))
-					File.Delete (xmlUri2);
-//				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri2);
+//				if (File.Exists(xmlUri2))
+//					File.Delete (xmlUri2);
+				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri2);
 
-				UpdateCase (xmlUri, Constants.PROBLEM, "<LanguageSpecificSpecification> ");
+				var output = UpdateCase (xmlUri, Constants.PROBLEM, "<LanguageSpecificSpecification> ");
+				if (output.StartsWith ("Stored document", StringComparison.Ordinal))
+					success = true;
 			}
 			else if (componentType.Equals("Solution"))
 			{
@@ -241,25 +231,15 @@ namespace RiskHuntingAppTest
 				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOLUTION, Ref);
 				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOLUTION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
-				if (File.Exists(xmlUri2))
-					File.Delete (xmlUri2);
-//				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
+//				if (File.Exists(xmlUri2))
+//					File.Delete (xmlUri2);
+				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
 
-				UpdateCase (xmlUri, Constants.SOLUTION, "<LanguageSpecificSpecification> ");
+				var output = UpdateCase (xmlUri, Constants.SOLUTION, "<LanguageSpecificSpecification> ");
+				if (output.StartsWith ("Stored document", StringComparison.Ordinal))
+					success = true;
 			}
-			else if (componentType.Equals("Additional"))
-			{
-				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml(this.currentRisk);
-				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.ADDITIONAL, Ref);
-				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.ADDITIONAL, Ref);
-				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
-				if (File.Exists(xmlUri2))
-					File.Delete (xmlUri2);
-				//				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
-
-				UpdateCase (xmlUri, Constants.ADDITIONAL, "<LanguageSpecificSpecification> ");
-			}
+			return success;
 		}
 
 		#endregion
@@ -638,7 +618,7 @@ namespace RiskHuntingAppTest
 
 		#endregion
 
-		private void UpdateCase(string xmlUri, string componentType, string firstLine)
+		private string UpdateCase(string xmlUri, string componentType, string firstLine)
 		{
 			try
 			{
@@ -658,22 +638,28 @@ namespace RiskHuntingAppTest
 				cgStream.Close();
 				xmlContent = firstLine + xmlContent;
 				RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
-				Console.WriteLine(eddie.UpdateCase (xmlContent, componentType, this.sourceId));
+				var output = eddie.UpdateCase (xmlContent, componentType, this.sourceId);
+				Console.WriteLine(output);
+				return output;
 			}
 			catch {
 			}
+			return String.Empty;
 		}
 
 		public virtual void submitClicked(object sender, EventArgs args)
 		{
 			if (Page.IsValid) {
-				GenerateXml(Constants.SOURCESPECIFICATION);
-				GenerateXml(Constants.PROBLEM);
-				GenerateXml(Constants.SOLUTION);
-				GenerateXml(Constants.ADDITIONAL);
+				var success1 = GenerateXml(Constants.SOURCESPECIFICATION);
+				var success2 = GenerateXml(Constants.PROBLEM);
+				var success3 = GenerateXml(Constants.SOLUTION);
 
-
-				Response.Redirect ("DescribeRisk.aspx");
+				string pb = String.Empty;
+				if (success1 && success2 && success3) 
+					pb = "success";
+				else
+					pb = "nosuccess";
+				Response.Redirect ("DescribeRisk.aspx?pb=" + pb);
 			}
 
 		}

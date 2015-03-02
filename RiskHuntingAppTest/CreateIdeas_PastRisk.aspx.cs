@@ -254,6 +254,7 @@ namespace RiskHuntingAppTest
 				if (Session ["CREATIVITY_PROMPTS_PAST_RISK"] != null) {
 					this.total = CreativityPromptsFeed.Count < Constants.MaxPromptsAtATime ? CreativityPromptsFeed.Count : Constants.MaxPromptsAtATime;
 					int counter = 0;
+					content2.InnerHtml += "<br><br><span class=\"maintitle\">Creative guidance from previous risk</span>";
 					for (int i = 0; i < this.total; i++) {
 						content2.InnerHtml += GenerateHtml (CreativityPromptsFeed [i]);
 //						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);

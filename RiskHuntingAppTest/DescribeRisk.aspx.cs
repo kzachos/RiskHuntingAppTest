@@ -12,6 +12,7 @@ using System.Linq;
 using System.Xml.Linq;
 
 //using ActivityTrackingLog.Utils;
+using System.Collections.Specialized;
 
 namespace RiskHuntingAppTest
 {
@@ -27,6 +28,7 @@ namespace RiskHuntingAppTest
 		protected string responsePath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Responses");
 		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
 		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
+//		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", Constants.CASE_TYPE);
 
 		protected string requestId, responseUri;
 
@@ -49,35 +51,60 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CurrentResponseUri"] != null) 
-				Session.Remove ("CurrentResponseUri");
-			if (Session ["CURRENT_PROBLEM_DESC"] != null) 
-				Session.Remove ("CURRENT_PROBLEM_DESC");
-			if (Session ["CURRENT_PERSONA"] != null) 
-				Session.Remove ("CURRENT_PERSONA");
-			if (Session ["CURRENT_PERSONAS"] != null) 
-				Session.Remove ("CURRENT_PERSONAS");
-			//			Session.Remove ("CREATIVITY_PROMPTS");
-
-			InitTextElements();
-			InitParametersDropDown ();
-			alert_message_success.Visible = false;
-			alert_message_error.Visible = false;
-
-
-			this.requestId = DetermineID ();
-			if (!this.requestId.Equals (String.Empty)) {
-				rightbutton.Visible = true;
-				deleteRiskDiv.Visible = true;
-				this.sourceId = this.requestId;
-				RetrieveRiskXml ("SourceSpecification");
-				RetrieveRiskXml ("Problem");
-				RetrieveRiskXml ("Solution");
-				Session ["CURRENT_RISK"] = this.sourceId;
-
+			if (!DetermineFrom ().Equals (String.Empty)) { // coming from summary so reset form for a new risk
+				ResetForm ();
+				if (DetermineFrom ().Equals ("success")) {
+					alert_message_success.Visible = true;
+					successMessage.InnerText = "Thank you for your safty imput. Your risk has been successfully submitted and uploaded to the database";
+					alert_message_error.Visible = false;
+				} 
+				else if (DetermineFrom ().Equals ("nosuccess")) {
+					alert_message_success.Visible = false;
+					errorMessage.InnerText = "Your risk could not be uploaded to the database. Please try again later.";
+					alert_message_error.Visible = true;
+				}
+				else if (DetermineFrom ().Equals ("deleted")) {
+					alert_message_success.Visible = true;
+					successMessage.InnerText = "Your risk has been successfully deleted and removed from the database";
+					alert_message_error.Visible = false;
+				}
+				else if (DetermineFrom ().Equals ("notdeleted")) {
+					alert_message_success.Visible = false;
+					errorMessage.InnerText = "Your risk could not be removed from the database. Please try again later.";
+					alert_message_error.Visible = true;
+				}
 			} else {
-				deleteRiskDiv.Visible = false;
-				rightbutton.Visible = false;
+
+				if (Session ["CurrentResponseUri"] != null)
+					Session.Remove ("CurrentResponseUri");
+				if (Session ["CURRENT_PROBLEM_DESC"] != null)
+					Session.Remove ("CURRENT_PROBLEM_DESC");
+				if (Session ["CURRENT_PERSONA"] != null)
+					Session.Remove ("CURRENT_PERSONA");
+				if (Session ["CURRENT_PERSONAS"] != null)
+					Session.Remove ("CURRENT_PERSONAS");
+				//			Session.Remove ("CREATIVITY_PROMPTS");
+
+				InitTextElements ();
+				InitParametersDropDown ();
+				alert_message_success.Visible = false;
+				alert_message_error.Visible = false;
+
+
+				this.requestId = DetermineID ();
+				if (!this.requestId.Equals (String.Empty)) {
+					rightbutton.Visible = true;
+					deleteRiskDiv.Visible = true;
+					this.sourceId = this.requestId;
+					RetrieveRiskXml ("SourceSpecification");
+					RetrieveRiskXml ("Problem");
+					RetrieveRiskXml ("Solution");
+					Session ["CURRENT_RISK"] = this.sourceId;
+
+				} else {
+					deleteRiskDiv.Visible = false;
+					rightbutton.Visible = false;
+				}
 			}
 
 			if (!Page.IsPostBack) {
@@ -149,6 +176,17 @@ namespace RiskHuntingAppTest
 			return id;
 		}
 
+		private string DetermineFrom()
+		{
+			string c = String.Empty;
+			if (Request.QueryString["pb"] != null)
+			{
+				c = Request.QueryString["pb"];
+				NameValueCollection filtered = new NameValueCollection(Request.QueryString);
+				filtered.Remove("pb");			
+			}
+			return c;
+		}
 
 		#region Initializing
 
@@ -563,7 +601,6 @@ namespace RiskHuntingAppTest
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
 			RiskLocation.SelectedIndex = -1;
 			RiskBodyParts.SelectedIndex = -1;
-			Response.Redirect("DescribeRisk.aspx");
 		}
 
 		public virtual void ideasClicked(object sender, EventArgs args)
@@ -584,6 +621,8 @@ namespace RiskHuntingAppTest
 		public virtual void resetClicked(object sender, EventArgs args)
 		{
 			ResetForm ();
+			Response.Redirect("DescribeRisk.aspx");
+
 		}
 
 		public virtual void saveClicked(object sender, EventArgs args)
@@ -612,9 +651,15 @@ namespace RiskHuntingAppTest
 					Debug.WriteLine (file + " will be deleted");
 					File.Delete (file);
 				}
-				if (Session ["CURRENT_RISK"] != null)
-					Session.Remove("CURRENT_RISK");
-				Response.Redirect("DescribeRisk.aspx");
+				var output = RemoveCase (this.sourceId);
+				string pb = String.Empty;
+				if (output) 
+					pb = "deleted";
+				else
+					pb = "notdeleted";
+				ResetForm ();
+				Session.Remove("CURRENT_RISK");
+				Response.Redirect ("DescribeRisk.aspx?pb=" + pb);
 			}
 
 		}
@@ -702,6 +747,30 @@ namespace RiskHuntingAppTest
 			var NLResponse = Util.DeserializeNLResponse (e.Result);
 
 			Session ["CURRENT_PROBLEM_DESC"] = NLResponse;
+		}
+
+		private bool RemoveCase(string caseId)
+		{
+			try
+			{
+				RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
+				var output1 = eddie.RemoveCase ("SourceSpecification", caseId);
+				var output2 = eddie.RemoveCase ("Problem", caseId);
+				var output3 = eddie.RemoveCase ("Solution", caseId);
+				Console.WriteLine("SourceSpecification output1: " + output1);
+				Console.WriteLine("Problem output2: " + output2);
+				Console.WriteLine("Solution output3: " + output3);
+
+				if (output1.StartsWith ("Stored document", StringComparison.Ordinal) &&
+					output2.StartsWith ("Stored document", StringComparison.Ordinal) &&
+					output3.StartsWith ("Stored document", StringComparison.Ordinal))
+					return true;
+				else 
+					return false;
+			}
+			catch {
+				return false;
+			}
 		}
 
 		#endregion

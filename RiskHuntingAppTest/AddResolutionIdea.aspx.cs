@@ -45,6 +45,7 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
+			alert_message_error.Visible = false;
 			if (Session ["CURRENT_RISK"] != null)
 				this.sourceId = Session ["CURRENT_RISK"].ToString();	
 			RetrieveCurrentRisk ();
@@ -90,36 +91,40 @@ namespace RiskHuntingAppTest
 		{
 			if (Page.IsValid)
 			{
-				if (!AddIdeaDescription.Text.Equals(ADDIDEA_WATERMARK)) {
+				if (AddIdeaDescription.Text.Equals (String.Empty) ||
+					AddIdeaDescription.Text.Equals (ADDIDEA_WATERMARK)) {
+
+					errorMessage.InnerHtml = "Please add your idea below.";
+					alert_message_error.Visible = true;
+
+				} else {
 
 					this.currentRisk.State = RiskQueryState.IdeasGenerated;
 					this.currentRisk.Recommendations.Add (AddIdeaDescription.Text);
 
-					GenerateXml(Constants.SOURCESPECIFICATION);
-					GenerateXml(Constants.PROBLEM);
-					GenerateXml(Constants.SOLUTION);
+					GenerateXml (Constants.SOURCESPECIFICATION);
+					GenerateXml (Constants.PROBLEM);
+					GenerateXml (Constants.SOLUTION);
 
-					string url = this.requestFrom.Replace("@","?");
+					string url = this.requestFrom.Replace ("@", "?");
 					if (!this.requestFrom.Equals (String.Empty)) {
 						if (this.requestFrom.Contains ("@"))
 							url += "&";
 						else
 							url += "?";
-//						if (this.requestFrom.Contains ("Superheroes"))
-//						{
-//							if (Session["CURRENT_PERSONA"] != null)
-//							{
-//								url += "pb=" + Session["CURRENT_PERSONA"].ToString();
-//							}
-//						}
-//						else
-							url += "pb=same";
+						//						if (this.requestFrom.Contains ("Superheroes"))
+						//						{
+						//							if (Session["CURRENT_PERSONA"] != null)
+						//							{
+						//								url += "pb=" + Session["CURRENT_PERSONA"].ToString();
+						//							}
+						//						}
+						//						else
+						url += "pb=same";
 					}
-					url = url.Replace("@","?");
-					Response.Redirect(url);
-
+					url = url.Replace ("@", "?");
+					Response.Redirect (url);
 				}
-
 			}
 		}
 

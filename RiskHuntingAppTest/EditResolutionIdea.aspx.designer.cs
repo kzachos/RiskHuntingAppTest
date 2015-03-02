@@ -24,5 +24,9 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.WebControls.Button UpdateIdea;
 		
 		protected System.Web.UI.WebControls.Button DeleteIdea;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_error;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 	}
 }

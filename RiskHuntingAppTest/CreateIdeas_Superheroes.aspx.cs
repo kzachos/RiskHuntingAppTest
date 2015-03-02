@@ -10,9 +10,9 @@ namespace RiskHuntingAppTest
 	
 	public partial class CreateIdeas_Superheroes : System.Web.UI.Page
 	{
-		const string Tag1a = "<iframe src=\"http://brightsparks.city.ac.uk/RiskHunting\" border=\"0\" frameborder=\"0\" height=\"100%\" width=\"100%\"></iframe>";
+		const string Tag1a = "<iframe src=\"http://brightsparks.city.ac.uk/RiskHunting/indexApp.php?persona=Iceman border=\"0\" frameborder=\"0\" height=\"100%\" width=\"100%\"></iframe>";
 		const string Tag1b = "<iframe src=\"";
-		const string Tag2 = "http://brightsparks.city.ac.uk/RiskHunting?persona=";
+		const string Tag2 = "http://brightsparks.city.ac.uk/RiskHunting/indexApp.php?persona=";
 		const string Tag3 = "\" border=\"0\" frameborder=\"0\" height=\"100%\" width=\"100%\"></iframe>";
 
 		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");

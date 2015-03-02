@@ -1,14 +1,24 @@
 ﻿<Properties StartupItem="RiskHuntingAppTest/RiskHuntingAppTest.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RiskHuntingAppTest/Summary.aspx.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RiskHuntingAppTest/DescribeRisk.aspx.cs">
     <Files>
-      <File FileName="RiskHuntingAppTest/Default.aspx" Line="4" Column="4" />
-      <File FileName="RiskHuntingAppTest/CreateIdeas_PastRisk.aspx.cs" Line="32" Column="32" />
-      <File FileName="RiskHuntingAppTest/DescribeRisk.aspx" Line="35" Column="35" />
-      <File FileName="RiskHuntingAppTest/Summary.aspx" Line="96" Column="96" />
-      <File FileName="RiskHuntingAppTest/Summary.aspx.cs" Line="45" Column="45" />
-      <File FileName="RiskHuntingAppTest/ResolveRisk.aspx" Line="8" Column="8" />
+      <File FileName="RiskHuntingAppTest/Summary.aspx.cs" Line="12" Column="12" />
+      <File FileName="RiskHuntingAppTest/DescribeRisk.aspx.cs" Line="16" Column="16" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="RiskHuntingAppTest" expanded="True" selected="True">
+            <Node name="Classes" expanded="True" />
+            <Node name="DescribeRisk.aspx" expanded="True" />
+            <Node name="Summary.aspx" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

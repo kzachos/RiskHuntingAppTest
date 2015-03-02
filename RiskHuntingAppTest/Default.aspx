@@ -17,36 +17,89 @@
 	<script type="text/javascript" src="Theme/javascript/jquery-latest.js"></script>
 	<script type="text/javascript" src="Theme/javascript/jquery.layout-latest.js"></script>
 
-<style type="text/css">
-	.container {
-	width: 1170px;
+	<style type="text/css">
+	body {
+	  font-family: sans-serif;
 	}
-	.container {
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
-	}
-.col-1 {
-width: 50%;
-}
-.col-2 {
-width: 50%;
-}
-.col-1, {
-min-height: 1px;
-padding-right: 15px;
-padding-left: 15px;
-float: left;
-}
-.col-2 {
-min-height: 1px;
-padding-right: 15px;
-padding-left: 15px;
-float: right;
-}
 
-</style>
+	/* sizes */
+	#main-wrap > div { min-height: 500px; }
+
+	#header {
+	  margin-top: 20px;
+	  text-align: right;
+	  text-align: center;
+	}
+
+	#sub-header {
+	  font-family: sans-serif;
+	  margin-top: 20px;
+	  font-size: 20px;
+	  min-height: 70px;
+	  text-align: center;
+	}
+
+	#sub-header2 {
+		position: relative;
+		font-weight: bold;
+		font-size: 20px;
+		right: 20px;
+		left: 9px;
+		color: #941830;
+		text-shadow: #FFF 0 1px 0;
+		padding: 1px 0 3px 8px;
+		text-align: center;
+	}
+
+	/* layout */
+	#main-wrap {
+	  /* overflow to handle inner floating block */
+	  overflow: hidden;
+	}
+
+	#col-left {
+	  float: left;
+	  text-align: center;
+	  width: 49%;
+	 }
+
+	.right {
+	  width: 404px;
+	  float: right;
+	}
+
+	#col-right {
+	  float: right;
+	  text-align: center;
+	  width: 49%;
+	}   
+
+	.left {
+	  width: 404px;
+	  float: left;
+	}
+
+	a img{
+	    border:0;
+	}
+
+	input#btnOpenBS, #btnOpenRH {
+	  margin-top: 10px;
+	  padding: 7px 15px 7px 15px;
+	  font-family: Lucida Sans, Tahoma, sans-serif;
+	  font-size:18px;
+	  font-weight:600;
+	  outline: none;
+	  cursor: pointer;
+	  text-align: center;
+	  text-decoration: none;
+	  color: #ffffff;
+	  border: solid 1px #3598DC;
+	  background-color: #3598DC;
+	  border-radius: 4px 4px 4px 4px;
+	}
+
+	</style>
 	<script type="text/javascript">
 
 	</script>
@@ -54,34 +107,31 @@ float: right;
 	<body>
 
 	<span id="loading"></span>
-
-	<div class="container">
-		<div class="ui-layout-north" id="multiselectionbuttons">
-				TEST
-		</div>
-
-		<div class="col-1">
-			<div id="multiselectionbuttons">
-					Superheroes for Risks
-			</div><br><br>
-			<a href="javascript:doLoad('http://brightsparks.city.ac.uk/RiskHunting');" style="text-align:center">
-				<img alt="home" style="position:center; width: 80%" src="Theme/images/brightsparks.png" />
-			</a> 
-
-
-		</div>
-
-
-		<div class="col-2">
-			<div id="multiselectionbuttons">
-					Risk Hunting and Resolving
-			</div><br><br>
-			<a href="javascript:doLoad('http://127.0.0.1:8080/DescribeRisk.aspx');" >
-				<img alt="home" style="position:center; width: 80%" src="Theme/images/riskhunting.png" />
-			</a> 
-
-		</div>
-	</div>
+	 <div id="header"><a href="http://projectcollage.eu/" target="_blank"><img src="Theme/images/collagelogo.png" height="60"></a></div>
+	 <p><br><br><div id="sub-header2">Welcome to our Risk Hunting space.</div><p><br><br>
+	 <div id="main-wrap">
+	    <div id="col-left">
+	     <div class="right"> 
+	       <h2>Superheroes for Risks</h2>
+	       <div>
+		       <a href="javascript:doLoad('http://brightsparks.city.ac.uk/RiskHunting');">
+		       		<img style="position:center; width: 100%" src="Theme/images/brightsparks.png">
+		       </a>
+	       </div>
+	       <input id="btnOpenBS" onclick="javascript:window.location.href='http://brightsparks.city.ac.uk/RiskHunting'" value="Open" type="button" />
+	     </div>
+	    </div>
+	    <div id="col-right">
+	     <div class="left">
+	       <h2>Risk Hunting and Resolving</h2>
+	       <div>
+		       <a href="javascript:doLoad('DescribeRisk.aspx');">
+		       		<img style="position:center; width: 100%" src="Theme/images/riskhunting.png">
+		       </a>
+	       </div>
+	       <input id="btnOpenRH" onclick="javascript:window.location.href='DescribeRisk.aspx'" value="Open" type="button" />
+	     </div>
+	 </div>
 
 
 	</body>

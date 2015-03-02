@@ -8,23 +8,34 @@
  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">
 	    
-function Confirm() {
-    var confirm_value = document.createElement("INPUT");
-    confirm_value.type = "hidden";
-    confirm_value.name = "confirm_value";
-    if (confirm("Are you sure you want to delete the idea?")) {
-        confirm_value.value = "Yes";
-    } else {
-        confirm_value.value = "No";
-    }
-    document.forms[0].appendChild(confirm_value);
-}
+	function Confirm() {
+	    var confirm_value = document.createElement("INPUT");
+	    confirm_value.type = "hidden";
+	    confirm_value.name = "confirm_value";
+	    if (confirm("Are you sure you want to delete the idea?")) {
+	        confirm_value.value = "Yes";
+	    } else {
+	        confirm_value.value = "No";
+	    }
+	    document.forms[0].appendChild(confirm_value);
+	}
 
+	window.setTimeout(function () {
+	    $("#alert_message_success").fadeTo(500, 0).slideUp(500, function () {
+	        $(this).remove();
+	    });
+	}, 3000);
+	window.setTimeout(function () {
+	    $("#alert_message_error").fadeTo(500, 0).slideUp(500, function () {
+	        $(this).remove();
+	    });
+	}, 3000);
 
 </script>
 </head>
@@ -37,6 +48,13 @@ function Confirm() {
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
+
+	<div id="alert_message_error" runat="server">
+		<div class="alert-box error">
+			<div id="errorMessage" style="display: inline" runat="server"></div>
+		</div>
+	</div>
+
 	<!--<span class="maintitle">Idea description</span>-->
 	<ul class="pageitem">
 		<li class="label">

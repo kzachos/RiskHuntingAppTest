@@ -124,8 +124,14 @@ namespace RiskHuntingAppTest
 		{
 			if (Page.IsValid)
 			{
-				if (!EditIdeaDescription.Text.Equals(EDITIDEA_WATERMARK))
+				if (EditIdeaDescription.Text.Equals(String.Empty) ||
+					EditIdeaDescription.Text.Equals(EDITIDEA_WATERMARK))
 				{
+					errorMessage.InnerHtml = "Please add your idea below.";
+					alert_message_error.Visible = true;
+
+				}
+				else {
 
 					this.currentRisk.Recommendations [this.index] = EditIdeaDescription.Text;
 

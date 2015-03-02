@@ -156,7 +156,9 @@ namespace RiskHuntingAppTest
 				queries.InnerHtml = String.Empty;
 				foreach (var r in sortedRisks) {
 					queries.InnerHtml += GenerateQueryHtml (r);
-//					Console.WriteLine ("risk.State (GenerateQueryHistory): " + r.State.ToString ());
+					Console.WriteLine ("risk id (GenerateQueryHistory): " + r.Id);
+					Console.WriteLine ("risk name (GenerateQueryHistory): " + r.Name);
+					Console.WriteLine ("risk.State (GenerateQueryHistory): " + r.State.ToString ());
 				}
 			} else {
 				SortDiv.Visible = false;
