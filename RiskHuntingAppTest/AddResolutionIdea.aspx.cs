@@ -95,9 +95,9 @@ namespace RiskHuntingAppTest
 					this.currentRisk.State = RiskQueryState.IdeasGenerated;
 					this.currentRisk.Recommendations.Add (AddIdeaDescription.Text);
 
-					GenerateXml("SourceSpecification");
-					GenerateXml("Problem");
-					GenerateXml("Solution");
+					GenerateXml(Constants.SOURCESPECIFICATION);
+					GenerateXml(Constants.PROBLEM);
+					GenerateXml(Constants.SOLUTION);
 
 					string url = this.requestFrom.Replace("@","?");
 					if (!this.requestFrom.Equals (String.Empty)) {

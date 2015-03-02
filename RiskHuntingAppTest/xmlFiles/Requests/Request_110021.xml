@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" requestId="110022" xmlns="http://achernar.soi.city.ac.uk/xmlSchemas/Request">
+<Request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" requestId="110054" xmlns="http://achernar.soi.city.ac.uk/xmlSchemas/Request">
   <Registries>
     <Registry type="Sources" name="-" />
   </Registries>
@@ -8,13 +8,13 @@
     <TermExpansion synonym="0" hypernym="0" gloss="0" />
     <MaxResults>100</MaxResults>
   </Properties>
-  <DateTime>07/11/2014 17:08:18</DateTime>
+  <DateTime>01/03/2015 22:50:47</DateTime>
   <SimilarityType>Eddie</SimilarityType>
   <DataSource>
     <Type>Document</Type>
     <Uri>n/a</Uri>
   </DataSource>
   <Target>
-    <TargetDescription>[InjuryNature]:  [LocationDetail]: Plant [Content]: the floor is wet and slippery [BodyPart]: Head</TargetDescription>
+    <TargetDescription>[InjuryNature]:  [LocationDetail]: Entrance [Content]: the floor is wet and slippery [BodyPart]: Hands</TargetDescription>
   </Target>
 </Request>

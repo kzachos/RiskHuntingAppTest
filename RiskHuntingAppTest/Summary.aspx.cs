@@ -46,16 +46,8 @@ namespace RiskHuntingAppTest
 		const string aMidTag = "');\">";
 		const string aEndTag = "</a>";
 
-		protected const string SOURCESPECIFICATION = "SourceSpecification";
-		protected const string PROBLEM = "Problem";
-		protected const string SOLUTION = "Solution";
-		protected const string ADDITIONAL = "Additional";
-		protected const string PROCESSFOLDER = "_toProcess";
 
 		const string defaultProcessGuidance = "Define all elements of the danger in the web form. Ask a colleague to check these elements.";
-
-		protected const string SOURCE_TYPE = Constants.CASEREF;
-		protected const string CASE_TYPE = "Risk";
 
 		protected string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
 		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Requests");
@@ -211,6 +203,64 @@ namespace RiskHuntingAppTest
 			this.currentRisk = new Risk (ss, problem, solution);
 		}
 			
+		private void GenerateXml(string componentType)
+		{
+			string Ref;
+			string xmlUri, xmlUri2;
+			if (componentType.Equals("SourceSpecification"))
+			{
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = Util.CreateSourceSpecificationXml(this.currentRisk);
+				//				Console.WriteLine ("this.sourceId (GenerateXml): " + this.sourceId.ToString ());
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOURCESPECIFICATION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOURCESPECIFICATION, Ref);
+				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri);
+				if (File.Exists(xmlUri2))
+					File.Delete (xmlUri2);
+//				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri2);
+
+				UpdateCase (xmlUri, Constants.SOURCESPECIFICATION, "<SourceSpecification> ");
+			}
+			else if (componentType.Equals("Problem"))
+			{
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = Util.CreateProblemXml(this.currentRisk);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.PROBLEM, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.PROBLEM, Ref);
+				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri);
+				if (File.Exists(xmlUri2))
+					File.Delete (xmlUri2);
+//				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri2);
+
+				UpdateCase (xmlUri, Constants.PROBLEM, "<LanguageSpecificSpecification> ");
+			}
+			else if (componentType.Equals("Solution"))
+			{
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml(this.currentRisk);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOLUTION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOLUTION, Ref);
+				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
+				if (File.Exists(xmlUri2))
+					File.Delete (xmlUri2);
+//				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
+
+				UpdateCase (xmlUri, Constants.SOLUTION, "<LanguageSpecificSpecification> ");
+			}
+			else if (componentType.Equals("Additional"))
+			{
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml(this.currentRisk);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.ADDITIONAL, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.ADDITIONAL, Ref);
+				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
+				if (File.Exists(xmlUri2))
+					File.Delete (xmlUri2);
+				//				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
+
+				UpdateCase (xmlUri, Constants.ADDITIONAL, "<LanguageSpecificSpecification> ");
+			}
+		}
 
 		#endregion
 
@@ -301,12 +351,12 @@ namespace RiskHuntingAppTest
 
 				doc.Add (_stateTableIdeas ());
 
-				Paragraph p3 = new Paragraph ("Risk Actions");
-				p3.Alignment = 1;
-				doc.Add (p3);
-				// table data, see code snippet following this one
-
-				doc.Add (_stateTableActions ());
+//				Paragraph p3 = new Paragraph ("Risk Actions");
+//				p3.Alignment = 1;
+//				doc.Add (p3);
+//				// table data, see code snippet following this one
+//
+//				doc.Add (_stateTableActions ());
 
 				doc.Close ();
 
@@ -424,26 +474,26 @@ namespace RiskHuntingAppTest
 				}
 			}
 			doc.Add(listIdeas);  // Add the list to the page
-			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n"));
-
-			// Write page content.  Note the use of fonts and alignment attributes.
-			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new iTextSharp.text.Chunk("\n\n"));
-			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_LEFT, _largeFont, new Chunk("Risk actions \n\n"));
-			// Create an unordered bullet list.  The 10f argument separates the bullet from the text by 10 points
-			iTextSharp.text.List listActions = new iTextSharp.text.List(iTextSharp.text.List.UNORDERED, 10f);
-			listActions.SetListSymbol("\u2022");   // Set the bullet symbol (without this a hypen starts each list item)
-			listActions.IndentationLeft = 20f;     // Indent the list 20 points
-			if (this.currentRisk.Actions.Count > 0) {
-				for (int i = 0; i < this.currentRisk.Actions.Count; i++) {
-					listActions.Add(new iTextSharp.text.ListItem(this.currentRisk.Actions[i].Content, _standardFont));
-					var list = new iTextSharp.text.List(iTextSharp.text.List.UNORDERED, 10f);
-					list.IndentationLeft = 10f;
-					list.Add("Owner: " + new iTextSharp.text.ListItem(this.currentRisk.Actions[i].Owner, _smallFont));
-					list.Add("Implement by: " + new iTextSharp.text.ListItem(this.currentRisk.Actions[i].ImplementBy.ToShortDateString(), _smallFont));
-					listActions.Add (list);
-				}
-			}
-			doc.Add(listActions);  // Add the list to the page
+//			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n"));
+//
+//			// Write page content.  Note the use of fonts and alignment attributes.
+//			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new iTextSharp.text.Chunk("\n\n"));
+//			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_LEFT, _largeFont, new Chunk("Risk actions \n\n"));
+//			// Create an unordered bullet list.  The 10f argument separates the bullet from the text by 10 points
+//			iTextSharp.text.List listActions = new iTextSharp.text.List(iTextSharp.text.List.UNORDERED, 10f);
+//			listActions.SetListSymbol("\u2022");   // Set the bullet symbol (without this a hypen starts each list item)
+//			listActions.IndentationLeft = 20f;     // Indent the list 20 points
+//			if (this.currentRisk.Actions.Count > 0) {
+//				for (int i = 0; i < this.currentRisk.Actions.Count; i++) {
+//					listActions.Add(new iTextSharp.text.ListItem(this.currentRisk.Actions[i].Content, _standardFont));
+//					var list = new iTextSharp.text.List(iTextSharp.text.List.UNORDERED, 10f);
+//					list.IndentationLeft = 10f;
+//					list.Add("Owner: " + new iTextSharp.text.ListItem(this.currentRisk.Actions[i].Owner, _smallFont));
+//					list.Add("Implement by: " + new iTextSharp.text.ListItem(this.currentRisk.Actions[i].ImplementBy.ToShortDateString(), _smallFont));
+//					listActions.Add (list);
+//				}
+//			}
+//			doc.Add(listActions);  // Add the list to the page
 
 			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _largeFont, new Chunk("\n\n\n\n"));
 			this.AddParagraph(doc, iTextSharp.text.Element.ALIGN_CENTER, _smallFont, new Chunk("Generated " +
@@ -617,12 +667,13 @@ namespace RiskHuntingAppTest
 		public virtual void submitClicked(object sender, EventArgs args)
 		{
 			if (Page.IsValid) {
-				var Ref = Constants.CASEREF + this.sourceId + "_" + Constants.SOURCESPECIFICATION + ".xml";
-				var xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOURCESPECIFICATION, Ref);
-				UpdateCase (xmlUri, Constants.SOURCESPECIFICATION, "<SourceSpecification> ");
-				UpdateCase (xmlUri, Constants.PROBLEM, "<LanguageSpecificSpecification> ");
-				UpdateCase (xmlUri, Constants.SOLUTION, "<LanguageSpecificSpecification> ");
-				UpdateCase (xmlUri, Constants.ADDITIONAL, "<LanguageSpecificSpecification> ");
+				GenerateXml(Constants.SOURCESPECIFICATION);
+				GenerateXml(Constants.PROBLEM);
+				GenerateXml(Constants.SOLUTION);
+				GenerateXml(Constants.ADDITIONAL);
+
+
+				Response.Redirect ("DescribeRisk.aspx");
 			}
 
 		}

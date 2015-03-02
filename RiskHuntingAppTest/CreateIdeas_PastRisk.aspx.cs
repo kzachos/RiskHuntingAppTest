@@ -239,6 +239,7 @@ namespace RiskHuntingAppTest
 				int counter = 0;
 				if (this.total > 0)
 				{
+					content2.InnerHtml += "<br><br><span class=\"maintitle\">Creative guidance from previous risk</span>";
 					for (int i = 0; i < this.total; i++) {
 						content2.InnerHtml += GenerateHtml (CreativityPromptsFeed [i]);
 //						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
@@ -306,6 +307,7 @@ namespace RiskHuntingAppTest
 			string responseUri = DetermineResponseUri ();
 
 			if (!responseUri.Equals (String.Empty)) {
+				content2.InnerHtml += "<br><span class=\"maintitle\">Previous riks resolutions applied</span>";
 				XmlProc.ResponseSerialized.MatchedSources response = XmlProc.ObjectXMLSerializer<XmlProc.ResponseSerialized.MatchedSources>.Load (responseUri);
 
 				List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource> matchedSources = (List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource>)response.MatchedSource;

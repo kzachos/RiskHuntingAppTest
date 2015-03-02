@@ -20,64 +20,18 @@
 </head>
 <body>
 
-<div id="TopbarProblemSolution" runat="server">
 	<div id="topbar2">
 		<div id="leftbutton">
-			<a href="javascript:doLoad('Settings.aspx');" >
-				<%--<img alt="home" src="Theme/images/home.png" />--%>
-				Feedback
-			</a> 
-		</div>
-		<div id="rightbutton">
-			<a href="javascript:doLoad('QueryHistory.aspx');">
-				<%--<img alt="home" src="Theme/images/home.png" />--%>
-				Risk History
+			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');" >
+				<img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-3-icon.png" />
+				Resolve Risk
 			</a> 
 		</div>
 		<div id="multiselectionbuttons">
-			<a href="javascript:doLoad('Default.aspx');">
-				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-1-icon.png" /> Problem
-			</a>
-			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
-				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-filled-icon.png" /> Solution
-			</a>
-			<a id="pressed" href="">
-				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Summary
-			</a>
+			<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-filled-icon.png" /> 
+			Summary
 		</div>
 	</div>
-</div>
-<div id="TopbarProblemSearchSolution" runat="server">
-	<div id="topbar2">
-		<div id="leftbutton">
-			<a href="javascript:doLoad('Settings.aspx');" >
-				<%--<img alt="home" src="Theme/images/home.png" />--%>
-				Feedback
-			</a> 
-		</div>
-		<div id="rightbutton">
-			<a href="javascript:doLoad('QueryHistory.aspx');">
-				<%--<img alt="home" src="Theme/images/home.png" />--%>
-				Risk History
-			</a> 
-		</div>
-		<div id="multiselectionbuttons">
-			<a href="javascript:doLoad('Default.aspx');">
-				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-1-icon.png" /> Problem
-			</a>
-			<a href="javascript:doLoad('SearchResults.aspx');">
-			<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-icon.png" /> Search
-			</a>
-			<a href="javascript:doLoad('Solution_ResolutionIdeas.aspx');">
-				<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-3-icon.png" /> Solution
-			</a>
-			<a  id="pressed" href="javascript:doLoad('Summary.aspx');">
-			<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-filled-icon.png" /> Summary
-			</a>
-		</div>
-	</div>
-</div>
-
 
 <span id="loading"></span>
 <div id="content">

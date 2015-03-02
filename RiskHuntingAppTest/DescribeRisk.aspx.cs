@@ -361,9 +361,9 @@ namespace RiskHuntingAppTest
 			//			responseStream.Close();
 
 
-			GenerateXml("SourceSpecification");
-			GenerateXml("Problem");
-			GenerateXml("Solution");
+			GenerateXml(Constants.SOURCESPECIFICATION);
+			GenerateXml(Constants.PROBLEM);
+			GenerateXml(Constants.SOLUTION);
 
 			//			this.responseUri = responseXmlUri;
 			//			Session["CurrentResponseUri"] = responseXmlUri;
@@ -563,7 +563,7 @@ namespace RiskHuntingAppTest
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
 			RiskLocation.SelectedIndex = -1;
 			RiskBodyParts.SelectedIndex = -1;
-			Response.Redirect("Default.aspx");
+			Response.Redirect("DescribeRisk.aspx");
 		}
 
 		public virtual void ideasClicked(object sender, EventArgs args)
@@ -614,7 +614,7 @@ namespace RiskHuntingAppTest
 				}
 				if (Session ["CURRENT_RISK"] != null)
 					Session.Remove("CURRENT_RISK");
-				Response.Redirect("Default.aspx");
+				Response.Redirect("DescribeRisk.aspx");
 			}
 
 		}

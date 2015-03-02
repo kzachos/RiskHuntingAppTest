@@ -67,7 +67,7 @@
       <asp:Label ID="exTrace" runat="server" Visible="false" />
     </pre>
     <br />
-    Return to the <a href='Default.aspx'> Default Page</a>
+    Return to the <a href='DescribeRisk.aspx'> Default Page</a>
   </div>
   </form>
 </body>

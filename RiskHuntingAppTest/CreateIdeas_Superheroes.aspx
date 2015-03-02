@@ -41,7 +41,7 @@
 		<div class="ui-layout-north">
 			<div id="topbar2">
 				<div id="leftbutton">
-					<a href="javascript:doLoad('Default.aspx');" >
+					<a href="javascript:doLoad('DescribeRisk.aspx');" >
 						<img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-1-icon.png" />
 						Describe Risk
 					</a> 

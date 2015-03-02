@@ -44,7 +44,7 @@ namespace RiskHuntingAppTest
 
 
 		const string Tag1 = "<li class=\"store\">";
-		const string Tag2 = "<a class=\"noeffect\" href=\"javascript:doLoad('Default.aspx?id=";
+		const string Tag2 = "<a class=\"noeffect\" href=\"javascript:doLoad('DescribeRisk.aspx?id=";
 		const string Tag3 = "');\">";
 		const string Tag4 = "<span class=\"name\">";
 		const string Tag5 = "</span>";
@@ -475,7 +475,7 @@ namespace RiskHuntingAppTest
 		private string GenerateInnerHtmlSimple(string responseXmlUri, string requestId, string requestDescr)
 		{
 			return LiStartTagMenu +
-				aStartTag + "Default.aspx?id=" + requestId + "&path=" + responseXmlUri + aMidTag +
+				aStartTag + "DescribeRisk.aspx?id=" + requestId + "&path=" + responseXmlUri + aMidTag +
 				SpanStartTagName + requestId + ": " + ExtractAttributeContentFromString(requestDescr, "Content") + SpanEndTag +
 				SpanStartTagArrow + SpanEndTag + aEndTag + LiEndTag;
 		}

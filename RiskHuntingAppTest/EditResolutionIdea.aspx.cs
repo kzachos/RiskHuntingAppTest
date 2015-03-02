@@ -129,9 +129,9 @@ namespace RiskHuntingAppTest
 
 					this.currentRisk.Recommendations [this.index] = EditIdeaDescription.Text;
 
-					GenerateXml("SourceSpecification");
-					GenerateXml("Problem");
-					GenerateXml("Solution");
+					GenerateXml(Constants.SOURCESPECIFICATION);
+					GenerateXml(Constants.PROBLEM);
+					GenerateXml(Constants.SOLUTION);
 
 					Response.Redirect(DetermineFrom () + ".aspx");
 				}

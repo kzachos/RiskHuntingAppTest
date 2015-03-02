@@ -91,7 +91,7 @@ namespace RiskHuntingAppTest
 
 		public virtual void goBackClicked(object sender, EventArgs args)
 		{
-			Response.Redirect ("Default.aspx");
+			Response.Redirect ("DescribeRisk.aspx");
 		}
 
 		#region Html related

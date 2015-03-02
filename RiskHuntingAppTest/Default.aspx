@@ -76,7 +76,7 @@ float: right;
 			<div id="multiselectionbuttons">
 					Risk Hunting and Resolving
 			</div><br><br>
-			<a href="javascript:doLoad('http://brightsparks.city.ac.uk/RiskHunting');" >
+			<a href="javascript:doLoad('http://127.0.0.1:8080/DescribeRisk.aspx');" >
 				<img alt="home" style="position:center; width: 80%" src="Theme/images/riskhunting.png" />
 			</a> 
 

@@ -1,28 +1,14 @@
 ﻿<Properties StartupItem="RiskHuntingAppTest/RiskHuntingAppTest.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RiskHuntingAppTest/Summary.aspx.cs">
     <Files>
-      <File FileName="RiskHuntingAppTest/CreateIdeas_BrightSparks.aspx" Line="1" Column="1" />
-      <File FileName="RiskHuntingAppTest/CreateIdeas_BrightSparks.aspx.cs" Line="1" Column="1" />
-      <File FileName="RiskHuntingAppTest/CreateIdeas_SameRisk.aspx.cs" Line="18" Column="18" />
+      <File FileName="RiskHuntingAppTest/Default.aspx" Line="4" Column="4" />
+      <File FileName="RiskHuntingAppTest/CreateIdeas_PastRisk.aspx.cs" Line="32" Column="32" />
+      <File FileName="RiskHuntingAppTest/DescribeRisk.aspx" Line="35" Column="35" />
+      <File FileName="RiskHuntingAppTest/Summary.aspx" Line="96" Column="96" />
+      <File FileName="RiskHuntingAppTest/Summary.aspx.cs" Line="45" Column="45" />
+      <File FileName="RiskHuntingAppTest/ResolveRisk.aspx" Line="8" Column="8" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="RiskHuntingAppTest" expanded="True">
-            <Node name="WebReferences" expanded="True" />
-            <Node name="AddResolutionIdea.aspx" expanded="True" />
-            <Node name="CreateIdeas_BrightSparks.aspx" expanded="True" />
-            <Node name="CreateIdeas_SameRisk.aspx" expanded="True">
-              <Node name="CreateIdeas_SameRisk.aspx.cs" selected="True" />
-            </Node>
-            <Node name="EditResolutionIdea.aspx" expanded="True" />
-            <Node name="ResolveRisk.aspx" expanded="True" />
-            <Node name="Summary.aspx" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

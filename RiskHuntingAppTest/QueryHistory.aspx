@@ -15,7 +15,7 @@
 <div id="TopbarProblemIdeas" runat="server">
 	<div id="topbar2">
 		<div id="leftbutton">
-			<a href="javascript:doLoad('Default.aspx');" >
+			<a href="javascript:doLoad('DescribeRisk.aspx');" >
 				back
 			</a> 
 		</div>
