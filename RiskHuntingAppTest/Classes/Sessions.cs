@@ -11,16 +11,16 @@ namespace RiskHuntingAppTest
 	{
 		#region Private Constants
 		//---------------------------------------------------------------------
-		private const string sortBy = "SortBy";
-		private const string currentRisk = "CURRENT_RISK";
-		private const string currentProblemDesc = "CURRENT_PROBLEM_DESC";
-		private const string currentPastRiskDesc = "CURRENT_PAST_RISK_DESC";
-		private const string creativityPrompts = "CREATIVITY_PROMPTS";
-		private const string creativityPromptsPastRisk = "CREATIVITY_PROMPTS_PAST_RISK";
-		private const string currentResponseUri = "CurrentResponseUri";
-		private const string currentOriginalID = "CurrentOriginalID";
-		private const string currentPersonas = "CURRENT_PERSONAS";
-		private const string currentPersona = "CURRENT_PERSONA";
+		public const string sortState = "SortBy";
+		public const string riskState = "CURRENT_RISK";
+		public const string problemDescState = "CURRENT_PROBLEM_DESC";
+		public const string pastRiskDescState = "CURRENT_PAST_RISK_DESC";
+		public const string creativityPromptsState = "CREATIVITY_PROMPTS";
+		public const string creativityPromptsPastRiskState = "CREATIVITY_PROMPTS_PAST_RISK";
+		public const string responseUriState = "CurrentResponseUri";
+		public const string pastRiskState = "CurrentOriginalID";
+		public const string personasState = "CURRENT_PERSONAS";
+		public const string personaState = "CURRENT_PERSONA";
 
 		//---------------------------------------------------------------------
 		#endregion
@@ -29,10 +29,11 @@ namespace RiskHuntingAppTest
 		//---------------------------------------------------------------------
 
 
+
 		public static string SortState
 		{
 			get {
-				var obj = HttpContext.Current.Session [sortBy];
+				var obj = HttpContext.Current.Session [sortState];
 				if (obj == null)
 					return String.Empty;
 				return (string)obj;
@@ -40,7 +41,7 @@ namespace RiskHuntingAppTest
 
 			set
 			{
-				HttpContext.Current.Session [sortBy] = value;
+				HttpContext.Current.Session [sortState] = value;
 			}
 		}
 
@@ -48,7 +49,7 @@ namespace RiskHuntingAppTest
 		{
 			get 
 			{
-				var obj = HttpContext.Current.Session [currentRisk];
+				var obj = HttpContext.Current.Session [riskState];
 				if (obj == null)
 					return String.Empty;
 				return (string)obj;
@@ -56,7 +57,7 @@ namespace RiskHuntingAppTest
 
 			set
 			{
-				HttpContext.Current.Session [currentRisk] = value;
+				HttpContext.Current.Session [riskState] = value;
 			}
 		}
 			
@@ -64,15 +65,15 @@ namespace RiskHuntingAppTest
 		{
 			get 
 			{
-				var obj = HttpContext.Current.Session [currentProblemDesc];
+				var obj = HttpContext.Current.Session [problemDescState];
 				if (obj == null)
-					return new List<NLResponseToken>();
+					return null;
 				return (List<NLResponseToken>)obj;
 			}
 
 			set
 			{
-				HttpContext.Current.Session [currentProblemDesc] = value;
+				HttpContext.Current.Session [problemDescState] = value;
 			}
 		}
 
@@ -80,15 +81,15 @@ namespace RiskHuntingAppTest
 		{
 			get 
 			{
-				var obj = HttpContext.Current.Session [currentPastRiskDesc];
+				var obj = HttpContext.Current.Session [pastRiskDescState];
 				if (obj == null)
-					return new List<NLResponseToken>();
+					return null;
 				return (List<NLResponseToken>)obj;
 			}
 
 			set
 			{
-				HttpContext.Current.Session [currentPastRiskDesc] = value;
+				HttpContext.Current.Session [pastRiskDescState] = value;
 			}
 		}
 
@@ -96,7 +97,7 @@ namespace RiskHuntingAppTest
 		{
 			get 
 			{
-				var obj = HttpContext.Current.Session [creativityPrompts];
+				var obj = HttpContext.Current.Session [creativityPromptsState];
 				if (obj == null)
 					return null;
 				return (IList<string>)obj;
@@ -104,7 +105,7 @@ namespace RiskHuntingAppTest
 
 			set
 			{
-				HttpContext.Current.Session [creativityPrompts] = value;
+				HttpContext.Current.Session [creativityPromptsState] = value;
 			}
 		}
 
@@ -112,7 +113,7 @@ namespace RiskHuntingAppTest
 		{
 			get 
 			{
-				var obj = HttpContext.Current.Session [creativityPromptsPastRisk];
+				var obj = HttpContext.Current.Session [creativityPromptsPastRiskState];
 				if (obj == null)
 					return null;
 				return (IList<string>)obj;
@@ -120,7 +121,7 @@ namespace RiskHuntingAppTest
 
 			set
 			{
-				HttpContext.Current.Session [creativityPromptsPastRisk] = value;
+				HttpContext.Current.Session [creativityPromptsPastRiskState] = value;
 			}
 		}
 
@@ -128,7 +129,7 @@ namespace RiskHuntingAppTest
 		{
 			get 
 			{
-				var obj = HttpContext.Current.Session [currentResponseUri];
+				var obj = HttpContext.Current.Session [responseUriState];
 				if (obj == null)
 					return String.Empty;
 				return (string)obj;
@@ -136,7 +137,7 @@ namespace RiskHuntingAppTest
 
 			set
 			{
-				HttpContext.Current.Session [currentResponseUri] = value;
+				HttpContext.Current.Session [responseUriState] = value;
 			}
 		}
 
@@ -144,7 +145,7 @@ namespace RiskHuntingAppTest
 		{
 			get 
 			{
-				var obj = HttpContext.Current.Session [currentOriginalID];
+				var obj = HttpContext.Current.Session [pastRiskState];
 				if (obj == null)
 					return String.Empty;
 				return (string)obj;
@@ -152,29 +153,14 @@ namespace RiskHuntingAppTest
 
 			set
 			{
-				HttpContext.Current.Session [currentOriginalID] = value;
+				HttpContext.Current.Session [pastRiskState] = value;
 			}
 		}
-
-		public static string PersonaState
-		{
-			get {
-				var obj = HttpContext.Current.Session [currentPersona];
-				if (obj == null)
-					return String.Empty;
-				return (string)obj;
-			}
-
-			set
-			{
-				HttpContext.Current.Session [currentPersona] = value;
-			}
-		}
-
+			
 		public static List<Persona> PersonasState
 		{
 			get {
-				var obj = HttpContext.Current.Session [currentPersonas];
+				var obj = HttpContext.Current.Session [personasState];
 				if (obj == null)
 					return null;
 				return (List<Persona>)obj;
@@ -182,9 +168,25 @@ namespace RiskHuntingAppTest
 
 			set
 			{
-				HttpContext.Current.Session [currentPersonas] = value;
+				HttpContext.Current.Session [personasState] = value;
 			}
 		}
+
+		public static string PersonaState
+		{
+			get {
+				var obj = HttpContext.Current.Session [personaState];
+				if (obj == null)
+					return String.Empty;
+				return (string)obj;
+			}
+
+			set
+			{
+				HttpContext.Current.Session [personaState] = value;
+			}
+		}
+
 
 		/// <summary>
 		///     The Username is the domain name and username of the current user.

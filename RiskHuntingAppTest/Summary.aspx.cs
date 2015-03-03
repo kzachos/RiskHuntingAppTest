@@ -64,8 +64,8 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString ();
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 			else
 				this.sourceId = String.Empty;
 
@@ -196,7 +196,7 @@ namespace RiskHuntingAppTest
 			if (componentType.Equals("SourceSpecification"))
 			{
 				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = Util.CreateSourceSpecificationXml(this.currentRisk);
-				//				Console.WriteLine ("this.sourceId (GenerateXml): " + this.sourceId.ToString ());
+				//				Console.WriteLine ("this.sourceId (GenerateXml): " + this.s[Sessions.SortState]String ());
 				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
 				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOURCESPECIFICATION, Ref);
 				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOURCESPECIFICATION, Ref);

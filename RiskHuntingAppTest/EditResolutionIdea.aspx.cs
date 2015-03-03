@@ -46,8 +46,9 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString();	
+			alert_message_error.Visible = false;
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 			RetrieveCurrentRisk ();
 
 			TopbarProblemIdeas.InnerHtml = GenerateHtml (DetermineFrom ());

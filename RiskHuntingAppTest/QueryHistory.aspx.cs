@@ -94,8 +94,8 @@ namespace RiskHuntingAppTest
 		string DetermineSortAttribute()
 		{
 			var sortBy = String.Empty;
-			if (Session ["SortBy"] != null)
-				sortBy = Session ["SortBy"].ToString();
+			if (Sessions.SortState != String.Empty)
+				sortBy = Sessions.SortState;
 			return sortBy;
 		}
 
@@ -165,8 +165,8 @@ namespace RiskHuntingAppTest
 				statusLabel.Text = "No previous risk cases available.";
 			}
 
-			if (Session["CurrentResponseUri"] != null) 
-				Session.Remove("CurrentResponseUri");
+			if (Sessions.ResponseUriState != String.Empty) 
+				Session.Remove(Sessions.responseUriState);
 		}
 
 		Risk RetrieveCurrentRisk (string locSpec, string locProblem, string locSolution)
@@ -200,7 +200,7 @@ namespace RiskHuntingAppTest
 		protected void itemSelected(object sender, EventArgs e)
 		{
 			DropDownList dropdown = (DropDownList) sender;  
-			Session ["SortBy"] = dropdown.SelectedItem.Text;
+			Sessions.SortState = dropdown.SelectedItem.Text;
 //			Console.WriteLine ("SortBy (itemSelected): " + Session ["SortBy"].ToString ());
 
 		}

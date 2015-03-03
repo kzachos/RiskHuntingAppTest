@@ -47,7 +47,7 @@
       <xs:element name="RetrieveSinglePersonaSimpleResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="RetrieveSinglePersonaSimpleResult" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" nSession [Sessions.SortState]ePersonaSimpleResult" tSession [Sessions.SortState]
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -148,10 +148,9 @@
   <message name="RetrievePersonaFromTypeSimpleHttpGetOut">
     <part name="Body" element="tns:string" />
   </message>
-  <message name="RetrieveSinglePersonaSimpleHttpGetIn">
+Session [Sessions.SortState]etrieveSinglePersonaSimpleHttpGetIn">
     <part name="name" type="s:string" />
-  </message>
-  <message name="RetrieveSinglePersonaSimpleHttpGetOut">
+  </Session [Sessions.SortState]e name="RetrieveSinglePersonaSimpleHttpGetOut">
     <part name="Body" element="tns:string" />
   </message>
   <message name="RetrievePersonaAdvancedHttpGetIn">

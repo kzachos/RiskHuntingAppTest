@@ -27,13 +27,13 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Load(object sender, EventArgs e)
 		{			
-			if (Session ["CURRENT_PERSONA"] != null) 
-				Session.Remove ("CURRENT_PERSONA");
-			if (Session ["CURRENT_PERSONAS"] != null) 
-				Session.Remove ("CURRENT_PERSONAS");
+			if (Sessions.PersonaState != String.Empty) 
+				Session.Remove (Sessions.personaState);
+			if (Sessions.PersonasState != null) 
+				Session.Remove (Sessions.personasState);
 
-			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString ();
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
 
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");

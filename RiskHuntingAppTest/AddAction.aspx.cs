@@ -32,8 +32,8 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString();	
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 			RetrieveCurrentRisk ();
 			PopulateAddDateDropDown ();
 

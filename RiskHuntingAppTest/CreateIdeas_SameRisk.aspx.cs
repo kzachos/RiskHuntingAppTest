@@ -111,20 +111,20 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_PERSONA"] != null) 
-				Session.Remove ("CURRENT_PERSONA");
-			if (Session ["CURRENT_PERSONAS"] != null) 
-				Session.Remove ("CURRENT_PERSONAS");
+			if (Sessions.PersonaState != String.Empty) 
+				Session.Remove (Sessions.personaState);
+			if (Sessions.PersonasState != null) 
+				Session.Remove (Sessions.personasState);
 			generatePrompts.Visible = true;
 			alert_message_success.Visible = false;
 			alert_message_error.Visible = false;
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 
-			if (Session ["CREATIVITY_PROMPTS"] != null) {
+			if (Sessions.CreativityPromptsState != null) {
 //				if (Session ["CURRENT_PROBLEM_DESC"] != null) 
 //					Session.Remove ("CURRENT_PROBLEM_DESC");
-				CreativityPromptsFeed = (IList<string>) Session ["CREATIVITY_PROMPTS"];
+				CreativityPromptsFeed = Sessions.CreativityPromptsState;
 				if (DetermineFrom().Equals(String.Empty))
 					CreativityPromptsFeed.Shuffle ();
 				PopulateData ();
@@ -174,8 +174,8 @@ namespace RiskHuntingAppTest
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 
 			if (!Page.IsPostBack) {
 
@@ -245,8 +245,8 @@ namespace RiskHuntingAppTest
 			System.Net.ServicePointManager.Expect100Continue = false;
 			var output = antique.NLParser (this.currentRisk.Content);
 			this.NLResponse = Util.DeserializeNLResponse (output);
-			if (Session ["CREATIVITY_PROMPTS"] != null)
-				Session.Remove("CREATIVITY_PROMPTS");
+			if (Sessions.CreativityPromptsState != null)
+				Session.Remove(Sessions.creativityPromptsState);
 			//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
 		}
 
@@ -348,8 +348,8 @@ namespace RiskHuntingAppTest
 				Console.WriteLine ("CreativityPromptsFeed.Count: " + CreativityPromptsFeed.Count);
 			} else {
 
-				if (Session ["CREATIVITY_PROMPTS"] != null)
-					CreativityPromptsFeed = (IList<string>)Session ["CREATIVITY_PROMPTS"];
+				if (Sessions.CreativityPromptsState != null)
+					CreativityPromptsFeed = Sessions.CreativityPromptsState;
 				else {
 					Console.WriteLine ("no CREATIVITY_PROMPTS");
 				}
@@ -370,13 +370,13 @@ namespace RiskHuntingAppTest
 //						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
 						Console.WriteLine (CreativityPromptsFeed [i]);
 					}
-					Session ["CREATIVITY_PROMPTS"] = CreativityPromptsFeed;
+					Sessions.CreativityPromptsState = CreativityPromptsFeed;
 				}
 				else
 					GenerateHtml3 ("No prompts avaiable", String.Empty);
 			} else {
 				Console.WriteLine ("PopulateData");
-				if (Session ["CREATIVITY_PROMPTS"] != null) {
+				if (Sessions.CreativityPromptsState != null) {
 					this.total = CreativityPromptsFeed.Count < Constants.MaxPromptsAtATime ? CreativityPromptsFeed.Count : Constants.MaxPromptsAtATime;
 					int counter = 0;
 					for (int i = 0; i < this.total; i++) {
@@ -461,9 +461,9 @@ namespace RiskHuntingAppTest
 
 		public virtual void morePromptsClicked(object sender, EventArgs args)
 		{
-			if (Session ["CREATIVITY_PROMPTS"] != null) {
+			if (Sessions.CreativityPromptsState != null) {
 				content2.Controls.Clear ();
-				CreativityPromptsFeed = (IList<string>) Session ["CREATIVITY_PROMPTS"];
+				CreativityPromptsFeed = Sessions.CreativityPromptsState;
 				CreativityPromptsFeed.Shuffle ();
 				PopulateData ();
 			}

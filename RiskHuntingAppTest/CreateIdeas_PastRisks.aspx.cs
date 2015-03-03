@@ -41,12 +41,12 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_PAST_RISK_DESC"] != null) 
-				Session.Remove ("CURRENT_PAST_RISK_DESC");
-			if (Session ["CURRENT_PERSONA"] != null) 
-				Session.Remove ("CURRENT_PERSONA");
-			if (Session ["CURRENT_PERSONAS"] != null) 
-				Session.Remove ("CURRENT_PERSONAS");
+			if (Sessions.PastRiskDescState != null) 
+				Session.Remove (Sessions.pastRiskDescState);
+			if (Sessions.PersonaState != String.Empty) 
+				Session.Remove (Sessions.personaState);
+			if (Sessions.PersonasState != null) 
+				Session.Remove (Sessions.personasState);
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
 				creativeGuidance.Visible = false;
@@ -93,9 +93,9 @@ namespace RiskHuntingAppTest
 		private string DetermineID()
 		{
 			string id = String.Empty;
-			if (Session ["CURRENT_RISK"] != null)
+			if (Sessions.RiskState != String.Empty)
 			{
-				id = Session ["CURRENT_RISK"].ToString ();
+				id = Sessions.RiskState;
 			}
 			return id;
 		}
@@ -118,7 +118,7 @@ namespace RiskHuntingAppTest
 			responseStream.Close();
 
 			this.responseUri = responseXmlUri;
-			Session ["CurrentResponseUri"] = responseXmlUri;
+			Sessions.ResponseUriState = responseXmlUri;
 //			Response.Redirect("CreateIdeas_PastRisks.aspx", false);
 		}
 
@@ -277,14 +277,14 @@ namespace RiskHuntingAppTest
 		private string DetermineResponseUri()
 		{
 			string responseUri = String.Empty;
-			if (Session ["CurrentResponseUri"] != null)
-				responseUri = Session ["CurrentResponseUri"].ToString ();
+			if (Sessions.ResponseUriState != String.Empty)
+				responseUri = Sessions.ResponseUriState;
 			else if (Request.QueryString ["path"] != null) {
 				responseUri = Request.QueryString ["path"];
-				Session ["CurrentResponseUri"] = responseUri;
+				Sessions.ResponseUriState = responseUri;
 			} else if (File.Exists (Path.Combine (responsePath, "Response_" + this.sourceId + ".xml"))) {
 				responseUri = Path.Combine (responsePath, "Response_" + this.sourceId + ".xml");
-				Session ["CurrentResponseUri"] = responseUri;
+				Sessions.ResponseUriState = responseUri;
 			}
 			return responseUri; 
 		}

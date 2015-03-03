@@ -28,10 +28,10 @@ namespace RiskHuntingAppTest
 		{
 			if (!Page.IsPostBack) {
 //			AddIdeaDescription.WatermarkText = ADDIDEA_WATERMARK;
-				if (Session ["CURRENT_RISK"] != null)
-					this.sourceId = Session ["CURRENT_RISK"].ToString ();	
-				if (Session ["CURRENT_PROBLEM_DESC"] != null)
-					Session.Remove ("CURRENT_PROBLEM_DESC");
+				if (Sessions.RiskState != String.Empty)
+					sourceId = Sessions.RiskState;
+				if (Sessions.ProblemDescState != null)
+					Session.Remove (Sessions.problemDescState);
 				RetrieveCurrentRisk ();
 				if (DetermineFrom ().Equals (String.Empty))
 					BrightSparksDiv.InnerHtml = GenerateHtml ();
@@ -41,15 +41,15 @@ namespace RiskHuntingAppTest
 					RetrievePersonas ();
 					if (this.HofResponse.Count > 0) {
 						this.HofResponse.Shuffle ();
-						Session ["CURRENT_PERSONAS"] = this.HofResponse;
+						Sessions.PersonasState = this.HofResponse;
 						currentPersona = this.HofResponse [0].Name.ToString ();
-						Session ["CURRENT_PERSONA"] = currentPersona;
+						Sessions.PersonaState = currentPersona;
 						BrightSparksDiv.InnerHtml = GenerateHtml (currentPersona);
 
 					}
 				} else {
-					if (Session ["CURRENT_PERSONA"] != null) {
-						BrightSparksDiv.InnerHtml = GenerateHtml (Session ["CURRENT_PERSONA"].ToString ());
+					if (Sessions.PersonaState != String.Empty) {
+						BrightSparksDiv.InnerHtml = GenerateHtml (Sessions.PersonaState);
 					} else {
 						BrightSparksDiv.InnerHtml = GenerateHtml ();
 					}
@@ -89,8 +89,8 @@ namespace RiskHuntingAppTest
 			System.Net.ServicePointManager.Expect100Continue = false;
 			var output = hof.RetrieveAllPersonasFromType (Constants.PERSONA_TYPE);
 			this.HofResponse = Util.DeserializeHofResponse (output);
-			if (Session ["CURRENT_PERSONA"] != null)
-				Session.Remove("CURRENT_PERSONA");
+			if (Sessions.PersonaState != String.Empty)
+				Session.Remove(Sessions.personaState);
 			//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
 		}
 
@@ -154,12 +154,12 @@ namespace RiskHuntingAppTest
 
 		public virtual void moreClicked(object sender, EventArgs args)
 		{
-			if (Session ["CURRENT_PERSONAS"] != null) {
-				this.HofResponse = (List<Persona>) Session ["CURRENT_PERSONAS"];
+			if (Sessions.PersonasState != null) {
+				this.HofResponse = Sessions.PersonasState;
 				if (this.HofResponse.Count > 0) {
 					this.HofResponse.Shuffle ();
 					currentPersona = this.HofResponse [0].Name.ToString ();
-					Session ["CURRENT_PERSONA"] = currentPersona;
+					Sessions.PersonaState = currentPersona;
 					BrightSparksDiv.InnerHtml = GenerateHtml (currentPersona);
 
 				}

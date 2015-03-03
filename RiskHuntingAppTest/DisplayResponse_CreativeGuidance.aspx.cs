@@ -43,8 +43,8 @@ namespace RiskHuntingAppTest
 		{
 			MorePrompts.Visible = false;
 			generatePrompts.Visible = false;
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
 
 			if (Session ["CURRENT_RISK_DESC"] != null) 
 				NLResponse = (List<NLResponseToken>) Session ["CURRENT_RISK_DESC"];
@@ -99,8 +99,8 @@ namespace RiskHuntingAppTest
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
 
 			if (!Page.IsPostBack) {
 

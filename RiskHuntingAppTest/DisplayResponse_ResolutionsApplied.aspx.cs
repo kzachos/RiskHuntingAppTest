@@ -38,8 +38,8 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
 
 			if (!Page.IsPostBack) {
 //				RePopulateValues ();
@@ -77,8 +77,8 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
 
 			if (!Page.IsPostBack) {
 

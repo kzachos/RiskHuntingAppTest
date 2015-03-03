@@ -75,14 +75,14 @@ namespace RiskHuntingAppTest
 				}
 			} else {
 
-				if (Session ["CurrentResponseUri"] != null)
-					Session.Remove ("CurrentResponseUri");
-				if (Session ["CURRENT_PROBLEM_DESC"] != null)
-					Session.Remove ("CURRENT_PROBLEM_DESC");
-				if (Session ["CURRENT_PERSONA"] != null)
-					Session.Remove ("CURRENT_PERSONA");
-				if (Session ["CURRENT_PERSONAS"] != null)
-					Session.Remove ("CURRENT_PERSONAS");
+				if (Sessions.ResponseUriState != String.Empty)
+					Session.Remove (Sessions.responseUriState);
+				if (Sessions.ProblemDescState != null)
+					Session.Remove (Sessions.problemDescState);
+				if (Sessions.PersonaState != String.Empty)
+					Session.Remove (Sessions.personaState);
+				if (Sessions.PersonasState != null)
+					Session.Remove (Sessions.personasState);
 				//			Session.Remove ("CREATIVITY_PROMPTS");
 
 				InitTextElements ();
@@ -99,7 +99,7 @@ namespace RiskHuntingAppTest
 					RetrieveRiskXml ("SourceSpecification");
 					RetrieveRiskXml ("Problem");
 					RetrieveRiskXml ("Solution");
-					Session ["CURRENT_RISK"] = this.sourceId;
+					Sessions.RiskState = this.sourceId;
 
 				} else {
 					deleteRiskDiv.Visible = false;
@@ -136,14 +136,14 @@ namespace RiskHuntingAppTest
 		private string DetermineResponseUri()
 		{
 			string responseUri = String.Empty;
-			if (Session["CurrentResponseUri"] != null)
-				responseUri = Session["CurrentResponseUri"].ToString();
+			if (Sessions.ResponseUriState != String.Empty)
+				responseUri = Sessions.ResponseUriState;
 			else
 			{
 				if (Request.QueryString["id"] != null)
 				{
 					responseUri = Path.Combine (responsePath, "Response_" + Request.QueryString["id"] + ".xml");
-					Session["CurrentResponseUri"] = responseUri;
+					Sessions.ResponseUriState = responseUri;
 				}
 			}
 			return responseUri;
@@ -169,9 +169,9 @@ namespace RiskHuntingAppTest
 			{
 				id = Request.QueryString["id"];
 			}
-			else if (Session ["CURRENT_RISK"] != null)
+			else if (Sessions.RiskState != String.Empty)
 			{
-				id = Session ["CURRENT_RISK"].ToString ();
+				id = Sessions.RiskState;
 			}
 			return id;
 		}
@@ -365,16 +365,16 @@ namespace RiskHuntingAppTest
 			if (initiateNewSearch) {
 				this.maxId = GetNewSourceId ();
 				this.sourceId = GetNewSourceId ().ToString ();
-				Session ["CURRENT_RISK"] = this.sourceId;
+				Sessions.RiskState = this.sourceId;
 				this.currentRisk = NewRisk (searchResults);
 			} else {
-				if (Session ["CURRENT_RISK"] == null) {
+				if (Sessions.RiskState == String.Empty) {
 					this.maxId = GetNewSourceId ();
 					this.sourceId = GetNewSourceId ().ToString ();
-					Session ["CURRENT_RISK"] = this.sourceId;
+					Sessions.RiskState = this.sourceId;
 					this.currentRisk = NewRisk (searchResults);
 				} else {
-					this.sourceId = Session ["CURRENT_RISK"].ToString();
+					this.sourceId = Sessions.RiskState;
 					Console.WriteLine ("this.sourceId (CreateRisk): " + this.sourceId.ToString ());
 					RetrieveCurrentRisk ();
 					UpdateRisk (searchResults);
@@ -461,8 +461,8 @@ namespace RiskHuntingAppTest
 			Console.WriteLine ("this.currentRisk.Id (UpdateRisk): " + this.currentRisk.Id.ToString ());
 			Console.WriteLine ("this.sourceId (UpdateRisk): " + this.sourceId.ToString ());
 			if (!this.currentRisk.Content.Equals (RiskDescription.Text)) {
-				if (Session ["CREATIVITY_PROMPTS"] != null)
-					Session.Remove ("CREATIVITY_PROMPTS");
+				if (Sessions.CreativityPromptsState != null)
+					Session.Remove (Sessions.creativityPromptsState);
 			}
 			this.currentRisk.Content = RiskDescription.Text;
 			this.currentRisk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
@@ -576,7 +576,7 @@ namespace RiskHuntingAppTest
 		{
 			//Add the save function here ex store the text to DB
 			//Here we only move the between two textboxes to show that it works
-			if (Session ["CURRENT_RISK"] == null) {
+			if (Sessions.RiskState == String.Empty) {
 				Console.WriteLine ("new");
 				AutoSaveLabel.Text = "Saved and created on " + DateTime.Now;
 			} else {
@@ -709,7 +709,7 @@ namespace RiskHuntingAppTest
 			System.Net.ServicePointManager.Expect100Continue = false;
 			var output = antique.NLParser (this.currentRisk.Content);
 			var NLResponse = Util.DeserializeNLResponse (output);
-			Session ["CURRENT_PROBLEM_DESC"] = NLResponse;
+			Sessions.ProblemDescState = NLResponse;
 		}
 
 		private void RetrieveNLDataAsync()
@@ -746,7 +746,7 @@ namespace RiskHuntingAppTest
 			Console.WriteLine (e.Result);
 			var NLResponse = Util.DeserializeNLResponse (e.Result);
 
-			Session ["CURRENT_PROBLEM_DESC"] = NLResponse;
+			Sessions.ProblemDescState = NLResponse;
 		}
 
 		private bool RemoveCase(string caseId)

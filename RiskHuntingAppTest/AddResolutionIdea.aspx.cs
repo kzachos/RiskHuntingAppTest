@@ -46,8 +46,8 @@ namespace RiskHuntingAppTest
 		protected void Page_Init(object sender, EventArgs e)
 		{
 			alert_message_error.Visible = false;
-			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString();	
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 			RetrieveCurrentRisk ();
 
 			this.requestContent = DetermineContent ();
@@ -114,9 +114,9 @@ namespace RiskHuntingAppTest
 							url += "?";
 						//						if (this.requestFrom.Contains ("Superheroes"))
 						//						{
-						//							if (Session["CURRENT_PERSONA"] != null)
+						//							if (Session [ "CURRENT_PERSONA"] != null)
 						//							{
-						//								url += "pb=" + Session["CURRENT_PERSONA"].ToString();
+						//								url += "pb=" + Session [ "CURRENT_PERSONA"].ToString();
 						//							}
 						//						}
 						//						else
