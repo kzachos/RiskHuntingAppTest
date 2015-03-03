@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>Kos</Author>
+  <LaunchDate>03/03/2015 13:41:08</LaunchDate>
+  <SourceSpecificationLastEdited>03/03/2015 13:41:08</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>the worker is busy falling down</Content>
+    <Observations />
+    <ObservedBehaviour>Entrance</ObservedBehaviour>
+    <TreatmentType>Hands</TreatmentType>
+    <DateOfIncident />
+    <AilmentType />
+    <TriggeringEvent />
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

@@ -59,7 +59,23 @@ namespace RiskHuntingAppTest
 
         protected void Page_Init(object sender, EventArgs e)
         {
-			Session.RemoveAll ();
+//			if (Sessions.ResponseUriState != String.Empty)
+				Session.Remove (Sessions.responseUriState);
+//			if (Sessions.ProblemDescState != null)
+				Session.Remove (Sessions.problemDescState);
+//			if (Sessions.PersonaState != String.Empty)
+				Session.Remove (Sessions.personaState);
+//			if (Sessions.PersonasState != null)
+				Session.Remove (Sessions.personasState);
+			Session.Remove (Sessions.problemDescState);
+			Session.Remove (Sessions.pastRiskDescState);
+			Session.Remove (Sessions.creativityPromptsState);
+			Session.Remove (Sessions.creativityPromptsPastRiskState);
+			Session.Remove (Sessions.responseUriState);
+			Session.Remove (Sessions.pastRiskState);
+			Session.Remove (Sessions.personasState);
+			Session.Remove (Sessions.personaState);
+
 			this.maxId = 1000;
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
