@@ -6,6 +6,10 @@ namespace RiskHuntingAppTest
 	{
 		public const string SESSION_ACTIVITY_LOG_ID = "__SessionActivityLog";
 
+		public const string EDDIE_URI = "http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx";
+		public const string ANTIQUE_URI = "http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx";
+		public const string HALLOFFAME_URI = "http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx";
+
 		public const string CASEREF = "CaseStudy_";
 		public const string SOURCE_TYPE = CASEREF;
 		public const string CASE_TYPE = "Risk";
@@ -23,7 +27,8 @@ namespace RiskHuntingAppTest
 		public const float THRESHOLD = 50.0f;
 		public const int MaxPastRisksAtATime = 5;
 
-
+		public const string SESSION_EXPIRED_TEXT = "Your session expired";
+		public const string SESSION_EXPIRED_LABEL = "sessionexpired";
 	}
 }
 

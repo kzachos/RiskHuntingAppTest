@@ -17,6 +17,10 @@
 	    }); 
 	});
 
+	$('form').live("submit", function () {
+        ShowProgress();
+    });
+
 	window.setTimeout(function () {
 	    $("#alert_message_success").fadeTo(500, 0).slideUp(500, function () {
 	        $(this).remove();
@@ -52,7 +56,7 @@
 
 	<div id="topbar2Sub">
 		<div id="multiselectionbuttonsSub">
-			<a id="pressed" href="">Ideas from risk itself</a>
+			<a id="pressed" href="">Ideas from new risk</a>
 			<a href="javascript:doLoad('CreateIdeas_Superheroes.aspx');">Ideas from Superheroes</a>
 			<a href="javascript:doLoad('CreateIdeas_PastRisks.aspx');">Ideas from previous risks</a>
 		</div>
@@ -73,11 +77,13 @@
 				</div>
 			</div>
 
-			<div class="alert-box notice">
-				<span>hint: </span>
-				<div id="creativeGuidance" style="display: inline" runat="server"></div>
-				<div class="close">&times;</div>
-			</div>
+			<div id="hint_box" runat="server">
+				<div class="alert-box notice">
+					<span>hint: </span>
+					<div id="creativeGuidance" style="display: inline" runat="server"></div>
+					<div class="close">&times;</div>
+				</div>
+			</div>	
 
 
 

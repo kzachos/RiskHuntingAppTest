@@ -26,7 +26,7 @@
 	</div>
 </div>
 
-<span id="loading"></span>
+	<span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
 	<%--<span class="maintitle">Previous queries</span>--%>

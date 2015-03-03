@@ -1549,7 +1549,7 @@ select {
 .smallfield:last-child input {
 	-webkit-border-bottom-right-radius: 8px;
 }
-#progress{-webkit-border-radius:10px;background-color:black;color:white;font-size:18px;font-weight:bold;height:80px;left:60px;line-height:80px;margin:0 auto;position:absolute;text-align:center;top:150px;width:200px;z-index:5000}
+#progress{-webkit-border-radius:10px;background-color:black;color:white;font-size:18px;font-weight:bold;height:150px;left:60px;line-height:80px;margin:0 auto;position:absolute;text-align:center;top:150px;width:200px;z-index:5000}
 
 /* quadbutton */
 #quadbutton{

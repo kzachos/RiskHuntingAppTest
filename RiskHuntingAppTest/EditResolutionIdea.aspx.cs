@@ -46,6 +46,7 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
+			Util.AccessLog(Util.ScreenType.EditIdea);
 			alert_message_error.Visible = false;
 			if (Sessions.RiskState != String.Empty)
 				this.sourceId = Sessions.RiskState;
@@ -89,18 +90,23 @@ namespace RiskHuntingAppTest
 
 		void RetrieveCurrentRisk ()
 		{
-			string location;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			this.currentRisk = new Risk (ss, problem, solution);
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
 
 		}
 
@@ -133,6 +139,7 @@ namespace RiskHuntingAppTest
 
 				}
 				else {
+					Util.AccessLog(Util.ScreenType.EditIdea, Util.FeatureType.EditIdea_UpdateIdeaButton);
 
 					this.currentRisk.Recommendations [this.index] = EditIdeaDescription.Text;
 
@@ -151,6 +158,8 @@ namespace RiskHuntingAppTest
 			{
 				string confirmValue = Request.Form["confirm_value"];
 				if (confirmValue == "Yes") {
+					Util.AccessLog(Util.ScreenType.EditIdea, Util.FeatureType.EditIdea_DeleteIdeaButton);
+
 					int index = this.currentRisk.Recommendations.IndexOf (this.requestContent);
 					if (index != -1)
 						this.currentRisk.Recommendations.RemoveAt (index);

@@ -74,8 +74,6 @@ namespace RiskHuntingAppTest
 					RetrieveCurrentRisk ();
 					RetrieveNLData ();
 //				}
-				PrepareData ();
-				PopulateData ();
 			}
 
 			var processGuidanceText = Util.GenerateProcessGuidance ("creativeGuidance");
@@ -83,6 +81,7 @@ namespace RiskHuntingAppTest
 
 			if (Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
+				Util.AccessLog(Util.ScreenType.CreateIdea_PastRisk);
 				content2.Controls.Clear ();
 				GenerateContent ();
 //				hint_box.Visible = false;
@@ -115,16 +114,39 @@ namespace RiskHuntingAppTest
 
 		#region Creativity Prompts
 
+
 		void RetrieveNLData ()
 		{
-			RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
-			System.Net.ServicePointManager.Expect100Continue = false;
-			var output = antique.NLParser (this.currentRisk.Content);
-			this.NLResponse = Util.DeserializeNLResponse (output);
-			if (Sessions.CreativityPromptsPastRiskState != null)
-				Session.Remove(Sessions.creativityPromptsPastRiskState);
-//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
+			string errorMsg;
+			if(Util.ServiceExists(Constants.ANTIQUE_URI, false, out errorMsg)) {
+				RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
+				try
+				{
+					System.Net.ServicePointManager.Expect100Continue = false;
+					var output = antique.NLParser (this.currentRisk.Content);
+					this.NLResponse = Util.DeserializeNLResponse (output);
+					if (Sessions.CreativityPromptsPastRiskState != null)
+						Session.Remove(Sessions.creativityPromptsPastRiskState);
+					//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
+				}
+				catch (Exception ex)
+				{
+				}
+				finally {
+					PrepareData ();
+					PopulateData ();
+				}
+			}
+			else
+			{
+				generatePrompts.Visible = false;
+				hint_box.Visible = false;
+				alert_message_success.Visible = false;
+				errorMessage.InnerText = "Currently unable to generate creativity prompts. Please try again later.";
+				alert_message_error.Visible = true;
+			}
 		}
+
 
 		List<string> GenerateGenericCreativityPrompts()
 		{
@@ -235,7 +257,7 @@ namespace RiskHuntingAppTest
 		{
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("****** PopulateData *******");
-				this.total = CreativityPromptsFeed.Count < Constants.MaxPromptsAtATime ? CreativityPromptsFeed.Count : Constants.MaxPromptsAtATime;
+				this.total = CreativityPromptsFeed.Count < Constants.MaxPromptsAtATime ? CreativityPromptsFeed.Count : Constants.MaxPromptsAtATime -1;
 				int counter = 0;
 				if (this.total > 0)
 				{
@@ -248,7 +270,7 @@ namespace RiskHuntingAppTest
 					Sessions.CreativityPromptsPastRiskState = CreativityPromptsFeed;
 				}
 				else
-					GenerateHtml3 ("No prompts avaiable", String.Empty);
+					GenerateHtml3 ("No prompts available", String.Empty);
 			} else {
 				Console.WriteLine ("PopulateData");
 				if (Sessions.CreativityPromptsPastRiskState != null) {
@@ -290,6 +312,8 @@ namespace RiskHuntingAppTest
 		public virtual void morePromptsClicked(object sender, EventArgs args)
 		{
 			if (Sessions.CreativityPromptsPastRiskState != null) {
+				Util.AccessLog(Util.ScreenType.CreateIdea_PastRisk, Util.FeatureType.CreateIdea_PastRisk_GenerateNewPromptsButton);
+
 				content2.Controls.Clear ();
 				GenerateContent ();
 				CreativityPromptsFeed = Sessions.CreativityPromptsPastRiskState;
@@ -308,7 +332,6 @@ namespace RiskHuntingAppTest
 			string responseUri = DetermineResponseUri ();
 
 			if (!responseUri.Equals (String.Empty)) {
-				content2.InnerHtml += "<br><span class=\"maintitle\">Previous riks resolutions applied</span>";
 				XmlProc.ResponseSerialized.MatchedSources response = XmlProc.ObjectXMLSerializer<XmlProc.ResponseSerialized.MatchedSources>.Load (responseUri);
 
 				List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource> matchedSources = (List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource>)response.MatchedSource;
@@ -322,16 +345,16 @@ namespace RiskHuntingAppTest
 						//						title.InnerHtml = String.Empty;
 
 //						RiskDescription.Text = Util.ExtractAttributeContentFromString(matchedSource.Content, "Content");
-
+						string resText = String.Empty;
 						var recommendation = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Recommendation").Trim();
 						if (!recommendation.Trim().Equals (String.Empty))
-							content2.InnerHtml += GenerateHtml (recommendation);
+							resText += GenerateHtml (recommendation);
 //							GenerateHtml2 (recommendation, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml3 (recommendation, String.Empty, 0);
 
 						var correctiveActions = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Corrective Actions");
 						if (!correctiveActions.Trim().Equals (String.Empty))
-							content2.InnerHtml += GenerateHtml (correctiveActions);
+							resText += GenerateHtml (correctiveActions);
 //							GenerateHtml2 (correctiveActions, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml3 (correctiveActions, String.Empty, 0);
 
@@ -340,13 +363,17 @@ namespace RiskHuntingAppTest
 						if (!countermeasures.Equals (String.Empty) 
 							&& !countermeasures.Trim().ToLower().Contains (ignoreWord.ToLower())
 						)
-							content2.InnerHtml += GenerateHtml (countermeasures);
+							resText += GenerateHtml (countermeasures);
 //							GenerateHtml2 (countermeasures, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml2 (countermeasures, String.Empty, 0);
 
 						//							var c = new CheckBox ();
 						//							c.ID = "CheckBox0";
 						//							c.CheckedChanged += new EventHandler (CheckBox1_CheckedChanged);
+
+						if (!resText.Equals(String.Empty))
+							content2.InnerHtml += "<br><span class=\"maintitle\">Previous risk resolutions applied</span>";
+						content2.InnerHtml += resText;
 						break;
 
 					}
@@ -415,7 +442,7 @@ namespace RiskHuntingAppTest
 		private string GenerateHtml(string idea)
 		{
 			return LiStartTagMenu +
-				aStartTag + DetermineID() + aMidTag1 + idea + aMidTag2 +
+				aStartTag + DetermineID() + aMidTag1 + Microsoft.Security.Application.AntiXss.JavaScriptEncode(idea, false) + aMidTag2 +
 				SpanStartTagName + idea + SpanEndTag +
 				SpanStartTagArrow + SpanEndTag + aEndTag + LiEndTag;
 		}
@@ -496,19 +523,23 @@ namespace RiskHuntingAppTest
 
 		void RetrieveCurrentRisk ()
 		{
-			string location = String.Empty;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			this.currentRisk = new Risk (ss, problem, solution);
-
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
 		}
 
 		private void GenerateXml()

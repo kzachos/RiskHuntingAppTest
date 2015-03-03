@@ -64,6 +64,9 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
+			alert_message_success.Visible = false;
+			alert_message_error.Visible = false;
+			Util.AccessLog(Util.ScreenType.Summary);
 			if (Sessions.RiskState != String.Empty)
 				this.sourceId = Sessions.RiskState;
 			else
@@ -174,18 +177,23 @@ namespace RiskHuntingAppTest
 
 		void RetrieveCurrentRisk ()
 		{
-			string location = String.Empty;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			this.currentRisk = new Risk (ss, problem, solution);
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
 		}
 			
 		private bool GenerateXml(string componentType)
@@ -205,9 +213,9 @@ namespace RiskHuntingAppTest
 //					File.Delete (xmlUri2);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri2);
 
-				var output = UpdateCase (xmlUri, Constants.SOURCESPECIFICATION, "<SourceSpecification> ");
-				if (output.StartsWith ("Stored document", StringComparison.Ordinal))
-					success = true;
+//				var output = UpdateCase (xmlUri, Constants.SOURCESPECIFICATION, "<SourceSpecification> ");
+//				if (output.StartsWith ("Stored document", StringComparison.Ordinal))
+//					success = true;
 			}
 			else if (componentType.Equals("Problem"))
 			{
@@ -220,9 +228,9 @@ namespace RiskHuntingAppTest
 //					File.Delete (xmlUri2);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri2);
 
-				var output = UpdateCase (xmlUri, Constants.PROBLEM, "<LanguageSpecificSpecification> ");
-				if (output.StartsWith ("Stored document", StringComparison.Ordinal))
-					success = true;
+//				var output = UpdateCase (xmlUri, Constants.PROBLEM, "<LanguageSpecificSpecification> ");
+//				if (output.StartsWith ("Stored document", StringComparison.Ordinal))
+//					success = true;
 			}
 			else if (componentType.Equals("Solution"))
 			{
@@ -618,58 +626,77 @@ namespace RiskHuntingAppTest
 
 		#endregion
 
+
 		private string UpdateCase(string xmlUri, string componentType, string firstLine)
 		{
-			try
-			{
-				FileStream cgStream = new FileStream(xmlUri, FileMode.Open, FileAccess.Read);
+			string errorMsg;
+			if (Util.ServiceExists (Constants.ANTIQUE_URI, false, out errorMsg)) {
+				FileStream cgStream = new FileStream (xmlUri, FileMode.Open, FileAccess.Read);
 				var xmlContent = String.Empty;
-				using (StreamReader cgStreamReader = new StreamReader(cgStream))
-				{
-					string headerLine = cgStreamReader.ReadLine();
-					headerLine = cgStreamReader.ReadLine();
+				using (StreamReader cgStreamReader = new StreamReader (cgStream)) {
+					string headerLine = cgStreamReader.ReadLine ();
+					headerLine = cgStreamReader.ReadLine ();
 					string line;
-					while ((line = cgStreamReader.ReadLine()) != null)
-					{
+					while ((line = cgStreamReader.ReadLine ()) != null) {
 						xmlContent += line;
 
 					}
 				}
-				cgStream.Close();
+				cgStream.Close ();
 				xmlContent = firstLine + xmlContent;
-				RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
+				RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService ();
 				var output = eddie.UpdateCase (xmlContent, componentType, this.sourceId);
-				Console.WriteLine(output);
+				Console.WriteLine (output);
 				return output;
 			}
-			catch {
+			else
+			{
+				return String.Empty;
 			}
-			return String.Empty;
 		}
 
 		public virtual void submitClicked(object sender, EventArgs args)
 		{
 			if (Page.IsValid) {
+				Util.AccessLog(Util.ScreenType.Summary, Util.FeatureType.Summary_SubmitCaseButton);
+
 				var success1 = GenerateXml(Constants.SOURCESPECIFICATION);
 				var success2 = GenerateXml(Constants.PROBLEM);
 				var success3 = GenerateXml(Constants.SOLUTION);
 
-				string pb = String.Empty;
-				if (success1 && success2 && success3) 
-					pb = "success";
-				else
-					pb = "nosuccess";
-				Response.Redirect ("DescribeRisk.aspx?pb=" + pb);
+//				string pb = String.Empty;
+				if (success1 && success2 && success3) {
+//					pb = "success";
+					alert_message_success.Visible = true;
+					successMessage.InnerText = "Thank you for your safty imput. Your risk has been successfully submitted and uploaded to the database";
+					alert_message_error.Visible = false;
+				} else {
+//					pb = "nosuccess";
+					alert_message_success.Visible = false;
+					errorMessage.InnerText = "Your risk could not be uploaded to the database. Please try again later.";
+					alert_message_error.Visible = true;
+				}
+//				Response.Redirect ("DescribeRisk.aspx?pb=" + pb);
 			}
 
 		}
 
 		public virtual void exportClicked (object sender, EventArgs args)
 		{
+			Util.AccessLog(Util.ScreenType.Summary, Util.FeatureType.Summary_GenerateReportButton);
 
 			BuildPdf ();
 
+			Response.Redirect ("Summary.aspx");
 
+		}
+
+		public virtual void createNewClicked (object sender, EventArgs args)
+		{
+			Util.AccessLog(Util.ScreenType.Summary, Util.FeatureType.Summary_CreateNewRiskButton);
+
+			Session.RemoveAll ();
+			Response.Redirect ("DescribeRisk.aspx");
 		}
 	}
 }

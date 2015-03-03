@@ -136,8 +136,7 @@ namespace RiskHuntingAppTest
 					RetrieveCurrentRisk ();
 					RetrieveNLData ();
 //				}
-				PrepareData ();
-				PopulateData ();
+
 			}
 
 			var processGuidanceText = Util.GenerateProcessGuidance ("creativeGuidance");
@@ -165,6 +164,9 @@ namespace RiskHuntingAppTest
 
 
 
+			} else {
+				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
+				Util.AccessLog(Util.ScreenType.CreateIdea_SameRisk);
 			}
 
 		}
@@ -241,13 +243,34 @@ namespace RiskHuntingAppTest
 
 		void RetrieveNLData ()
 		{
-			RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
-			System.Net.ServicePointManager.Expect100Continue = false;
-			var output = antique.NLParser (this.currentRisk.Content);
-			this.NLResponse = Util.DeserializeNLResponse (output);
-			if (Sessions.CreativityPromptsState != null)
-				Session.Remove(Sessions.creativityPromptsState);
-			//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
+			string errorMsg;
+			if(Util.ServiceExists(Constants.ANTIQUE_URI, false, out errorMsg)) {
+				RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
+				try
+				{
+					System.Net.ServicePointManager.Expect100Continue = false;
+					var output = antique.NLParser (this.currentRisk.Content);
+					this.NLResponse = Util.DeserializeNLResponse (output);
+					if (Sessions.CreativityPromptsState != null)
+						Session.Remove(Sessions.creativityPromptsState);
+					//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
+				}
+				catch (Exception ex)
+				{
+				}
+				finally {
+					PrepareData ();
+					PopulateData ();
+				}
+			}
+			else
+			{
+				generatePrompts.Visible = false;
+				hint_box.Visible = false;
+				alert_message_success.Visible = false;
+				errorMessage.InnerText = "Currently unable to generate creativity prompts. Please try again later.";
+				alert_message_error.Visible = true;
+			}
 		}
 
 		#endregion
@@ -373,7 +396,7 @@ namespace RiskHuntingAppTest
 					Sessions.CreativityPromptsState = CreativityPromptsFeed;
 				}
 				else
-					GenerateHtml3 ("No prompts avaiable", String.Empty);
+					GenerateHtml3 ("No prompts available", String.Empty);
 			} else {
 				Console.WriteLine ("PopulateData");
 				if (Sessions.CreativityPromptsState != null) {
@@ -462,6 +485,8 @@ namespace RiskHuntingAppTest
 		public virtual void morePromptsClicked(object sender, EventArgs args)
 		{
 			if (Sessions.CreativityPromptsState != null) {
+				Util.AccessLog(Util.ScreenType.CreateIdea_SameRisk, Util.FeatureType.CreateIdea_SameRisk_GenerateNewPromptsButton);
+
 				content2.Controls.Clear ();
 				CreativityPromptsFeed = Sessions.CreativityPromptsState;
 				CreativityPromptsFeed.Shuffle ();
@@ -516,19 +541,23 @@ namespace RiskHuntingAppTest
 
 		void RetrieveCurrentRisk ()
 		{
-			string location = String.Empty;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			this.currentRisk = new Risk (ss, problem, solution);
-
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
 		}
 
 		private void GenerateXml()

@@ -13,3 +13,4 @@
 /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/itextsharp.dll
 /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/AnLogger.dll
 /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/bin/AntiXSSLibrary.dll

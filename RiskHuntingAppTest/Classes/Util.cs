@@ -12,12 +12,17 @@ using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
+using System.Data;
+using System.Net;
+using System.Web;
 
 namespace RiskHuntingAppTest
 {
 	public static class Util
 	{
 		static string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
+		static string resourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "Resources");
+
 
 		#region Extract content 
 
@@ -90,6 +95,250 @@ namespace RiskHuntingAppTest
 
 
 		#endregion
+
+
+		#region Access Log
+
+		public enum ScreenType
+		{
+			History,
+			DescribeRisk,
+			CreateIdea_SameRisk,
+			CreateIdea_Superheroes,
+			CreateIdea_PastRisks,
+			CreateIdea_PastRisk,
+			ResolveRisk,
+			Summary,
+			AddIdea,
+			EditIdea
+		}
+
+		public enum FeatureType
+		{
+			History_Sort,
+			DescribeRisk_CreateIdeasButton,
+			DescribeRisk_ClearFormButton,
+			DescribeRisk_DeleteRiskButton,
+			CreateIdea_SameRisk_GenerateNewPromptsButton,
+			CreateIdea_Superheroes_GenerateNewSuperheroButton,
+			CreateIdea_PastRisks_FindRisksButton,
+			CreateIdea_PastRisk_GenerateNewPromptsButton,
+			AddIdea_AddIdeaButton,
+			EditIdea_UpdateIdeaButton,
+			EditIdea_DeleteIdeaButton,
+			Summary_SubmitCaseButton,
+			Summary_GenerateReportButton,
+			Summary_CreateNewRiskButton
+		}
+
+		public static void AccessLog(ScreenType screen)
+		{
+			var sourceId = String.Empty;
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
+			string msg = string.Format("{0}, {1}, {2}, {3}", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), sourceId.Equals(String.Empty)?"no_ID":sourceId, screen.ToString(), GetVisitor());
+
+			//			Console.WriteLine ("AccessLogFilename: " + AccessLogFilename);
+			lock (loggingGate)
+			{
+				using (StreamWriter sw = File.AppendText(AccessLogFilename))
+				{
+					sw.WriteLine(msg);
+					sw.Flush();
+					sw.Close();
+				}
+
+			}
+
+		}
+
+		public static void AccessLog(ScreenType screen, FeatureType feature)
+		{
+			var sourceId = String.Empty;
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
+			string msg = string.Format("{0}, {1}, {2}, {3}, {4}", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), sourceId.Equals(String.Empty)?"no_ID":sourceId, screen.ToString(), feature.ToString(),  GetVisitor());
+
+			//			Console.WriteLine ("AccessLogFilename: " + AccessLogFilename);
+			lock (loggingGate)
+			{
+				using (StreamWriter sw = File.AppendText(AccessLogFilename))
+				{
+					sw.WriteLine(msg);
+					sw.Flush();
+					sw.Close();
+				}
+
+			}
+
+		}
+
+		public static void DeleteAccessLogFile()
+		{
+			if (File.Exists(AccessLogFilename))
+			{
+				File.Delete(AccessLogFilename);
+			}
+		}
+
+		public static string AccessLogFilename
+		{
+			get
+			{
+				return Path.Combine(resourcesPath, "Access.log");
+			}
+		}
+
+		static string GetVisitor()
+		{
+
+			string strIPAddress = string.Empty;
+			string strVisitorCountry = string.Empty;
+
+			strIPAddress = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+			if (strIPAddress == "" || strIPAddress == null)
+				strIPAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+			else
+			{
+				string[] ipRange = strIPAddress.Split(',');
+				int le = ipRange.Length - 1;
+				strIPAddress = ipRange[le];
+			}
+
+			DataTable _objDataTable = Util.GetLocation(strIPAddress);
+
+			if (_objDataTable != null)
+			{
+
+				if (_objDataTable.Rows.Count > 0)
+				{
+					bool success = false;
+					strVisitorCountry =
+						"{IP: "
+						+ strIPAddress
+						+ ", COUNTRY: "
+						+ Convert.ToString(_objDataTable.Rows[0]["Country"]).ToUpper()
+						//+ ", COUNTRY CODE: "
+						//+ Convert.ToString(_objDataTable.Rows[0]["CountryCode"]).ToUpper()
+						//+", LATITUDE: "
+						//+ Convert.ToString(_objDataTable.Rows[0]["Latitude"]).ToUpper()
+						//+", LONGITUDE: "
+						//+ Convert.ToString(_objDataTable.Rows[0]["Longitude"]).ToUpper()
+//						+", LOCATION: "
+//						+ GoogleReverseGeocoder.ReverseGeocode (Convert.ToDouble(_objDataTable.Rows[0]["Latitude"]),Convert.ToDouble(_objDataTable.Rows[0]["Longitude"]), out success)
+						+ "}";
+
+				}
+
+				else
+				{
+					strVisitorCountry = "{IP: " + strIPAddress + "}";
+
+				}
+
+			}
+			else
+				strVisitorCountry = "{IP: " + strIPAddress + "}";
+			return strVisitorCountry;
+		}
+
+		/// <summary>
+		/// Get the location from IP Address using the free 
+		/// services of (http://freegeoip.appspot.com/xml/) 
+		/// </summary>
+		/// <param name="strIPAddress"></param>
+		/// <returns> The Response into the Datatable Index 0 </returns>
+		static DataTable GetLocation(string strIPAddress)
+		{
+			//Create a WebRequest with the current Ip
+			WebRequest _objWebRequest =
+				WebRequest.Create("http://ws.cdyne.com/ip2geo/ip2geo.asmx/ResolveIP?ipAddress="
+					+ strIPAddress + "&licenseKey=0");
+			//Create a Web Proxy
+			WebProxy _objWebProxy =
+				new WebProxy("http://ws.cdyne.com/ip2geo/ip2geo.asmx/ResolveIP?ipAddress="
+					+ strIPAddress + "&licenseKey=0", true);
+
+			//Assign the proxy to the WebRequest
+			_objWebRequest.Proxy = _objWebProxy;
+
+			//Set the timeout in Seconds for the WebRequest
+			_objWebRequest.Timeout = 2000;
+
+			try
+			{
+				//Get the WebResponse 
+				WebResponse _objWebResponse = _objWebRequest.GetResponse();
+				//Read the Response in a XMLTextReader
+				XmlTextReader _objXmlTextReader
+				= new XmlTextReader(_objWebResponse.GetResponseStream());
+
+				//Create a new DataSet
+				DataSet _objDataSet = new DataSet();
+				//Read the Response into the DataSet
+				_objDataSet.ReadXml(_objXmlTextReader);
+
+				return _objDataSet.Tables[0];
+			}
+
+			catch
+			{
+
+				return null;
+
+			}
+
+		} 
+
+
+
+		public static object loggingGate = new object();
+
+		#endregion
+
+		public static bool ServiceExists(string url, bool throwExceptions, out string errorMessage)
+		{
+			try
+			{
+				errorMessage = string.Empty;
+
+				// try accessing the web service directly via it's URL
+				HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+				request.Timeout = 100000;
+
+				using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+				{
+					if (response.StatusCode != HttpStatusCode.OK)
+						throw new Exception("Error locating web service");
+				}
+
+				// try getting the WSDL?
+				// asmx lets you put "?wsdl" to make sure the URL is a web service
+				// could parse and validate WSDL here
+
+			}
+			catch (WebException ex)
+			{   
+				// decompose 400- codes here if you like
+				//		        errorMessage = string.Format("Error testing connection to web service at \"{0}\":\r\n{1}", url, ex);
+				errorMessage = "Currently unable to connect to the remote discovery service.";
+				if (throwExceptions)
+					throw new Exception(errorMessage, ex);
+				return false;
+			}   
+			catch (Exception ex)
+			{
+				errorMessage = "Currently unable to connect to the remote discovery service.";
+				if (throwExceptions)
+					throw new Exception(errorMessage, ex);
+				return false;
+			}
+
+			return true;
+		}
+
+
 
 		public static string TruncateAtWord(this string value, int length) 
 		{
@@ -448,42 +697,36 @@ namespace RiskHuntingAppTest
 		public static int GetHtmlSelectIdForLocation (string searchValue)
 		{
 			int id = 0;
-			bool found = false;
+			int found = -1;
 			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
-			if (doc.Descendants ("rl").Count () > 0)
+			if (doc.Descendants ("rl").Count () > 0) {
 				foreach (XElement xe in doc.Descendants("rl")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
-						found = true;
+						found = id;
 						
-					}
-					else
+					} else
 						id++;
 				}
-			if (found)
-				return id;
-			else
-				return -1;
+			}
+			return found;
 
 		}
 
 		public static int GetHtmlSelectIdForBodyPart (string searchValue)
 		{
 			int id = 0;
-			bool found = false;
+			int found = -1;
 			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
-			if (doc.Descendants ("bp").Count () > 0)
+			if (doc.Descendants ("bp").Count () > 0) {
 				foreach (XElement xe in doc.Descendants("bp")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
-						found = true;
+						found = id;
 						
-					}
-					else
+					} else
 						id++;
 				}
-			if (found)
-				return id;
-			else
-				return -1;
+			}
+			return found;
 
 		}
 	}

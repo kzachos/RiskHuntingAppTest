@@ -26,7 +26,11 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
+			alert_message_success.Visible = false;
+			alert_message_error.Visible = false;
+
 			if (!Page.IsPostBack) {
+				Util.AccessLog(Util.ScreenType.CreateIdea_Superheroes);
 //			AddIdeaDescription.WatermarkText = ADDIDEA_WATERMARK;
 				if (Sessions.RiskState != String.Empty)
 					sourceId = Sessions.RiskState;
@@ -83,15 +87,35 @@ namespace RiskHuntingAppTest
 
 		#region Service call
 
+
 		void RetrievePersonas ()
 		{
-			RiskHuntingAppTest.hofService.WebBasedHallofFameService hof = new RiskHuntingAppTest.hofService.WebBasedHallofFameService ();
-			System.Net.ServicePointManager.Expect100Continue = false;
-			var output = hof.RetrieveAllPersonasFromType (Constants.PERSONA_TYPE);
-			this.HofResponse = Util.DeserializeHofResponse (output);
-			if (Sessions.PersonaState != String.Empty)
-				Session.Remove(Sessions.personaState);
-			//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
+			string errorMsg;
+			if(Util.ServiceExists(Constants.HALLOFFAME_URI, false, out errorMsg)) {
+				RiskHuntingAppTest.hofService.WebBasedHallofFameService hof = new RiskHuntingAppTest.hofService.WebBasedHallofFameService ();
+				try
+				{
+					System.Net.ServicePointManager.Expect100Continue = false;
+					var output = hof.RetrieveAllPersonasFromType (Constants.PERSONA_TYPE);
+					this.HofResponse = Util.DeserializeHofResponse (output);
+					if (Sessions.PersonaState != String.Empty)
+						Session.Remove(Sessions.personaState);
+					//			Session ["CURRENT_PAST_RISK_DESC"] = NLResponse;
+				}
+				catch (Exception ex)
+				{
+				}
+				finally {
+				}
+			}
+			else
+			{
+				this.HofResponse = new List<Persona> ();
+				FormDiv.Visible = false;
+				alert_message_success.Visible = false;
+				errorMessage.InnerText = "Currently unable to generate superheroes. Please try again later.";
+				alert_message_error.Visible = true;
+			}
 		}
 
 		#endregion
@@ -100,19 +124,23 @@ namespace RiskHuntingAppTest
 
 		void RetrieveCurrentRisk ()
 		{
-			string location = String.Empty;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			this.currentRisk = new Risk (ss, problem, solution);
-
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
 		}
 
 		private void GenerateXml(string componentType)
@@ -155,6 +183,8 @@ namespace RiskHuntingAppTest
 		public virtual void moreClicked(object sender, EventArgs args)
 		{
 			if (Sessions.PersonasState != null) {
+				Util.AccessLog(Util.ScreenType.CreateIdea_Superheroes, Util.FeatureType.CreateIdea_Superheroes_GenerateNewSuperheroButton);
+
 				this.HofResponse = Sessions.PersonasState;
 				if (this.HofResponse.Count > 0) {
 					this.HofResponse.Shuffle ();

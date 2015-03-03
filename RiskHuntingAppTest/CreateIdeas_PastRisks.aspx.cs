@@ -49,6 +49,7 @@ namespace RiskHuntingAppTest
 				Session.Remove (Sessions.personasState);
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
+				Util.AccessLog(Util.ScreenType.CreateIdea_PastRisks);
 				creativeGuidance.Visible = false;
 //				creativeGuidance2.Visible = false;
 				alert_message_success.Visible = false;
@@ -100,64 +101,80 @@ namespace RiskHuntingAppTest
 			return id;
 		}
 
-		private void FindRisks ()
+		private bool FindRisks ()
 		{
 			string responseXml = PerformEddie();
-
+			if (!responseXml.Equals (String.Empty)) {
 //			this.requestId = DetermineID ();
-			string responseRef = "Response_" + this.requestId + ".xml";
-			//string responseRef = "Response_201131_153042.xml";
-			string responseXmlUri = Path.Combine (responsePath, responseRef);
-			if (File.Exists (responseXmlUri))
-				File.Delete (responseXmlUri);
-			FileStream responseStream = new FileStream(responseXmlUri, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
-			StreamWriter responseStreamWriter = new StreamWriter(responseStream, Encoding.ASCII);
-			responseStreamWriter.Write(responseXml);
-			responseStreamWriter.Flush();
-			responseStreamWriter.Close();
-			responseStream.Close();
+				string responseRef = "Response_" + this.requestId + ".xml";
+				//string responseRef = "Response_201131_153042.xml";
+				string responseXmlUri = Path.Combine (responsePath, responseRef);
+				if (File.Exists (responseXmlUri))
+					File.Delete (responseXmlUri);
+				FileStream responseStream = new FileStream (responseXmlUri, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
+				StreamWriter responseStreamWriter = new StreamWriter (responseStream, Encoding.ASCII);
+				responseStreamWriter.Write (responseXml);
+				responseStreamWriter.Flush ();
+				responseStreamWriter.Close ();
+				responseStream.Close ();
 
-			this.responseUri = responseXmlUri;
-			Sessions.ResponseUriState = responseXmlUri;
+				this.responseUri = responseXmlUri;
+				Sessions.ResponseUriState = responseXmlUri;
+				return true;
 //			Response.Redirect("CreateIdeas_PastRisks.aspx", false);
+			} else
+				return false;
 		}
 
 		#region Service Call
-		string PerformEddie()
+
+
+		string PerformEddie ()
 		{
-			XmlProc.RequestSerialized.Request request = CreateEddieRequestWithNewRequestId(Path.Combine (xmlFilesPath, "EddieRequest_template.xml"));
+			string errorMsg;
+			if(Util.ServiceExists(Constants.EDDIE_URI, false, out errorMsg)) {
 
-//			this.requestId = DetermineID ();
-			string requestRef = "Request_" + this.requestId + ".xml";
-			string requestXmlUri = Path.Combine (requestPath, requestRef);
+				XmlProc.RequestSerialized.Request request = CreateEddieRequestWithNewRequestId(Path.Combine (xmlFilesPath, "EddieRequest_template.xml"));
 
-			XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Save(request, requestXmlUri);
+				//			this.requestId = DetermineID ();
+				string requestRef = "Request_" + this.requestId + ".xml";
+				string requestXmlUri = Path.Combine (requestPath, requestRef);
 
-			FileStream cgStream1 = new FileStream(requestXmlUri, FileMode.Open, FileAccess.Read);
-			StreamReader cgStreamReader1 = new StreamReader(cgStream1);
-			string requestXml = cgStreamReader1.ReadToEnd();
-			cgStreamReader1.Close();
+				XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Save(request, requestXmlUri);
 
-			//errorLabel.Text = requestXml;
+				FileStream cgStream1 = new FileStream(requestXmlUri, FileMode.Open, FileAccess.Read);
+				StreamReader cgStreamReader1 = new StreamReader(cgStream1);
+				string requestXml = cgStreamReader1.ReadToEnd();
+				cgStreamReader1.Close();
 
-			var watch = Stopwatch.StartNew();
+				//errorLabel.Text = requestXml;
 
-			RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
-			eddie.Timeout = 3000000;
-			string eddieResponseXml = eddie.PerformEddieDomain(requestXml, "Risk");
+				var watch = Stopwatch.StartNew();
 
-			watch.Stop();
-			// Get the elapsed time as a TimeSpan value.
-			TimeSpan ts = watch.Elapsed;
-			// Format and display the TimeSpan value.
-			string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-				ts.Hours, ts.Minutes, ts.Seconds,
-				ts.Milliseconds / 10);
-			Console.WriteLine(elapsedTime, "RunTime");
+				RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService();
+				eddie.Timeout = 3000000;
+				string eddieResponseXml = eddie.PerformEddieDomain(requestXml, "Risk");
 
-			return eddieResponseXml;
+				watch.Stop();
+				// Get the elapsed time as a TimeSpan value.
+				TimeSpan ts = watch.Elapsed;
+				// Format and display the TimeSpan value.
+				string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+					ts.Hours, ts.Minutes, ts.Seconds,
+					ts.Milliseconds / 10);
+				Console.WriteLine(elapsedTime, "RunTime");
 
+				return eddieResponseXml;
 
+			}
+			else
+			{
+				submitDiv.Visible = false;
+				alert_message_success.Visible = false;
+				errorMessage.InnerText = "Currently unable to find past risks. Please try again later.";
+				alert_message_error.Visible = true;
+				return String.Empty;
+			}
 		}
 
 
@@ -260,18 +277,24 @@ namespace RiskHuntingAppTest
 
 		void RetrieveCurrentRisk ()
 		{
-			string location = String.Empty;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			this.currentRisk = new Risk (ss, problem, solution);
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
+
 
 		}
 		private string DetermineResponseUri()
@@ -338,13 +361,17 @@ namespace RiskHuntingAppTest
 		{
 			this.requestId = DetermineID ();
 			if (!this.requestId.Equals (String.Empty)) {
+				Util.AccessLog(Util.ScreenType.CreateIdea_PastRisks, Util.FeatureType.CreateIdea_PastRisks_FindRisksButton);
+
 				this.sourceId = this.requestId;
 				RetrieveCurrentRisk ();
-				FindRisks ();
-				GenerateMatchedSources(responseUri, 0, Constants.MaxPastRisksAtATime - 1);
-				var processGuidanceText = Util.GenerateProcessGuidance ("riskResolutions");
-				creativeGuidance.Visible = true;
-				creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
+				var ok = FindRisks ();
+//				if (ok) {
+					GenerateMatchedSources (responseUri, 0, Constants.MaxPastRisksAtATime - 1);
+					var processGuidanceText = Util.GenerateProcessGuidance ("riskResolutions");
+					creativeGuidance.Visible = true;
+					creativeGuidance.InnerText = processGuidanceText.Equals (String.Empty) ? defaultProcessGuidance : processGuidanceText;
+//				}
 			}
 
 		}

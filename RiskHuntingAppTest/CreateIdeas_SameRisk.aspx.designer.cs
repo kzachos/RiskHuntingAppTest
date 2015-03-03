@@ -23,6 +23,8 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl hint_box;
+		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl creativeGuidance;
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl content2;

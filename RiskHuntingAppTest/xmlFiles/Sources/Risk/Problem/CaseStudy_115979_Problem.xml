@@ -3,13 +3,13 @@
   <FacetType>Problem</FacetType>
   <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
   <Author>Kos</Author>
-  <LaunchDate>03/03/2015 13:41:08</LaunchDate>
-  <SourceSpecificationLastEdited>03/03/2015 13:41:08</SourceSpecificationLastEdited>
+  <LaunchDate>03/03/2015 20:45:47</LaunchDate>
+  <SourceSpecificationLastEdited>03/03/2015 20:45:47</SourceSpecificationLastEdited>
   <FacetSpecificationData>
     <Content>the worker is busy falling down</Content>
     <Observations />
     <ObservedBehaviour>Entrance</ObservedBehaviour>
-    <TreatmentType>Hands</TreatmentType>
+    <TreatmentType>Eyes</TreatmentType>
     <DateOfIncident />
     <AilmentType />
     <TriggeringEvent />

@@ -20,6 +20,8 @@
 		    }); 
 		});
 
+
+
 		window.setTimeout(function () {
 		    $("#alert_message_success").fadeTo(500, 0).slideUp(500, function () {
 		        $(this).remove();
@@ -60,34 +62,53 @@
 
 			<div id="topbar2Sub">
 				<div id="multiselectionbuttonsSub">
-					<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">Ideas from risk itself</a>
+					<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">Ideas from new risk</a>
 					<a id="pressed" href="">Ideas from Superheroes</a>
 					<a href="javascript:doLoad('CreateIdeas_PastRisks.aspx');">Ideas from previous risks</a>
 				</div>
 			</div>
 
 		</div>
-		<span id="loading"></span>
-		<div class="ui-layout-center" id="BrightSparksDiv" runat="server">
+
+		<div id="alert_message_success" runat="server">
+			<div class="alert-box success">
+				<div id="successMessage" style="display: inline" runat="server"></div>
+			</div>
 		</div>
-		<div class="ui-layout-south">
-			<form id="form1" runat="server">
-				<!--<ul class="pageitem">
-					<li class="label">
-						<cc1:WatermarkedTextBox id="AddIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
-					</li>
-				</ul>-->
-				<ul class="pageitembutton">
-					<li class="button3">
-						<asp:Button id="GenerateAgain" runat="server" text="GENERATE NEW SUPERHERO" onclick="moreClicked"></asp:Button>
-					</li>
-				</ul>
-				<ul class="pageitembutton">
-					<li class="button">
-						<asp:Button id="AddNewIdea" runat="server" text="ADD NEW IDEA" onclick="addNewIdeaClicked"></asp:Button>
-					</li>
-				</ul>
-			</form>
+		<div id="alert_message_error" runat="server">
+			<div class="alert-box error">
+				<div id="errorMessage" style="display: inline" runat="server"></div>
+			</div>
+		</div>
+
+		<span id="loading"></span>
+		<div id="FormDiv" runat="server" >
+			<div class="ui-layout-center" id="BrightSparksDiv" runat="server">
+
+			</div>
+			<div class="ui-layout-south">
+				<form id="form1" runat="server">
+					<!--<ul class="pageitem">
+						<li class="label">
+							<cc1:WatermarkedTextBox id="AddIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
+						</li>
+					</ul>-->
+					<ul class="pageitembutton">
+						<div id="GenerateAgainDiv" runat="server">
+							<li class="button3">
+								<asp:Button id="GenerateAgain" runat="server" text="GENERATE NEW SUPERHERO" onclick="moreClicked"></asp:Button>
+							</li>
+						</div>
+					</ul>
+					<ul class="pageitembutton">
+						<div id="AddNewIdeaDiv" runat="server">
+							<li class="button">
+								<asp:Button id="AddNewIdea" runat="server" text="ADD NEW IDEA" onclick="addNewIdeaClicked"></asp:Button>
+							</li>
+						</div>
+					</ul>
+				</form>
+			</div>
 		</div>
 
 	</body>

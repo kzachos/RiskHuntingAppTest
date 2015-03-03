@@ -13,11 +13,25 @@ namespace RiskHuntingAppTest {
 	
 	public partial class CreateIdeas_Superheroes {
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_success;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl successMessage;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_error;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl FormDiv;
+		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl BrightSparksDiv;
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl GenerateAgainDiv;
+		
 		protected System.Web.UI.WebControls.Button GenerateAgain;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl AddNewIdeaDiv;
 		
 		protected System.Web.UI.WebControls.Button AddNewIdea;
 	}

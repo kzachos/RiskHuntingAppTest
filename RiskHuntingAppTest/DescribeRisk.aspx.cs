@@ -73,6 +73,11 @@ namespace RiskHuntingAppTest
 					errorMessage.InnerText = "Your risk could not be removed from the database. Please try again later.";
 					alert_message_error.Visible = true;
 				}
+				else if (DetermineFrom ().Equals (Constants.SESSION_EXPIRED_LABEL)) {
+					alert_message_success.Visible = false;
+					errorMessage.InnerText = Constants.SESSION_EXPIRED_TEXT;
+					alert_message_error.Visible = true;
+				}
 			} else {
 
 				if (Sessions.ResponseUriState != String.Empty)
@@ -109,6 +114,7 @@ namespace RiskHuntingAppTest
 
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
+				Util.AccessLog(Util.ScreenType.DescribeRisk);
 			} else {
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
 			}
@@ -607,6 +613,8 @@ namespace RiskHuntingAppTest
 		{
 			if (CheckTextBox (RiskName, NAME_WATERMARK) && CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
 				Save ();
+				Util.AccessLog(Util.ScreenType.DescribeRisk, Util.FeatureType.DescribeRisk_CreateIdeasButton);
+
 				//				if (Session ["CREATIVITY_PROMPTS"] == null)
 				//					RetrieveNLData ();
 
@@ -620,6 +628,8 @@ namespace RiskHuntingAppTest
 
 		public virtual void resetClicked(object sender, EventArgs args)
 		{
+			Util.AccessLog(Util.ScreenType.DescribeRisk, Util.FeatureType.DescribeRisk_ClearFormButton);
+
 			ResetForm ();
 			Response.Redirect("DescribeRisk.aspx");
 
@@ -644,6 +654,8 @@ namespace RiskHuntingAppTest
 		{
 			string confirmValue = Request.Form["confirm_value"];
 			if (confirmValue == "Yes") {
+				Util.AccessLog(Util.ScreenType.DescribeRisk, Util.FeatureType.DescribeRisk_DeleteRiskButton);
+
 				string filesToDelete = @"*" + this.sourceId + "*.xml";   // Only delete xml files containing *sourceID* in their filenames
 				string[] fileList = System.IO.Directory.GetFiles (xmlFilesPath, filesToDelete, System.IO.SearchOption.AllDirectories);
 				//				Debug.WriteLine (filesToDelete);
@@ -843,25 +855,23 @@ namespace RiskHuntingAppTest
 
 		void RetrieveCurrentRisk ()
 		{
-			string location = String.Empty;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			//			this.currentRisk = new Risk ();
-			//			this.currentRisk.Id = ss.SourceId;
-			//			this.currentRisk.Name = ss.SourceName;
-			//			this.currentRisk.Author = ss.Facet [0].Author;
-			//			this.currentRisk.Content = problem.FacetSpecificationData.Content;
-
-			this.currentRisk = new Risk (ss, problem, solution);
-			Console.WriteLine ("this.currentRisk: " + this.currentRisk.Id.ToString ());
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
 		}
 
 		void RetrieveRiskXml ()

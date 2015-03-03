@@ -17,6 +17,10 @@
 	    }); 
 	});
 
+	$('form').live("submit", function () {
+        ShowProgress();
+    });
+
 	window.setTimeout(function () {
 	    $("#alert_message_success").fadeTo(500, 0).slideUp(500, function () {
 	        $(this).remove();
@@ -52,7 +56,7 @@
 
 	<div id="topbar2Sub">
 		<div id="multiselectionbuttonsSub">
-			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">Ideas from risk itself</a>
+			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">Ideas from new risk</a>
 			<a href="javascript:doLoad('CreateIdeas_Superheroes.aspx');">Ideas from Superheroes</a>
 			<a id="pressed" href="">Ideas from previous risks</a>
 		</div>

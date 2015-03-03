@@ -59,6 +59,7 @@ namespace RiskHuntingAppTest
 
         protected void Page_Init(object sender, EventArgs e)
         {
+
 //			if (Sessions.ResponseUriState != String.Empty)
 				Session.Remove (Sessions.responseUriState);
 //			if (Sessions.ProblemDescState != null)
@@ -80,6 +81,7 @@ namespace RiskHuntingAppTest
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
 				PopulateSortDropDown ();
+				Util.AccessLog(Util.ScreenType.History);
 			} else {
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
 
@@ -215,6 +217,7 @@ namespace RiskHuntingAppTest
 
 		protected void itemSelected(object sender, EventArgs e)
 		{
+			Util.AccessLog(Util.ScreenType.History, Util.FeatureType.History_Sort);
 			DropDownList dropdown = (DropDownList) sender;  
 			Sessions.SortState = dropdown.SelectedItem.Text;
 //			Console.WriteLine ("SortBy (itemSelected): " + Session ["SortBy"].ToString ());

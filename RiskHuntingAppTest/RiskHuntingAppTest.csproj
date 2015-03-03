@@ -59,6 +59,10 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Core" />
+    <Reference Include="AntiXssLibrary">
+      <HintPath>bin\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Condition="false" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -226,6 +230,8 @@
     <Compile Include="DescribeRisk.aspx.designer.cs">
       <DependentUpon>DescribeRisk.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\GoogleGeocodingDataContracts.cs" />
+    <Compile Include="Classes\GoogleReverseGeocoder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />

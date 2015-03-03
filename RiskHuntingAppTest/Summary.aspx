@@ -11,11 +11,30 @@
 	<title>Risk Hunting App</title>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
+	var ignore = true;
+	
     $(document).on('click','.close',function(){ 
 	    $(this).parent().fadeTo(300,0,function(){ 
 	          $(this).remove(); 
 	    }); 
 	});
+
+	$('form').live("submit", function () {
+        if (needToConfirm)
+        	ShowProgress();
+    });
+
+	window.setTimeout(function() {
+	  $("#alert_message_success").fadeTo(500, 0).slideUp(500, function(){
+	    $(this).remove(); 
+	  });
+	}, 3000);
+
+	window.setTimeout(function() {
+	  $("#alert_message_error").fadeTo(500, 0).slideUp(500, function(){
+	    $(this).remove(); 
+	  });
+	}, 3000);
 </script>
 </head>
 <body>
@@ -36,6 +55,17 @@
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
+
+	<div id="alert_message_success" runat="server">
+		<div class="alert-box success">
+			<div id="successMessage" style="display: inline" runat="server"></div>
+		</div>
+	</div>
+	<div id="alert_message_error" runat="server">
+		<div class="alert-box error">
+			<div id="errorMessage" style="display: inline" runat="server"></div>
+		</div>
+	</div>
 
 	<div class="alert-box notice">
 		<span>hint: </span>
@@ -119,7 +149,13 @@
 
 	<ul class="pageitembutton">
 		<li class="button3">
-			<asp:Button id="Export" runat="server" text="EXPORT" onclick="exportClicked"></asp:Button>
+			<asp:Button id="Export" runat="server" text="GENERATE REPORT TO PRINT" onclick="exportClicked" onClientclick="ignore = false;"></asp:Button>
+		</li>
+	</ul>
+
+	<ul class="pageitembutton">
+		<li class="buttonGrey">
+			<asp:Button id="NewRisk" runat="server" text="CREATE NEW RISK" onclick="createNewClicked"></asp:Button>
 		</li>
 	</ul>
 </form>

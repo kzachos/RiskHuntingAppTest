@@ -17,6 +17,10 @@
 	    }); 
 	});
 
+	$('form').live("submit", function () {
+        ShowProgress();
+    });
+
 	window.setTimeout(function () {
 	    $("#alert_message_success").fadeTo(500, 0).slideUp(500, function () {
 	        $(this).remove();
