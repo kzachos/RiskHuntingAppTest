@@ -51,6 +51,7 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
+			this.currentRiskDescription = String.Empty;
 			generatePrompts.Visible = true;
 			alert_message_success.Visible = false;
 			alert_message_error.Visible = false;
@@ -123,7 +124,7 @@ namespace RiskHuntingAppTest
 				try
 				{
 					System.Net.ServicePointManager.Expect100Continue = false;
-					var output = antique.NLParser (this.currentRisk.Content);
+					var output = antique.NLParser (this.currentRiskDescription);
 					this.NLResponse = Util.DeserializeNLResponse (output);
 					if (Sessions.CreativityPromptsPastRiskState != null)
 						Session.Remove(Sessions.creativityPromptsPastRiskState);
@@ -343,7 +344,7 @@ namespace RiskHuntingAppTest
 						//SortedList elements = SeperateStringByChar(matchedSource.Content);
 
 						//						title.InnerHtml = String.Empty;
-
+						this.currentRiskDescription = Util.ExtractAttributeContentFromString (matchedSource.Content, "Content");
 //						RiskDescription.Text = Util.ExtractAttributeContentFromString(matchedSource.Content, "Content");
 						string resText = String.Empty;
 						var recommendation = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Recommendation").Trim();

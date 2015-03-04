@@ -47,6 +47,8 @@ namespace RiskHuntingAppTest
 				Session.Remove (Sessions.personaState);
 			if (Sessions.PersonasState != null) 
 				Session.Remove (Sessions.personasState);
+			if (Sessions.CreativityPromptsPastRiskState != null) 
+				Session.Remove (Sessions.creativityPromptsPastRiskState);
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
 				Util.AccessLog(Util.ScreenType.CreateIdea_PastRisks);

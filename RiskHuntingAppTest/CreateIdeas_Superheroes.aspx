@@ -82,11 +82,12 @@
 		</div>
 
 		<span id="loading"></span>
-		<div id="FormDiv" runat="server" >
+
 			<div class="ui-layout-center" id="BrightSparksDiv" runat="server">
 
 			</div>
-			<div class="ui-layout-south">
+
+			<div class="ui-layout-south" id="ButtonsDiv" runat="server">
 				<form id="form1" runat="server">
 					<!--<ul class="pageitem">
 						<li class="label">
@@ -109,7 +110,6 @@
 					</ul>
 				</form>
 			</div>
-		</div>
 
 	</body>
 </html>

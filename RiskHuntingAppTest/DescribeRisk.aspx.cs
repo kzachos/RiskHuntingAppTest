@@ -605,6 +605,7 @@ namespace RiskHuntingAppTest
 			RiskDescription.WatermarkText = DESC_WATERMARK;
 			RiskAuthor.Text = String.Empty;
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
+			InitParametersDropDown ();
 			RiskLocation.SelectedIndex = -1;
 			RiskBodyParts.SelectedIndex = -1;
 		}
@@ -663,15 +664,13 @@ namespace RiskHuntingAppTest
 					Debug.WriteLine (file + " will be deleted");
 					File.Delete (file);
 				}
-				var output = RemoveCase (this.sourceId);
 				string pb = String.Empty;
-				if (output) 
-					pb = "deleted";
-				else
-					pb = "notdeleted";
-				ResetForm ();
-				Session.Remove("CURRENT_RISK");
-				Response.Redirect ("DescribeRisk.aspx?pb=" + pb);
+//				var output = RemoveCase (this.sourceId);
+//				if (output) 
+//					pb = "deleted";
+//				else
+//					pb = "notdeleted";
+				Response.Redirect ("DescribeRisk.aspx?pb=" + "deleted");
 			}
 
 		}
@@ -724,42 +723,42 @@ namespace RiskHuntingAppTest
 			Sessions.ProblemDescState = NLResponse;
 		}
 
-		private void RetrieveNLDataAsync()
-		{
-			var watch = Stopwatch.StartNew();
+//		private void RetrieveNLDataAsync()
+//		{
+//			var watch = Stopwatch.StartNew();
+//
+//			//			string riskDescription = String.Empty;
+//			//			if (Session ["CURRENT_PROBLEM_DESC"] != null)
+//			//				riskDescription = Session ["CURRENT_PROBLEM_DESC"].ToString ();
+//
+//			try {
+//				RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
+//				antique.NLParserCompleted += objAntique_NLParserCompleted;
+//				antique.NLParserAsync (this.currentRisk.Content);
+//			}
+//			finally {
+//
+//				watch.Stop ();
+//				// Get the elapsed time as a TimeSpan value.
+//				TimeSpan ts = watch.Elapsed;
+//				// Format and display the TimeSpan value.
+//				string elapsedTime = String.Format ("{0:00}:{1:00}:{2:00}.{3:00}",
+//					ts.Hours, ts.Minutes, ts.Seconds,
+//					ts.Milliseconds / 10);
+//				Console.WriteLine (elapsedTime, "RunTime");
+//				Response.Redirect ("CreateIdeas_SameRisk.aspx");
+//			}
+//
+//		}
 
-			//			string riskDescription = String.Empty;
-			//			if (Session ["CURRENT_PROBLEM_DESC"] != null)
-			//				riskDescription = Session ["CURRENT_PROBLEM_DESC"].ToString ();
-
-			try {
-				RiskHuntingAppTest.antiqueService.AntiqueService antique = new RiskHuntingAppTest.antiqueService.AntiqueService ();
-				antique.NLParserCompleted += objAntique_NLParserCompleted;
-				antique.NLParserAsync (this.currentRisk.Content);
-			}
-			finally {
-
-				watch.Stop ();
-				// Get the elapsed time as a TimeSpan value.
-				TimeSpan ts = watch.Elapsed;
-				// Format and display the TimeSpan value.
-				string elapsedTime = String.Format ("{0:00}:{1:00}:{2:00}.{3:00}",
-					ts.Hours, ts.Minutes, ts.Seconds,
-					ts.Milliseconds / 10);
-				Console.WriteLine (elapsedTime, "RunTime");
-				Response.Redirect ("CreateIdeas_SameRisk.aspx");
-			}
-
-		}
-
-		void objAntique_NLParserCompleted(object sender, 
-			RiskHuntingAppTest.antiqueService.NLParserCompletedEventArgs e)
-		{
-			Console.WriteLine (e.Result);
-			var NLResponse = Util.DeserializeNLResponse (e.Result);
-
-			Sessions.ProblemDescState = NLResponse;
-		}
+//		void objAntique_NLParserCompleted(object sender, 
+//			RiskHuntingAppTest.antiqueService.NLParserCompletedEventArgs e)
+//		{
+//			Console.WriteLine (e.Result);
+//			var NLResponse = Util.DeserializeNLResponse (e.Result);
+//
+//			Sessions.ProblemDescState = NLResponse;
+//		}
 
 		private bool RemoveCase(string caseId)
 		{

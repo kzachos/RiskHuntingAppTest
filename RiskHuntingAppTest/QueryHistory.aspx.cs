@@ -300,7 +300,7 @@ namespace RiskHuntingAppTest
 			List<string> all = new List<string>();
 			DirectoryInfo dir = new DirectoryInfo(dirPath);
 //			FileInfo[] FileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
-			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
+			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.LastWriteTime).ToArray();
 			if (FileList.Length-1 < max)
 				max = FileList.Length-1;
 			//foreach (FileInfo FI in FileList)

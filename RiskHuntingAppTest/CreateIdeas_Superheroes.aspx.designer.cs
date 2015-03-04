@@ -21,9 +21,9 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 		
-		protected System.Web.UI.HtmlControls.HtmlGenericControl FormDiv;
-		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl BrightSparksDiv;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl ButtonsDiv;
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		

@@ -111,7 +111,8 @@ namespace RiskHuntingAppTest
 			else
 			{
 				this.HofResponse = new List<Persona> ();
-				FormDiv.Visible = false;
+				BrightSparksDiv.Visible = false;
+				ButtonsDiv.Visible = false;
 				alert_message_success.Visible = false;
 				errorMessage.InnerText = "Currently unable to generate superheroes. Please try again later.";
 				alert_message_error.Visible = true;

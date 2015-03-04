@@ -184,3 +184,178 @@
 03/03/2015 21:01:10, 115980, CreateIdea_PastRisks, {IP: 127.0.0.1}
 03/03/2015 21:01:11, 115980, CreateIdea_PastRisks, CreateIdea_PastRisks_FindRisksButton, {IP: 127.0.0.1}
 03/03/2015 21:01:12, 115980, DescribeRisk, {IP: 127.0.0.1}
+04/03/2015 00:29:57, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:30:40, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:30:47, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:30:51, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:30:55, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:02, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:07, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:13, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:18, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:23, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:28, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:34, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:39, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:43, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:46, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:48, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:53, 115979, CreateIdea_SameRisk, CreateIdea_SameRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:31:58, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:07, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:07, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:08, 115979, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:16, 115979, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:32, 115979, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:32, 115979, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:42, 115979, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:42, 115979, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:32:46, 115979, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:33:02, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:33:03, 115979, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:33:07, 110058, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:33:08, 110058, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:33:09, 110058, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:33:12, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:33:13, 110058, CreateIdea_PastRisks, CreateIdea_PastRisks_FindRisksButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:42:27, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:42:29, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:42:33, 110058, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:42:35, 110058, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:42:35, 110058, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:42:38, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:43:00, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:43:02, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:43:03, 110058, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:43:05, 110058, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:43:06, 110058, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:43:08, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:37, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:39, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:40, 110058, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:45, 110058, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:46, 110058, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:47, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:57, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:44:57, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:45:01, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:45:13, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:45:14, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:45:20, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:45:41, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:11, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:12, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:14, 110058, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:15, 110058, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:16, 110058, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:18, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:33, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:40, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:48, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:49, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:51, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:52, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:55, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:47:55, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:00, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:00, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:02, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:02, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:06, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:06, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:09, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:09, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:12, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:12, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:17, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:17, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:22, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:28, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:29, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:32, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:32, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:38, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:39, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:41, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:41, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:43, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:44, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:45, 110058, CreateIdea_PastRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:46, 110058, CreateIdea_PastRisk, CreateIdea_PastRisk_GenerateNewPromptsButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:48:52, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:05, 110058, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:08, 110058, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:11, 110058, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:13, 110058, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:14, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:16, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:16, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:49:19, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:50:38, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:50:41, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:50:42, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:50:43, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:50:44, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:50:45, 115979, CreateIdea_Superheroes, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:17, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:18, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:20, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:21, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:22, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:23, 115979, CreateIdea_Superheroes, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:50, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:52, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:53, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:54, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:56, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:52:56, 115979, CreateIdea_Superheroes, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:53:01, 115979, CreateIdea_Superheroes, CreateIdea_Superheroes_GenerateNewSuperheroButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:53:18, 115979, CreateIdea_Superheroes, CreateIdea_Superheroes_GenerateNewSuperheroButton, {IP: 127.0.0.1}
+04/03/2015 00:53:22, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1}
+04/03/2015 00:53:23, 115979, CreateIdea_Superheroes, {IP: 127.0.0.1}
+04/03/2015 00:53:39, no_ID, DescribeRisk, {IP: 127.0.0.1}
+04/03/2015 00:53:40, no_ID, History, {IP: 127.0.0.1}
+04/03/2015 00:53:41, 115979, DescribeRisk, {IP: 127.0.0.1}
+04/03/2015 00:53:42, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1}
+04/03/2015 00:53:42, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1}
+04/03/2015 00:53:44, 115979, CreateIdea_Superheroes, {IP: 127.0.0.1}
+04/03/2015 00:54:46, no_ID, DescribeRisk, {IP: 127.0.0.1}
+04/03/2015 00:54:47, no_ID, History, {IP: 127.0.0.1}
+04/03/2015 00:54:48, 115979, DescribeRisk, {IP: 127.0.0.1}
+04/03/2015 00:54:49, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1}
+04/03/2015 00:54:49, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1}
+04/03/2015 00:54:50, 115979, CreateIdea_Superheroes, {IP: 127.0.0.1}
+04/03/2015 00:55:05, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:55:06, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:55:08, 115979, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:55:09, 115979, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:55:10, 115979, CreateIdea_SameRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:55:11, 115979, CreateIdea_Superheroes, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:55:15, 115979, CreateIdea_Superheroes, CreateIdea_Superheroes_GenerateNewSuperheroButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 00:55:17, 115979, CreateIdea_Superheroes, CreateIdea_Superheroes_GenerateNewSuperheroButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:10:23, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:12:10, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:12:14, 115978, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:14:37, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:14:38, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:14:40, 110051, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:14:44, 110051, DescribeRisk, DescribeRisk_DeleteRiskButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:14:44, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:15:41, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:15:43, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:15:45, 110057, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:15:50, 110057, DescribeRisk, DescribeRisk_DeleteRiskButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:15:51, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:16:42, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:16:43, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:16:46, 115980, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:16:53, 115980, DescribeRisk, DescribeRisk_DeleteRiskButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:16:53, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:19:01, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:19:06, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:19:09, 110016, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:19:15, 110016, DescribeRisk, DescribeRisk_DeleteRiskButton, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:19:16, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:19:22, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:19:24, 115978, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+04/03/2015 01:35:06, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }

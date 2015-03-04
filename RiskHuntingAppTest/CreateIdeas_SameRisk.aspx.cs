@@ -233,13 +233,13 @@ namespace RiskHuntingAppTest
 //			var output = client.NLParser (content);
 //			return output;
 
-		void objAntique_NLParserCompleted(object sender, 
-			RiskHuntingAppTest.antiqueService.NLParserCompletedEventArgs e)
-		{
-			Console.WriteLine ("Result for " + this.currentRiskDescription + ": " + e.Result);
-			this.NLResponse = Util.DeserializeNLResponse (e.Result);
-
-		}
+//		void objAntique_NLParserCompleted(object sender, 
+//			RiskHuntingAppTest.antiqueService.NLParserCompletedEventArgs e)
+//		{
+//			Console.WriteLine ("Result for " + this.currentRiskDescription + ": " + e.Result);
+//			this.NLResponse = Util.DeserializeNLResponse (e.Result);
+//
+//		}
 
 		void RetrieveNLData ()
 		{
