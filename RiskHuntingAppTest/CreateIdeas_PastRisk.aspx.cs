@@ -348,8 +348,16 @@ namespace RiskHuntingAppTest
 //						RiskDescription.Text = Util.ExtractAttributeContentFromString(matchedSource.Content, "Content");
 						string resText = String.Empty;
 						var recommendation = Util.ExtractAttributeContentFromString2 (matchedSource.Content, "Recommendation").Trim();
-						if (!recommendation.Trim().Equals (String.Empty))
-							resText += GenerateHtml (recommendation);
+						if (recommendation.Contains (";")) {
+							string[] recommendationArray = recommendation.Split (';');
+							for (int i = 0; i < recommendationArray.Length; i++) {
+								resText += GenerateHtml (recommendationArray [i]);
+							}
+						} else {
+							if (!recommendation.Trim().Equals (String.Empty))
+								resText += GenerateHtml (recommendation);
+						}
+
 //							GenerateHtml2 (recommendation, String.Empty, counter++);
 						//								content2.InnerHtml += GenerateHtml3 (recommendation, String.Empty, 0);
 

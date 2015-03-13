@@ -25,16 +25,8 @@ namespace RiskHuntingAppTest
 		const string Tag10a = "</div>";
 
 		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
-		protected const string SOURCESPECIFICATION = "SourceSpecification";
-		protected const string PROBLEM = "Problem";
-		protected const string SOLUTION = "Solution";
-		protected const string ADDITIONAL = "Additional";
-		protected const string PROCESSFOLDER = "_toProcess";
-
 		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
-
-		protected const string SOURCE_TYPE = Constants.CASEREF;
-		protected const string CASE_TYPE = "Risk";
+	
 
 		protected string requestContent, sourceId;
 		protected int index;
@@ -191,27 +183,27 @@ namespace RiskHuntingAppTest
 			{
 				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = Util.CreateSourceSpecificationXml(this.currentRisk);
 				//				Console.WriteLine ("this.sourceId (GenerateXml): " + this.sourceId.ToString ());
-				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, SOURCESPECIFICATION, Ref);
-				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, SOURCESPECIFICATION, Ref);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOURCESPECIFICATION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOURCESPECIFICATION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri2);
 			}
 			else if (componentType.Equals("Problem"))
 			{
 				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = Util.CreateProblemXml(this.currentRisk);
-				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, PROBLEM, Ref);
-				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, PROBLEM, Ref);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.PROBLEM, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.PROBLEM, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri2);
 			}
 			else if (componentType.Equals("Solution"))
 			{
 				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml(this.currentRisk);
-				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, SOLUTION, Ref);
-				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, SOLUTION, Ref);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOLUTION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOLUTION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
 			}

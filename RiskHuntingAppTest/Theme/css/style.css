@@ -123,6 +123,8 @@ a:hover .arrow {
 #leftnav, #leftbutton, #blueleftbutton {
 	top: 7px;
 }
+
+
 #rightnav, #rightbutton, #bluerightbutton {
 	top: 7px;
 }
@@ -143,7 +145,6 @@ a:hover .arrow {
 	height:43px;
 	line-height:43px;
 	background: #ffffff;
-	background: -moz-linear-gradient(top, #ffffff 0%, #ececec 2%, #c5c5c5 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(2%,#ececec), color-stop(100%,#787878));
 	background: -webkit-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
 	background: -o-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
@@ -158,7 +159,6 @@ a:hover .arrow {
 	height:33px;
 	line-height:33px;
 	background: #ffffff;
-	background: -moz-linear-gradient(top, #ffffff 0%, #ececec 2%, #c5c5c5 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(2%,#ececec), color-stop(100%,#787878));
 	background: -webkit-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
 	background: -o-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
@@ -381,6 +381,7 @@ a {
 	margin: 0px 9px 4px;
 	list-style: none;
 }
+
 .pageitemborder {
 	-webkit-border-radius: 8px;
 	background-color: #EEEEEE;
@@ -400,7 +401,6 @@ a {
 
 .pageitembutton {
 	-webkit-border-radius: 8px;
-	background-color: #941830;
 	border: #878787 solid 0px;
 	font-size: 12pt;
 	overflow: hidden;
@@ -422,7 +422,6 @@ a {
     z-index: 99;
     opacity: 0.2;
     filter: alpha(opacity=80);
-    -moz-opacity: 0.8;
     min-height: 100%;
     width: 100%;
 }
@@ -681,6 +680,7 @@ fieldset {
 	-webkit-border-bottom-right-radius: 8px;
 }
 .menu:hover, .store:hover, .list #content li a:hover, .list .withimage:hover, .applist li:hover:nth-child(n),.ipodlist li:hover:nth-child(n) {
+	background: #941830;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#941830), to(#941830));
 }
 .ipodlist li:hover:nth-child(n) .name,.ipodlist li:hover:nth-child(n) .time{border:0}

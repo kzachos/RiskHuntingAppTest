@@ -1,13 +1,56 @@
 <?xml version="1.0"?>
 <Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <rl>
-    <n>Plant</n>
+    <n>Pedestal Line</n>
+    <name>Sam Gibson</name>
+    <email>sam.gibson@cnhind.com</email>
   </rl>
   <rl>
-    <n>Corridor</n>
+    <n>Cab Line</n>
+    <name>Steve Young</name>
+    <email>stephen.young@cnhind.com</email>
   </rl>
   <rl>
-    <n>Entrance</n>
+    <n>After Paint (APM or Medical Line)</n>
+    <name>Kevin Passingham</name>
+    <email>kevin.passingham@cnhind.com</email>
+    <email>michael.george@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Pre-Paint</n>
+    <name>John Williams</name>
+    <email>john.williams@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Paint Floor</n>
+    <name>JW</name>
+  </rl>
+  <rl>
+    <n>AGV</n>
+    <name>JW</name>
+  </rl>
+  <rl>
+    <n>Warehouse</n>
+    <name>Lee Victory</name>
+    <email>lee.victory@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Maintenance</n>
+    <name>Dave Cox</name>
+    <email>david.cox@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Road Test Centre</n>
+    <name>Andy Plom</name>
+    <email>andy.plom@external.cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Sub Assembly</n>
+    <name>Paul Cumming</name>
+    <email>paul.cumming@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Other (Office/Plantwide)</n>
   </rl>
   <bp>
     <n>Whole body</n>
@@ -16,24 +59,48 @@
     <n>Head</n>
   </bp>
   <bp>
-    <n>Eyes</n>
+    <n>Eye</n>
   </bp>
   <bp>
-    <n>Arms</n>
-  </bp>
-  <bp>
-    <n>Face</n>
-  </bp>
-  <bp>
-    <n>Ears</n>
-  </bp>
-  <bp>
-    <n>Nose</n>
-  </bp>
-  <bp>
-    <n>Shoulders</n>
+    <n>Arm</n>
   </bp>
   <bp>
     <n>Hands</n>
   </bp>
+  <bp>
+    <n>Trunk</n>
+  </bp>
+  <bp>
+    <n>Leg</n>
+  </bp>
+  <bp>
+    <n>Foot</n>
+  </bp>
+  <bp>
+    <n>None</n>
+  </bp>
+  <ic>
+    <n>Abrasions/Cuts/Laceration</n>
+  </ic>
+  <ic>
+    <n>Burns/Scalds</n>
+  </ic>
+  <ic>
+    <n>Contusion/Crush/Concussion</n>
+  </ic>
+  <ic>
+    <n>Foreign Bodies</n>
+  </ic>
+  <ic>
+    <n>Fractures/Dislocations</n>
+  </ic>
+  <ic>
+    <n>Hematoma/Bruise</n>
+  </ic>
+  <ic>
+    <n>Sprains/Strains</n>
+  </ic>
+  <ic>
+    <n>None</n>
+  </ic>
 </Parameters>

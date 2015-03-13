@@ -29,6 +29,8 @@ namespace RiskHuntingAppTest
 
 		protected System.Web.UI.HtmlControls.HtmlSelect RiskBodyParts;  
 
+		protected System.Web.UI.HtmlControls.HtmlSelect RiskInjury;
+
 		protected System.Web.UI.WebControls.Button submit;
 
 		protected System.Web.UI.HtmlControls.HtmlGenericControl previousrisks;
@@ -48,6 +50,14 @@ namespace RiskHuntingAppTest
 		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 
 		protected System.Web.UI.HtmlControls.HtmlGenericControl rightbutton;
+
+		protected System.Web.UI.HtmlControls.HtmlSelect DateIncidentOccurredDay;
+
+		protected System.Web.UI.HtmlControls.HtmlSelect DateIncidentOccurredMonth;
+
+		protected System.Web.UI.HtmlControls.HtmlSelect DateIncidentOccurredYear;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl PINcodeDiv;
 	}
 }
 

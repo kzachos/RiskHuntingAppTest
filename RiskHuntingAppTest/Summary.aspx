@@ -6,6 +6,8 @@
  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/mozillaStyle.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/ieStyle.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
@@ -36,13 +38,22 @@
 	  });
 	}, 3000);
 </script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 </head>
 <body>
 
 	<div id="topbar2">
-		<div id="leftbutton">
-			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');" >
-				<img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-3-icon.png" />
+		<div id="leftnav">
+    		<a href="javascript:doLoad('Default.aspx');" ><img alt="home" src="Theme/images/home.png" />
+    		</a>
+			<a href="javascript:doLoad('ResolveRisk.aspx');" >
+				&nbsp;&nbsp;&nbsp; <img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-3-icon.png" />
 				Resolve Risk
 			</a> 
 		</div>
@@ -79,9 +90,6 @@
 	<ul class="pageitemborder">
 		<div id="sourceDiv" runat="server">
 		</div>
-		<!--<li class="label">
-			<asp:Label runat="server" Width="100%" >Resolution Idea A</asp:Label>
-		</li>-->			
 
 	</ul>
 
@@ -96,44 +104,6 @@
 	</ul>
 
 	<br><br>
-
-	<!--<span class="maintitle">Action Plan</span>
-	<br><br>
-	<ul class="pageitemborder">
-		<div id="divActions" runat="server">
-		</div>
-	</ul>-->
-
-	<!--<span class="maintitle">Risk Name</span>
-	<ul class="pageitem">
-		<li class="labelcontent">
-			<asp:Label id="RiskName" runat="server" TextMode="MultiLine" Width="100%" ></asp:Label>
-		</li>
-	</ul>
-	<span class="maintitle">Description</span>
-	<ul class="pageitem">
-		<li class="labelcontent">
-			<asp:Label id="RiskDescription" runat="server" TextMode="MultiLine" Width="100%" >During change of shift, the hallway is very crowded and the floor is not visible. People trip often because they do not see the holes or uneven surfaces</asp:Label>
-		</li>
-	</ul>
-	<span class="maintitle">Name of person reporting the risk</span>
-	<ul class="pageitem">
-		<li class="labelcontent">
-			<asp:Label id="RiskAuthor" runat="server" TextMode="MultiLine" Width="100%" >Uneven floor</asp:Label>
-		</li>
-	</ul>
-	<span class="maintitle">Location</span>
-	<ul class="pageitem">
-		<li class="labelcontent">
-			<asp:Label id="RiskLocation" runat="server" TextMode="MultiLine" Width="100%" >Path from work to locker room</asp:Label>
-		</li>
-	</ul>
-	<span class="maintitle">Body Parts at Risk</span>
-	<ul class="pageitem">
-		<li class="labelcontent">
-			<asp:Label id="RiskBodyParts" runat="server" TextMode="MultiLine" Width="100%" >Ankles, wrists, head, shoulders</asp:Label>
-		</li>
-	</ul>-->
 
 
 	<ul class="pageitem">

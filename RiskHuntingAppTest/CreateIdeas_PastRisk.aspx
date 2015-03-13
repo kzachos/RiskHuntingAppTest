@@ -6,6 +6,8 @@
  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/mozillaStyle.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/ieStyle.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
@@ -32,6 +34,13 @@
 	    });
 	}, 3000);
 </script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 </head>
 <body>
 
@@ -84,19 +93,7 @@
 					</li>
 				</div>
 			</ul>
-
-			<!--<ul class="pageitembutton">
-				<li class="button">
-					<asp:Button id="SaveSelected" runat="server" text="SAVE SELECTED" onclick="submitClicked"></asp:Button>
-				</li>
-			</ul>-->
 				
-			
-			<!--<ul class="pageitembutton">
-				<li class="buttonGrey">
-					<asp:Button id="ReturnToList" runat="server" text="RETURN TO LIST..." onclick="backClicked"></asp:Button>
-				</li>
-			</ul>-->
 		</form>
 	</div>
 	<div id="footer">

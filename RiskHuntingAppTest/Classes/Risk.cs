@@ -66,6 +66,7 @@ namespace RiskHuntingAppTest
 
 		public RiskQueryState State { get; set; }
 		public bool SimilarCasesFound { get; set; }
+		public string ImageUri { get; set; }
 
 
 		public Risk (XmlProc.SourceSpecificationSerialized.SourceSpecification ss, 
@@ -100,8 +101,12 @@ namespace RiskHuntingAppTest
 
 			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData pf = p.FacetSpecificationData;
 			Content = !pf.Content.Equals (String.Empty) ? pf.Content : String.Empty;
-			LocationDetail = !pf.ObservedBehaviour.Equals (String.Empty) ? pf.ObservedBehaviour : String.Empty;
-			BodyPart = !pf.TreatmentType.Equals (String.Empty) ? pf.TreatmentType : String.Empty;
+			LocationDetail = !pf.LocationDetail.Equals (String.Empty) ? pf.LocationDetail : String.Empty;
+			BodyPart = !pf.BodyPart.Equals (String.Empty) ? pf.BodyPart : String.Empty;
+			DateIncidentOccurred = Util.ConvertDateTime (p.SourceSpecificationLastEdited);
+			InjuryNature = !pf.InjuryNature.Equals (String.Empty) ? pf.InjuryNature : String.Empty;
+			ImageUri = !pf.Miscellaneous.Equals(String.Empty) ? pf.Miscellaneous : String.Empty;
+
 
 			Recommendations = new ArrayList ();
 			Actions = new List<Action> ();

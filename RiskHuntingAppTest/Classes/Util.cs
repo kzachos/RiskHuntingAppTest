@@ -426,11 +426,11 @@ namespace RiskHuntingAppTest
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecProblem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
 			fspecProblem.FacetSpecificationLanguage = "Text";
-			fspecProblem.FacetSpecificationLink = "CaseStudy_" + risk.Id + "_Problem.xml";
+			fspecProblem.FacetSpecificationLink = Constants.CASEREF + risk.Id + "_Problem.xml";
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecSolution = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
 			fspecSolution.FacetSpecificationLanguage = "Text";
-			fspecSolution.FacetSpecificationLink = "CaseStudy_" + risk.Id + "_Solution.xml";
+			fspecSolution.FacetSpecificationLink = Constants.CASEREF + risk.Id + "_Solution.xml";
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet problem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
 			problem.FacetType = "Problem";
@@ -468,13 +468,21 @@ namespace RiskHuntingAppTest
 			//obs.launchDate = now.ToString();
 			//obs.Value = "n/A";
 			//fsd.Observations.Add(obs);
-			fsd.Observations = String.Empty;
-			fsd.ObservedBehaviour = risk.LocationDetail;
-			fsd.TreatmentType = risk.BodyPart;
-			fsd.DateOfIncident = String.Empty;
-			fsd.AilmentType = String.Empty;
-			fsd.TriggeringEvent = String.Empty;
-			fsd.Miscellaneous = String.Empty;
+			fsd.InjuryNature = risk.InjuryNature;
+			fsd.LocationDetail = risk.LocationDetail;
+			fsd.BodyPart = risk.BodyPart;
+			fsd.InjuryCause = String.Empty;
+			fsd.IncidentPriority = String.Empty;
+			fsd.IncidentStatus = String.Empty;
+			fsd.RootCause = String.Empty;
+			fsd.RoutineWork = String.Empty;
+			fsd.ShiftType = String.Empty;
+			fsd.Title = String.Empty;
+			fsd.ClosedByOperator = String.Empty;
+			fsd.ContractorName = String.Empty;
+			fsd.DateClosed = String.Empty;
+			fsd.DateIncidentOccurred = risk.DateIncidentOccurred.ToString();
+			fsd.Miscellaneous = risk.ImageUri;
 			fsd.MatchingDetails = String.Empty;
 
 			problem.FacetSpecificationData = fsd;
@@ -728,6 +736,75 @@ namespace RiskHuntingAppTest
 			}
 			return found;
 
+		}
+
+		public static int GetHtmlSelectIdForInjuryCategory (string searchValue)
+		{
+			int id = 0;
+			int found = -1;
+			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("ic").Count () > 0) {
+				foreach (XElement xe in doc.Descendants("ic")) {
+					if (xe.Element ("n").Value.Equals (searchValue)) {
+						found = id;
+
+					} else
+						id++;
+				}
+			}
+			return found;
+
+		}
+
+		public enum ImageFormat
+		{
+			bmp,
+			jpeg,
+			gif,
+			tiff,
+			png,
+			unknown
+		}
+
+		public static ImageFormat GetImageFormat(string pathToFile)
+		{
+			var bytes = File.ReadAllBytes(pathToFile);
+			// see http://www.mikekunz.com/image_file_header.html  
+			var bmp    = Encoding.ASCII.GetBytes("BM");     // BMP
+			var gif    = Encoding.ASCII.GetBytes("GIF");    // GIF
+			var png    = new byte[] { 137, 80, 78, 71 };    // PNG
+			var tiff   = new byte[] { 73, 73, 42 };         // TIFF
+			var tiff2  = new byte[] { 77, 77, 42 };         // TIFF
+			var jpeg   = new byte[] { 255, 216, 255, 224 }; // jpeg
+			var jpeg2  = new byte[] { 255, 216, 255, 225 }; // jpeg canon
+
+			if (bmp.SequenceEqual(bytes.Take(bmp.Length)))
+				return ImageFormat.bmp;
+
+			if (gif.SequenceEqual(bytes.Take(gif.Length)))
+				return ImageFormat.gif;
+
+			if (png.SequenceEqual(bytes.Take(png.Length)))
+				return ImageFormat.png;
+
+			if (tiff.SequenceEqual(bytes.Take(tiff.Length)))
+				return ImageFormat.tiff;
+
+			if (tiff2.SequenceEqual(bytes.Take(tiff2.Length)))
+				return ImageFormat.tiff;
+
+			if (jpeg.SequenceEqual(bytes.Take(jpeg.Length)))
+				return ImageFormat.jpeg;
+
+			if (jpeg2.SequenceEqual(bytes.Take(jpeg2.Length)))
+				return ImageFormat.jpeg;
+
+			return ImageFormat.unknown;
+		}
+
+		public static bool IsDirectoryEmpty(string path)
+		{
+			return !Directory.EnumerateFileSystemEntries(path).Any();
 		}
 	}
 }

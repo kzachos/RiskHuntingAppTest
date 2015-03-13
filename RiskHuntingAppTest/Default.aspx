@@ -10,6 +10,8 @@
  <link href="Theme/pics/mirror_icon.gif" rel="apple-touch-icon" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/mozillaStyle.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/ieStyle.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <%--<link href="Theme/css/style2.css" rel="stylesheet" media="screen" type="text/css" />--%>
   <script src="Theme/javascript/functions.js" type="text/javascript"></script>
@@ -103,6 +105,13 @@
 	<script type="text/javascript">
 
 	</script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 	</head>
 	<body>
 

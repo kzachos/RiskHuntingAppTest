@@ -8,6 +8,8 @@
  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/mozillaStyle.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/ieStyle.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
 <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
@@ -25,6 +27,13 @@
 	    });
 	}, 3000);
 </script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 </head>
 <body>
 
@@ -36,7 +45,6 @@
 <span id="loading"></span>
 <div id="content">
 <form id="form1" runat="server">
-	<!--<span class="maintitle">Idea description</span>-->
 
 	<div id="alert_message_error" runat="server">
 		<div class="alert-box error">

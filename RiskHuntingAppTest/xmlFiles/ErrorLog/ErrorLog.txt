@@ -1450,3 +1450,27 @@ Stack Trace:
   at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
   at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
 
+********** 05/03/2015 19:19:54 **********
+Inner Exception Type: System.FormatException
+Inner Exception: String was not recognized as a valid DateTime.
+Inner Source: mscorlib
+Inner Stack Trace: 
+  at System.DateTime.Parse (System.String s, IFormatProvider provider, DateTimeStyles styles) [0x00027] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/corlib/System/DateTime.cs:845 
+  at System.DateTime.Parse (System.String s, IFormatProvider provider) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/corlib/System/DateTime.cs:833 
+  at System.DateTime.Parse (System.String s) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/corlib/System/DateTime.cs:828 
+  at RiskHuntingAppTest.DescribeRisk.RetrieveRiskXml (System.String componentType) [0x0013b] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DescribeRisk.aspx.cs:975 
+  at RiskHuntingAppTest.DescribeRisk.Page_Init (System.Object sender, System.EventArgs e) [0x00270] in /Users/koszachos/Projects/RiskHuntingAppTest/RiskHuntingAppTest/DescribeRisk.aspx.cs:107 
+  at System.Web.UI.Control.OnInit (System.EventArgs e) [0x00029] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1193 
+  at System.Web.UI.Page.OnInit (System.EventArgs e) [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:2631 
+  at System.Web.UI.Control.InitRecursive (System.Web.UI.Control namingContainer) [0x000c2] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Control.cs:1757 
+  at System.Web.UI.Page.InternalProcessRequest () [0x00161] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1412 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00062] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1259 
+Exception Type: System.Web.HttpUnhandledException
+Exception: Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Source: DefaultPage
+Stack Trace: 
+  at System.Web.UI.Page.ProcessException (System.Exception e) [0x0004b] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1291 
+  at System.Web.UI.Page.ProcessRequest (System.Web.HttpContext context) [0x00090] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web.UI/Page.cs:1271 
+  at System.Web.HttpApplication+<Pipeline>c__Iterator1.MoveNext () [0x00dd7] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:1368 
+  at System.Web.HttpApplication.Tick () [0x00000] in /private/tmp/source-mono-mac-3.12.0-branch-32/bockbuild-mono-3.12.0-branch/profiles/mono-mac-xamarin/build-root/mono-3.12.0/mcs/class/System.Web/System.Web/HttpApplication.cs:936 
+

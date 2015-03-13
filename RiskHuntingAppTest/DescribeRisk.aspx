@@ -10,9 +10,13 @@
  <link href="Theme/pics/mirror_icon.gif" rel="apple-touch-icon" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/mozillaStyle.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/ieStyle.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/PINpad.css" rel="stylesheet" type="text/css" >
  <%--<link href="Theme/css/style2.css" rel="stylesheet" media="screen" type="text/css" />--%>
   <script src="Theme/javascript/functions.js" type="text/javascript"></script>
+  <script src="Theme/javascript/PINpad.js"></script>
 	<title>Risk Hunting App</title>
 	<link href="Theme/pics/mirror_startup.png" rel="apple-touch-startup-image" />
 
@@ -62,13 +66,22 @@ window.setTimeout(function() {
 }, 3000);
 
 </script>
+ <!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 </head>
 <body onload="AutoExpand(RiskDescription)">
 
 	<div id="topbar2">
-		<div id="leftbutton">
-			<a href="javascript:doLoad('QueryHistory.aspx');" >
-				Our Previous Risks
+		<div id="leftnav">
+    		<a href="javascript:doLoad('Default.aspx');" ><img alt="home" src="Theme/images/home.png" />
+    		</a>
+			<a style="position:relative; TOP:2px;" href="javascript:doLoad('QueryHistory.aspx');" >
+				&nbsp;&nbsp;&nbsp; Our Previous Risks
 			</a> 
 		</div>
 		<div id="rightbutton" runat="server">
@@ -95,22 +108,6 @@ window.setTimeout(function() {
 	    <asp:Timer ID="Timer1" runat="server"  Interval="3000" ontick="Timer1_Tick"></asp:Timer>  
 
 
-		<!--<span class="maintitle">SELECT EXISTING RISK</span>
-		<ul class="pageitem">
-			<li class="blank">
-				<asp:Label  runat="server" Width="100%" ></asp:Label>
-			</li>
-			<li class="select" >
-				<asp:DropDownList ID="ExistingRiskDropDown" runat="Server" Width="98%" ></asp:DropDownList>
-				<span class="arrow"></span>
-			</li>
-			<li class="blank">
-				<asp:Label  runat="server" Width="100%" ></asp:Label>
-			</li>
-		</ul>
-
-		<span class="darkredboldtitle">OR</span><br><br>
-		-->
 		<div id="alert_message_success" runat="server">
 			<div class="alert-box success">
 				<div id="successMessage" style="display: inline" runat="server"></div>
@@ -169,13 +166,44 @@ window.setTimeout(function() {
 			    <span class="arrow"></span> 
 			</li>
 		</ul>
+		<span class="maintitle">What is the type of the injury?</span>
+		<ul class="pageitem">
+			<li class="select">
+			    <select id="RiskInjury" name="RiskInjury" runat="server">
+			    </select>
+			    <span class="arrow"></span> 
+			</li>
+		</ul>
+		<span class="maintitle">When did it happen?</span>
+		<UL class="pageitem">
+			<LI class="select">
+				<SELECT name="DateIncidentOccurredDay" id="DateIncidentOccurredDay" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
+			<LI class="select">
+				<SELECT name="DateIncidentOccurredMonth" id="DateIncidentOccurredMonth" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
 
-
+			<LI class="select">
+				<SELECT name="DateIncidentOccurredYear" id="DateIncidentOccurredYear" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
+		</UL>
+		<span class="maintitle">Have you got a picture?</span>
+		<ul class="pageitemborder">
+			<li class="menu">
+				<a href="javascript:doLoad('FileUploadControl.aspx');">
+					<span class="name">Press here to add, update or delete an image</span>
+					<span class="arrow"></span>
+				</a>
+			</li>
+		</ul>
 
 		<ul class="pageitembutton">
-			<!--<li class="buttonGrey">
-				<asp:Button id="save" runat="server" text="SAVE CHANGES" onclick="saveClicked"></asp:Button>
-			</li>-->
 			<li class="button">
 				<asp:button id="createIdeasButton" runat="server" text="CREATE IDEAS" onclick="ideasClicked"></asp:button>
 			</li>
@@ -184,14 +212,14 @@ window.setTimeout(function() {
 			
 		<ul class="pageitembutton">
 			<li class="buttonGrey">
-				<asp:button id="reset" runat="server" text="CLEAR FORM" onclick="resetClicked"></asp:button>
+				<asp:button id="reset" runat="server" text="CLEAR FORM &amp; DESCRIBE NEW RISK" onclick="resetClicked"></asp:button>
 			</li>
 		</ul>
 
 		<ul class="pageitembutton">
 			<div id="deleteRiskDiv" runat="server">
 				<li class="button2">
-					<asp:Button id="delete" runat="server" text="DELETE RISK" onclick="deleteClicked" onClientclick="Confirm();"></asp:Button>
+					<asp:Button id="delete" runat="server" text="DELETE RISK" onclick="deleteClicked"></asp:Button>
 				</li>
 			</div>	
 		</ul>
@@ -208,6 +236,9 @@ window.setTimeout(function() {
 	</form>
 
 	</div>
+
+
+		<div id="PINcode"></div>
 
 
 

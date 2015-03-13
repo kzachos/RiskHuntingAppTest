@@ -52,20 +52,20 @@ namespace RiskHuntingAppTest
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
 				Util.AccessLog(Util.ScreenType.CreateIdea_PastRisks);
-				creativeGuidance.Visible = false;
 //				creativeGuidance2.Visible = false;
 				alert_message_success.Visible = false;
 				alert_message_error.Visible = false;
-				alert_message_guidance.Visible = false;
+				describeRiskDiv.Visible = false;
 
 				this.sourceId = DetermineID ();
 				this.responseUri = DetermineResponseUri ();
 				if (!responseUri.Equals (String.Empty)) {
 					//				Session.Remove ("CURRENT_RISK_DESC");
 					//				Session.Remove ("CREATIVITY_PROMPTS");
-					creativeGuidance.Visible = true;
-					GenerateMatchedSources (responseUri, 0, Constants.MaxPastRisksAtATime - 1);
-				} 
+					GenerateMatchedSources (responseUri, 0, Constants.MaxPastRisksAtATime - 1, false);
+				}
+				else
+					alert_message_guidance.Visible = false;
 
 
 			} else {
@@ -76,9 +76,10 @@ namespace RiskHuntingAppTest
 				if (!responseUri.Equals (String.Empty)) {
 					//				Session.Remove ("CURRENT_RISK_DESC");
 					//				Session.Remove ("CREATIVITY_PROMPTS");
-					creativeGuidance.Visible = true;
-					GenerateMatchedSources (responseUri, 0, Constants.MaxPastRisksAtATime - 1);
-				} 
+					GenerateMatchedSources (responseUri, 0, Constants.MaxPastRisksAtATime - 1, false);
+				}
+				else
+					alert_message_guidance.Visible = false;
 //				else {
 //					errorMessage.InnerHtml = "the service could not retrieve any previous risks. Please try again later.";
 //					alert_message_success.Visible = false;
@@ -251,15 +252,18 @@ namespace RiskHuntingAppTest
 			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
 			//Array.Reverse(FileList);
 			NLP.StringProc str = new NLP.StringProc();
-			char[] deliminator = new char[] { '_' };
+			char[] deliminator = new char[] { 'y' };
+			char[] deliminator2 = new char[] { '_' };
 			SortedList fileNameParts = new SortedList();
+			SortedList fileNameParts2 = new SortedList();
 
 			for (int i = 0; i <= FileList.Length-1; i++)
 			{
 				FileInfo FI = FileList[i];
 				//string file = files[i];
 				fileNameParts = str.SeperateStringByChar(FI.FullName, deliminator);
-				all.Add(fileNameParts[1].ToString(), FI.FullName);
+				fileNameParts2 = str.SeperateStringByChar(fileNameParts[1].ToString(), deliminator2);
+				all.Add(fileNameParts2[0].ToString(), FI.FullName);
 				//				Console.WriteLine ("FI.FullName: " + FI.FullName);
 			}
 
@@ -314,15 +318,13 @@ namespace RiskHuntingAppTest
 			return responseUri; 
 		}
 
-		private void GenerateMatchedSources(string responseUri, int startIndex, int max)
+		private void GenerateMatchedSources(string responseUri, int startIndex, int max, bool fromSearch)
 		{
 			responses.InnerHtml = String.Empty;
 			XmlProc.ResponseSerialized.MatchedSources response = XmlProc.ObjectXMLSerializer<XmlProc.ResponseSerialized.MatchedSources>.Load(responseUri);
 
 			List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource> matchedSources = (List<XmlProc.ResponseSerialized.MatchedSourcesMatchedSource>)response.MatchedSource;
 			if (matchedSources.Count > 0) {
-				alert_message_guidance.Visible = true;
-				submit.Text = "FIND MORE RISKS";
 				if (matchedSources.Count - 1 < max)
 					max = matchedSources.Count - 1;
 
@@ -333,22 +335,39 @@ namespace RiskHuntingAppTest
 				}
 				Console.WriteLine (responses.InnerHtml);
 				if (responses.InnerHtml.Trim ().Equals (String.Empty)) {
-					errorMessage.InnerHtml = "No cases have been found.";
-					alert_message_success.Visible = false;
-					alert_message_error.Visible = true;
-//					creativeGuidance2.Visible = true;
+					if (fromSearch) {
+						alert_message_guidance.Visible = true;
+						creativeGuidance.InnerText = "No cases have been found. Have you tried to extend the risk description to increase the likelihood of a match?";
+						alert_message_success.Visible = false;
+						alert_message_error.Visible = false;
+						describeRiskDiv.Visible = true;
+						submitDiv.Visible = false;
+					} else
+						alert_message_guidance.Visible = false;
+				} else {
+					alert_message_guidance.Visible = true;
+					submit.Text = "FIND MORE RISKS";
 				}
+
 			} else {
-				errorMessage.InnerHtml = "No cases have been found.";
-				alert_message_success.Visible = false;
-				alert_message_error.Visible = true;
-//				creativeGuidance2.Visible = true;
+				if (fromSearch) {
+					alert_message_guidance.Visible = true;
+					creativeGuidance.InnerText = "No cases have been found. Have you tried to extend the risk description to increase the likelihood of a match?";
+					alert_message_success.Visible = false;
+					alert_message_error.Visible = false;
+					describeRiskDiv.Visible = true;
+					submitDiv.Visible = false;
+				}
+				else
+					alert_message_guidance.Visible = false;
 			}
 		}
 
 		private string GenerateMatchedSourceHtml(XmlProc.ResponseSerialized.MatchedSourcesMatchedSource matchedSource)
 		{
-			string riskName = Util.ExtractAttributeContentFromString (matchedSource.Content, "Content").ExtractKeywords ().TruncateAtWord (10);
+			int n;
+			bool isNumeric = int.TryParse(matchedSource.SourceName, out n);
+			string riskName = isNumeric ? Util.ExtractAttributeContentFromString (matchedSource.Content, "Content").ExtractKeywords ().TruncateAtWord (10): matchedSource.SourceName;
 			var bodyPart = Util.ExtractAttributeContentFromString (matchedSource.Content, "BodyPart").Equals (String.Empty) ? "Not specified" : Util.ExtractAttributeContentFromString (matchedSource.Content, "BodyPart");
 			return Tag1 + Tag2 + matchedSource.SourceId + Tag3 + Tag4 + riskName + Tag5 + Tag6 +
 				Util.ExtractAttributeContentFromString (matchedSource.Content, "Content") + Tag7 + 
@@ -369,10 +388,9 @@ namespace RiskHuntingAppTest
 				RetrieveCurrentRisk ();
 				var ok = FindRisks ();
 //				if (ok) {
-					GenerateMatchedSources (responseUri, 0, Constants.MaxPastRisksAtATime - 1);
 					var processGuidanceText = Util.GenerateProcessGuidance ("riskResolutions");
-					creativeGuidance.Visible = true;
 					creativeGuidance.InnerText = processGuidanceText.Equals (String.Empty) ? defaultProcessGuidance : processGuidanceText;
+					GenerateMatchedSources (responseUri, 0, Constants.MaxPastRisksAtATime - 1, true);
 //				}
 			}
 
@@ -381,6 +399,11 @@ namespace RiskHuntingAppTest
 		public virtual void creativeGuidanceClicked(object sender, EventArgs args)
 		{
 			Response.Redirect ("CreateIdeas_SameRisk.aspx");
+		}
+
+		public virtual void returnClicked(object sender, EventArgs args)
+		{
+			Response.Redirect("DescribeRisk.aspx");
 		}
 	}
 }

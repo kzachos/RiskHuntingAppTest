@@ -118,8 +118,13 @@ namespace RiskHuntingAppTest
 			generatePrompts.Visible = true;
 			alert_message_success.Visible = false;
 			alert_message_error.Visible = false;
+			describeRiskDiv.Visible = false;
 			if (Sessions.RiskState != String.Empty)
 				this.sourceId = Sessions.RiskState;
+
+			var processGuidanceText = Util.GenerateProcessGuidance ("creativeGuidance");
+			creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
+
 
 			if (Sessions.CreativityPromptsState != null) {
 //				if (Session ["CURRENT_PROBLEM_DESC"] != null) 
@@ -139,8 +144,6 @@ namespace RiskHuntingAppTest
 
 			}
 
-			var processGuidanceText = Util.GenerateProcessGuidance ("creativeGuidance");
-			creativeGuidance.InnerText = processGuidanceText.Equals(String.Empty)?defaultProcessGuidance:processGuidanceText;
 
 				
 			if (Page.IsPostBack) {
@@ -386,17 +389,22 @@ namespace RiskHuntingAppTest
 				Console.WriteLine ("****** PopulateData *******");
 				this.total = CreativityPromptsFeed.Count < Constants.MaxPromptsAtATime ? CreativityPromptsFeed.Count : Constants.MaxPromptsAtATime;
 				int counter = 0;
-				if (this.total > 0)
-				{
+				if (this.total > 0) {
 					for (int i = 0; i < this.total; i++) {
 						content2.InnerHtml += GenerateHtml (CreativityPromptsFeed [i]);
 //						GenerateHtml3 (CreativityPromptsFeed [i], String.Empty, counter++);
 						Console.WriteLine (CreativityPromptsFeed [i]);
 					}
 					Sessions.CreativityPromptsState = CreativityPromptsFeed;
+				} else {
+					generatePrompts.Visible = false;
+					hint_box.Visible = true;
+					alert_message_success.Visible = false;
+					creativeGuidance.InnerText = "Could not generate any creativity prompts. Have you tried to extend the risk description?";
+					alert_message_error.Visible = false;
+					describeRiskDiv.Visible = true;
+//					GenerateHtml3 ("No prompts available", String.Empty);
 				}
-				else
-					GenerateHtml3 ("No prompts available", String.Empty);
 			} else {
 				Console.WriteLine ("PopulateData");
 				if (Sessions.CreativityPromptsState != null) {
@@ -575,6 +583,11 @@ namespace RiskHuntingAppTest
 		public virtual void resolutionIdeasClicked(object sender, EventArgs args)
 		{
 			Response.Redirect("Solution_ResolutionIdeas.aspx");
+		}
+
+		public virtual void returnClicked(object sender, EventArgs args)
+		{
+			Response.Redirect("DescribeRisk.aspx");
 		}
 
 		private string RetrieveCheckboxText (string id)

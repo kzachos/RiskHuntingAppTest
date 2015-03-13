@@ -13,6 +13,7 @@ using System.Xml.Linq;
 
 //using ActivityTrackingLog.Utils;
 using System.Collections.Specialized;
+using System.Globalization;
 
 namespace RiskHuntingAppTest
 {
@@ -92,9 +93,10 @@ namespace RiskHuntingAppTest
 
 				InitTextElements ();
 				InitParametersDropDown ();
+				PopulateDateDropDown ();
 				alert_message_success.Visible = false;
 				alert_message_error.Visible = false;
-
+//				PINcodeDiv.Visible = false;
 
 				this.requestId = DetermineID ();
 				if (!this.requestId.Equals (String.Empty)) {
@@ -105,7 +107,6 @@ namespace RiskHuntingAppTest
 					RetrieveRiskXml ("Problem");
 					RetrieveRiskXml ("Solution");
 					Sessions.RiskState = this.sourceId;
-
 				} else {
 					deleteRiskDiv.Visible = false;
 					rightbutton.Visible = false;
@@ -116,6 +117,7 @@ namespace RiskHuntingAppTest
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
 				Util.AccessLog(Util.ScreenType.DescribeRisk);
 			} else {
+//				PINcodeDiv.Visible = true;
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
 			}
 		}
@@ -215,6 +217,8 @@ namespace RiskHuntingAppTest
 		{
 			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
 			RiskLocation.Items.Clear();
+			RiskBodyParts.Items.Clear();
+			RiskInjury.Items.Clear();
 			if (doc.Descendants("rl").Count() > 0)
 				foreach (XElement xe in doc.Descendants("rl"))
 					RiskLocation.Items.Add(new ListItem(xe.Element("n").Value));    
@@ -223,9 +227,54 @@ namespace RiskHuntingAppTest
 			if (doc.Descendants("bp").Count() > 0)
 				foreach (XElement xe in doc.Descendants("bp"))
 					RiskBodyParts.Items.Add(new ListItem(xe.Element("n").Value));    
+
+			if (doc.Descendants("ic").Count() > 0)
+				foreach (XElement xe in doc.Descendants("ic"))
+					RiskInjury.Items.Add(new ListItem(xe.Element("n").Value));    
 		}
 
+		private void PopulateDateDropDown()
+		{
+			DateIncidentOccurredDay.Items.Clear();
+			DateIncidentOccurredMonth.Items.Clear();
+			DateIncidentOccurredYear.Items.Clear();
 
+			var dayNow = DateTime.Now.Day;
+			var monthNow = DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture);
+			var yearNow = DateTime.Now.ToString("yyyy", CultureInfo.InvariantCulture);
+
+			int count = 0;
+			for (int i=1; i<=31; i++)
+			{
+				DateIncidentOccurredDay.Items.Add (new ListItem (i.ToString()));
+				if (dayNow.Equals (i))
+					DateIncidentOccurredDay.SelectedIndex = count;
+				count++;
+			}
+
+			string[] monthNames = 
+				System.Globalization.CultureInfo.CurrentCulture
+					.DateTimeFormat.MonthGenitiveNames;
+			for (int i=0; i<monthNames.Length; i++)
+			{
+				DateIncidentOccurredMonth.Items.Add (new ListItem (monthNames[i]));
+				if (monthNow.Equals (monthNames[i]))
+					DateIncidentOccurredMonth.SelectedIndex = i;
+			}
+
+			DateTime startDate = new DateTime(2013, 01, 01);
+			DateTime endDate = DateTime.Now;
+			count = 0;
+			while (startDate <= endDate)
+			{
+				string startDateYear = startDate.ToString ("yyyy", CultureInfo.InvariantCulture);
+				DateIncidentOccurredYear.Items.Add (new ListItem (startDateYear));
+				if (yearNow.Equals (startDateYear))
+					DateIncidentOccurredYear.SelectedIndex = count;
+				startDate = startDate.AddYears(1);
+				count++;
+			}
+		}
 
 		#endregion
 
@@ -438,13 +487,15 @@ namespace RiskHuntingAppTest
 			Risk risk = new Risk ();
 			risk.Id = Convert.ToInt32 (this.sourceId);
 
-			risk.Content = RiskDescription.Text;
+			risk.Content = CheckTextBoxContent(RiskDescription, DESC_WATERMARK);
 			risk.Author = CheckTextBoxContent (RiskAuthor, AUTHOR_WATERMARK);
 			risk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
 			//			risk.InjuryNature = CheckTextBoxContent(RiskDanger, DANGER_WATERMARK);
 			risk.InjuryNature = String.Empty;
 			risk.LocationDetail = RiskLocation.Value; 
 			risk.BodyPart = RiskBodyParts.Value;
+			risk.InjuryNature = RiskInjury.Value;
+			risk.ImageUri = String.Empty;
 
 			risk.Recommendations = new ArrayList ();
 			risk.Countermeasures = String.Empty;
@@ -459,6 +510,10 @@ namespace RiskHuntingAppTest
 			else
 				risk.SimilarCasesFound = false;
 
+			var month = DateTime.ParseExact (DateIncidentOccurredMonth.Value, "MMMM", CultureInfo.CurrentCulture).Month;
+			string dateString = DateIncidentOccurredDay.Value + "/" + month.ToString() + "/" + DateIncidentOccurredYear.Value;
+			risk.DateIncidentOccurred = DateTime.Parse (dateString).Date;
+
 			return risk;
 		}
 
@@ -470,17 +525,22 @@ namespace RiskHuntingAppTest
 				if (Sessions.CreativityPromptsState != null)
 					Session.Remove (Sessions.creativityPromptsState);
 			}
-			this.currentRisk.Content = RiskDescription.Text;
+			this.currentRisk.Content = CheckTextBoxContent(RiskDescription, DESC_WATERMARK);
 			this.currentRisk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
 			this.currentRisk.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
 			//			risk.InjuryNature = CheckTextBoxContent(RiskDanger, DANGER_WATERMARK);
 			this.currentRisk.InjuryNature = String.Empty;
 			this.currentRisk.LocationDetail = RiskLocation.Value;
 			this.currentRisk.BodyPart = RiskBodyParts.Value;
+			this.currentRisk.InjuryNature = RiskInjury.Value;
 			if (search)
 				this.currentRisk.SimilarCasesFound = true;
 			else
 				this.currentRisk.SimilarCasesFound = false;
+
+			var month = DateTime.ParseExact (DateIncidentOccurredMonth.Value, "MMMM", CultureInfo.CurrentCulture).Month;
+			string dateString = DateIncidentOccurredDay.Value + "/" + month.ToString() + "/" + DateIncidentOccurredYear.Value;
+			this.currentRisk.DateIncidentOccurred = DateTime.Parse (dateString).Date;
 		}
 
 		//		public virtual void submitClicked(object sender, EventArgs args)
@@ -606,8 +666,10 @@ namespace RiskHuntingAppTest
 			RiskAuthor.Text = String.Empty;
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
 			InitParametersDropDown ();
+			PopulateDateDropDown ();
 			RiskLocation.SelectedIndex = -1;
 			RiskBodyParts.SelectedIndex = -1;
+			RiskInjury.SelectedIndex = -1;
 		}
 
 		public virtual void ideasClicked(object sender, EventArgs args)
@@ -653,25 +715,26 @@ namespace RiskHuntingAppTest
 
 		public virtual void deleteClicked(object sender, EventArgs args)
 		{
-			string confirmValue = Request.Form["confirm_value"];
-			if (confirmValue == "Yes") {
-				Util.AccessLog(Util.ScreenType.DescribeRisk, Util.FeatureType.DescribeRisk_DeleteRiskButton);
-
-				string filesToDelete = @"*" + this.sourceId + "*.xml";   // Only delete xml files containing *sourceID* in their filenames
-				string[] fileList = System.IO.Directory.GetFiles (xmlFilesPath, filesToDelete, System.IO.SearchOption.AllDirectories);
-				//				Debug.WriteLine (filesToDelete);
-				foreach (string file in fileList) {
-					Debug.WriteLine (file + " will be deleted");
-					File.Delete (file);
-				}
-				string pb = String.Empty;
-//				var output = RemoveCase (this.sourceId);
-//				if (output) 
-//					pb = "deleted";
-//				else
-//					pb = "notdeleted";
-				Response.Redirect ("DescribeRisk.aspx?pb=" + "deleted");
-			}
+			Response.Redirect ("PinEntry.aspx");
+//			string confirmValue = Request.Form["confirm_value"];
+//			if (confirmValue == "Yes") {
+//				Util.AccessLog(Util.ScreenType.DescribeRisk, Util.FeatureType.DescribeRisk_DeleteRiskButton);
+//
+//				string filesToDelete = @"*" + this.sourceId + "*.xml";   // Only delete xml files containing *sourceID* in their filenames
+//				string[] fileList = System.IO.Directory.GetFiles (xmlFilesPath, filesToDelete, System.IO.SearchOption.AllDirectories);
+//				//				Debug.WriteLine (filesToDelete);
+//				foreach (string file in fileList) {
+//					Debug.WriteLine (file + " will be deleted");
+//					File.Delete (file);
+//				}
+//				string pb = String.Empty;
+////				var output = RemoveCase (this.sourceId);
+////				if (output) 
+////					pb = "deleted";
+////				else
+////					pb = "notdeleted";
+//				Response.Redirect ("DescribeRisk.aspx?pb=" + "deleted");
+//			}
 
 		}
 
@@ -791,7 +854,7 @@ namespace RiskHuntingAppTest
 		private string GenerateTargetDescription ()
 		{
 			string content = String.Empty;
-			content += "[InjuryNature]: " + String.Empty;
+			content += "[InjuryNature]: " + RiskInjury.Value;
 			content += " [LocationDetail]: " + RiskLocation.Value;
 			content += " [Content]: " + RiskDescription.Text;
 			content += " [BodyPart]: " + RiskBodyParts.Value;
@@ -837,21 +900,6 @@ namespace RiskHuntingAppTest
 
 		#region Xml generation
 
-		//		private void PopulateRiskDetails (string id)
-		//		{
-		//			string temp = String.Empty;
-		//			XmlProc.RequestSerialized.Request request = XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Load(requestPath + "Request_" + id + ".xml");
-		//			XmlProc.RequestSerialized.RequestTarget target = (XmlProc.RequestSerialized.RequestTarget)request.Target[0];
-		//			RiskName.Text = temp;
-		//			RiskDanger.Text = ExtractAttributeContentFromString(target.TargetDescription, "InjuryNature").Trim();
-		//			RiskLocation.Text = ExtractAttributeContentFromString(target.TargetDescription, "LocationDetail").Trim();
-		//			//			RiskRisk.Text = temp;
-		//			RiskDescription.Text = ExtractAttributeContentFromString(target.TargetDescription, "Content").Trim();
-		//			RiskBodyParts.Text = ExtractLastAttributeFromString(target.TargetDescription).Trim();
-		//			title.InnerHtml = String.Empty;
-		//
-		//		}
-
 		void RetrieveCurrentRisk ()
 		{
 			if (!this.sourceId.Equals(String.Empty))
@@ -873,30 +921,6 @@ namespace RiskHuntingAppTest
 			}
 		}
 
-		void RetrieveRiskXml ()
-		{
-			//			title.InnerHtml = String.Empty;
-			string location = String.Empty;
-
-			location = processPath + "SourceSpecification" + "/" + Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml";
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
-
-			location = processPath + "Problem" + "/" + Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml";
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
-
-			location = processPath + "Solution" + "/" + Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml";
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
-
-			this.currentRisk = new Risk (ss, problem, solution);
-
-			RiskName.Text = this.currentRisk.Name;
-			RiskDescription.Text = this.currentRisk.Content;
-			RiskAuthor.Text = this.currentRisk.Author;
-			//			RiskLocation.Text = String.Empty;
-			//			RiskBodyParts.Text = String.Empty;
-
-		}
-
 		void RetrieveRiskXml (string componentType)
 		{
 			//			title.InnerHtml = String.Empty;
@@ -915,16 +939,26 @@ namespace RiskHuntingAppTest
 				RiskDescription.Text = problemFacet.Content;
 				RiskAuthor.Text = problem.Author;
 
-				var id1 = Util.GetHtmlSelectIdForLocation (problemFacet.ObservedBehaviour);
+				var id1 = Util.GetHtmlSelectIdForLocation (problemFacet.LocationDetail);
 				if (id1 > -1)
 					RiskLocation.SelectedIndex = id1;
 
-				var id2 = Util.GetHtmlSelectIdForBodyPart (problemFacet.TreatmentType);
+				var id2 = Util.GetHtmlSelectIdForBodyPart (problemFacet.BodyPart);
 				//				Console.WriteLine ("id2: " + id2);
 				//				Console.WriteLine ("value: " + problemFacet.TreatmentType);
 				if (id2 > -1)
 					RiskBodyParts.SelectedIndex = id2;
 
+				var id3 = Util.GetHtmlSelectIdForInjuryCategory (problemFacet.InjuryNature);
+				if (id3 > -1)
+					RiskInjury.SelectedIndex = id3;
+
+				if (!problemFacet.DateIncidentOccurred.Equals (String.Empty)) {
+					var date = DateTime.Parse (problemFacet.DateIncidentOccurred).Date;
+					DateIncidentOccurredDay.Value = date.Day.ToString ();
+					DateIncidentOccurredMonth.Value = date.ToString ("MMMM", CultureInfo.InvariantCulture);
+					DateIncidentOccurredYear.Value = date.Year.ToString ();
+				}
 
 			}
 			else if (componentType.Equals("Solution"))
@@ -970,205 +1004,7 @@ namespace RiskHuntingAppTest
 			}
 
 		}
-
-		private XmlProc.SourceSpecificationSerialized.SourceSpecification CreateSourceSpecificationXml()
-		{
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = new XmlProc.SourceSpecificationSerialized.SourceSpecification();
-
-			DateTime now = DateTime.Now;
-			ss.SourceId = Convert.ToInt32(this.sourceId);
-			//			this.sourceId = maxId.ToString();
-			ss.SourceName = this.currentRisk.Name;
-			ss.SourceType = Constants.SOURCE_TYPE;
-			ss.Domain = Constants.CASE_TYPE;
-			ss.Filename = ss.SourceType + maxId + ".docx";
-			ss.LaunchDate = now.ToString();
-			ss.SourceSpecificationLastEdited = now.ToString();
-
-			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecProblem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
-			fspecProblem.FacetSpecificationLanguage = "Text";
-			fspecProblem.FacetSpecificationLink = ss.SourceType + maxId + "_Problem.xml";
-
-			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecSolution = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
-			fspecSolution.FacetSpecificationLanguage = "Text";
-			fspecSolution.FacetSpecificationLink = ss.SourceType + maxId + "_Solution.xml";
-
-			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet problem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
-			problem.FacetType = "Problem";
-			problem.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-			problem.FacetSpecification = fspecProblem;
-
-			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet solution = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
-			solution.FacetType = "Solution";
-			solution.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-			solution.FacetSpecification = fspecSolution;
-
-			ss.Facet = new System.Collections.Generic.List<XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet>();
-			ss.Facet.Add(problem);
-			ss.Facet.Add(solution);
-
-			return ss;
-		}
-
-		private XmlProc.ProblemSerialized.LanguageSpecificSpecification CreateProblemXml()
-		{
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = new XmlProc.ProblemSerialized.LanguageSpecificSpecification();
-
-			DateTime now = DateTime.Now;
-			problem.FacetType = "Problem";
-			problem.FacetSpecificationLanguage = "Text";
-			problem.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-			problem.LaunchDate = now.ToString();
-			problem.SourceSpecificationLastEdited = now.ToString();
-
-			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData();
-			fsd.Content = currentRisk.Content;
-			//fsd.Observations = new System.Collections.Generic.List<XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationDataObservation>();
-			//XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationDataObservation obs = new XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationDataObservation();
-			//obs.id = 1;
-			//obs.launchDate = now.ToString();
-			//obs.Value = "n/A";
-			//fsd.Observations.Add(obs);
-			fsd.Observations = String.Empty;
-			fsd.ObservedBehaviour = String.Empty;
-			fsd.TreatmentType = String.Empty;
-			fsd.DateOfIncident = String.Empty;
-			fsd.AilmentType = String.Empty;
-			fsd.TriggeringEvent = String.Empty;
-			fsd.Miscellaneous = String.Empty;
-			fsd.MatchingDetails = String.Empty;
-
-			problem.FacetSpecificationData = fsd;
-
-
-			return problem;
-		}
-
-		private XmlProc.SolutionSerialized.LanguageSpecificSpecification CreateSolutionXml()
-		{
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = new XmlProc.SolutionSerialized.LanguageSpecificSpecification();
-
-			DateTime now = DateTime.Now;
-			solution.FacetType = "Solution";
-			solution.FacetSpecificationLanguage = "Text";
-			solution.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-			solution.LaunchDate = now.ToString();
-			solution.SourceSpecificationLastEdited = now.ToString();
-
-			XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData();
-
-			string completeSolutionString;
-			if (currentRisk.Recommendation.Equals (String.Empty) && currentRisk.CorrectiveActions.Equals (String.Empty) && currentRisk.Countermeasures.Equals (String.Empty))
-				completeSolutionString = String.Empty;
-			else
-				completeSolutionString = currentRisk.Recommendation + ";" + currentRisk.CorrectiveActions + ";" + currentRisk.Countermeasures;
-
-			fsd.Content = completeSolutionString;
-			fsd.Miscellaneous = String.Empty;
-
-			solution.FacetSpecificationData = fsd;
-
-
-			return solution;
-		}
-
-
-		//		private XmlProc.SourceSpecificationSerialized.SourceSpecification CreateSourceSpecificationXml()
-		//		{
-		//			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = new XmlProc.SourceSpecificationSerialized.SourceSpecification();
-		//
-		//			DateTime now = DateTime.Now;
-		//			ss.SourceId = maxId;
-		//			this.sourceId = maxId.ToString();
-		//			ss.SourceName = CheckTextBoxContent(RiskName, NAME_WATERMARK);
-		//			ss.SourceType = SOURCE_TYPE;
-		//			ss.Domain = CASE_TYPE;
-		//			ss.Filename = ss.SourceType + maxId + ".docx";
-		//			ss.LaunchDate = now.ToString();
-		//			ss.SourceSpecificationLastEdited = now.ToString();
-		//
-		//			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecProblem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
-		//			fspecProblem.FacetSpecificationLanguage = "Text";
-		//			fspecProblem.FacetSpecificationLink = ss.SourceType + maxId + "_Problem.xml";
-		//
-		//			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecSolution = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
-		//			fspecSolution.FacetSpecificationLanguage = "Text";
-		//			fspecSolution.FacetSpecificationLink = ss.SourceType + maxId + "_Solution.xml";
-		//
-		//			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet problem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
-		//			problem.FacetType = "Problem";
-		//			problem.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-		//			problem.FacetSpecification = fspecProblem;
-		//
-		//			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet solution = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
-		//			solution.FacetType = "Solution";
-		//			solution.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-		//			solution.FacetSpecification = fspecSolution;
-		//
-		//			ss.Facet = new System.Collections.Generic.List<XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet>();
-		//			ss.Facet.Add(problem);
-		//			ss.Facet.Add(solution);
-		//
-		//			return ss;
-		//		}
-		//
-		//		private XmlProc.ProblemSerialized.LanguageSpecificSpecification CreateProblemXml()
-		//		{
-		//			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = new XmlProc.ProblemSerialized.LanguageSpecificSpecification();
-		//
-		//			DateTime now = DateTime.Now;
-		//			problem.FacetType = "Problem";
-		//			problem.FacetSpecificationLanguage = "Text";
-		//			problem.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-		//			problem.LaunchDate = now.ToString();
-		//			problem.SourceSpecificationLastEdited = now.ToString();
-		//
-		//			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData();
-		//			fsd.Content = currentRisk.Content;
-		//			//fsd.Observations = new System.Collections.Generic.List<XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationDataObservation>();
-		//			//XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationDataObservation obs = new XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationDataObservation();
-		//			//obs.id = 1;
-		//			//obs.launchDate = now.ToString();
-		//			//obs.Value = "n/A";
-		//			//fsd.Observations.Add(obs);
-		//			fsd.Observations = String.Empty;
-		//			fsd.ObservedBehaviour = String.Empty;
-		//			fsd.TreatmentType = String.Empty;
-		//			fsd.DateOfIncident = String.Empty;
-		//			fsd.AilmentType = String.Empty;
-		//			fsd.TriggeringEvent = String.Empty;
-		//			fsd.Miscellaneous = String.Empty;
-		//			fsd.MatchingDetails = String.Empty;
-		//
-		//			problem.FacetSpecificationData = fsd;
-		//
-		//
-		//			return problem;
-		//		}
-		//
-		//		private XmlProc.SolutionSerialized.LanguageSpecificSpecification CreateSolutionXml()
-		//		{
-		//			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = new XmlProc.SolutionSerialized.LanguageSpecificSpecification();
-		//
-		//			DateTime now = DateTime.Now;
-		//			solution.FacetType = "Solution";
-		//			solution.FacetSpecificationLanguage = "Text";
-		//			solution.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
-		//			solution.LaunchDate = now.ToString();
-		//			solution.SourceSpecificationLastEdited = now.ToString();
-		//
-		//			XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData();
-		//
-		//			//			string completeSolutionString = currentRisk.Recommendation + ";" + currentRisk.CorrectiveActions + ";" + currentRisk.Countermeasures;
-		//			fsd.Content = String.Empty;
-		//			fsd.Miscellaneous = String.Empty;
-		//
-		//			solution.FacetSpecificationData = fsd;
-		//
-		//
-		//			return solution;
-		//		}
-
+			
 		private int GetNewSourceId()
 		{
 			int maxId = 0;
@@ -1217,15 +1053,18 @@ namespace RiskHuntingAppTest
 			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
 			//Array.Reverse(FileList);
 			NLP.StringProc str = new NLP.StringProc();
-			char[] deliminator = new char[] { '_' };
+			char[] deliminator = new char[] { 'y' };
+			char[] deliminator2 = new char[] { '_' };
 			SortedList fileNameParts = new SortedList();
+			SortedList fileNameParts2 = new SortedList();
 
 			for (int i = 0; i <= FileList.Length-1; i++)
 			{
 				FileInfo FI = FileList[i];
 				//string file = files[i];
 				fileNameParts = str.SeperateStringByChar(FI.FullName, deliminator);
-				all.Add(fileNameParts[1].ToString(), FI.FullName);
+				fileNameParts2 = str.SeperateStringByChar(fileNameParts[1].ToString(), deliminator2);
+				all.Add(fileNameParts2[0].ToString(), FI.FullName);
 				//				Console.WriteLine ("FI.FullName: " + FI.FullName);
 			}
 

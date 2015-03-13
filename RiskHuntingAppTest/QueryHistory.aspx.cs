@@ -59,6 +59,7 @@ namespace RiskHuntingAppTest
 
         protected void Page_Init(object sender, EventArgs e)
         {
+			alert_message_notice.Visible = false;
 
 //			if (Sessions.ResponseUriState != String.Empty)
 				Session.Remove (Sessions.responseUriState);
@@ -180,7 +181,8 @@ namespace RiskHuntingAppTest
 				}
 			} else {
 				SortDiv.Visible = false;
-				statusLabel.Text = "No previous risk cases available.";
+				alert_message_notice.Visible = true;
+				noticeMessage.InnerText = "No previous risk cases available";
 			}
 
 			if (Sessions.ResponseUriState != String.Empty) 
@@ -223,36 +225,7 @@ namespace RiskHuntingAppTest
 //			Console.WriteLine ("SortBy (itemSelected): " + Session ["SortBy"].ToString ());
 
 		}
-
-		private OrderedDictionary GetFilesFromDirectorySortedList4(string dirPath, int max)
-		{
-			OrderedDictionary all = new OrderedDictionary ();
-			DirectoryInfo dir = new DirectoryInfo(dirPath);
-			//			FileInfo[] FileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
-			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
-			//Array.Reverse(FileList);
-			NLP.StringProc str = new NLP.StringProc();
-			char[] deliminator = new char[] { '_' };
-			SortedList fileNameParts = new SortedList();
-			if (FileList.Length - 1 < max)
-				max = FileList.Length - 1;
-			//foreach (FileInfo FI in FileList)
-			//{
-			//    FileInfo FI = FileList[i];
-			//    fileNameParts = str.SeperateStringByChar(FI.FullName, deliminator);
-			//    all.Add(fileNameParts[1].ToString(), FI.FullName);
-			//}
-			for (int i = 0; i <= max; i++)
-			{
-				FileInfo FI = FileList[i];
-				//string file = files[i];
-				fileNameParts = str.SeperateStringByChar(FI.FullName, deliminator);
-				all.Add(fileNameParts[1].ToString(), FI.FullName);
-			}
-
-			return all;
-		}
-
+			
         private void GenerateQueryHistory(string dirPath, int max)
         {
 			List<string> allResponsePaths = GetFilesFromDirectoryList(Path.Combine (dirPath, "Responses"), max);
@@ -276,23 +249,24 @@ namespace RiskHuntingAppTest
 //			string requestId, requestPath;
 
 			if (allResponsePaths.Count > 0)
-				for (int i = 0; i < allResponsePaths.Count; i++)
-				{
-	//				var fileNameParts3 = responsePath.Split(deliminator3, StringSplitOptions.None);
-	//				fileNameParts = str.SeperateStringByChar(fileNameParts3[1], deliminator);
-	//				fileNameParts2 = str.SeperateStringByChar(fileNameParts[2].ToString(), deliminator2);
-	//				requestId = fileNameParts[1].ToString() + fileNameParts2[0].ToString();
+				for (int i = 0; i < allResponsePaths.Count; i++) {
+					//				var fileNameParts3 = responsePath.Split(deliminator3, StringSplitOptions.None);
+					//				fileNameParts = str.SeperateStringByChar(fileNameParts3[1], deliminator);
+					//				fileNameParts2 = str.SeperateStringByChar(fileNameParts[2].ToString(), deliminator2);
+					//				requestId = fileNameParts[1].ToString() + fileNameParts2[0].ToString();
 
-					requestPath = allRequestPathsValues[i];
+					requestPath = allRequestPathsValues [i];
 
 					//Response.Write(requestPath + "<BR>");
-					XmlProc.RequestSerialized.Request request = XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Load(requestPath);
-					XmlProc.RequestSerialized.RequestTarget target = (XmlProc.RequestSerialized.RequestTarget)request.Target[0];
+					XmlProc.RequestSerialized.Request request = XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Load (requestPath);
+					XmlProc.RequestSerialized.RequestTarget target = (XmlProc.RequestSerialized.RequestTarget)request.Target [0];
 
-					queries.InnerHtml += GenerateQueryHtml(allResponsePaths[i], allRequestPathsKeys[i], target.TargetDescription);
+					queries.InnerHtml += GenerateQueryHtml (allResponsePaths [i], allRequestPathsKeys [i], target.TargetDescription);
 				}
-			else
-				statusLabel.Text = "No risk queries available.";
+			else {
+				alert_message_notice.Visible = true;
+				noticeMessage.InnerText = "No previous risk cases available";
+			}
         }
 
 		private List<string> GetFilesFromDirectoryList(string dirPath, int max)

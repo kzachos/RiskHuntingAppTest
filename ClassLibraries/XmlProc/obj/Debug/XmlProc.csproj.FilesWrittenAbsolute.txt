@@ -1,0 +1,8 @@
+/Users/koszachos/Projects/SearchApp/ClassLibraries/XmlProc/bin/Debug/XmlProc.dll.mdb
+/Users/koszachos/Projects/SearchApp/ClassLibraries/XmlProc/bin/Debug/XmlProc.dll
+/Users/koszachos/Projects/SearchApp/ClassLibraries/XmlProc/obj/Debug/XmlProc.dll
+/Users/koszachos/Projects/SearchApp/ClassLibraries/XmlProc/obj/Debug/XmlProc.dll.mdb
+/Users/koszachos/Projects/RiskHuntingAppTest/ClassLibraries/XmlProc/bin/Debug/XmlProc.dll.mdb
+/Users/koszachos/Projects/RiskHuntingAppTest/ClassLibraries/XmlProc/bin/Debug/XmlProc.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/ClassLibraries/XmlProc/obj/Debug/XmlProc.dll
+/Users/koszachos/Projects/RiskHuntingAppTest/ClassLibraries/XmlProc/obj/Debug/XmlProc.dll.mdb

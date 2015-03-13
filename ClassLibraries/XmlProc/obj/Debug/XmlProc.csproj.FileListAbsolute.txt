@@ -1,0 +1,10 @@
+C:\Inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\bin\Debug\XmlProc.dll
+C:\Inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\bin\Debug\XmlProc.pdb
+C:\Inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\obj\Debug\ResolveAssemblyReference.cache
+C:\Inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\obj\Debug\XmlProc.dll
+C:\Inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\obj\Debug\XmlProc.pdb
+D:\inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\bin\Debug\XmlProc.dll
+D:\inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\bin\Debug\XmlProc.pdb
+D:\inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\obj\Debug\ResolveAssemblyReference.cache
+D:\inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\obj\Debug\XmlProc.dll
+D:\inetpub\wwwroot\SearchApp\ClassLibraries\XmlProc\obj\Debug\XmlProc.pdb

@@ -10,7 +10,7 @@ namespace RiskHuntingAppTest
 		public const string ANTIQUE_URI = "http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx";
 		public const string HALLOFFAME_URI = "http://achernar.soi.city.ac.uk/HallOfFame/HallOfFameService/Service1.asmx";
 
-		public const string CASEREF = "CaseStudy_";
+		public const string CASEREF = "CaseStudy";
 		public const string SOURCE_TYPE = CASEREF;
 		public const string CASE_TYPE = "Risk";
 		public const string AUTHOR = "Bassildon Trial";
@@ -22,6 +22,7 @@ namespace RiskHuntingAppTest
 		public const string SOLUTION = "Solution";
 		public const string ADDITIONAL = "Additional";
 		public const string PROCESSFOLDER = "_toProcess";
+		public const string IMAGESFOLDER = "Images";
 
 		public const int MaxPromptsAtATime = 8;
 		public const float THRESHOLD = 50.0f;
@@ -29,6 +30,11 @@ namespace RiskHuntingAppTest
 
 		public const string SESSION_EXPIRED_TEXT = "Your session expired";
 		public const string SESSION_EXPIRED_LABEL = "sessionexpired";
+
+		public const string PIN = "1234";
+
+		public const string PDF_TEMPLATE = "OHSREP12_Template.pdf";
+		public const string PDF_OUTPUT = "Risk.pdf";
 	}
 }
 

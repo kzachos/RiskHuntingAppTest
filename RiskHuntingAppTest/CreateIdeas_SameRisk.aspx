@@ -6,6 +6,8 @@
  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=0.6667, user-scalable=no" name="viewport" />
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/mozillaStyle.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/ieStyle.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 	<title>Risk Hunting App</title>
@@ -32,13 +34,22 @@
 	    });
 	}, 3000);
 </script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
 </head>
 <body>
 
 	<div id="topbar2">
-		<div id="leftbutton">
-			<a href="javascript:doLoad('DescribeRisk.aspx');" >
-				<img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-1-icon.png" />
+		<div id="leftnav">
+    		<a href="javascript:doLoad('Default.aspx');" ><img alt="home" src="Theme/images/home.png" />
+    		</a>
+   			<a href="javascript:doLoad('DescribeRisk.aspx');" >
+				&nbsp;&nbsp;&nbsp; <img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-1-icon.png" />
 				Describe Risk
 			</a> 
 		</div>
@@ -103,11 +114,13 @@
 				</div>
 			</ul>
 
-			<!--<ul class="pageitembutton">
-				<li class="button">
-					<asp:Button id="SaveSelected" runat="server" text="SAVE SELECTED" onclick="submitClicked"></asp:Button>
-				</li>
-			</ul>-->
+			<ul class="pageitembutton">
+				<div id="describeRiskDiv" runat="server">
+					<li class="buttonGrey">
+						<asp:Button id="ReturnDescribeRisk" runat="server" text="RETURN TO YOUR RISK" onclick="returnClicked"></asp:Button>
+					</li>
+				</div>
+			</ul>
 				
 		</form>
 	</div>

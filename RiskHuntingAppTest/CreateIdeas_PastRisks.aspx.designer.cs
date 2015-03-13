@@ -32,5 +32,9 @@ namespace RiskHuntingAppTest {
 		protected System.Web.UI.HtmlControls.HtmlGenericControl submitDiv;
 		
 		protected System.Web.UI.WebControls.Button submit;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl describeRiskDiv;
+		
+		protected System.Web.UI.WebControls.Button ReturnDescribeRisk;
 	}
 }
