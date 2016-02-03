@@ -12,7 +12,7 @@ namespace RiskHuntingAppTest
 	
 		protected void Page_Init(object sender, EventArgs e)
 		{
-
+			Response.Redirect("DescribeRisk.aspx");
 		}
 			
 

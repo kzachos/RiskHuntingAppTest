@@ -62,18 +62,18 @@
 		</div>
 		<div id="multiselectionbuttons">
 			<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-2-filled-icon.png" /> 
-			Create Ideas
+			Create Ideas from Previous Risks
 		</div>
 	</div>
 
-	<div id="topbar2Sub">
+	<!--<div id="topbar2Sub">
 		<div id="multiselectionbuttonsSub">
 			<a id="pressed" href="">Ideas from previous risks</a>
 			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">Ideas from new risk</a>
 			<a href="javascript:doLoad('CreateIdeas_Superheroes.aspx');">Ideas from Superheroes</a>
 
 		</div>
-	</div>
+	</div>-->
 		
 	<span id="loading"></span>
 
