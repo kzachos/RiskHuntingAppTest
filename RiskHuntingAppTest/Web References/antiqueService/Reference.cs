@@ -41,6 +41,8 @@ namespace RiskHuntingAppTest.antiqueService {
         
         private System.Threading.SendOrPostCallback GenerateCreativityPromptsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GenerateCreativityCluesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GeneratePredicatesFromDocumentOperationCompleted;
         
         private System.Threading.SendOrPostCallback GeneratePredicatesOperationCompleted;
@@ -52,7 +54,7 @@ namespace RiskHuntingAppTest.antiqueService {
         private System.Threading.SendOrPostCallback PerformAntiqueSampleOperationCompleted;
         
         public AntiqueService() {
-            this.Url = "http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx";
+            this.Url = "http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx";
         }
         
         public AntiqueService(string url) {
@@ -82,6 +84,8 @@ namespace RiskHuntingAppTest.antiqueService {
         public event ConvertToNewDomainCompletedEventHandler ConvertToNewDomainCompleted;
         
         public event GenerateCreativityPromptsCompletedEventHandler GenerateCreativityPromptsCompleted;
+        
+        public event GenerateCreativityCluesCompletedEventHandler GenerateCreativityCluesCompleted;
         
         public event GeneratePredicatesFromDocumentCompletedEventHandler GeneratePredicatesFromDocumentCompleted;
         
@@ -571,6 +575,48 @@ namespace RiskHuntingAppTest.antiqueService {
         }
         
         /// <remarks>
+///Generate creativity clues from a given text
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GenerateCreativityClues", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string GenerateCreativityClues(string genericText, string text) {
+            object[] results = this.Invoke("GenerateCreativityClues", new object[] {
+                        genericText,
+                        text});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginGenerateCreativityClues(string genericText, string text, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GenerateCreativityClues", new object[] {
+                        genericText,
+                        text}, callback, asyncState);
+        }
+        
+        public string EndGenerateCreativityClues(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void GenerateCreativityCluesAsync(string genericText, string text) {
+            this.GenerateCreativityCluesAsync(genericText, text, null);
+        }
+        
+        public void GenerateCreativityCluesAsync(string genericText, string text, object userState) {
+            if ((this.GenerateCreativityCluesOperationCompleted == null)) {
+                this.GenerateCreativityCluesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGenerateCreativityCluesCompleted);
+            }
+            this.InvokeAsync("GenerateCreativityClues", new object[] {
+                        genericText,
+                        text}, this.GenerateCreativityCluesOperationCompleted, userState);
+        }
+        
+        private void OnGenerateCreativityCluesCompleted(object arg) {
+            if ((this.GenerateCreativityCluesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GenerateCreativityCluesCompleted(this, new GenerateCreativityCluesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks>
 ///Extract text from a document's URL and generate predicates.
 ///</remarks>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GeneratePredicatesFromDocument", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
@@ -1004,6 +1050,25 @@ namespace RiskHuntingAppTest.antiqueService {
     }
     
     public delegate void GenerateCreativityPromptsCompletedEventHandler(object sender, GenerateCreativityPromptsCompletedEventArgs args);
+    
+    public partial class GenerateCreativityCluesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GenerateCreativityCluesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void GenerateCreativityCluesCompletedEventHandler(object sender, GenerateCreativityCluesCompletedEventArgs args);
     
     public delegate void GeneratePredicatesFromDocumentCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs args);
     

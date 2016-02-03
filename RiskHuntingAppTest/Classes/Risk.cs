@@ -12,10 +12,10 @@ namespace RiskHuntingAppTest
 		IdeasGenerated,
 //		[Description("Similar risks found")]
 //		SimilarRisksFound,
-		[Description("Actions Formulated")]
-		ActionsFormulated,
-		[Description("Risk Resolved")]
-		RiskResolved
+//		[Description("Actions Formulated")]
+//		ActionsFormulated,
+//		[Description("Risk Resolved")]
+//		RiskResolved
 	}
 
 	public enum RiskResolutionType {
@@ -66,6 +66,7 @@ namespace RiskHuntingAppTest
 
 		public RiskQueryState State { get; set; }
 		public bool SimilarCasesFound { get; set; }
+		public string ImageUri { get; set; }
 
 
 		public Risk (XmlProc.SourceSpecificationSerialized.SourceSpecification ss, 
@@ -76,7 +77,7 @@ namespace RiskHuntingAppTest
 			Id = ss.SourceId;
 			Name = ss.SourceName;
 			LaunchDate = Util.ConvertDateTime (ss.LaunchDate);
-			LastEdited = Util.ConvertDateTime (ss.SourceSpecificationLastEdited);
+			LastEdited = Util.ConvertDateTime (ss.LaunchDate);
 			Author = ss.Facet [0].Author;
 
 			switch (ss.SourceType)
@@ -87,12 +88,12 @@ namespace RiskHuntingAppTest
 			case "IdeasGenerated":
 				State = RiskQueryState.IdeasGenerated;
 				break;
-			case "ActionsFormulated":
-				State = RiskQueryState.ActionsFormulated;
-				break;
-			case "RiskResolved":
-				State = RiskQueryState.RiskResolved;
-				break;
+//			case "ActionsFormulated":
+//				State = RiskQueryState.ActionsFormulated;
+//				break;
+//			case "RiskResolved":
+//				State = RiskQueryState.RiskResolved;
+//				break;
 			}
 
 
@@ -100,8 +101,12 @@ namespace RiskHuntingAppTest
 
 			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData pf = p.FacetSpecificationData;
 			Content = !pf.Content.Equals (String.Empty) ? pf.Content : String.Empty;
-			LocationDetail = !pf.ObservedBehaviour.Equals (String.Empty) ? pf.ObservedBehaviour : String.Empty;
-			BodyPart = !pf.TreatmentType.Equals (String.Empty) ? pf.TreatmentType : String.Empty;
+			LocationDetail = !pf.LocationDetail.Equals (String.Empty) ? pf.LocationDetail : String.Empty;
+			BodyPart = !pf.BodyPart.Equals (String.Empty) ? pf.BodyPart : String.Empty;
+			DateIncidentOccurred = Util.ConvertDateTime (p.SourceSpecificationLastEdited);
+			InjuryNature = !pf.InjuryNature.Equals (String.Empty) ? pf.InjuryNature : String.Empty;
+			ImageUri = !pf.Miscellaneous.Equals(String.Empty) ? pf.Miscellaneous : String.Empty;
+
 
 			Recommendations = new ArrayList ();
 			Actions = new List<Action> ();

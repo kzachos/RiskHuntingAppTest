@@ -12,17 +12,21 @@ namespace RiskHuntingAppTest
 	
 	public partial class EditResolutionIdea : System.Web.UI.Page
 	{
+		const string Tag1a = "<div id=\"topbar2\">";
+		const string Tag2a = "<div id=\"leftbutton\">";
+		const string Tag3a = "<a href=\"javascript:doLoad('";
+		const string Tag3b = ".aspx');\" >";
+		const string Tag4a = "cancel";
+		const string Tag5a = "</a>";
+		const string Tag6a = "</div>";
+		const string Tag7a = "<div id=\"multiselectionbuttons\">";
+		const string Tag8a = "Edit Idea";
+		const string Tag9a = "</div>";
+		const string Tag10a = "</div>";
+
 		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
-		protected const string SOURCESPECIFICATION = "SourceSpecification";
-		protected const string PROBLEM = "Problem";
-		protected const string SOLUTION = "Solution";
-		protected const string ADDITIONAL = "Additional";
-		protected const string PROCESSFOLDER = "_toProcess";
-
 		protected string processPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources", "_toProcess");
-
-		protected const string SOURCE_TYPE = Constants.CASEREF;
-		protected const string CASE_TYPE = "Risk";
+	
 
 		protected string requestContent, sourceId;
 		protected int index;
@@ -34,9 +38,13 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString();	
+			Util.AccessLog(Util.ScreenType.EditIdea);
+			alert_message_error.Visible = false;
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 			RetrieveCurrentRisk ();
+
+			TopbarProblemIdeas.InnerHtml = GenerateHtml (DetermineFrom ());
 
 			//			if (!Page.IsPostBack) {
 			this.requestContent = DetermineContent ();
@@ -62,20 +70,35 @@ namespace RiskHuntingAppTest
 			return id;
 		}
 
+		private string DetermineFrom()
+		{
+			string f = String.Empty;
+			if (Request.QueryString["from"] != null)
+			{
+				f = Request.QueryString["from"];
+			}
+			return f;
+		}
+
 		void RetrieveCurrentRisk ()
 		{
-			string location;
+			if (!this.sourceId.Equals(String.Empty))
+			{
+				string location = String.Empty;
 
-			location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
-			XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
+				location = Path.Combine (processPath, "SourceSpecification", Constants.CASEREF + this.sourceId + "_" + "SourceSpecification" + ".xml");
+				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
-			XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Problem", Constants.CASEREF + this.sourceId + "_" + "Problem" + ".xml");
+				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 
-			location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
-			XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
+				location = Path.Combine (processPath, "Solution", Constants.CASEREF + this.sourceId + "_" + "Solution" + ".xml");
+				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Load(location);
 
-			this.currentRisk = new Risk (ss, problem, solution);
+				this.currentRisk = new Risk (ss, problem, solution);
+			} else {
+				Response.Redirect ("DescribeRisk.aspx?pb=" + Constants.SESSION_EXPIRED_LABEL);
+			}
 
 		}
 
@@ -100,16 +123,23 @@ namespace RiskHuntingAppTest
 		{
 			if (Page.IsValid)
 			{
-				if (!EditIdeaDescription.Text.Equals(EDITIDEA_WATERMARK))
+				if (EditIdeaDescription.Text.Equals(String.Empty) ||
+					EditIdeaDescription.Text.Equals(EDITIDEA_WATERMARK))
 				{
+					errorMessage.InnerHtml = "Please add your idea below.";
+					alert_message_error.Visible = true;
+
+				}
+				else {
+					Util.AccessLog(Util.ScreenType.EditIdea, Util.FeatureType.EditIdea_UpdateIdeaButton);
 
 					this.currentRisk.Recommendations [this.index] = EditIdeaDescription.Text;
 
-					GenerateXml("SourceSpecification");
-					GenerateXml("Problem");
-					GenerateXml("Solution");
+					GenerateXml(Constants.SOURCESPECIFICATION);
+					GenerateXml(Constants.PROBLEM);
+					GenerateXml(Constants.SOLUTION);
 
-					Response.Redirect("Solution_ResolutionIdeas.aspx");
+					Response.Redirect(DetermineFrom () + ".aspx");
 				}
 			}
 		}
@@ -120,6 +150,8 @@ namespace RiskHuntingAppTest
 			{
 				string confirmValue = Request.Form["confirm_value"];
 				if (confirmValue == "Yes") {
+					Util.AccessLog(Util.ScreenType.EditIdea, Util.FeatureType.EditIdea_DeleteIdeaButton);
+
 					int index = this.currentRisk.Recommendations.IndexOf (this.requestContent);
 					if (index != -1)
 						this.currentRisk.Recommendations.RemoveAt (index);
@@ -131,9 +163,15 @@ namespace RiskHuntingAppTest
 					GenerateXml ("Problem");
 					GenerateXml ("Solution");
 
-					Response.Redirect ("Solution_ResolutionIdeas.aspx");
+					Response.Redirect (DetermineFrom () + ".aspx");
 				}
 			}
+		}
+
+		private string GenerateHtml(string from)
+		{
+			return Tag1a + Tag2a + Tag3a + from + Tag3b + Tag4a + Tag5a + 
+				Tag6a + Tag7a + Tag8a + Tag9a + Tag10a;
 		}
 
 		#region Xml generation
@@ -145,27 +183,27 @@ namespace RiskHuntingAppTest
 			{
 				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = Util.CreateSourceSpecificationXml(this.currentRisk);
 				//				Console.WriteLine ("this.sourceId (GenerateXml): " + this.sourceId.ToString ());
-				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, SOURCESPECIFICATION, Ref);
-				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, SOURCESPECIFICATION, Ref);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOURCESPECIFICATION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOURCESPECIFICATION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Save(ss, xmlUri2);
 			}
 			else if (componentType.Equals("Problem"))
 			{
 				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = Util.CreateProblemXml(this.currentRisk);
-				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, PROBLEM, Ref);
-				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, PROBLEM, Ref);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.PROBLEM, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.PROBLEM, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Save(problem, xmlUri2);
 			}
 			else if (componentType.Equals("Solution"))
 			{
 				XmlProc.SolutionSerialized.LanguageSpecificSpecification solution = Util.CreateSolutionXml(this.currentRisk);
-				Ref = SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
-				xmlUri = Path.Combine (sourcesPath, CASE_TYPE, SOLUTION, Ref);
-				xmlUri2 = Path.Combine (sourcesPath, PROCESSFOLDER, SOLUTION, Ref);
+				Ref = Constants.SOURCE_TYPE + this.sourceId + "_" + componentType + ".xml";
+				xmlUri = Path.Combine (sourcesPath, Constants.CASE_TYPE, Constants.SOLUTION, Ref);
+				xmlUri2 = Path.Combine (sourcesPath, Constants.PROCESSFOLDER, Constants.SOLUTION, Ref);
 				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri);
 				XmlProc.ObjectXMLSerializer<XmlProc.SolutionSerialized.LanguageSpecificSpecification>.Save(solution, xmlUri2);
 			}

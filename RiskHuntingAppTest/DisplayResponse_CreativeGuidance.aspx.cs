@@ -43,8 +43,8 @@ namespace RiskHuntingAppTest
 		{
 			MorePrompts.Visible = false;
 			generatePrompts.Visible = false;
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
 
 			if (Session ["CURRENT_RISK_DESC"] != null) 
 				NLResponse = (List<NLResponseToken>) Session ["CURRENT_RISK_DESC"];
@@ -99,8 +99,8 @@ namespace RiskHuntingAppTest
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
-			if (Session ["CURRENT_RISK"] != null)
-				sourceId = Session ["CURRENT_RISK"].ToString();
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
 
 			if (!Page.IsPostBack) {
 
@@ -292,12 +292,12 @@ namespace RiskHuntingAppTest
 			if (Request.QueryString["id"] != null)
 			{
 				id = Request.QueryString["id"];
-				Session["CurrentOriginalID"] = id;
+				Session ["CurrentOriginalID"] = id;
 			}
 			else
 			{
-				if (Session["CurrentOriginalID"] != null)
-					id = Session["CurrentOriginalID"].ToString();
+				if (Session ["CurrentOriginalID"] != null)
+					id = Session ["CurrentOriginalID"].ToString();
 			}
 			return id;
 		}
@@ -305,8 +305,8 @@ namespace RiskHuntingAppTest
 		private string DetermineResponseUri()
 		{
 			string responseUri = String.Empty;
-			if (Session["CurrentResponseUri"] != null)
-				responseUri = Session["CurrentResponseUri"].ToString();
+			if (Session ["CurrentResponseUri"] != null)
+				responseUri = Session ["CurrentResponseUri"].ToString();
 			else
 			{
 				if (Request.QueryString["path"] != null)

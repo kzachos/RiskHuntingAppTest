@@ -15,7 +15,7 @@ namespace RiskHuntingAppTest
 			if (type.Equals ("NP")) {
 				this.genericCPs.Add ("how to make the " + filler + " move and adjust");
 				this.genericCPs.Add ("doing the opposite of what is expected with the " + filler);
-				this.genericCPs.Add ("it you can replace something mechanical in the " + filler + " with something that is sensory");
+				this.genericCPs.Add ("if you can replace something mechanical in the " + filler + " with something that is sensory");
 				this.genericCPs.Add ("if it is possible to change the density of the " + filler);
 				this.genericCPs.Add ("if it is possible to change the temperature of the " + filler);
 				this.genericCPs.Add ("making the " + filler + " more flexible");

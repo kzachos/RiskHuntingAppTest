@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceId>120003</SourceId>
+  <SourceName>Accident</SourceName>
+  <SourceType>ProblemDescribed</SourceType>
+  <Domain>Risk</Domain>
+  <Filename />
+  <LaunchDate>11/05/2015 10:42:20</LaunchDate>
+  <SourceSpecificationLastEdited>23/04/2015</SourceSpecificationLastEdited>
+  <Facet>
+    <FacetType>Problem</FacetType>
+    <Author>sdfdfsdf</Author>
+    <FacetSpecification>
+      <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+      <FacetSpecificationLink>CaseStudy120003_Problem.xml</FacetSpecificationLink>
+    </FacetSpecification>
+  </Facet>
+  <Facet>
+    <FacetType>Solution</FacetType>
+    <Author>sdfdfsdf</Author>
+    <FacetSpecification>
+      <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+      <FacetSpecificationLink>CaseStudy120003_Solution.xml</FacetSpecificationLink>
+    </FacetSpecification>
+  </Facet>
+</SourceSpecification>

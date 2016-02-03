@@ -12,12 +12,17 @@ using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
+using System.Data;
+using System.Net;
+using System.Web;
 
 namespace RiskHuntingAppTest
 {
 	public static class Util
 	{
 		static string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
+		static string resourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "Resources");
+
 
 		#region Extract content 
 
@@ -90,6 +95,250 @@ namespace RiskHuntingAppTest
 
 
 		#endregion
+
+
+		#region Access Log
+
+		public enum ScreenType
+		{
+			History,
+			DescribeRisk,
+			CreateIdea_SameRisk,
+			CreateIdea_Superheroes,
+			CreateIdea_PastRisks,
+			CreateIdea_PastRisk,
+			ResolveRisk,
+			Summary,
+			AddIdea,
+			EditIdea
+		}
+
+		public enum FeatureType
+		{
+			History_Sort,
+			DescribeRisk_CreateIdeasButton,
+			DescribeRisk_ClearFormButton,
+			DescribeRisk_DeleteRiskButton,
+			CreateIdea_SameRisk_GenerateNewPromptsButton,
+			CreateIdea_Superheroes_GenerateNewSuperheroButton,
+			CreateIdea_PastRisks_FindRisksButton,
+			CreateIdea_PastRisk_GenerateNewPromptsButton,
+			AddIdea_AddIdeaButton,
+			EditIdea_UpdateIdeaButton,
+			EditIdea_DeleteIdeaButton,
+			Summary_SubmitCaseButton,
+			Summary_GenerateReportButton,
+			Summary_CreateNewRiskButton
+		}
+
+		public static void AccessLog(ScreenType screen)
+		{
+			var sourceId = String.Empty;
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
+			string msg = string.Format("{0}, {1}, {2}, {3}", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), sourceId.Equals(String.Empty)?"no_ID":sourceId, screen.ToString(), GetVisitor());
+
+			//			Console.WriteLine ("AccessLogFilename: " + AccessLogFilename);
+			lock (loggingGate)
+			{
+				using (StreamWriter sw = File.AppendText(AccessLogFilename))
+				{
+					sw.WriteLine(msg);
+					sw.Flush();
+					sw.Close();
+				}
+
+			}
+
+		}
+
+		public static void AccessLog(ScreenType screen, FeatureType feature)
+		{
+			var sourceId = String.Empty;
+			if (Sessions.RiskState != String.Empty)
+				sourceId = Sessions.RiskState;
+			string msg = string.Format("{0}, {1}, {2}, {3}, {4}", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), sourceId.Equals(String.Empty)?"no_ID":sourceId, screen.ToString(), feature.ToString(),  GetVisitor());
+
+			//			Console.WriteLine ("AccessLogFilename: " + AccessLogFilename);
+			lock (loggingGate)
+			{
+				using (StreamWriter sw = File.AppendText(AccessLogFilename))
+				{
+					sw.WriteLine(msg);
+					sw.Flush();
+					sw.Close();
+				}
+
+			}
+
+		}
+
+		public static void DeleteAccessLogFile()
+		{
+			if (File.Exists(AccessLogFilename))
+			{
+				File.Delete(AccessLogFilename);
+			}
+		}
+
+		public static string AccessLogFilename
+		{
+			get
+			{
+				return Path.Combine(resourcesPath, "Access.log");
+			}
+		}
+
+		static string GetVisitor()
+		{
+
+			string strIPAddress = string.Empty;
+			string strVisitorCountry = string.Empty;
+
+			strIPAddress = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+			if (strIPAddress == "" || strIPAddress == null)
+				strIPAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+			else
+			{
+				string[] ipRange = strIPAddress.Split(',');
+				int le = ipRange.Length - 1;
+				strIPAddress = ipRange[le];
+			}
+
+			DataTable _objDataTable = Util.GetLocation(strIPAddress);
+
+			if (_objDataTable != null)
+			{
+
+				if (_objDataTable.Rows.Count > 0)
+				{
+					bool success = false;
+					strVisitorCountry =
+						"{IP: "
+						+ strIPAddress
+						+ ", COUNTRY: "
+						+ Convert.ToString(_objDataTable.Rows[0]["Country"]).ToUpper()
+						//+ ", COUNTRY CODE: "
+						//+ Convert.ToString(_objDataTable.Rows[0]["CountryCode"]).ToUpper()
+						//+", LATITUDE: "
+						//+ Convert.ToString(_objDataTable.Rows[0]["Latitude"]).ToUpper()
+						//+", LONGITUDE: "
+						//+ Convert.ToString(_objDataTable.Rows[0]["Longitude"]).ToUpper()
+//						+", LOCATION: "
+//						+ GoogleReverseGeocoder.ReverseGeocode (Convert.ToDouble(_objDataTable.Rows[0]["Latitude"]),Convert.ToDouble(_objDataTable.Rows[0]["Longitude"]), out success)
+						+ "}";
+
+				}
+
+				else
+				{
+					strVisitorCountry = "{IP: " + strIPAddress + "}";
+
+				}
+
+			}
+			else
+				strVisitorCountry = "{IP: " + strIPAddress + "}";
+			return strVisitorCountry;
+		}
+
+		/// <summary>
+		/// Get the location from IP Address using the free 
+		/// services of (http://freegeoip.appspot.com/xml/) 
+		/// </summary>
+		/// <param name="strIPAddress"></param>
+		/// <returns> The Response into the Datatable Index 0 </returns>
+		static DataTable GetLocation(string strIPAddress)
+		{
+			//Create a WebRequest with the current Ip
+			WebRequest _objWebRequest =
+				WebRequest.Create("http://ws.cdyne.com/ip2geo/ip2geo.asmx/ResolveIP?ipAddress="
+					+ strIPAddress + "&licenseKey=0");
+			//Create a Web Proxy
+			WebProxy _objWebProxy =
+				new WebProxy("http://ws.cdyne.com/ip2geo/ip2geo.asmx/ResolveIP?ipAddress="
+					+ strIPAddress + "&licenseKey=0", true);
+
+			//Assign the proxy to the WebRequest
+			_objWebRequest.Proxy = _objWebProxy;
+
+			//Set the timeout in Seconds for the WebRequest
+			_objWebRequest.Timeout = 2000;
+
+			try
+			{
+				//Get the WebResponse 
+				WebResponse _objWebResponse = _objWebRequest.GetResponse();
+				//Read the Response in a XMLTextReader
+				XmlTextReader _objXmlTextReader
+				= new XmlTextReader(_objWebResponse.GetResponseStream());
+
+				//Create a new DataSet
+				DataSet _objDataSet = new DataSet();
+				//Read the Response into the DataSet
+				_objDataSet.ReadXml(_objXmlTextReader);
+
+				return _objDataSet.Tables[0];
+			}
+
+			catch
+			{
+
+				return null;
+
+			}
+
+		} 
+
+
+
+		public static object loggingGate = new object();
+
+		#endregion
+
+		public static bool ServiceExists(string url, bool throwExceptions, out string errorMessage)
+		{
+			try
+			{
+				errorMessage = string.Empty;
+
+				// try accessing the web service directly via it's URL
+				HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+				request.Timeout = 100000;
+
+				using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+				{
+					if (response.StatusCode != HttpStatusCode.OK)
+						throw new Exception("Error locating web service");
+				}
+
+				// try getting the WSDL?
+				// asmx lets you put "?wsdl" to make sure the URL is a web service
+				// could parse and validate WSDL here
+
+			}
+			catch (WebException ex)
+			{   
+				// decompose 400- codes here if you like
+				//		        errorMessage = string.Format("Error testing connection to web service at \"{0}\":\r\n{1}", url, ex);
+				errorMessage = "Currently unable to connect to the remote discovery service.";
+				if (throwExceptions)
+					throw new Exception(errorMessage, ex);
+				return false;
+			}   
+			catch (Exception ex)
+			{
+				errorMessage = "Currently unable to connect to the remote discovery service.";
+				if (throwExceptions)
+					throw new Exception(errorMessage, ex);
+				return false;
+			}
+
+			return true;
+		}
+
+
 
 		public static string TruncateAtWord(this string value, int length) 
 		{
@@ -173,15 +422,15 @@ namespace RiskHuntingAppTest
 //			ss.Filename = ss.SourceType + risk.Id + ".docx";
 			ss.Filename = risk.SimilarCasesFound?"Found":String.Empty;
 			ss.LaunchDate = now.ToString();
-			ss.SourceSpecificationLastEdited = now.ToString();
+			ss.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecProblem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
 			fspecProblem.FacetSpecificationLanguage = "Text";
-			fspecProblem.FacetSpecificationLink = "CaseStudy_" + risk.Id + "_Problem.xml";
+			fspecProblem.FacetSpecificationLink = Constants.CASEREF + risk.Id + "_Problem.xml";
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecSolution = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
 			fspecSolution.FacetSpecificationLanguage = "Text";
-			fspecSolution.FacetSpecificationLink = "CaseStudy_" + risk.Id + "_Solution.xml";
+			fspecSolution.FacetSpecificationLink = Constants.CASEREF + risk.Id + "_Solution.xml";
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet problem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
 			problem.FacetType = "Problem";
@@ -209,7 +458,7 @@ namespace RiskHuntingAppTest
 			problem.FacetSpecificationLanguage = "Text";
 			problem.Author = risk.Author;
 			problem.LaunchDate = now.ToString();
-			problem.SourceSpecificationLastEdited = now.ToString();
+			problem.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
 			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData();
 			fsd.Content = risk.Content;
@@ -219,13 +468,21 @@ namespace RiskHuntingAppTest
 			//obs.launchDate = now.ToString();
 			//obs.Value = "n/A";
 			//fsd.Observations.Add(obs);
-			fsd.Observations = String.Empty;
-			fsd.ObservedBehaviour = risk.LocationDetail;
-			fsd.TreatmentType = risk.BodyPart;
-			fsd.DateOfIncident = String.Empty;
-			fsd.AilmentType = String.Empty;
-			fsd.TriggeringEvent = String.Empty;
-			fsd.Miscellaneous = String.Empty;
+			fsd.InjuryNature = risk.InjuryNature;
+			fsd.LocationDetail = risk.LocationDetail;
+			fsd.BodyPart = risk.BodyPart;
+			fsd.InjuryCause = String.Empty;
+			fsd.IncidentPriority = String.Empty;
+			fsd.IncidentStatus = String.Empty;
+			fsd.RootCause = String.Empty;
+			fsd.RoutineWork = String.Empty;
+			fsd.ShiftType = String.Empty;
+			fsd.Title = String.Empty;
+			fsd.ClosedByOperator = String.Empty;
+			fsd.ContractorName = String.Empty;
+			fsd.DateClosed = String.Empty;
+			fsd.DateIncidentOccurred = risk.DateIncidentOccurred.ToString();
+			fsd.Miscellaneous = risk.ImageUri;
 			fsd.MatchingDetails = String.Empty;
 
 			problem.FacetSpecificationData = fsd;
@@ -243,7 +500,7 @@ namespace RiskHuntingAppTest
 			solution.FacetSpecificationLanguage = "Text";
 			solution.Author = risk.Author;
 			solution.LaunchDate = now.ToString();
-			solution.SourceSpecificationLastEdited = now.ToString();
+			solution.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
 			XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData();
 
@@ -322,12 +579,80 @@ namespace RiskHuntingAppTest
 
 		#endregion 
 
+		public static string GenerateAdaptedIdeaFromCreativityPrompt(string text)
+		{
+			string formattedText = String.Empty;
+			if (text.StartsWith("how to"))
+				formattedText = text.Replace ("how to ", String.Empty);
+				
+			if (text.StartsWith("if you can"))
+				formattedText = text.Replace ("if you can ", String.Empty);
+				
+			if (text.StartsWith("if it is possible to"))
+				formattedText = text.Replace ("if it is possible to ", String.Empty);
+				
+			if (text.StartsWith("how you"))
+				formattedText = text.Replace ("how you ", String.Empty);
+				
+			if (text.StartsWith("whether you can"))
+				formattedText = text.Replace ("whether you can ", String.Empty);
+				
+			if (text.StartsWith("how you might"))
+				formattedText = text.Replace ("how you might ", String.Empty);
+				
+			if (text.StartsWith("if you could"))
+				formattedText = text.Replace ("if you could ", String.Empty);
+				
+			if (text.StartsWith("whether it is possible to"))
+				formattedText = text.Replace ("whether it is possible to ", String.Empty);
+				
+			if (text.StartsWith("trying to"))
+				formattedText = text.Replace ("trying to ", String.Empty);
+				
+			if (text.StartsWith("either trying to"))
+				formattedText = text.Replace ("either trying to ", String.Empty);
+				
+			if (text.StartsWith("doing"))
+				formattedText = text.Replace ("doing", "do");
+				
+			if (text.StartsWith("making"))
+				formattedText = text.Replace ("making", "make");
+				
+			if (text.StartsWith("dividing"))
+				formattedText = text.Replace ("dividing", "divide");
+				
+			if (text.StartsWith("putting"))
+				formattedText = text.Replace ("putting", "put");
+				
+			if (text.StartsWith("deactivating"))
+				formattedText = text.Replace ("deactivating", "deactivate");
+				
+			if (text.StartsWith("using"))
+				formattedText = text.Replace ("using", "use");
+				
+			if (text.StartsWith("having"))
+				formattedText = text.Replace ("having", "have");
+				
+			return formattedText;
+		}
 
 		public static List<NLResponseToken> DeserializeNLResponse (string jsonString)
 		{
 			List<NLResponseToken> response = new List<NLResponseToken> ();
 			try {
 				response = JsonConvert.DeserializeObject<List<NLResponseToken>>(jsonString);
+
+			} catch (Exception ex) {
+				Debug.WriteLine ("ERROR deserializing downloaded NLParser JSON: " + ex);
+			}
+			return response;
+		}
+
+		public static List<Persona> DeserializeHofResponse (string jsonString)
+		{
+			List<Persona> response = new List<Persona> ();
+			try {
+				response = JsonConvert.DeserializeObject<List<Persona>>(jsonString);
 
 			} catch (Exception ex) {
 				Debug.WriteLine ("ERROR deserializing downloaded NLParser JSON: " + ex);
@@ -380,43 +705,124 @@ namespace RiskHuntingAppTest
 		public static int GetHtmlSelectIdForLocation (string searchValue)
 		{
 			int id = 0;
-			bool found = false;
-			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
-			if (doc.Descendants ("rl").Count () > 0)
+			int found = -1;
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("rl").Count () > 0) {
 				foreach (XElement xe in doc.Descendants("rl")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
-						found = true;
-						break;
-					}
-					else
+						found = id;
+						
+					} else
 						id++;
 				}
-			if (found)
-				return id;
-			else
-				return -1;
+			}
+			return found;
 
 		}
 
 		public static int GetHtmlSelectIdForBodyPart (string searchValue)
 		{
 			int id = 0;
-			bool found = false;
-			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
-			if (doc.Descendants ("bp").Count () > 0)
+			int found = -1;
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("bp").Count () > 0) {
 				foreach (XElement xe in doc.Descendants("bp")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
-						found = true;
-						break;
-					}
-					else
+						found = id;
+						
+					} else
 						id++;
 				}
-			if (found)
-				return id;
-			else
-				return -1;
+			}
+			return found;
 
+		}
+
+		public static int GetHtmlSelectIdForTypeOfInjury (string searchValue)
+		{
+			int id = 0;
+			int found = -1;
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("TypeOfIncident").Count () > 0) {
+				foreach (XElement xe in doc.Descendants("TypeOfIncident")) {
+					if (xe.Element ("n").Value.Equals (searchValue)) {
+						found = id;
+
+					} else
+						id++;
+				}
+			}
+			return found;
+
+		}
+
+		public static int GetHtmlSelectIdForIncidentCategory (string searchValue)
+		{
+			int id = 0;
+			int found = -1;
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("IncidentCategory").Count () > 0) {
+				foreach (XElement xe in doc.Descendants("IncidentCategory")) {
+					if (xe.Element ("n").Value.Equals (searchValue)) {
+						found = id;
+
+					} else
+						id++;
+				}
+			}
+			return found;
+
+		} 
+
+		public enum ImageFormat
+		{
+			bmp,
+			jpeg,
+			gif,
+			tiff,
+			png,
+			unknown
+		}
+
+		public static ImageFormat GetImageFormat(string pathToFile)
+		{
+			var bytes = File.ReadAllBytes(pathToFile);
+			// see http://www.mikekunz.com/image_file_header.html  
+			var bmp    = Encoding.ASCII.GetBytes("BM");     // BMP
+			var gif    = Encoding.ASCII.GetBytes("GIF");    // GIF
+			var png    = new byte[] { 137, 80, 78, 71 };    // PNG
+			var tiff   = new byte[] { 73, 73, 42 };         // TIFF
+			var tiff2  = new byte[] { 77, 77, 42 };         // TIFF
+			var jpeg   = new byte[] { 255, 216, 255, 224 }; // jpeg
+			var jpeg2  = new byte[] { 255, 216, 255, 225 }; // jpeg canon
+
+			if (bmp.SequenceEqual(bytes.Take(bmp.Length)))
+				return ImageFormat.bmp;
+
+			if (gif.SequenceEqual(bytes.Take(gif.Length)))
+				return ImageFormat.gif;
+
+			if (png.SequenceEqual(bytes.Take(png.Length)))
+				return ImageFormat.png;
+
+			if (tiff.SequenceEqual(bytes.Take(tiff.Length)))
+				return ImageFormat.tiff;
+
+			if (tiff2.SequenceEqual(bytes.Take(tiff2.Length)))
+				return ImageFormat.tiff;
+
+			if (jpeg.SequenceEqual(bytes.Take(jpeg.Length)))
+				return ImageFormat.jpeg;
+
+			if (jpeg2.SequenceEqual(bytes.Take(jpeg2.Length)))
+				return ImageFormat.jpeg;
+
+			return ImageFormat.unknown;
+		}
+
+		public static bool IsDirectoryEmpty(string path)
+		{
+			return !Directory.EnumerateFileSystemEntries(path).Any();
 		}
 	}
 }

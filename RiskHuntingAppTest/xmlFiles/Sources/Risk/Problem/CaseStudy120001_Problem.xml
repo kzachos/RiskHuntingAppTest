@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>dffd</Author>
+  <LaunchDate>24/04/2015 17:00:11</LaunchDate>
+  <SourceSpecificationLastEdited>16/03/2015</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>The worker climbed on the cab to reach something they left behind</Content>
+    <InjuryNature>Abrasions/Cuts/Laceration</InjuryNature>
+    <LocationDetail>Pedestal Line</LocationDetail>
+    <BodyPart>Whole body</BodyPart>
+    <InjuryCause />
+    <IncidentPriority />
+    <IncidentStatus />
+    <RootCause />
+    <RoutineWork />
+    <ShiftType />
+    <Title />
+    <ClosedByOperator />
+    <ContractorName />
+    <DateClosed />
+    <DateIncidentOccurred>16/03/2015 00:00:00</DateIncidentOccurred>
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

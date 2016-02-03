@@ -44,7 +44,7 @@ namespace RiskHuntingAppTest
 
 
 		const string Tag1 = "<li class=\"store\">";
-		const string Tag2 = "<a class=\"noeffect\" href=\"javascript:doLoad('Default.aspx?id=";
+		const string Tag2 = "<a class=\"noeffect\" href=\"javascript:doLoad('DescribeRisk.aspx?id=";
 		const string Tag3 = "');\">";
 		const string Tag4 = "<span class=\"name\">";
 		const string Tag5 = "</span>";
@@ -59,10 +59,30 @@ namespace RiskHuntingAppTest
 
         protected void Page_Init(object sender, EventArgs e)
         {
+			alert_message_notice.Visible = false;
+
+//			if (Sessions.ResponseUriState != String.Empty)
+				Session.Remove (Sessions.responseUriState);
+//			if (Sessions.ProblemDescState != null)
+				Session.Remove (Sessions.problemDescState);
+//			if (Sessions.PersonaState != String.Empty)
+				Session.Remove (Sessions.personaState);
+//			if (Sessions.PersonasState != null)
+				Session.Remove (Sessions.personasState);
+			Session.Remove (Sessions.problemDescState);
+			Session.Remove (Sessions.pastRiskDescState);
+			Session.Remove (Sessions.creativityPromptsState);
+			Session.Remove (Sessions.creativityPromptsPastRiskState);
+			Session.Remove (Sessions.responseUriState);
+			Session.Remove (Sessions.pastRiskState);
+			Session.Remove (Sessions.personasState);
+			Session.Remove (Sessions.personaState);
+
 			this.maxId = 1000;
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Init - NOT Page.IsPostBack");
 				PopulateSortDropDown ();
+				Util.AccessLog(Util.ScreenType.History);
 			} else {
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
 
@@ -93,8 +113,8 @@ namespace RiskHuntingAppTest
 		string DetermineSortAttribute()
 		{
 			var sortBy = String.Empty;
-			if (Session ["SortBy"] != null)
-				sortBy = Session ["SortBy"].ToString();
+			if (Sessions.SortState != String.Empty)
+				sortBy = Sessions.SortState;
 			return sortBy;
 		}
 
@@ -138,7 +158,7 @@ namespace RiskHuntingAppTest
 				case "Status":
 					sortedRisks = risks.OrderBy (q => q.State).ToList ();
 					break;
-				case "Name":
+				case "Category":
 					sortedRisks = risks.OrderBy (q => q.Name).ToList ();
 					break;
 				case "Date":
@@ -155,15 +175,18 @@ namespace RiskHuntingAppTest
 				queries.InnerHtml = String.Empty;
 				foreach (var r in sortedRisks) {
 					queries.InnerHtml += GenerateQueryHtml (r);
-//					Console.WriteLine ("risk.State (GenerateQueryHistory): " + r.State.ToString ());
+					Console.WriteLine ("risk id (GenerateQueryHistory): " + r.Id);
+					Console.WriteLine ("risk name (GenerateQueryHistory): " + r.Name);
+					Console.WriteLine ("risk.State (GenerateQueryHistory): " + r.State.ToString ());
 				}
 			} else {
 				SortDiv.Visible = false;
-				statusLabel.Text = "No previous risk cases available.";
+				alert_message_notice.Visible = true;
+				noticeMessage.InnerText = "No previous risk cases available";
 			}
 
-			if (Session["CurrentResponseUri"] != null) 
-				Session.Remove("CurrentResponseUri");
+			if (Sessions.ResponseUriState != String.Empty) 
+				Session.Remove(Sessions.responseUriState);
 		}
 
 		Risk RetrieveCurrentRisk (string locSpec, string locProblem, string locSolution)
@@ -186,8 +209,8 @@ namespace RiskHuntingAppTest
 			string path = String.Empty;
 //			Console.WriteLine ("risk.SimilarCasesFound: " + risk.SimilarCasesFound);
 			string search = risk.SimilarCasesFound?path:String.Empty;
-			return Tag1 + Tag2 + risk.Id + search + Tag3 + Tag4 + risk.Name + Tag5 + 
-				Tag6 + risk.Content + Tag7 + 
+			return Tag1 + Tag2 + risk.Id + search + Tag3 + Tag4 + risk.Content + Tag5 + 
+				Tag6 + risk.Name + Tag7 + 
 				Tag8 + "<b>Status</b>: " + Util.GetEnumDescription(risk.State) + 
 				"&nbsp;&nbsp;&nbsp;" + "<b>Author</b>: " + risk.Author + 
 				"&nbsp;&nbsp;&nbsp;" + " <b>Last Modified</b>: " + Util.FormatDate (risk.LastEdited) + 
@@ -196,41 +219,13 @@ namespace RiskHuntingAppTest
 
 		protected void itemSelected(object sender, EventArgs e)
 		{
+			Util.AccessLog(Util.ScreenType.History, Util.FeatureType.History_Sort);
 			DropDownList dropdown = (DropDownList) sender;  
-			Session ["SortBy"] = dropdown.SelectedItem.Text;
+			Sessions.SortState = dropdown.SelectedItem.Text;
 //			Console.WriteLine ("SortBy (itemSelected): " + Session ["SortBy"].ToString ());
 
 		}
-
-		private OrderedDictionary GetFilesFromDirectorySortedList4(string dirPath, int max)
-		{
-			OrderedDictionary all = new OrderedDictionary ();
-			DirectoryInfo dir = new DirectoryInfo(dirPath);
-			//			FileInfo[] FileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
-			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
-			//Array.Reverse(FileList);
-			NLP.StringProc str = new NLP.StringProc();
-			char[] deliminator = new char[] { '_' };
-			SortedList fileNameParts = new SortedList();
-			if (FileList.Length - 1 < max)
-				max = FileList.Length - 1;
-			//foreach (FileInfo FI in FileList)
-			//{
-			//    FileInfo FI = FileList[i];
-			//    fileNameParts = str.SeperateStringByChar(FI.FullName, deliminator);
-			//    all.Add(fileNameParts[1].ToString(), FI.FullName);
-			//}
-			for (int i = 0; i <= max; i++)
-			{
-				FileInfo FI = FileList[i];
-				//string file = files[i];
-				fileNameParts = str.SeperateStringByChar(FI.FullName, deliminator);
-				all.Add(fileNameParts[1].ToString(), FI.FullName);
-			}
-
-			return all;
-		}
-
+			
         private void GenerateQueryHistory(string dirPath, int max)
         {
 			List<string> allResponsePaths = GetFilesFromDirectoryList(Path.Combine (dirPath, "Responses"), max);
@@ -254,23 +249,24 @@ namespace RiskHuntingAppTest
 //			string requestId, requestPath;
 
 			if (allResponsePaths.Count > 0)
-				for (int i = 0; i < allResponsePaths.Count; i++)
-				{
-	//				var fileNameParts3 = responsePath.Split(deliminator3, StringSplitOptions.None);
-	//				fileNameParts = str.SeperateStringByChar(fileNameParts3[1], deliminator);
-	//				fileNameParts2 = str.SeperateStringByChar(fileNameParts[2].ToString(), deliminator2);
-	//				requestId = fileNameParts[1].ToString() + fileNameParts2[0].ToString();
+				for (int i = 0; i < allResponsePaths.Count; i++) {
+					//				var fileNameParts3 = responsePath.Split(deliminator3, StringSplitOptions.None);
+					//				fileNameParts = str.SeperateStringByChar(fileNameParts3[1], deliminator);
+					//				fileNameParts2 = str.SeperateStringByChar(fileNameParts[2].ToString(), deliminator2);
+					//				requestId = fileNameParts[1].ToString() + fileNameParts2[0].ToString();
 
-					requestPath = allRequestPathsValues[i];
+					requestPath = allRequestPathsValues [i];
 
 					//Response.Write(requestPath + "<BR>");
-					XmlProc.RequestSerialized.Request request = XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Load(requestPath);
-					XmlProc.RequestSerialized.RequestTarget target = (XmlProc.RequestSerialized.RequestTarget)request.Target[0];
+					XmlProc.RequestSerialized.Request request = XmlProc.ObjectXMLSerializer<XmlProc.RequestSerialized.Request>.Load (requestPath);
+					XmlProc.RequestSerialized.RequestTarget target = (XmlProc.RequestSerialized.RequestTarget)request.Target [0];
 
-					queries.InnerHtml += GenerateQueryHtml(allResponsePaths[i], allRequestPathsKeys[i], target.TargetDescription);
+					queries.InnerHtml += GenerateQueryHtml (allResponsePaths [i], allRequestPathsKeys [i], target.TargetDescription);
 				}
-			else
-				statusLabel.Text = "No risk queries available.";
+			else {
+				alert_message_notice.Visible = true;
+				noticeMessage.InnerText = "No previous risk cases available";
+			}
         }
 
 		private List<string> GetFilesFromDirectoryList(string dirPath, int max)
@@ -278,7 +274,7 @@ namespace RiskHuntingAppTest
 			List<string> all = new List<string>();
 			DirectoryInfo dir = new DirectoryInfo(dirPath);
 //			FileInfo[] FileList = dir.GetFiles("*.*", SearchOption.AllDirectories);
-			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.CreationTime).ToArray();
+			FileInfo[] FileList = dir.GetFiles().OrderByDescending(p => p.LastWriteTime).ToArray();
 			if (FileList.Length-1 < max)
 				max = FileList.Length-1;
 			//foreach (FileInfo FI in FileList)
@@ -468,14 +464,13 @@ namespace RiskHuntingAppTest
             for (int i = 0; i < fileParts.Count-1; i++)
                 responseXmlUri += fileParts[i].ToString() + "\\\\";
             responseXmlUri += fileParts[fileParts.Count-1].ToString();
-            if (Session["CurrentResponseUri"] != null) Session.Remove("CurrentResponseUri");
 			return GenerateInnerHtmlAdvanced (responseXmlUri, requestId, requestDescr);
         }
 
 		private string GenerateInnerHtmlSimple(string responseXmlUri, string requestId, string requestDescr)
 		{
 			return LiStartTagMenu +
-				aStartTag + "Default.aspx?id=" + requestId + "&path=" + responseXmlUri + aMidTag +
+				aStartTag + "DescribeRisk.aspx?id=" + requestId + "&path=" + responseXmlUri + aMidTag +
 				SpanStartTagName + requestId + ": " + ExtractAttributeContentFromString(requestDescr, "Content") + SpanEndTag +
 				SpanStartTagArrow + SpanEndTag + aEndTag + LiEndTag;
 		}

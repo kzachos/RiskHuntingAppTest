@@ -3,6 +3,67 @@
   <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A web service that performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. Query matching is in 2 steps: (i) XQuery text-searching functions to discover an initial set of case descriptions that satisfy global search constraints (CoarseGrainedMatching); (ii) traditional vector-space model IR, enhanced with WordNet, to further refine and assess the quality of the candidate case set (FineGrainedMatching).</wsdl:documentation>
   <types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CheckExistCase">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="facetType" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="caseID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckExistCaseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CheckExistCaseResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveCase">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="facetType" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="caseID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RemoveCaseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RemoveCaseResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCase">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="contentXml" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="facetType" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="caseID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateCaseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="UpdateCaseResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddCaseComment">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="newCommentText" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="caseID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddCaseCommentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="AddCaseCommentResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="RetrieveTerms">
         <xs:complexType />
       </xs:element>
@@ -138,9 +199,45 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="StoreXmlDocument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="xmlContent" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="facetType" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="sourceId" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StoreXmlDocumentResponse">
+        <xs:complexType />
+      </xs:element>
       <xs:element name="string" nillable="true" type="xs:string" />
     </xs:schema>
   </types>
+  <message name="CheckExistCaseSoapIn">
+    <part name="parameters" element="tns:CheckExistCase" />
+  </message>
+  <message name="CheckExistCaseSoapOut">
+    <part name="parameters" element="tns:CheckExistCaseResponse" />
+  </message>
+  <message name="RemoveCaseSoapIn">
+    <part name="parameters" element="tns:RemoveCase" />
+  </message>
+  <message name="RemoveCaseSoapOut">
+    <part name="parameters" element="tns:RemoveCaseResponse" />
+  </message>
+  <message name="UpdateCaseSoapIn">
+    <part name="parameters" element="tns:UpdateCase" />
+  </message>
+  <message name="UpdateCaseSoapOut">
+    <part name="parameters" element="tns:UpdateCaseResponse" />
+  </message>
+  <message name="AddCaseCommentSoapIn">
+    <part name="parameters" element="tns:AddCaseComment" />
+  </message>
+  <message name="AddCaseCommentSoapOut">
+    <part name="parameters" element="tns:AddCaseCommentResponse" />
+  </message>
   <message name="RetrieveTermsSoapIn">
     <part name="parameters" element="tns:RetrieveTerms" />
   </message>
@@ -207,6 +304,41 @@
   <message name="PerformEddieDomainSampleSoapOut">
     <part name="parameters" element="tns:PerformEddieDomainSampleResponse" />
   </message>
+  <message name="StoreXmlDocumentSoapIn">
+    <part name="parameters" element="tns:StoreXmlDocument" />
+  </message>
+  <message name="StoreXmlDocumentSoapOut">
+    <part name="parameters" element="tns:StoreXmlDocumentResponse" />
+  </message>
+  <message name="CheckExistCaseHttpGetIn">
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="CheckExistCaseHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RemoveCaseHttpGetIn">
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="RemoveCaseHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="UpdateCaseHttpGetIn">
+    <part name="contentXml" type="s:string" />
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="UpdateCaseHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="AddCaseCommentHttpGetIn">
+    <part name="newCommentText" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="AddCaseCommentHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
   <message name="RetrieveTermsHttpGetIn" />
   <message name="RetrieveTermsHttpGetOut">
     <part name="Body" element="tns:string" />
@@ -262,6 +394,41 @@
     <part name="domain" type="s:string" />
   </message>
   <message name="PerformEddieDomainSampleHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="StoreXmlDocumentHttpGetIn">
+    <part name="xmlContent" type="s:string" />
+    <part name="facetType" type="s:string" />
+    <part name="sourceId" type="s:string" />
+  </message>
+  <message name="StoreXmlDocumentHttpGetOut" />
+  <message name="CheckExistCaseHttpPostIn">
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="CheckExistCaseHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="RemoveCaseHttpPostIn">
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="RemoveCaseHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="UpdateCaseHttpPostIn">
+    <part name="contentXml" type="s:string" />
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="UpdateCaseHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="AddCaseCommentHttpPostIn">
+    <part name="newCommentText" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="AddCaseCommentHttpPostOut">
     <part name="Body" element="tns:string" />
   </message>
   <message name="RetrieveTermsHttpPostIn" />
@@ -321,7 +488,33 @@
   <message name="PerformEddieDomainSampleHttpPostOut">
     <part name="Body" element="tns:string" />
   </message>
+  <message name="StoreXmlDocumentHttpPostIn">
+    <part name="xmlContent" type="s:string" />
+    <part name="facetType" type="s:string" />
+    <part name="sourceId" type="s:string" />
+  </message>
+  <message name="StoreXmlDocumentHttpPostOut" />
   <portType name="EDDiE_x0020_Web_x0020_ServiceSoap">
+    <operation name="CheckExistCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be checked in the database if it exists&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  string that is either true or false </wsdl:documentation>
+      <input message="tns:CheckExistCaseSoapIn" />
+      <output message="tns:CheckExistCaseSoapOut" />
+    </operation>
+    <operation name="RemoveCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be removed from the database&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:RemoveCaseSoapIn" />
+      <output message="tns:RemoveCaseSoapOut" />
+    </operation>
+    <operation name="UpdateCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the xml content, the type of facet AND the case id that the comment should be associated with&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:UpdateCaseSoapIn" />
+      <output message="tns:UpdateCaseSoapOut" />
+    </operation>
+    <operation name="AddCaseComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the new comment to be added AND the case id that the comment should be associated with&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:AddCaseCommentSoapIn" />
+      <output message="tns:AddCaseCommentSoapOut" />
+    </operation>
     <operation name="RetrieveTerms">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: none&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The list of terms currently in the database. </wsdl:documentation>
       <input message="tns:RetrieveTermsSoapIn" />
@@ -377,8 +570,33 @@
       <input message="tns:PerformEddieDomainSampleSoapIn" />
       <output message="tns:PerformEddieDomainSampleSoapOut" />
     </operation>
+    <operation name="StoreXmlDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  &lt;i&gt;xmlContent()&lt;/i&gt;the content of a XML document&lt;br&gt;&lt;i&gt;facetType()&lt;/i&gt;the facet type&lt;br&gt;&lt;i&gt;sourceId()&lt;/i&gt;the source ID&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: Store the content of a XML document to the eXist database. </wsdl:documentation>
+      <input message="tns:StoreXmlDocumentSoapIn" />
+      <output message="tns:StoreXmlDocumentSoapOut" />
+    </operation>
   </portType>
   <portType name="EDDiE_x0020_Web_x0020_ServiceHttpGet">
+    <operation name="CheckExistCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be checked in the database if it exists&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  string that is either true or false </wsdl:documentation>
+      <input message="tns:CheckExistCaseHttpGetIn" />
+      <output message="tns:CheckExistCaseHttpGetOut" />
+    </operation>
+    <operation name="RemoveCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be removed from the database&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:RemoveCaseHttpGetIn" />
+      <output message="tns:RemoveCaseHttpGetOut" />
+    </operation>
+    <operation name="UpdateCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the xml content, the type of facet AND the case id that the comment should be associated with&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:UpdateCaseHttpGetIn" />
+      <output message="tns:UpdateCaseHttpGetOut" />
+    </operation>
+    <operation name="AddCaseComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the new comment to be added AND the case id that the comment should be associated with&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:AddCaseCommentHttpGetIn" />
+      <output message="tns:AddCaseCommentHttpGetOut" />
+    </operation>
     <operation name="RetrieveTerms">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: none&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The list of terms currently in the database. </wsdl:documentation>
       <input message="tns:RetrieveTermsHttpGetIn" />
@@ -434,8 +652,33 @@
       <input message="tns:PerformEddieDomainSampleHttpGetIn" />
       <output message="tns:PerformEddieDomainSampleHttpGetOut" />
     </operation>
+    <operation name="StoreXmlDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  &lt;i&gt;xmlContent()&lt;/i&gt;the content of a XML document&lt;br&gt;&lt;i&gt;facetType()&lt;/i&gt;the facet type&lt;br&gt;&lt;i&gt;sourceId()&lt;/i&gt;the source ID&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: Store the content of a XML document to the eXist database. </wsdl:documentation>
+      <input message="tns:StoreXmlDocumentHttpGetIn" />
+      <output message="tns:StoreXmlDocumentHttpGetOut" />
+    </operation>
   </portType>
   <portType name="EDDiE_x0020_Web_x0020_ServiceHttpPost">
+    <operation name="CheckExistCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be checked in the database if it exists&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  string that is either true or false </wsdl:documentation>
+      <input message="tns:CheckExistCaseHttpPostIn" />
+      <output message="tns:CheckExistCaseHttpPostOut" />
+    </operation>
+    <operation name="RemoveCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be removed from the database&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:RemoveCaseHttpPostIn" />
+      <output message="tns:RemoveCaseHttpPostOut" />
+    </operation>
+    <operation name="UpdateCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the xml content, the type of facet AND the case id that the comment should be associated with&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:UpdateCaseHttpPostIn" />
+      <output message="tns:UpdateCaseHttpPostOut" />
+    </operation>
+    <operation name="AddCaseComment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the new comment to be added AND the case id that the comment should be associated with&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
+      <input message="tns:AddCaseCommentHttpPostIn" />
+      <output message="tns:AddCaseCommentHttpPostOut" />
+    </operation>
     <operation name="RetrieveTerms">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: none&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  The list of terms currently in the database. </wsdl:documentation>
       <input message="tns:RetrieveTermsHttpPostIn" />
@@ -491,9 +734,50 @@
       <input message="tns:PerformEddieDomainSampleHttpPostIn" />
       <output message="tns:PerformEddieDomainSampleHttpPostOut" />
     </operation>
+    <operation name="StoreXmlDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;:  &lt;i&gt;xmlContent()&lt;/i&gt;the content of a XML document&lt;br&gt;&lt;i&gt;facetType()&lt;/i&gt;the facet type&lt;br&gt;&lt;i&gt;sourceId()&lt;/i&gt;the source ID&lt;br&gt;&lt;b&gt;Description&lt;/b&gt;: Store the content of a XML document to the eXist database. </wsdl:documentation>
+      <input message="tns:StoreXmlDocumentHttpPostIn" />
+      <output message="tns:StoreXmlDocumentHttpPostOut" />
+    </operation>
   </portType>
   <binding name="EDDiE_x0020_Web_x0020_ServiceSoap" type="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CheckExistCase">
+      <soap:operation soapAction="http://tempuri.org/CheckExistCase" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveCase">
+      <soap:operation soapAction="http://tempuri.org/RemoveCase" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateCase">
+      <soap:operation soapAction="http://tempuri.org/UpdateCase" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddCaseComment">
+      <soap:operation soapAction="http://tempuri.org/AddCaseComment" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="RetrieveTerms">
       <soap:operation soapAction="http://tempuri.org/RetrieveTerms" style="document" />
       <input>
@@ -593,9 +877,54 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="StoreXmlDocument">
+      <soap:operation soapAction="http://tempuri.org/StoreXmlDocument" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
   </binding>
   <binding name="EDDiE_x0020_Web_x0020_ServiceSoap12" type="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CheckExistCase">
+      <soap12:operation soapAction="http://tempuri.org/CheckExistCase" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RemoveCase">
+      <soap12:operation soapAction="http://tempuri.org/RemoveCase" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="UpdateCase">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCase" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddCaseComment">
+      <soap12:operation soapAction="http://tempuri.org/AddCaseComment" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="RetrieveTerms">
       <soap12:operation soapAction="http://tempuri.org/RetrieveTerms" style="document" />
       <input>
@@ -695,9 +1024,54 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="StoreXmlDocument">
+      <soap12:operation soapAction="http://tempuri.org/StoreXmlDocument" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
   </binding>
   <binding name="EDDiE_x0020_Web_x0020_ServiceHttpGet" type="tns:EDDiE_x0020_Web_x0020_ServiceHttpGet">
     <http:binding verb="GET" />
+    <operation name="CheckExistCase">
+      <http:operation location="/CheckExistCase" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RemoveCase">
+      <http:operation location="/RemoveCase" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UpdateCase">
+      <http:operation location="/UpdateCase" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="AddCaseComment">
+      <http:operation location="/AddCaseComment" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="RetrieveTerms">
       <http:operation location="/RetrieveTerms" />
       <input>
@@ -796,10 +1170,53 @@
       <output>
         <mime:mimeXml part="Body" />
       </output>
+    </operation>
+    <operation name="StoreXmlDocument">
+      <http:operation location="/StoreXmlDocument" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
     </operation>
   </binding>
   <binding name="EDDiE_x0020_Web_x0020_ServiceHttpPost" type="tns:EDDiE_x0020_Web_x0020_ServiceHttpPost">
     <http:binding verb="POST" />
+    <operation name="CheckExistCase">
+      <http:operation location="/CheckExistCase" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="RemoveCase">
+      <http:operation location="/RemoveCase" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="UpdateCase">
+      <http:operation location="/UpdateCase" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="AddCaseComment">
+      <http:operation location="/AddCaseComment" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="RetrieveTerms">
       <http:operation location="/RetrieveTerms" />
       <input>
@@ -898,21 +1315,28 @@
       <output>
         <mime:mimeXml part="Body" />
       </output>
+    </operation>
+    <operation name="StoreXmlDocument">
+      <http:operation location="/StoreXmlDocument" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
     </operation>
   </binding>
   <service name="EDDiE_x0020_Web_x0020_Service">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A web service that performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. Query matching is in 2 steps: (i) XQuery text-searching functions to discover an initial set of case descriptions that satisfy global search constraints (CoarseGrainedMatching); (ii) traditional vector-space model IR, enhanced with WordNet, to further refine and assess the quality of the candidate case set (FineGrainedMatching).</wsdl:documentation>
     <port name="EDDiE_x0020_Web_x0020_ServiceSoap" binding="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
-      <soap:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+      <soap:address location="http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
     </port>
     <port name="EDDiE_x0020_Web_x0020_ServiceSoap12" binding="tns:EDDiE_x0020_Web_x0020_ServiceSoap12">
-      <soap12:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+      <soap12:address location="http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
     </port>
     <port name="EDDiE_x0020_Web_x0020_ServiceHttpGet" binding="tns:EDDiE_x0020_Web_x0020_ServiceHttpGet">
-      <http:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+      <http:address location="http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
     </port>
     <port name="EDDiE_x0020_Web_x0020_ServiceHttpPost" binding="tns:EDDiE_x0020_Web_x0020_ServiceHttpPost">
-      <http:address location="http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
+      <http:address location="http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx" />
     </port>
   </service>
 </definitions>

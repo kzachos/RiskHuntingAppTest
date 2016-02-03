@@ -22,5 +22,9 @@ namespace RiskHuntingAppTest {
 		protected World.Code.WebControls.WatermarkedTextBox AddIdeaDescription;
 		
 		protected System.Web.UI.WebControls.Button AddNewIdea;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_error;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 	}
 }

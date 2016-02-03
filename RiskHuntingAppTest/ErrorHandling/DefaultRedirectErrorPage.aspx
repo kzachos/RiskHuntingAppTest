@@ -14,7 +14,7 @@
     We are currently having problems on the site.  An email has been sent to 
     the site owner to report the problem.
     <br><br>
-    Return to the <a href='Default.aspx'> Home Page</a>
+    Return to the <a href='DescribeRisk.aspx'> Home Page</a>
     </div>
   </div>
   </form>

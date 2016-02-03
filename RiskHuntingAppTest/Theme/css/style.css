@@ -123,6 +123,8 @@ a:hover .arrow {
 #leftnav, #leftbutton, #blueleftbutton {
 	top: 7px;
 }
+
+
 #rightnav, #rightbutton, #bluerightbutton {
 	top: 7px;
 }
@@ -143,7 +145,6 @@ a:hover .arrow {
 	height:43px;
 	line-height:43px;
 	background: #ffffff;
-	background: -moz-linear-gradient(top, #ffffff 0%, #ececec 2%, #c5c5c5 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(2%,#ececec), color-stop(100%,#787878));
 	background: -webkit-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
 	background: -o-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
@@ -158,7 +159,6 @@ a:hover .arrow {
 	height:33px;
 	line-height:33px;
 	background: #ffffff;
-	background: -moz-linear-gradient(top, #ffffff 0%, #ececec 2%, #c5c5c5 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(2%,#ececec), color-stop(100%,#787878));
 	background: -webkit-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
 	background: -o-linear-gradient(top, #ffffff 0%,#ececec 2%,#c5c5c5 100%);
@@ -182,7 +182,6 @@ a:hover .arrow {
 	line-height: 44px;
 	height: 44px;
 	font-size: 16pt;
-	font-weight:bold;
 	text-shadow: #FFF 0px 1px 0px;
 	text-align: center;
 	text-overflow: ellipsis;
@@ -194,15 +193,8 @@ a:hover .arrow {
 }
 #multiselectionbuttonsSub {
 	text-align:center;
-	line-height: 33px;
-	height: 33px;
 	font-size: 12pt;
-	font-weight:bold;
-	text-shadow: #FFF 0px 1px 0px;
 	text-align: center;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
 }
 #multiselectionbuttonsSub a {
 	padding:15px;
@@ -389,6 +381,7 @@ a {
 	margin: 0px 9px 4px;
 	list-style: none;
 }
+
 .pageitemborder {
 	-webkit-border-radius: 8px;
 	background-color: #EEEEEE;
@@ -408,7 +401,6 @@ a {
 
 .pageitembutton {
 	-webkit-border-radius: 8px;
-	background-color: #941830;
 	border: #878787 solid 0px;
 	font-size: 12pt;
 	overflow: hidden;
@@ -430,7 +422,6 @@ a {
     z-index: 99;
     opacity: 0.2;
     filter: alpha(opacity=80);
-    -moz-opacity: 0.8;
     min-height: 100%;
     width: 100%;
 }
@@ -441,6 +432,18 @@ a {
     border: 5px solid #67CFF5;
     width: 200px;
     height: 100px;
+    display: none;
+    position: fixed;
+    background-color: White;
+    z-index: 999;
+}
+.loadingLarge
+{
+    font-family: Arial;
+    font-size: 10pt;
+    border: 5px solid #67CFF5;
+    width: 500px;
+    height: 800px;
     display: none;
     position: fixed;
     background-color: White;
@@ -514,12 +517,12 @@ a {
 #tributton a:hover, #duobutton a:hover {
 	background: #BA8D96;
 	color: white;
-	text-shadow: black 0 0px 0;
+	text-shadow: none;
 }
 #tributton a#pressed, #duobutton a#pressed {
 	background: #941830;
 	color: white;
-	text-shadow: black 0 0px 0;
+	text-shadow: none;
 }
 #triselectionbuttons, #duoselectionbuttons {
 /*	-webkit-border-image: url('../images/navbutton.png') 0 5 0 5;*/
@@ -559,7 +562,6 @@ a {
 #multiselectionbuttons a:hover, #multiselectionbuttonsSub a:hover, #multiselectionbuttons a#pressed, #multiselectionbuttonsSub a#pressed {
 	background: none;
 	color: #941830;
-	font-weight:bold;
 	text-decoration: none;
 }
 
@@ -649,7 +651,7 @@ fieldset {
 .pageitembutton li:first-child, .pageitembutton li.form:first-child {
 	border-top: 0;
 }
-.menu, .radiobutton, .select, li.button, li.button2, li.button3, li.buttonGrey, li.bigfield, li.smallfield {
+.menu, .radiobutton, .select, li.button, li.button2, li.button3, li.buttonGrey, li.buttonLightGrey, li.bigfield, li.smallfield {
 	position: relative;
 	list-style-type: none;
 	display: block;
@@ -673,23 +675,24 @@ fieldset {
 	border-top: 1px solid #878787;
 	width: auto;
 }
-.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
+.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, li.buttonLightGrey:first-child input, .bigfield:first-child input {
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-top-right-radius: 8px;
 }
-.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
+.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, li.buttonLightGrey:first-child input, .bigfield:first-child input {
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-top-right-radius: 8px;
 }
-.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
+.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, li.buttonLightGrey:last-child input, .bigfield:last-child input {
 	-webkit-border-bottom-left-radius: 8px;
 	-webkit-border-bottom-right-radius: 8px;
 }
-.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
+.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, li.buttonLightGrey:last-child input, .bigfield:last-child input {
 	-webkit-border-bottom-left-radius: 8px;
 	-webkit-border-bottom-right-radius: 8px;
 }
 .menu:hover, .store:hover, .list #content li a:hover, .list .withimage:hover, .applist li:hover:nth-child(n),.ipodlist li:hover:nth-child(n) {
+	background: #941830;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#941830), to(#941830));
 }
 .ipodlist li:hover:nth-child(n) .name,.ipodlist li:hover:nth-child(n) .time{border:0}
@@ -1291,7 +1294,6 @@ li:last-child.store .image, .store:last-child a {
 	font-size: 14px;
 	top: 8px;
 	left: 9px;
-	font-weight: bold;
 }
 #leftnav, #leftbutton, #rightnav, #rightbutton, #blueleftbutton, #bluerightbutton {
 	z-index: 5000;
@@ -1300,11 +1302,9 @@ li:last-child.store .image, .store:last-child a {
 	display: block;
 	color: #787878;
 	text-decoration: none;
-	text-shadow: black 0 0px 0;
 }
 #leftnav a:hover, #leftnav a#pressed, #rightnav a:hover, #rightnav a#pressed, #leftbutton a:hover, #leftbutton a#pressed, #rightbutton a:hover, #rightbutton a#pressed {
 	color: #941830;
-	text-shadow: black 0 0px 0;
 }
 .black #leftnav a:first-child, .transparent #leftnav a:first-child {
 	-webkit-border-image: url("../images/navleftblack.png") 0 5 0 13;
@@ -1348,7 +1348,6 @@ li:last-child.store .image, .store:last-child a {
 	font-size: 14px;
 	top: 8px;
 	right: 9px;
-	font-weight: bold;
 }
 #rightnav a {
 /*	-webkit-border-image: url("../images/navlinkright1.png") 0 13 0 5;*/
@@ -1445,61 +1444,93 @@ select {
 	border-width: 10px;
 }
 .button input {
-	width: 100%;
-	height: 100%;
-	-webkit-appearance: none;
-	border: 2;
-	-webkit-border-radius: 0;
-	font-weight: bold;
-	font-size: 17px;
-	color: white;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	background: #7AB395;
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #2DCC70;
+  background-color: #2DCC70;
 }
+
+
 .button2 input {
-	width: 100%;
-	height: 100%;
-	-webkit-appearance: none;
-	border: 2;
-	-webkit-border-radius: 0;
-	font-weight: bold;
-	font-size: 17px;
-	color: white;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	background: #BF979F;
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #E54D42;
+  background-color: #E54D42;
 }
 .button3 input {
-    width: 100%;
-    height: 100%;
-    -webkit-appearance: none;
-    border: 2;
-    -webkit-border-radius: 0;
-    font-weight: bold;
-    font-size: 17px;
-    color: white;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    background: #87AFED;
+   width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #3598DC;
+  background-color: #3598DC;
 }
 .buttonGrey input {
     width: 100%;
-    height: 100%;
-    -webkit-appearance: none;
-    border: 2;
-    -webkit-border-radius: 0;
-    font-weight: bold;
-    font-size: 17px;
-    color: white;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    background: #787878;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #787878;
+  background-color: #787878;
 }
+.buttonLightGrey input {
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  color: #787878;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #EEEEEE;
+  background-color: #EEEEEE;
+}
+
 .textbox textarea {
 	padding: 0;
 	margin-top: 5px;
@@ -1548,7 +1579,26 @@ select {
 .smallfield:last-child input {
 	-webkit-border-bottom-right-radius: 8px;
 }
-#progress{-webkit-border-radius:10px;background-color:black;color:white;font-size:18px;font-weight:bold;height:80px;left:60px;line-height:80px;margin:0 auto;position:absolute;text-align:center;top:150px;width:200px;z-index:5000}
+#progress{-webkit-border-radius:10px;background-color:black;color:white;font-size:18px;font-weight:bold;height:150px;left:60px;line-height:80px;margin:0 auto;position:absolute;text-align:center;top:150px;width:200px;z-index:5000}
+
+#progress2 {
+	-webkit-border-radius:10px;
+	border-style: solid;
+    border-color: black;
+    border-width:1px;
+	background-color:#E3F7FC;
+	color:black;
+	font-size:15px;
+	font-weight:bold;
+	height:300px;
+	left:60px;
+	line-height:30px;
+	margin:0 auto;
+	position:absolute;
+	text-align:center;
+	top:350px;
+	width:550px;
+	z-index:5000}
 
 /* quadbutton */
 #quadbutton{

@@ -1,0 +1,43 @@
+﻿input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+#PINform {
+	position: absolute;
+	width: 300px; height: 450px;
+	left: 50%;
+	margin-left: -150px;
+	top: 50%;
+	margin-top: -225px;
+}
+#PINbox {
+	margin: 3%;
+	width: 92%;
+	font-size: 4em;
+	text-align: center;
+	border: none;
+	border-top: 2px solid #506CE8;
+	border-bottom: 2px solid #506CE8;
+	background: #fff;
+}
+.PINbutton {
+	background: #fff;
+	color: #506CE8;
+	border: 2px solid #506CE8;
+	border-radius: 50%;
+	font-size: 1.5em;
+	text-align: center;
+	width: 75px;
+	height: 75px;
+	margin: 5px 11px;
+}
+.clear, .enter {
+	font-size: 1em;
+}
+.PINbutton:hover {
+	background: #fff;
+	border: 2px solid #FF5A59;
+	color: #FF5A59;
+}

@@ -161,6 +161,21 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GenerateCreativityClues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="genericText" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="text" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenerateCreativityCluesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GenerateCreativityCluesResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="GeneratePredicatesFromDocument">
         <xs:complexType>
           <xs:sequence>
@@ -297,6 +312,12 @@
   <message name="GenerateCreativityPromptsSoapOut">
     <part name="parameters" element="tns:GenerateCreativityPromptsResponse" />
   </message>
+  <message name="GenerateCreativityCluesSoapIn">
+    <part name="parameters" element="tns:GenerateCreativityClues" />
+  </message>
+  <message name="GenerateCreativityCluesSoapOut">
+    <part name="parameters" element="tns:GenerateCreativityCluesResponse" />
+  </message>
   <message name="GeneratePredicatesFromDocumentSoapIn">
     <part name="parameters" element="tns:GeneratePredicatesFromDocument" />
   </message>
@@ -396,6 +417,13 @@
     <part name="text" type="s:string" />
   </message>
   <message name="GenerateCreativityPromptsHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="GenerateCreativityCluesHttpGetIn">
+    <part name="genericText" type="s:string" />
+    <part name="text" type="s:string" />
+  </message>
+  <message name="GenerateCreativityCluesHttpGetOut">
     <part name="Body" element="tns:string" />
   </message>
   <message name="GeneratePredicatesFromDocumentHttpGetIn">
@@ -498,6 +526,13 @@
   <message name="GenerateCreativityPromptsHttpPostOut">
     <part name="Body" element="tns:string" />
   </message>
+  <message name="GenerateCreativityCluesHttpPostIn">
+    <part name="genericText" type="s:string" />
+    <part name="text" type="s:string" />
+  </message>
+  <message name="GenerateCreativityCluesHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
   <message name="GeneratePredicatesFromDocumentHttpPostIn">
     <part name="documentUri" type="s:string" />
     <part name="domainID" type="s:string" />
@@ -588,6 +623,11 @@
       <input message="tns:GenerateCreativityPromptsSoapIn" />
       <output message="tns:GenerateCreativityPromptsSoapOut" />
     </operation>
+    <operation name="GenerateCreativityClues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate creativity clues from a given text</wsdl:documentation>
+      <input message="tns:GenerateCreativityCluesSoapIn" />
+      <output message="tns:GenerateCreativityCluesSoapOut" />
+    </operation>
     <operation name="GeneratePredicatesFromDocument">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extract text from a document's URL and generate predicates.</wsdl:documentation>
       <input message="tns:GeneratePredicatesFromDocumentSoapIn" />
@@ -675,6 +715,11 @@
       <input message="tns:GenerateCreativityPromptsHttpGetIn" />
       <output message="tns:GenerateCreativityPromptsHttpGetOut" />
     </operation>
+    <operation name="GenerateCreativityClues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate creativity clues from a given text</wsdl:documentation>
+      <input message="tns:GenerateCreativityCluesHttpGetIn" />
+      <output message="tns:GenerateCreativityCluesHttpGetOut" />
+    </operation>
     <operation name="GeneratePredicatesFromDocument">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extract text from a document's URL and generate predicates.</wsdl:documentation>
       <input message="tns:GeneratePredicatesFromDocumentHttpGetIn" />
@@ -761,6 +806,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate creativity prompts from a given text</wsdl:documentation>
       <input message="tns:GenerateCreativityPromptsHttpPostIn" />
       <output message="tns:GenerateCreativityPromptsHttpPostOut" />
+    </operation>
+    <operation name="GenerateCreativityClues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generate creativity clues from a given text</wsdl:documentation>
+      <input message="tns:GenerateCreativityCluesHttpPostIn" />
+      <output message="tns:GenerateCreativityCluesHttpPostOut" />
     </operation>
     <operation name="GeneratePredicatesFromDocument">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Extract text from a document's URL and generate predicates.</wsdl:documentation>
@@ -891,6 +941,15 @@
     </operation>
     <operation name="GenerateCreativityPrompts">
       <soap:operation soapAction="http://tempuri.org/GenerateCreativityPrompts" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GenerateCreativityClues">
+      <soap:operation soapAction="http://tempuri.org/GenerateCreativityClues" style="document" />
       <input>
         <soap:body use="literal" />
       </input>
@@ -1054,6 +1113,15 @@
         <soap12:body use="literal" />
       </output>
     </operation>
+    <operation name="GenerateCreativityClues">
+      <soap12:operation soapAction="http://tempuri.org/GenerateCreativityClues" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="GeneratePredicatesFromDocument">
       <soap12:operation soapAction="http://tempuri.org/GeneratePredicatesFromDocument" style="document" />
       <input>
@@ -1203,6 +1271,15 @@
     </operation>
     <operation name="GenerateCreativityPrompts">
       <http:operation location="/GenerateCreativityPrompts" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GenerateCreativityClues">
+      <http:operation location="/GenerateCreativityClues" />
       <input>
         <http:urlEncoded />
       </input>
@@ -1362,6 +1439,15 @@
         <mime:mimeXml part="Body" />
       </output>
     </operation>
+    <operation name="GenerateCreativityClues">
+      <http:operation location="/GenerateCreativityClues" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="GeneratePredicatesFromDocument">
       <http:operation location="/GeneratePredicatesFromDocument" />
       <input>
@@ -1406,16 +1492,16 @@
   </binding>
   <service name="AntiqueService">
     <port name="AntiqueServiceSoap" binding="tns:AntiqueServiceSoap">
-      <soap:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+      <soap:address location="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
     </port>
     <port name="AntiqueServiceSoap12" binding="tns:AntiqueServiceSoap12">
-      <soap12:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+      <soap12:address location="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
     </port>
     <port name="AntiqueServiceHttpGet" binding="tns:AntiqueServiceHttpGet">
-      <http:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+      <http:address location="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
     </port>
     <port name="AntiqueServiceHttpPost" binding="tns:AntiqueServiceHttpPost">
-      <http:address location="http://10.200.51.10/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
+      <http:address location="http://achernar.soi.city.ac.uk/ESD/ClassLibraries/Antique/Antique.AntiqueService/AntiqueService.asmx" />
     </port>
   </service>
 </definitions>

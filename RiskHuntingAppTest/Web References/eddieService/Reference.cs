@@ -20,6 +20,14 @@ namespace RiskHuntingAppTest.eddieService {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EDDiEWebService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback CheckExistCaseOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RemoveCaseOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateCaseOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AddCaseCommentOperationCompleted;
+        
         private System.Threading.SendOrPostCallback RetrieveTermsOperationCompleted;
         
         private System.Threading.SendOrPostCallback ValidateRequestXmlOperationCompleted;
@@ -42,13 +50,23 @@ namespace RiskHuntingAppTest.eddieService {
         
         private System.Threading.SendOrPostCallback PerformEddieDomainSampleOperationCompleted;
         
+        private System.Threading.SendOrPostCallback StoreXmlDocumentOperationCompleted;
+        
         public EDDiEWebService() {
-            this.Url = "http://10.200.51.10/ESD/WebServices/EDDiE_WS/EddieService.asmx";
+            this.Url = "http://achernar.soi.city.ac.uk/ESD/WebServices/EDDiE_WS/EddieService.asmx";
         }
         
         public EDDiEWebService(string url) {
             this.Url = url;
         }
+        
+        public event CheckExistCaseCompletedEventHandler CheckExistCaseCompleted;
+        
+        public event RemoveCaseCompletedEventHandler RemoveCaseCompleted;
+        
+        public event UpdateCaseCompletedEventHandler UpdateCaseCompleted;
+        
+        public event AddCaseCommentCompletedEventHandler AddCaseCommentCompleted;
         
         public event RetrieveTermsCompletedEventHandler RetrieveTermsCompleted;
         
@@ -71,6 +89,179 @@ namespace RiskHuntingAppTest.eddieService {
         public event PerformEddieSampleCompletedEventHandler PerformEddieSampleCompleted;
         
         public event PerformEddieDomainSampleCompletedEventHandler PerformEddieDomainSampleCompleted;
+        
+        public event StoreXmlDocumentCompletedEventHandler StoreXmlDocumentCompleted;
+        
+        /// <remarks>
+///<b>Input</b>: the type of facet AND the case id that should be checked in the database if it exists<br><b>Output</b>:  string that is either true or false 
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CheckExistCase", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string CheckExistCase(string facetType, string caseID) {
+            object[] results = this.Invoke("CheckExistCase", new object[] {
+                        facetType,
+                        caseID});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginCheckExistCase(string facetType, string caseID, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("CheckExistCase", new object[] {
+                        facetType,
+                        caseID}, callback, asyncState);
+        }
+        
+        public string EndCheckExistCase(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void CheckExistCaseAsync(string facetType, string caseID) {
+            this.CheckExistCaseAsync(facetType, caseID, null);
+        }
+        
+        public void CheckExistCaseAsync(string facetType, string caseID, object userState) {
+            if ((this.CheckExistCaseOperationCompleted == null)) {
+                this.CheckExistCaseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckExistCaseCompleted);
+            }
+            this.InvokeAsync("CheckExistCase", new object[] {
+                        facetType,
+                        caseID}, this.CheckExistCaseOperationCompleted, userState);
+        }
+        
+        private void OnCheckExistCaseCompleted(object arg) {
+            if ((this.CheckExistCaseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckExistCaseCompleted(this, new CheckExistCaseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks>
+///<b>Input</b>: the type of facet AND the case id that should be removed from the database<br><b>Output</b>:  none 
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RemoveCase", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string RemoveCase(string facetType, string caseID) {
+            object[] results = this.Invoke("RemoveCase", new object[] {
+                        facetType,
+                        caseID});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginRemoveCase(string facetType, string caseID, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("RemoveCase", new object[] {
+                        facetType,
+                        caseID}, callback, asyncState);
+        }
+        
+        public string EndRemoveCase(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void RemoveCaseAsync(string facetType, string caseID) {
+            this.RemoveCaseAsync(facetType, caseID, null);
+        }
+        
+        public void RemoveCaseAsync(string facetType, string caseID, object userState) {
+            if ((this.RemoveCaseOperationCompleted == null)) {
+                this.RemoveCaseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRemoveCaseCompleted);
+            }
+            this.InvokeAsync("RemoveCase", new object[] {
+                        facetType,
+                        caseID}, this.RemoveCaseOperationCompleted, userState);
+        }
+        
+        private void OnRemoveCaseCompleted(object arg) {
+            if ((this.RemoveCaseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RemoveCaseCompleted(this, new RemoveCaseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks>
+///<b>Input</b>: the xml content, the type of facet AND the case id that the comment should be associated with<br><b>Output</b>:  none 
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateCase", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string UpdateCase(string contentXml, string facetType, string caseID) {
+            object[] results = this.Invoke("UpdateCase", new object[] {
+                        contentXml,
+                        facetType,
+                        caseID});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginUpdateCase(string contentXml, string facetType, string caseID, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("UpdateCase", new object[] {
+                        contentXml,
+                        facetType,
+                        caseID}, callback, asyncState);
+        }
+        
+        public string EndUpdateCase(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void UpdateCaseAsync(string contentXml, string facetType, string caseID) {
+            this.UpdateCaseAsync(contentXml, facetType, caseID, null);
+        }
+        
+        public void UpdateCaseAsync(string contentXml, string facetType, string caseID, object userState) {
+            if ((this.UpdateCaseOperationCompleted == null)) {
+                this.UpdateCaseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateCaseCompleted);
+            }
+            this.InvokeAsync("UpdateCase", new object[] {
+                        contentXml,
+                        facetType,
+                        caseID}, this.UpdateCaseOperationCompleted, userState);
+        }
+        
+        private void OnUpdateCaseCompleted(object arg) {
+            if ((this.UpdateCaseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateCaseCompleted(this, new UpdateCaseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks>
+///<b>Input</b>: the new comment to be added AND the case id that the comment should be associated with<br><b>Output</b>:  none 
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/AddCaseComment", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string AddCaseComment(string newCommentText, string caseID) {
+            object[] results = this.Invoke("AddCaseComment", new object[] {
+                        newCommentText,
+                        caseID});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginAddCaseComment(string newCommentText, string caseID, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("AddCaseComment", new object[] {
+                        newCommentText,
+                        caseID}, callback, asyncState);
+        }
+        
+        public string EndAddCaseComment(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void AddCaseCommentAsync(string newCommentText, string caseID) {
+            this.AddCaseCommentAsync(newCommentText, caseID, null);
+        }
+        
+        public void AddCaseCommentAsync(string newCommentText, string caseID, object userState) {
+            if ((this.AddCaseCommentOperationCompleted == null)) {
+                this.AddCaseCommentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAddCaseCommentCompleted);
+            }
+            this.InvokeAsync("AddCaseComment", new object[] {
+                        newCommentText,
+                        caseID}, this.AddCaseCommentOperationCompleted, userState);
+        }
+        
+        private void OnAddCaseCommentCompleted(object arg) {
+            if ((this.AddCaseCommentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AddCaseCommentCompleted(this, new AddCaseCommentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks>
 ///<b>Input</b>: none<br><b>Output</b>:  The list of terms currently in the database. 
@@ -488,7 +679,126 @@ namespace RiskHuntingAppTest.eddieService {
                 this.PerformEddieDomainSampleCompleted(this, new PerformEddieDomainSampleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
+        
+        /// <remarks>
+///<b>Input</b>:  <i>xmlContent()</i>the content of a XML document<br><i>facetType()</i>the facet type<br><i>sourceId()</i>the source ID<br><b>Description</b>: Store the content of a XML document to the eXist database. 
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/StoreXmlDocument", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public void StoreXmlDocument(string xmlContent, string facetType, string sourceId) {
+            this.Invoke("StoreXmlDocument", new object[] {
+                        xmlContent,
+                        facetType,
+                        sourceId});
+        }
+        
+        public System.IAsyncResult BeginStoreXmlDocument(string xmlContent, string facetType, string sourceId, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("StoreXmlDocument", new object[] {
+                        xmlContent,
+                        facetType,
+                        sourceId}, callback, asyncState);
+        }
+        
+        public void EndStoreXmlDocument(System.IAsyncResult asyncResult) {
+            this.EndInvoke(asyncResult);
+        }
+        
+        public void StoreXmlDocumentAsync(string xmlContent, string facetType, string sourceId) {
+            this.StoreXmlDocumentAsync(xmlContent, facetType, sourceId, null);
+        }
+        
+        public void StoreXmlDocumentAsync(string xmlContent, string facetType, string sourceId, object userState) {
+            if ((this.StoreXmlDocumentOperationCompleted == null)) {
+                this.StoreXmlDocumentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnStoreXmlDocumentCompleted);
+            }
+            this.InvokeAsync("StoreXmlDocument", new object[] {
+                        xmlContent,
+                        facetType,
+                        sourceId}, this.StoreXmlDocumentOperationCompleted, userState);
+        }
+        
+        private void OnStoreXmlDocumentCompleted(object arg) {
+            if ((this.StoreXmlDocumentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.StoreXmlDocumentCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
     }
+    
+    public partial class CheckExistCaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CheckExistCaseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void CheckExistCaseCompletedEventHandler(object sender, CheckExistCaseCompletedEventArgs args);
+    
+    public partial class RemoveCaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RemoveCaseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void RemoveCaseCompletedEventHandler(object sender, RemoveCaseCompletedEventArgs args);
+    
+    public partial class UpdateCaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateCaseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void UpdateCaseCompletedEventHandler(object sender, UpdateCaseCompletedEventArgs args);
+    
+    public partial class AddCaseCommentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AddCaseCommentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void AddCaseCommentCompletedEventHandler(object sender, AddCaseCommentCompletedEventArgs args);
     
     public partial class RetrieveTermsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
@@ -698,4 +1008,6 @@ namespace RiskHuntingAppTest.eddieService {
     }
     
     public delegate void PerformEddieDomainSampleCompletedEventHandler(object sender, PerformEddieDomainSampleCompletedEventArgs args);
+    
+    public delegate void StoreXmlDocumentCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs args);
 }

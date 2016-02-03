@@ -25,10 +25,16 @@ namespace RiskHuntingAppTest {
 		
 		protected System.Web.UI.HtmlControls.HtmlGenericControl divIdeas;
 		
-		protected System.Web.UI.HtmlControls.HtmlGenericControl divActions;
-		
 		protected System.Web.UI.WebControls.Label statusLabel;
 		
 		protected System.Web.UI.WebControls.Button Export;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_success;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl alert_message_error;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl successMessage;
+
+		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMessage;
 	}
 }

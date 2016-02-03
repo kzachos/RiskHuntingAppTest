@@ -32,8 +32,8 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			if (Session ["CURRENT_RISK"] != null)
-				this.sourceId = Session ["CURRENT_RISK"].ToString();	
+			if (Sessions.RiskState != String.Empty)
+				this.sourceId = Sessions.RiskState;
 			RetrieveCurrentRisk ();
 			PopulateAddDateDropDown ();
 
@@ -102,7 +102,7 @@ namespace RiskHuntingAppTest
 			{
 				if (!AddActionDescription.Text.Equals(ADDACTION_WATERMARK)) {
 
-					this.currentRisk.State = RiskQueryState.ActionsFormulated;
+//					this.currentRisk.State = RiskQueryState.ActionsFormulated;
 					Action action = new Action ();
 					action.Id = Guid.NewGuid().ToString("N");
 					action.Content = AddActionDescription.Text;
