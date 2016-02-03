@@ -44,25 +44,25 @@
 
 <span id="loading"></span>
 <div id="content">
-<form id="form1" runat="server">
+	<form id="form1" runat="server">
 
-	<div id="alert_message_error" runat="server">
-		<div class="alert-box error">
-			<div id="errorMessage" style="display: inline" runat="server"></div>
+		<div id="alert_message_error" runat="server">
+			<div class="alert-box error">
+				<div id="errorMessage" style="display: inline" runat="server"></div>
+			</div>
 		</div>
-	</div>
 
-	<ul class="pageitem">
-		<li class="label">
-			<cc1:WatermarkedTextBox id="AddIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="80" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
-		</li>
-	</ul>
-	<ul class="pageitembutton">
-		<li class="button">
-			<asp:Button id="AddNewIdea" runat="server" text="ADD IDEA" onclick="addClicked"></asp:Button>
-		</li>
-	</ul>
-</form>
+		<ul class="pageitem">
+			<li class="label">
+				<cc1:WatermarkedTextBox id="AddIdeaDescription" runat="server" TextMode="MultiLine" Width="100%" Height="80" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			</li>
+		</ul>
+		<ul class="pageitembutton">
+			<li class="button">
+				<asp:Button id="AddNewIdea" runat="server" text="ADD IDEA" onclick="addClicked"></asp:Button>
+			</li>
+		</ul>
+	</form>
 
 
 </div>

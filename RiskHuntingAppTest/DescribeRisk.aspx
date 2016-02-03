@@ -58,12 +58,12 @@ window.setTimeout(function() {
   $("#alert_message_success").fadeTo(500, 0).slideUp(500, function(){
     $(this).remove(); 
   });
-}, 3000);
+}, 7000);
 window.setTimeout(function() {
   $("#alert_message_error").fadeTo(500, 0).slideUp(500, function(){
     $(this).remove(); 
   });
-}, 3000);
+}, 7000);
 
 </script>
  <!--[if gte IE 9]>
@@ -85,7 +85,7 @@ window.setTimeout(function() {
 			</a> 
 		</div>
 		<div id="rightbutton" runat="server">
-			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">
+			<a href="javascript:doLoad('CreateIdeas_PastRisks.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-2-icon.png" />
 				Create Ideas
 			</a> 
@@ -129,11 +129,12 @@ window.setTimeout(function() {
 
 
 		<div id="errorMsg" runat="server"></div>	
-		<span class="maintitle">Enter a suitable title for this risk</span>
-		<span class="maintitlesmall">(required)</span>
+		<span class="maintitle">Select an incident category</span>
 		<ul class="pageitem">
-			<li class="label">
-				<cc1:WatermarkedTextBox id="RiskName" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="30" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			<li class="select">
+			    <select id="RiskName" name="RiskName" runat="server">
+			    </select>
+			    <span class="arrow"></span> 
 			</li>
 		</ul>
 		<span class="maintitle">Please describe the risk</span>
@@ -143,7 +144,7 @@ window.setTimeout(function() {
 				<cc1:WatermarkedTextBox ID="RiskDescription" Font-Size="Larger" runat="server" TextMode="Multiline" Width="100%" cssclass="txtbox" onkeyup="AutoExpand(this)" Rows="3"></cc1:WatermarkedTextBox>
 			</li>
 		</ul>
-		<span class="maintitle">Enter the name of person reporting the risk</span>
+		<span class="maintitle">Enter the name and FIN number of the person reporting the risk</span>
 		<span class="maintitlesmall">(required)</span>
 		<ul class="pageitem">
 			<li class="label">
@@ -166,7 +167,7 @@ window.setTimeout(function() {
 			    <span class="arrow"></span> 
 			</li>
 		</ul>
-		<span class="maintitle">What is the type of the injury?</span>
+		<span class="maintitle">What is the type of (potential) injury?</span>
 		<ul class="pageitem">
 			<li class="select">
 			    <select id="RiskInjury" name="RiskInjury" runat="server">
@@ -194,6 +195,12 @@ window.setTimeout(function() {
 			</LI>
 		</UL>
 		<span class="maintitle">Have you got a picture?</span>
+		<ul class="pageitembutton">
+			<li class="buttonLightGrey">
+				<asp:button id="imageButton" runat="server" text="PRESS HERE TO ADD, UPDATE OR DELETE AN IMAGE" onclick="imageClicked"></asp:button>
+			</li>
+				
+		</ul>
 		<ul class="pageitemborder">
 			<li class="menu">
 				<a href="javascript:doLoad('FileUploadControl.aspx');">

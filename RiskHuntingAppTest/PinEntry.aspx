@@ -53,7 +53,7 @@
 			<span class="maintitle">Enter PIN to delete risk</span>
 		</div>
 		<br>
-		<table align="center" valign="middle" style="border: 1px solid #9999FF; border-collapse: collapse; height: 400px; width: 400px; text-align: center; background-color: white;">
+		<table  class="pullUp" align="center" valign="middle" style="border: 1px solid #9999FF; border-collapse: collapse; height: 400px; width: 400px; text-align: center; background-color: white;">
 		    <tr>
 		        <td class="button3">
 		        	<asp:Button ID="Button1" runat="server" Text="1" Height="75px" Width="75px" OnClick="Button_Click" /></td>

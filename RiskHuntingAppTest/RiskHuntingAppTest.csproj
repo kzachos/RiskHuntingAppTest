@@ -110,6 +110,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Parameters.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\GenericCreativityPrompts.cs" />
@@ -242,6 +243,12 @@
     <Compile Include="FileUploadControl.aspx.designer.cs">
       <DependentUpon>FileUploadControl.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddAction.aspx.cs">
+      <DependentUpon>AddAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddAction.aspx.designer.cs">
+      <DependentUpon>AddAction.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
@@ -324,6 +331,12 @@
     <Content Include="Images\Penguins.jpg" />
     <Content Include="Images\Jellyfish.jpg" />
     <Content Include="FileUploadControl.aspx" />
+    <Content Include="Theme\css\animations.css" />
+    <Content Include="AddAction.aspx" />
+    <Content Include="Theme\css\overlay.css" />
+    <Content Include="ErrorHandling\404.html" />
+    <Content Include="ErrorHandling\503.html" />
+    <Content Include="ErrorHandling\maintenance.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibraries\XmlProc\XmlProc.csproj">

@@ -19,7 +19,7 @@ namespace RiskHuntingAppTest
 
 		protected System.Web.UI.HtmlControls.HtmlGenericControl errorMsg;
 
-		protected World.Code.WebControls.WatermarkedTextBox RiskName;
+		protected System.Web.UI.HtmlControls.HtmlSelect RiskName;
 
 		protected World.Code.WebControls.WatermarkedTextBox RiskDescription;
 

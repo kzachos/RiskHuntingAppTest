@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <IncidentCategory>
+    <n>Accident</n>
+  </IncidentCategory>
+  <IncidentCategory>
+    <n>Near Miss</n>
+  </IncidentCategory>
+  <IncidentCategory>
+    <n>Unsafe Act</n>
+  </IncidentCategory>
+  <IncidentCategory>
+    <n>Unsafe Condition</n>
+  </IncidentCategory>
+  <IncidentCategory>
+    <n>Other</n>
+  </IncidentCategory>
+  <rl>
+    <n>Pedestal Line</n>
+    <name>Sam Gibson</name>
+    <email>sam.gibson@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Cab Line</n>
+    <name>Steve Young</name>
+    <email>stephen.young@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>After Paint (APM or Medical Line)</n>
+    <name>Kevin Passingham</name>
+    <email>kevin.passingham@cnhind.com</email>
+    <email>michael.george@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Pre-Paint</n>
+    <name>John Williams</name>
+    <email>john.williams@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Paint Floor</n>
+    <name>JW</name>
+  </rl>
+  <rl>
+    <n>AGV</n>
+    <name>JW</name>
+  </rl>
+  <rl>
+    <n>Warehouse</n>
+    <name>Lee Victory</name>
+    <email>lee.victory@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Maintenance</n>
+    <name>Dave Cox</name>
+    <email>david.cox@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Road Test Centre</n>
+    <name>Andy Plom</name>
+    <email>andy.plom@external.cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Sub Assembly</n>
+    <name>Paul Cumming</name>
+    <email>paul.cumming@cnhind.com</email>
+  </rl>
+  <rl>
+    <n>Other (Office/Plantwide)</n>
+  </rl>
+  <bp>
+    <n>Whole body</n>
+  </bp>
+  <bp>
+    <n>Head</n>
+  </bp>
+  <bp>
+    <n>Eye</n>
+  </bp>
+  <bp>
+    <n>Arm</n>
+  </bp>
+  <bp>
+    <n>Hands</n>
+  </bp>
+  <bp>
+    <n>Trunk</n>
+  </bp>
+  <bp>
+    <n>Leg</n>
+  </bp>
+  <bp>
+    <n>Foot</n>
+  </bp>
+  <bp>
+    <n>None</n>
+  </bp>
+  <TypeOfIncident>
+    <n>Abrasions/Cuts/Laceration</n>
+  </TypeOfIncident>
+  <TypeOfIncident>
+    <n>Burns/Scalds</n>
+  </TypeOfIncident>
+  <TypeOfIncident>
+    <n>Contusion/Crush/Concussion</n>
+  </TypeOfIncident>
+  <TypeOfIncident>
+    <n>Foreign Bodies</n>
+  </TypeOfIncident>
+  <TypeOfIncident>
+    <n>Fractures/Dislocations</n>
+  </TypeOfIncident>
+  <TypeOfIncident>
+    <n>Hematoma/Bruise</n>
+  </TypeOfIncident>
+  <TypeOfIncident>
+    <n>Sprains/Strains</n>
+  </TypeOfIncident>
+  <TypeOfIncident>
+    <n>None</n>
+  </TypeOfIncident>
+</Parameters>

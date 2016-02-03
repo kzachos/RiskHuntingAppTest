@@ -330,8 +330,9 @@ namespace RiskHuntingAppTest
 
 				for (int i = startIndex; i <= max; i++) {
 					XmlProc.ResponseSerialized.MatchedSourcesMatchedSource matchedSource = matchedSources [i];
-					if (Convert.ToDouble (matchedSource.OverallMatchValue) >= Constants.THRESHOLD)
-						responses.InnerHtml += GenerateMatchedSourceHtml (matchedSource);
+					if (!matchedSource.OverallMatchValue.Trim().Equals(String.Empty))
+						if (Convert.ToDouble (matchedSource.OverallMatchValue) >= Constants.THRESHOLD)
+							responses.InnerHtml += GenerateMatchedSourceHtml (matchedSource);
 				}
 				Console.WriteLine (responses.InnerHtml);
 				if (responses.InnerHtml.Trim ().Equals (String.Empty)) {

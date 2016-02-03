@@ -74,19 +74,19 @@ body { /* Converted 3 properties*/
 .searchbox input[type="text"] {/*Converted mozilla appearance tag*/
 	-ms-appearance: none;
 }
-.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
+.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, li.buttonLightGrey:first-child input, .bigfield:first-child input {
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
-.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
+.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, li.buttonLightGrey:first-child input, .bigfield:first-child input {
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 }
-.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
+.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, li.buttonLightGrey:last-child input, .bigfield:last-child input {
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 }
-.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
+.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, li.buttonLightGrey:last-child input, .bigfield:last-child input {
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 }

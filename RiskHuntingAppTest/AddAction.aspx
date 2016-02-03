@@ -28,46 +28,46 @@
 
 <span id="loading"></span>
 <div id="content">
-<form id="form1" runat="server">
-	<span class="maintitle">Action description</span>
-	<ul class="pageitem">
-		<li class="label">
-			<cc1:WatermarkedTextBox id="AddActionDescription" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
-		</li>
-	</ul>
-	<span class="maintitle">Owner of action</span>
-	<ul class="pageitem">
-		<li class="label">
-			<cc1:WatermarkedTextBox id="AddActionOwner" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
-		</li>
-	</ul>
-	<span class="maintitle">To be implemented by</span>
-	<UL class="pageitem">
-		<LI class="select">
-			<SELECT name="ImplementedDay" id="AddImplementedDay" size="1" runat="server">
-			</SELECT>
-			<SPAN class="arrow"></SPAN>
-		</LI>
-		<LI class="select">
-			<SELECT name="ImplementedMonth" id="AddImplementedMonth" size="1" runat="server">
-			</SELECT>
-			<SPAN class="arrow"></SPAN>
-		</LI>
+	<form id="form1" runat="server">
+		<span class="maintitle">Action description</span>
+		<ul class="pageitem">
+			<li class="label">
+				<cc1:WatermarkedTextBox id="AddActionDescription" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			</li>
+		</ul>
+		<span class="maintitle">Owner of action</span>
+		<ul class="pageitem">
+			<li class="label">
+				<cc1:WatermarkedTextBox id="AddActionOwner" runat="server" TextMode="MultiLine" Width="100%" Height="40" Font-Size="Larger" cssclass="txtbox"></cc1:WatermarkedTextBox>
+			</li>
+		</ul>
+		<span class="maintitle">To be implemented by</span>
+		<UL class="pageitem">
+			<LI class="select">
+				<SELECT name="ImplementedDay" id="AddImplementedDay" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
+			<LI class="select">
+				<SELECT name="ImplementedMonth" id="AddImplementedMonth" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
 
-		<LI class="select">
-			<SELECT name="ImplementedYear" id="AddImplementedYear" size="1" runat="server">
-			</SELECT>
-			<SPAN class="arrow"></SPAN>
-		</LI>
-	</UL>
+			<LI class="select">
+				<SELECT name="ImplementedYear" id="AddImplementedYear" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
+		</UL>
 
 
-	<ul class="pageitembutton">
-		<li class="button">
-			<asp:Button id="AddNewAction" runat="server" text="ADD ACTION" onclick="addClicked"></asp:Button>
-		</li>
-	</ul>
-</form>
+		<ul class="pageitembutton">
+			<li class="button">
+				<asp:Button id="AddNewAction" runat="server" text="ADD ACTION" onclick="addClicked"></asp:Button>
+			</li>
+		</ul>
+	</form>
 
 
 </div>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>sdfsdfsdf</Author>
+  <LaunchDate>11/05/2015 11:05:01</LaunchDate>
+  <SourceSpecificationLastEdited>11/05/2015</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>sdfsfsdf</Content>
+    <InjuryNature>Foreign Bodies</InjuryNature>
+    <LocationDetail>After Paint (APM or Medical Line)</LocationDetail>
+    <BodyPart>Arm</BodyPart>
+    <InjuryCause />
+    <IncidentPriority />
+    <IncidentStatus />
+    <RootCause />
+    <RoutineWork />
+    <ShiftType />
+    <Title />
+    <ClosedByOperator />
+    <ContractorName />
+    <DateClosed />
+    <DateIncidentOccurred>11/05/2015 00:00:00</DateIncidentOccurred>
+    <Miscellaneous />
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>

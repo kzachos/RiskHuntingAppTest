@@ -1,0 +1,34 @@
+﻿@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+* { box-sizing: border-box }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(100, 100, 100, 0.8);
+  width: 100%;
+  height: 100%;
+}
+.box {
+  background: #fff;
+  width: 500px;
+  height: 200px;
+  margin: 50px auto;
+  padding: 5px 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 #303030;
+}
+.close {
+  float: right;
+  font-size: 2em;
+  cursor: pointer;
+}
+a.showoverlay {
+  color: Blue;
+  text-decoration: underline;
+  cursor: pointer;
+}

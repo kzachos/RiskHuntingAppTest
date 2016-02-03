@@ -102,7 +102,7 @@ namespace RiskHuntingAppTest
 
 			sourceDiv.InnerHtml = String.Empty;
 			sourceDiv.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("Risk Name", this.currentRisk.Name) +
+				GenerateContentHtml ("Incident Category", this.currentRisk.Name) +
 				LiEndTag;
 
 			sourceDiv.InnerHtml += LiStartTagLabel +
@@ -330,6 +330,15 @@ namespace RiskHuntingAppTest
 			}
 		}
 
+		bool CheckExistsCase (string componentType)
+		{
+			RiskHuntingAppTest.eddieService.EDDiEWebService eddie = new RiskHuntingAppTest.eddieService.EDDiEWebService ();
+			var output = eddie.CheckExistCase (componentType, this.sourceId);
+			Console.WriteLine (output);
+			bool boolVal =  Convert.ToBoolean(output);
+			return boolVal;
+		}
+
 		public virtual void submitClicked(object sender, EventArgs args)
 		{
 			if (Page.IsValid) {
@@ -340,26 +349,33 @@ namespace RiskHuntingAppTest
 				var success2 = true;
 				var success3 = true;
 
+				bool sendEmail = false;
+				if (!CheckExistsCase (Constants.SOURCESPECIFICATION))
+					sendEmail = true;
+
 				success1 = GenerateXml(Constants.SOURCESPECIFICATION);
 				success2 = GenerateXml(Constants.PROBLEM);
 				success3 = GenerateXml(Constants.SOLUTION);
 
 
-//				string pb = String.Empty;
+				string pb = String.Empty;
 				if (success1 && success2 && success3) {
-//					pb = "success";
+
+					pb = "success";
 					alert_message_success.Visible = true;
-					successMessage.InnerText = "Thank you for your safty imput. Your risk has been successfully submitted and uploaded to the database";
+					successMessage.InnerText = "Thank you for your safty imput. Your risk has been successfully submitted and uploaded to the database.";
 					alert_message_error.Visible = false;
 					GeneratePDF (false);
-					SendEmail (true);
+					if (sendEmail)
+						SendEmail (true);
 				} else {
-//					pb = "nosuccess";
+					pb = "nosuccess";
 					alert_message_success.Visible = false;
 					errorMessage.InnerText = "Your risk could not be uploaded to the database. Please try again later.";
 					alert_message_error.Visible = true;
 				}
-//				Response.Redirect ("DescribeRisk.aspx?pb=" + pb);
+//				pb = "success";
+				Response.Redirect ("DescribeRisk.aspx?pb=" + pb);
 			}
 
 		}
@@ -391,8 +407,8 @@ namespace RiskHuntingAppTest
 		{
 			string from = "creativecareconsultancy@gmail.com"; //Replace this with your own correct Gmail Address
 
-			string to = "kzachos@gmail.com"; //Replace this with the Email Address to whom you want to send the mail
-//			string to = "derek.read@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
+			string to = "kzachos@gmail.com, lloyd.coulson@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
+//			string to = "kzachos@gmail.com, derek.read@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
 
 			MailMessage mail = new MailMessage();
 			mail.To.Add(to);
@@ -400,7 +416,7 @@ namespace RiskHuntingAppTest
 			mail.Subject = submission?"new risk submitted":"risk report generated";
 			mail.SubjectEncoding = System.Text.Encoding.UTF8;
 			var initialText = submission ? "A new risk has been submitted: <p>" : "A risk report has been generated: <p>";
-			mail.Body = "Risk Name: " + this.currentRisk.Name + "<p>"
+			mail.Body = "Incident Category: " + this.currentRisk.Name + "<p>"
 				+ "Risk Description: " + this.currentRisk.Content + "<p>"
 				+ "Author: " + this.currentRisk.Author + "<p>"
 				+ "Risk Location: " + this.currentRisk.LocationDetail + "<p>"
@@ -565,7 +581,8 @@ namespace RiskHuntingAppTest
 
 			form.SetField ("Name", this.currentRisk.Author);
 			form.SetField ("TimeDate", this.currentRisk.DateIncidentOccurred.ToShortDateString ());
-			form.SetField ("Location", this.currentRisk.LocationDetail);
+			form.SetField ("DeptMBU", this.currentRisk.LocationDetail);
+			form.SetField ("InjuryType", this.currentRisk.InjuryNature);
 			form.SetField ("Description", this.currentRisk.Content);
 			string rec = String.Empty;
 			if (this.currentRisk.Recommendations.Count > 0) {
@@ -575,7 +592,12 @@ namespace RiskHuntingAppTest
 			} else
 				rec = "n/A";
 			form.SetField ("Recommendation", rec);
-//			form.SetField ("UnsafeAct", "Yes");
+			if (this.currentRisk.Name.Equals("Unsafe Act"))
+				form.SetField ("UnsafeAct", "Yes");
+			else if (this.currentRisk.Name.Equals("Unsafe Condition"))
+				form.SetField ("UnsafeCondition", "Yes");
+			else if (this.currentRisk.Name.Equals("Near Miss"))
+				form.SetField ("NearMiss", "Yes");
 
 			if (!this.currentRisk.ImageUri.Equals (String.Empty)) {
 				Image instanceImg = Image.GetInstance (this.currentRisk.ImageUri);
@@ -896,7 +918,7 @@ namespace RiskHuntingAppTest
 //				table.AddCell(cell);
 //			}
 //
-//			table.AddCell("Risk Name");
+//			table.AddCell("Incident Category");
 //			table.AddCell(this.currentRisk.Name);
 //			table.AddCell("Risk Description");
 //			table.AddCell(this.currentRisk.Content);

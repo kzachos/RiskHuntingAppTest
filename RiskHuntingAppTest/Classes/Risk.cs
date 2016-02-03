@@ -77,7 +77,7 @@ namespace RiskHuntingAppTest
 			Id = ss.SourceId;
 			Name = ss.SourceName;
 			LaunchDate = Util.ConvertDateTime (ss.LaunchDate);
-			LastEdited = Util.ConvertDateTime (ss.SourceSpecificationLastEdited);
+			LastEdited = Util.ConvertDateTime (ss.LaunchDate);
 			Author = ss.Facet [0].Author;
 
 			switch (ss.SourceType)

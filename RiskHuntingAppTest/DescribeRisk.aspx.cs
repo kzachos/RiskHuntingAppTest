@@ -25,6 +25,7 @@ namespace RiskHuntingAppTest
 		const string defaultProcessGuidance = "Define all elements of the danger in the web form. Ask a colleague to check these elements.";
 
 		protected string xmlFilesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles");
+		protected string resourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "Resources");
 		protected string requestPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Requests");
 		protected string responsePath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Responses");
 		protected string sourcesPath = Path.Combine (SettingsTool.GetApplicationPath(), "xmlFiles", "Sources");
@@ -43,7 +44,7 @@ namespace RiskHuntingAppTest
 		protected const string LOCATION_WATERMARK = "[Enter the risk location]";
 		protected const string BODYPARTS_WATERMARK = "[Enter the body parts that are at risk, e.g. feet]";
 
-		protected const string ERROR_MESSAGE_REQUIRED = "One or more fields are empty.";
+		protected const string ERROR_MESSAGE_REQUIRED = "One or more fields are empty - please fill out the required fields to continue.";
 
 		//		const string StartTagNav = "<div id=duobutton>";
 		//		const string Mid1TagNav = "<div class=links>";
@@ -52,11 +53,12 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
+			
 			if (!DetermineFrom ().Equals (String.Empty)) { // coming from summary so reset form for a new risk
 				ResetForm ();
 				if (DetermineFrom ().Equals ("success")) {
 					alert_message_success.Visible = true;
-					successMessage.InnerText = "Thank you for your safty imput. Your risk has been successfully submitted and uploaded to the database";
+					successMessage.InnerText = "Thank you for your safty imput. Your risk has been successfully submitted and uploaded to the database. To review the risk use the \"Our Previous Risks\" button.";
 					alert_message_error.Visible = false;
 				} 
 				else if (DetermineFrom ().Equals ("nosuccess")) {
@@ -127,6 +129,8 @@ namespace RiskHuntingAppTest
 			//			string username = CASP.Authenticate("https://login.case.edu/cas/", this.Page);
 			//do whatever with username
 			//			Console.WriteLine (username);
+//			int zero = 0;
+//			int result = 100 / zero;
 
 			if (!Page.IsPostBack) {
 				Console.WriteLine ("Page_Load - NOT Page.IsPostBack");
@@ -206,7 +210,7 @@ namespace RiskHuntingAppTest
 
 		private void InitTextElements()
 		{
-			RiskName.WatermarkText = NAME_WATERMARK;
+//			RiskName.WatermarkText = NAME_WATERMARK;
 			RiskDescription.WatermarkText = DESC_WATERMARK;
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
 			//			RiskLocation.WatermarkText = LOCATION_WATERMARK;
@@ -215,10 +219,14 @@ namespace RiskHuntingAppTest
 
 		private void InitParametersDropDown()
 		{
-			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
+			RiskName.Items.Clear();
 			RiskLocation.Items.Clear();
 			RiskBodyParts.Items.Clear();
 			RiskInjury.Items.Clear();
+			if (doc.Descendants("IncidentCategory").Count() > 0)
+				foreach (XElement xe in doc.Descendants("IncidentCategory"))
+					RiskName.Items.Add(new ListItem(xe.Element("n").Value));    
 			if (doc.Descendants("rl").Count() > 0)
 				foreach (XElement xe in doc.Descendants("rl"))
 					RiskLocation.Items.Add(new ListItem(xe.Element("n").Value));    
@@ -228,8 +236,8 @@ namespace RiskHuntingAppTest
 				foreach (XElement xe in doc.Descendants("bp"))
 					RiskBodyParts.Items.Add(new ListItem(xe.Element("n").Value));    
 
-			if (doc.Descendants("ic").Count() > 0)
-				foreach (XElement xe in doc.Descendants("ic"))
+			if (doc.Descendants("TypeOfIncident").Count() > 0)
+				foreach (XElement xe in doc.Descendants("TypeOfIncident"))
 					RiskInjury.Items.Add(new ListItem(xe.Element("n").Value));    
 		}
 
@@ -489,7 +497,8 @@ namespace RiskHuntingAppTest
 
 			risk.Content = CheckTextBoxContent(RiskDescription, DESC_WATERMARK);
 			risk.Author = CheckTextBoxContent (RiskAuthor, AUTHOR_WATERMARK);
-			risk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
+//			risk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
+			risk.Name = RiskName.Value;
 			//			risk.InjuryNature = CheckTextBoxContent(RiskDanger, DANGER_WATERMARK);
 			risk.InjuryNature = String.Empty;
 			risk.LocationDetail = RiskLocation.Value; 
@@ -526,7 +535,8 @@ namespace RiskHuntingAppTest
 					Session.Remove (Sessions.creativityPromptsState);
 			}
 			this.currentRisk.Content = CheckTextBoxContent(RiskDescription, DESC_WATERMARK);
-			this.currentRisk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
+//			this.currentRisk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
+			this.currentRisk.Name = RiskName.Value;
 			this.currentRisk.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
 			//			risk.InjuryNature = CheckTextBoxContent(RiskDanger, DANGER_WATERMARK);
 			this.currentRisk.InjuryNature = String.Empty;
@@ -633,8 +643,11 @@ namespace RiskHuntingAppTest
 
 		protected void Timer1_Tick(object sender, EventArgs e)
 		{
-			if (CheckTextBox (RiskName, NAME_WATERMARK) && CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
-				Save ();
+			if (Sessions.RiskState != String.Empty)
+			{
+				if (CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
+					Save ();
+				}
 			}
 		}
 
@@ -659,14 +672,15 @@ namespace RiskHuntingAppTest
 		private void ResetForm ()
 		{
 			Session.RemoveAll ();
-			RiskName.Text = String.Empty;
-			RiskName.WatermarkText = NAME_WATERMARK;
+//			RiskName.Text = String.Empty;
+//			RiskName.WatermarkText = NAME_WATERMARK;
 			RiskDescription.Text = String.Empty;
 			RiskDescription.WatermarkText = DESC_WATERMARK;
 			RiskAuthor.Text = String.Empty;
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
 			InitParametersDropDown ();
 			PopulateDateDropDown ();
+			RiskName.SelectedIndex = -1;
 			RiskLocation.SelectedIndex = -1;
 			RiskBodyParts.SelectedIndex = -1;
 			RiskInjury.SelectedIndex = -1;
@@ -674,14 +688,14 @@ namespace RiskHuntingAppTest
 
 		public virtual void ideasClicked(object sender, EventArgs args)
 		{
-			if (CheckTextBox (RiskName, NAME_WATERMARK) && CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
+			if (CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
 				Save ();
 				Util.AccessLog(Util.ScreenType.DescribeRisk, Util.FeatureType.DescribeRisk_CreateIdeasButton);
 
 				//				if (Session ["CREATIVITY_PROMPTS"] == null)
 				//					RetrieveNLData ();
 
-				Response.Redirect ("CreateIdeas_SameRisk.aspx");
+				Response.Redirect ("CreateIdeas_PastRisks.aspx");
 			} else {
 				errorMessage.InnerHtml = ERROR_MESSAGE_REQUIRED;
 				alert_message_error.Visible = true;
@@ -698,9 +712,23 @@ namespace RiskHuntingAppTest
 
 		}
 
+		public virtual void imageClicked(object sender, EventArgs args)
+		{
+			if (CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
+				Save ();
+				Response.Redirect("FileUploadControl.aspx");
+
+			} else {
+				errorMessage.InnerHtml = ERROR_MESSAGE_REQUIRED;
+				alert_message_error.Visible = true;
+				alert_message_success.Visible = false;
+			}
+
+		}
+
 		public virtual void saveClicked(object sender, EventArgs args)
 		{
-			if (CheckTextBox (RiskName, NAME_WATERMARK) && CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
+			if (CheckTextBox (RiskDescription, DESC_WATERMARK) && CheckTextBox (RiskAuthor, AUTHOR_WATERMARK)) {
 				Save ();
 				successMessage.InnerHtml = "Saved successfully!";
 				alert_message_error.Visible = false;
@@ -929,7 +957,13 @@ namespace RiskHuntingAppTest
 			{
 				location = Path.Combine (processPath, componentType, Constants.CASEREF + this.sourceId + "_" + componentType + ".xml");
 				XmlProc.SourceSpecificationSerialized.SourceSpecification ss = XmlProc.ObjectXMLSerializer<XmlProc.SourceSpecificationSerialized.SourceSpecification>.Load(location);
-				RiskName.Text = ss.SourceName;
+//				RiskName.Text = ss.SourceName;
+
+				var id0 = Util.GetHtmlSelectIdForIncidentCategory (ss.SourceName);
+				if (id0 > -1)
+					RiskName.SelectedIndex = id0;
+				else
+					RiskName.SelectedIndex = RiskName.Items.Count - 1;
 			}
 			else if (componentType.Equals("Problem"))
 			{
@@ -938,6 +972,7 @@ namespace RiskHuntingAppTest
 				XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData problemFacet = problem.FacetSpecificationData;
 				RiskDescription.Text = problemFacet.Content;
 				RiskAuthor.Text = problem.Author;
+
 
 				var id1 = Util.GetHtmlSelectIdForLocation (problemFacet.LocationDetail);
 				if (id1 > -1)
@@ -949,7 +984,7 @@ namespace RiskHuntingAppTest
 				if (id2 > -1)
 					RiskBodyParts.SelectedIndex = id2;
 
-				var id3 = Util.GetHtmlSelectIdForInjuryCategory (problemFacet.InjuryNature);
+				var id3 = Util.GetHtmlSelectIdForTypeOfInjury (problemFacet.InjuryNature);
 				if (id3 > -1)
 					RiskInjury.SelectedIndex = id3;
 

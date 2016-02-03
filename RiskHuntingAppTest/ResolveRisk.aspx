@@ -30,7 +30,7 @@ var todaysDate=new Date()
 		<div id="leftnav">
     		<a href="javascript:doLoad('Default.aspx');" ><img alt="home" src="Theme/images/home.png" />
     		</a>
-			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');" >
+			<a href="javascript:doLoad('CreateIdeas_PastRisks.aspx');" >
 				&nbsp;&nbsp;&nbsp; <img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-2-icon.png" />
 				Create Risk
 			</a> 
@@ -38,7 +38,7 @@ var todaysDate=new Date()
 		<div id="rightbutton">
 			<a href="javascript:doLoad('Summary.aspx');">
 				<img alt="home" style="position:relative; TOP:2px;  height: 65%" src="Theme/images/numbers-4-icon.png" />
-				Summary
+				Preview and Submit
 			</a> 
 		</div>
 		<div id="multiselectionbuttons">

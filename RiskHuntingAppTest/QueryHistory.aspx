@@ -72,7 +72,7 @@ window.setTimeout(function() {
 				<asp:DropDownList ID="SortDropDown" EnableViewState="true" AutoPostBack="true" OnSelectedIndexChanged="itemSelected" runat="Server">
 	                <asp:ListItem Text="Date" Value="0" />
 	                <asp:ListItem Text="Status" Value="1" />
-	                <asp:ListItem Text="Name" Value="2" />
+	                <asp:ListItem Text="Category" Value="2" />
 	                <asp:ListItem Text="Author" Value="3" />
 	   			</asp:DropDownList>
 				<span class="arrow"></span>

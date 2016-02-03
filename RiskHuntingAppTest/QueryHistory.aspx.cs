@@ -158,7 +158,7 @@ namespace RiskHuntingAppTest
 				case "Status":
 					sortedRisks = risks.OrderBy (q => q.State).ToList ();
 					break;
-				case "Name":
+				case "Category":
 					sortedRisks = risks.OrderBy (q => q.Name).ToList ();
 					break;
 				case "Date":
@@ -209,8 +209,8 @@ namespace RiskHuntingAppTest
 			string path = String.Empty;
 //			Console.WriteLine ("risk.SimilarCasesFound: " + risk.SimilarCasesFound);
 			string search = risk.SimilarCasesFound?path:String.Empty;
-			return Tag1 + Tag2 + risk.Id + search + Tag3 + Tag4 + risk.Name + Tag5 + 
-				Tag6 + risk.Content + Tag7 + 
+			return Tag1 + Tag2 + risk.Id + search + Tag3 + Tag4 + risk.Content + Tag5 + 
+				Tag6 + risk.Name + Tag7 + 
 				Tag8 + "<b>Status</b>: " + Util.GetEnumDescription(risk.State) + 
 				"&nbsp;&nbsp;&nbsp;" + "<b>Author</b>: " + risk.Author + 
 				"&nbsp;&nbsp;&nbsp;" + " <b>Last Modified</b>: " + Util.FormatDate (risk.LastEdited) + 

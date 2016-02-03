@@ -20,6 +20,8 @@ namespace RiskHuntingAppTest.eddieService {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class EDDiEWebService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback CheckExistCaseOperationCompleted;
+        
         private System.Threading.SendOrPostCallback RemoveCaseOperationCompleted;
         
         private System.Threading.SendOrPostCallback UpdateCaseOperationCompleted;
@@ -58,6 +60,8 @@ namespace RiskHuntingAppTest.eddieService {
             this.Url = url;
         }
         
+        public event CheckExistCaseCompletedEventHandler CheckExistCaseCompleted;
+        
         public event RemoveCaseCompletedEventHandler RemoveCaseCompleted;
         
         public event UpdateCaseCompletedEventHandler UpdateCaseCompleted;
@@ -87,6 +91,48 @@ namespace RiskHuntingAppTest.eddieService {
         public event PerformEddieDomainSampleCompletedEventHandler PerformEddieDomainSampleCompleted;
         
         public event StoreXmlDocumentCompletedEventHandler StoreXmlDocumentCompleted;
+        
+        /// <remarks>
+///<b>Input</b>: the type of facet AND the case id that should be checked in the database if it exists<br><b>Output</b>:  string that is either true or false 
+///</remarks>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CheckExistCase", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped, Use=System.Web.Services.Description.SoapBindingUse.Literal)]
+        public string CheckExistCase(string facetType, string caseID) {
+            object[] results = this.Invoke("CheckExistCase", new object[] {
+                        facetType,
+                        caseID});
+            return ((string)(results[0]));
+        }
+        
+        public System.IAsyncResult BeginCheckExistCase(string facetType, string caseID, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("CheckExistCase", new object[] {
+                        facetType,
+                        caseID}, callback, asyncState);
+        }
+        
+        public string EndCheckExistCase(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((string)(results[0]));
+        }
+        
+        public void CheckExistCaseAsync(string facetType, string caseID) {
+            this.CheckExistCaseAsync(facetType, caseID, null);
+        }
+        
+        public void CheckExistCaseAsync(string facetType, string caseID, object userState) {
+            if ((this.CheckExistCaseOperationCompleted == null)) {
+                this.CheckExistCaseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckExistCaseCompleted);
+            }
+            this.InvokeAsync("CheckExistCase", new object[] {
+                        facetType,
+                        caseID}, this.CheckExistCaseOperationCompleted, userState);
+        }
+        
+        private void OnCheckExistCaseCompleted(object arg) {
+            if ((this.CheckExistCaseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CheckExistCaseCompleted(this, new CheckExistCaseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks>
 ///<b>Input</b>: the type of facet AND the case id that should be removed from the database<br><b>Output</b>:  none 
@@ -677,6 +723,25 @@ namespace RiskHuntingAppTest.eddieService {
             }
         }
     }
+    
+    public partial class CheckExistCaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CheckExistCaseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    public delegate void CheckExistCaseCompletedEventHandler(object sender, CheckExistCaseCompletedEventArgs args);
     
     public partial class RemoveCaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         

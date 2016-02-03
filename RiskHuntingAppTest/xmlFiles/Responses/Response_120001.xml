@@ -1,0 +1,565 @@
+<?xml version="1.0"?>
+<MatchedSources responseId="" similarityType="" dataSourceType="">
+    <MatchedSource>
+        <SourceId>111671</SourceId>
+        <SourceName>6109</SourceName>
+        <Content>[Domain]: Risk[Content]: No Hard Hat Worn by Worker on CDM Site in MA2 [InjuryNature]:  [LocationDetail]: M&amp;A2 CDM Site [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 07/12/2012 [DateIncidentOccurred]: 07/12/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Contractor reminded of the site rules];[Countermeasures: None]</Content>
+        <OverallMatchValue>95</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111436</SourceId>
+        <SourceName>5874</SourceName>
+        <Content>[Domain]: Risk[Content]: 5 X Maintenance workers not wearing ear plugs. [InjuryNature]:  [LocationDetail]: Maintenance [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 19/10/2012 [DateIncidentOccurred]: 16/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Maintenance Staff Reminded by Team Leaders concerning the need and requirement to wear required PPE and to follow procedures.];[Countermeasures: None]</Content>
+        <OverallMatchValue>95</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>120122</SourceId>
+        <SourceName>Unsafe Act</SourceName>
+        <Content>[Domain]: Risk[Content]: Operator has to fit pdu unit reaching up working above head height [InjuryNature]: Sprains/Strains [LocationDetail]: Pedestal Line [BodyPart]: Whole body [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]:  [RootCause]:  [RoutineWork]:  [ShiftType]:  [Title]:  [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 17/04/2015 00:00:00 [Miscellaneous]:  [SolutionDescription]: [Recommendation:Operator working above head height,using a platform to reach correct safe working height or move job process to ergonomically friendly area];[Corrective Actions:];[Countermeasures:]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>120124</SourceId>
+        <SourceName>Unsafe Act</SourceName>
+        <Content>[Domain]: Risk[Content]: Operator has to reach his hand under driveline to remove epl unit from being trapped,operator is at risk from crushing his hand under driveline as it drops onto pedastal [InjuryNature]: Contusion/Crush/Concussion [LocationDetail]: Pedestal Line [BodyPart]: Hands [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]:  [RootCause]:  [RoutineWork]:  [ShiftType]:  [Title]:  [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 23/04/2015 00:00:00 [Miscellaneous]:  [SolutionDescription]: [Recommendation:Epl unit has to placed on top of driveline to avoid the possibillity of unit being trapped and erase the chance of operator having to place themselves in danger to retrive unit];[Corrective Actions:];[Countermeasures:]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114315</SourceId>
+        <SourceName>8765</SourceName>
+        <Content>[Domain]: Risk[Content]: knocked my head under tractor - chains not secured on front and had to reach under tractor [InjuryNature]: None [LocationDetail]: J5 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Resolved [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 28/02/2014 [DateIncidentOccurred]: 16/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: better chains needed];[Corrective Actions: Operator out of process ,re trained operator 
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114477</SourceId>
+        <SourceName>8927</SourceName>
+        <Content>[Domain]: Risk[Content]: hood operator climbing on moving tractor to fit missing gas ram arms [InjuryNature]: None [LocationDetail]: ped line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 08/11/2013 [DateIncidentOccurred]: 16/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: fit in own area at floor level];[Corrective Actions: Usage updated operator check in place . Operator also counselled in the importance of fitting of this part .Monitor situation];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116714</SourceId>
+        <SourceName>11178</SourceName>
+        <Content>[Domain]: Risk[Content]: unit's steering was juddery due to lack of oil - many tractors reach the garage lacking oil as there is a fault with the med line filler [InjuryNature]: None [LocationDetail]: slat line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 02/07/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: get med line oil fill working correctly
+don't start-up or road test without checking the oil level];[Corrective Actions: operator checking oil fills and reporting any low fills];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117898</SourceId>
+        <SourceName>12363</SourceName>
+        <Content>[Domain]: Risk[Content]: guys climbing on tractors [InjuryNature]: None [LocationDetail]: not stated [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 12/11/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: stop them doing it];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114642</SourceId>
+        <SourceName>9092</SourceName>
+        <Content>[Domain]: Risk[Content]: GLS contractor climbing on racks to check radiators [InjuryNature]: None [LocationDetail]: R8 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 03/03/2014 [DateIncidentOccurred]: 02/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: have a driver de-stack or provide steps for operator];[Corrective Actions: re submit to s. ludlow];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>118034</SourceId>
+        <SourceName>12499</SourceName>
+        <Content>[Domain]: Risk[Content]: my flow rack doesn't work properly and I have to strain to reach the stock [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 29/10/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: get the flow rack fixed];[Corrective Actions: Flow rack being checked];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112138</SourceId>
+        <SourceName>6576</SourceName>
+        <Content>[Domain]: Risk[Content]: operatives climbing over yellow safety barrier rather than using the designated exits from garage [InjuryNature]:  [LocationDetail]: Start Up &amp; PDI [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/02/2013 [DateIncidentOccurred]: 18/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: operatives not named - no action can be taken];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114608</SourceId>
+        <SourceName>9058</SourceName>
+        <Content>[Domain]: Risk[Content]: people climbing up and down of unit (front&amp;back) [InjuryNature]: None [LocationDetail]: ped line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/02/2014 [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: mobile platform required];[Corrective Actions: Off line platforms available within garage area ];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>118286</SourceId>
+        <SourceName>12751</SourceName>
+        <Content>[Domain]: Risk[Content]: operator having to climb on axle to fit T4B parts [InjuryNature]: None [LocationDetail]: med Z2 [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 16/11/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: move further down the line];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112498</SourceId>
+        <SourceName>6939</SourceName>
+        <Content>[Domain]: Risk[Content]: pothole in floor that causes a danger of reach-trucks loosing their load [InjuryNature]: None [LocationDetail]: T22 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 10/04/2013 [DateIncidentOccurred]: 20/03/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: telerequest needed];[Corrective Actions: Assigned to VH];[Countermeasures: None]</Content>
+        <OverallMatchValue>76</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>120117</SourceId>
+        <SourceName>Unsafe Condition</SourceName>
+        <Content>[Domain]: Risk[Content]: The new superkit does not leave enough room to get around on some models causing operators to squeeze around the superkit, as In attached photograph [InjuryNature]: Abrasions/Cuts/Laceration [LocationDetail]: After Paint (APM or Medical Line) [BodyPart]: Whole body [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]:  [RootCause]:  [RoutineWork]:  [ShiftType]:  [Title]:  [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 15/04/2015 00:00:00 [Miscellaneous]: C:\inetpub\wwwroot\RiskHuntingApp\RiskHuntingAppTest\xmlFiles\Sources\Risk\Images\120117\120117.jpg [SolutionDescription]: [Recommendation:regenerate the superkit;make the superkit  move and adjust;Is it possible to make the superkit narrower];[Corrective Actions:];[Countermeasures:]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117560</SourceId>
+        <SourceName>12025</SourceName>
+        <Content>[Domain]: Risk[Content]: Part arrived in wooden case, however 'legs' missing from Case, leaving nails pointing out in curved fashion. [InjuryNature]: None [LocationDetail]: Loading dock 8 [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 22/10/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Remove/make nails safe, attach to small pallet with banding];[Corrective Actions: This can sometimes happen in transit. I would not expect it to have left the shipping depot like this.];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117291</SourceId>
+        <SourceName>11755</SourceName>
+        <Content>[Domain]: Risk[Content]: fire escape staors from fire door 4 - accumulation of leaves and rubbish impair access [InjuryNature]: None [LocationDetail]: admin basement [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 08/09/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: Requested Colin Lee (Voith) to clear leaves and rubbish infront of fire escape door No.4];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114761</SourceId>
+        <SourceName>9211</SourceName>
+        <Content>[Domain]: Risk[Content]: rainwater comes out of driveline packaging and leaves puddles on the floor - slip hazard [InjuryNature]: None [LocationDetail]: med line Z2 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 14/11/2013 11:06:51 [DateIncidentOccurred]: 11/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: remove packaging before it gets to the line];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113722</SourceId>
+        <SourceName>8167</SourceName>
+        <Content>[Domain]: Risk[Content]: drivers of buggies and FLTs leave their vehicles anywhere they can at break times - possibly blocking access to equipment or blocking escape routes [InjuryNature]: None [LocationDetail]: near canteen [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 07/11/2013 [DateIncidentOccurred]: 27/08/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: have designated parking areas for buggies and FLTs];[Corrective Actions: all team leaders have been instructed to tell their drivers to use alternative parking];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114065</SourceId>
+        <SourceName>8515</SourceName>
+        <Content>[Domain]: Risk[Content]: over spray from booths coming to the paint floor leaving dry spray over tools [InjuryNature]: None [LocationDetail]: paint booth [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 2-Medium [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 01/11/2013 [DateIncidentOccurred]: 02/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: new booths ];[Corrective Actions: Paint extraction now been improved ];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112314</SourceId>
+        <SourceName>6752</SourceName>
+        <Content>[Domain]: Risk[Content]: employee fell leaving Lean-Tek area as floor is not level - trip hazard [InjuryNature]: None [LocationDetail]: zebra crossing outside Lean-Tek [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 28/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: tele-request needed];[Corrective Actions: completed (feathered out)];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114529</SourceId>
+        <SourceName>8979</SourceName>
+        <Content>[Domain]: Risk[Content]: line operators are leaving maskings and other debris around the fan area - parts shoot out upon start-up and could injure somebody [InjuryNature]: None [LocationDetail]: slat line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 27/02/2014 [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ensure maskings and debris is removed from fan and shroud area];[Corrective Actions: Toolbox talk issued this week to line operators.  (Closed).
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112912</SourceId>
+        <SourceName>7353</SourceName>
+        <Content>[Domain]: Risk[Content]: lorries manouvering as cars are leaving the car park [InjuryNature]: None [LocationDetail]: south road [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 13/05/2013 11:54:19 [DateIncidentOccurred]: 20/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: stop lorries at end of shift times];[Corrective Actions: normal traffic - no action taken];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111651</SourceId>
+        <SourceName>6089</SourceName>
+        <Content>[Domain]: Risk[Content]: Rear Road PE&amp;T Test Cells - overflow of make-up tank leaving water all over the road - will become very dangerous if icey. [InjuryNature]:  [LocationDetail]: rear of Test Cells [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 03/12/2012 [DateIncidentOccurred]: 22/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: water cleaned regularly];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114281</SourceId>
+        <SourceName>8731</SourceName>
+        <Content>[Domain]: Risk[Content]: stop operators from leaving old zip ties on the floor - they are a slip hazard [InjuryNature]: None [LocationDetail]: V7 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 05/11/2013 [DateIncidentOccurred]: 23/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: have a word];[Corrective Actions: ALL operators spoken to about housekeeping];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>118244</SourceId>
+        <SourceName>12709</SourceName>
+        <Content>[Domain]: Risk[Content]: leaving a fuel tank on the hoist unattended [InjuryNature]: None [LocationDetail]: M15 [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 27/11/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: never leave hoist loaded and unattended];[Corrective Actions: noted];[Countermeasures: None]</Content>
+        <OverallMatchValue>64</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>120003</SourceId>
+        <SourceName>Pedestrian access</SourceName>
+        <Content>[Domain]: Risk[Content]: Cab line operators walking through pedestal line cab drop area [InjuryNature]: Hematoma/Bruise [LocationDetail]: Pedestal Line [BodyPart]: Head [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]:  [RootCause]:  [RoutineWork]:  [ShiftType]:  [Title]:  [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 16/03/2015 09:19:43 [Miscellaneous]:  [SolutionDescription]: [Recommendation:change the density of the operators - operators uto avoid going through cab dropto be;Put up Restricted area sign - sign in place;divide the people  up - people to be separeted from the line to prevent access];[Corrective Actions:];[Countermeasures:]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>120006</SourceId>
+        <SourceName>Near Miss</SourceName>
+        <Content>[Domain]: Risk[Content]: Glass in the cab door shattered when closing the door in the cab drop area [InjuryNature]: Abrasions/Cuts/Laceration [LocationDetail]: Pedestal Line [BodyPart]: Head [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]:  [RootCause]:  [RoutineWork]:  [ShiftType]:  [Title]:  [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 16/03/2015 00:00:00 [Miscellaneous]:  [SolutionDescription]: [Recommendation:avoid stress in the door , and/or the situation, before it happens - was the door closed using excessive force?; unfortunately certain conditions cause glass to break ,to notify bob jarvis to notify croix in possibility of adding grease to hinges;RESOLUTION: supplier to investigate the quality of the glass or the glass fitting process. Excessive force was not used during this operation. Bob Jarvis (Quality) working on this issue with the supplier.Item closed];[Corrective Actions:];[Countermeasures:]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113391</SourceId>
+        <SourceName>7834</SourceName>
+        <Content>[Domain]: Risk[Content]: slats on cab line are uneven - trip hazard [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 07/08/2013 07:54:29 [DateIncidentOccurred]: 13/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: already reported];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110149</SourceId>
+        <SourceName>4586</SourceName>
+        <Content>[Domain]: Risk[Content]: CAB MOUNT L/HAND SIDE HAD TO HAND LIFT ONTO UNIT WITH HELP LIFTING HOCK WOULD NOT LIFT OUT OF RAKING [InjuryNature]:  [LocationDetail]: J5 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/02/2012 [DateIncidentOccurred]: 24/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116080</SourceId>
+        <SourceName>10538</SourceName>
+        <Content>[Domain]: Risk[Content]: Cab line cabs on whells trailers require a usable simple appoach to inspection. [InjuryNature]: None [LocationDetail]: Cabline. [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: SMAT/Inspections - Resulting UA or UC [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 31/03/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Kaizen raised by Shaun Hoddy. Put team together after WCM audit to address];[Corrective Actions: steve young to put a system in place for new effective inspection process];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116328</SourceId>
+        <SourceName>10792</SourceName>
+        <Content>[Domain]: Risk[Content]: tour guide leads groups of visitors across the cab line while it's moving - also many visitors are not wearing safety footwear so should stick to the marked walkways [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 13/03/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: Tour Guides informed all H&amp;S in the factory and are reminded to stick to pathways.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110731</SourceId>
+        <SourceName>5169</SourceName>
+        <Content>[Domain]: Risk[Content]: Cab mounts STILL coming in as card-board boxes [InjuryNature]:  [LocationDetail]: Medical Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 24/10/2012 [DateIncidentOccurred]: 06/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: replaced by 763];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116409</SourceId>
+        <SourceName>10873</SourceName>
+        <Content>[Domain]: Risk[Content]: FLT driver leaning over side of stairs to clean roof of his cab [InjuryNature]: None [LocationDetail]: W17 stairs [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 22/05/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: Need name of driver];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116467</SourceId>
+        <SourceName>10931</SourceName>
+        <Content>[Domain]: Risk[Content]: error by Ped Line operator
+had to get in the cab via the narrow right side step as left side step was missing [InjuryNature]: None [LocationDetail]: slat line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 03/06/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: as per 10929];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114658</SourceId>
+        <SourceName>9108</SourceName>
+        <Content>[Domain]: Risk[Content]: cab line slats are uneven causing a trip hazard [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 13/11/2013 11:15:51 [DateIncidentOccurred]: 19/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: repair them];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111183</SourceId>
+        <SourceName>5621</SourceName>
+        <Content>[Domain]: Risk[Content]: Breaing in diesel funes while road testing less cab tractors on rolling road [InjuryNature]:  [LocationDetail]: Garage [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/10/2012 [DateIncidentOccurred]: 03/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: duplicated on 1003];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110029</SourceId>
+        <SourceName>4466</SourceName>
+        <Content>[Domain]: Risk[Content]: DESPATCH DRIVERS STANDING UP WHEN DRIVING LESS CAB TRACTORS AT EXCESSUBL SPEED ALSO THE DANGER BEING THE DRIVER COULD FULL UNDER THE WHEELS WHILE THE TRACTOR IS STILL MOVING ALSO PEOPE WORKING IN WHEEL PITCH AREA [InjuryNature]:  [LocationDetail]: Wheel Change Area [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 14/02/2012 [DateIncidentOccurred]: 06/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110608</SourceId>
+        <SourceName>5046</SourceName>
+        <Content>[Domain]: Risk[Content]: Hired tow buggy (515JBL) on cab line pulls to the right when braking. [InjuryNature]:  [LocationDetail]: Buggy [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 10/05/2012 [DateIncidentOccurred]: 03/05/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: Buggy 515JBL was serviced on the 10th May and the front tyre was changed because it was worn one side and causing the buggy to pull to the right.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>115737</SourceId>
+        <SourceName>10188</SourceName>
+        <Content>[Domain]: Risk[Content]: Clifton Walton was delivery to stop 5 rack 2 zone two of pedestal line. whilst walking with boxes of stock his left lower shin struck a cab devilery trailer tow hook that had been left in the downward position by a pedestal line zone one operator. A factor that also contributed to this first aid incident was that one of theinformation boards had been moved to the right from its designated area. [InjuryNature]: None [LocationDetail]: Pedestal line zone 2 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/02/2014 [DateIncidentOccurred]: 30/01/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Esure that a safe system of work is in place with operators instructed in the correct process. Ensure that in the event of a mistake there is no risk to other employees. Designated areas for trailer.];[Corrective Actions: Designated area for cab trailers is barriered of to define correct position eliminating any further trip hazards . All cab drop operators trained in this process.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117275</SourceId>
+        <SourceName>11739</SourceName>
+        <Content>[Domain]: Risk[Content]: Joe Cooke pressed the wrong button when operating the hoist causing him to crush his finger between the cab and the lifting attachment. [InjuryNature]: Contusion/Crush/Concusion [LocationDetail]: Cab line zone 1 cab lift. [BodyPart]: Hands [InjuryCause]: Lifting Objects [IncidentPriority]:  [IncidentStatus]:  [RootCause]: Precautions-Attention [RoutineWork]:  [ShiftType]:  [Title]: Accident Report [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 18/09/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: TWTTP performed, New handle fitted to the attachment to remove any potential of a crush injury warning signage on attachement instructing the use of the handle.];[Countermeasures: OPL, Training, Safety Talks]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117174</SourceId>
+        <SourceName>11638</SourceName>
+        <Content>[Domain]: Risk[Content]: oil on slats at the front of the cab line and leaking under the line - slip hazard [InjuryNature]: None [LocationDetail]: AA3 [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 20/08/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: all steering motors have a plastic bag to catch the oil and are removed at the end of cab line];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116329</SourceId>
+        <SourceName>10793</SourceName>
+        <Content>[Domain]: Risk[Content]: a slat in the cab line has been partially bent-up causing a trip hazard [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 21/03/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: repair slat];[Corrective Actions: Slat Repaired];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117669</SourceId>
+        <SourceName>12134</SourceName>
+        <Content>[Domain]: Risk[Content]: person walking through cab hole when it's clearly signed "No Pedestrians" [InjuryNature]: None [LocationDetail]: cab hole [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 27/06/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: pedestrian not named];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111200</SourceId>
+        <SourceName>5638</SourceName>
+        <Content>[Domain]: Risk[Content]: Two people walked acress restricted area in cab lift and nearly got hi by moving cab [InjuryNature]:  [LocationDetail]: Pedestal Line Cab Lift [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Near Miss Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 04/10/2012 [DateIncidentOccurred]: 01/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Put up Restricted area sign];[Corrective Actions: persons in question counselled barriers in place ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117841</SourceId>
+        <SourceName>12306</SourceName>
+        <Content>[Domain]: Risk[Content]: work force cutting through cab prep area - risk of injury [InjuryNature]: None [LocationDetail]: ped line Z1 [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 17/11/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: no names then no action];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112958</SourceId>
+        <SourceName>7399</SourceName>
+        <Content>[Domain]: Risk[Content]: P/N 84535396 cab mount delivered to line in cardboard box [InjuryNature]: None [LocationDetail]: J4 Med Line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 14/05/2013 09:50:11 [DateIncidentOccurred]: 13/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: use appropriate rack];[Corrective Actions: M Rudd says this is not unsafe];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113717</SourceId>
+        <SourceName>8162</SourceName>
+        <Content>[Domain]: Risk[Content]: employees walking through cab line to get to canteen [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 16/10/2013 [DateIncidentOccurred]: 27/08/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: enforce H&amp;S regs and ensure that employees keep to designated walkways];[Corrective Actions: I would suggest that if Health and Safety team agree with this then they should bring out a toolbox talk and then implement this fix action];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117751</SourceId>
+        <SourceName>12216</SourceName>
+        <Content>[Domain]: Risk[Content]: DCP Contractors - 2 guys continue to cut through cab drop area, over a moving line onto a busy aisle just to get to the canteen [InjuryNature]: None [LocationDetail]: cab drop [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 16/10/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: better H&amp;S inductions so they're aware of walkways etc];[Corrective Actions: noted];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117299</SourceId>
+        <SourceName>11763</SourceName>
+        <Content>[Domain]: Risk[Content]: cab loom hook covered in burrs that cut through my glove [InjuryNature]: None [LocationDetail]: ped line Z1 [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 02/09/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: hooks need to be checked by cab line];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114528</SourceId>
+        <SourceName>8978</SourceName>
+        <Content>[Domain]: Risk[Content]: numerous trip hazards in cab - parts not fitted, torn parts packs, tool box, etc [InjuryNature]: None [LocationDetail]: slat line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 27/02/2014 [DateIncidentOccurred]: 17/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: caught up in safer area (garage)];[Corrective Actions: This is now situated on the r/h side of the cab.  Not trip hazard.  (Closed).
+];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>115455</SourceId>
+        <SourceName>9906</SourceName>
+        <Content>[Domain]: Risk[Content]: roof leak at end of cab line [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: True [ContractorName]:  [DateClosed]: 29/11/2013 11:27:13 [DateIncidentOccurred]: 26/11/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: fix roof];[Corrective Actions: already reported];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110700</SourceId>
+        <SourceName>5138</SourceName>
+        <Content>[Domain]: Risk[Content]: Operator removing the retaining bolts holding cab to skids had to use a extension bar because of cross threaded bolts, this use of bar caused the operator to slip. [InjuryNature]:  [LocationDetail]: Pedestal Line zone 1 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Near Miss Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 24/05/2012 [DateIncidentOccurred]: 24/05/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Review of the process, this task has ergonomic problems,];[Corrective Actions: New bolts supplied for this task.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>115861</SourceId>
+        <SourceName>10319</SourceName>
+        <Content>[Domain]: Risk[Content]: cab on wheels trailer park - brake fluid pallets flooring has broken up and is a potential trip hazard [InjuryNature]: None [LocationDetail]: ped line Z2 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: Tools-Equipments [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 17/02/2014 08:30:17 [DateIncidentOccurred]: 11/02/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: flooring needs repair to avoid accidents];[Corrective Actions: Telerequested Vince Horsley aware,  redirect to VH];[Countermeasures: Maintenance]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117590</SourceId>
+        <SourceName>12055</SourceName>
+        <Content>[Domain]: Risk[Content]: complaint against cab line
+on checking air brakes operatorfound steering loose - further investigation revealed that the pedal box bolts were also loose - this is very dangerous as you can lose steering and brakes [InjuryNature]: None [LocationDetail]: TLB [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 30/09/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: better checks on cab line];[Corrective Actions: Operator instructed to check operation when finished and stamp Quality check sheet after each operation];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116901</SourceId>
+        <SourceName>11365</SourceName>
+        <Content>[Domain]: Risk[Content]: closing rear window on cab when it shattered - hinges are not greased so window is stiff and it creaks [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 30/06/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: unfortunately certain conditions cause glass to break ,to notify bob jarvis to notify croix in possibility of adding grease to hinges];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>115800</SourceId>
+        <SourceName>10251</SourceName>
+        <Content>[Domain]: Risk[Content]: RH keeps moving safety barriers at cab pick-up [InjuryNature]: None [LocationDetail]: ped line Z1 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 08/02/2014 [DateIncidentOccurred]: 31/01/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: None suggested];[Corrective Actions: Re locate barrier for ideal location for operator and buggy driver alike &gt;];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>117881</SourceId>
+        <SourceName>12346</SourceName>
+        <Content>[Domain]: Risk[Content]: complaint against Croix
+only fitting cab to skid with one bolt is not safe at all [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 06/11/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: investigating the spec, Bob Jarvis speaking to Croix.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116459</SourceId>
+        <SourceName>10923</SourceName>
+        <Content>[Domain]: Risk[Content]: Mr XXXX drove a tractor off the line with no brakes - there was a sign in the cab window saying "No Brakes" - very dangerous [InjuryNature]: None [LocationDetail]: start up [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 03/06/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: This is not permitted should have been towed off but without a name cannot deal with person responsible];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116353</SourceId>
+        <SourceName>10817</SourceName>
+        <Content>[Domain]: Risk[Content]: small floor plate left loose in cab - I slipped when getting in [InjuryNature]: None [LocationDetail]: garage [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 19/05/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: do not leave loose items - refit with at least two bolts];[Corrective Actions: This process is done on the pedestal line please send to Sam Gibson];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110288</SourceId>
+        <SourceName>4726</SourceName>
+        <Content>[Domain]: Risk[Content]: left hand cab mount arrived from supplier with bolts loose and have now only been nipped up with a spanner so not at correct torques which can present a danger if they came loose further along the line, i am refusing to lift them up using a hoist in a state like this [InjuryNature]:  [LocationDetail]: Medical Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/03/2012 [DateIncidentOccurred]: 16/02/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111639</SourceId>
+        <SourceName>6077</SourceName>
+        <Content>[Domain]: Risk[Content]: Tier 4 LWB cab mount holes blocked [InjuryNature]:  [LocationDetail]: Cab Drop [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 03/12/2012 [DateIncidentOccurred]: 29/11/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: duplicate of 1446];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112083</SourceId>
+        <SourceName>6521</SourceName>
+        <Content>[Domain]: Risk[Content]: screws found in front cab mount holes - cab would not deck owing to the blockage - build inspection of cab mount brackets into work practices before cab is mounted [InjuryNature]:  [LocationDetail]: Ped Line Z1 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 25/02/2013 [DateIncidentOccurred]: 13/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: check in place on medical line and begining of pedestal line to make sure area is clear from hardware ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114259</SourceId>
+        <SourceName>8709</SourceName>
+        <Content>[Domain]: Risk[Content]: bolt sticking out of ground outside near smoking area (rear of cab line) - trip hazard [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/03/2014 [DateIncidentOccurred]: 02/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: remove or cut down bolt - telerequest needed];[Corrective Actions: telerequest raised];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112080</SourceId>
+        <SourceName>6518</SourceName>
+        <Content>[Domain]: Risk[Content]: raised floor plate in cab-drop area - trip hazard
+Telerequest needed [InjuryNature]:  [LocationDetail]: Ped Line Z1 [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 19/02/2013 [DateIncidentOccurred]: 13/02/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: telerequested and fixed ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116236</SourceId>
+        <SourceName>10695</SourceName>
+        <Content>[Domain]: Risk[Content]: unit 787324 - when operator tried to connect +ve terminal on battery, it sparked and a loud bang was heard from the starter motor area - investigation revealedthat gris heat loom and engine loom were trapped under the cab having been wringly routed on med line [InjuryNature]: None [LocationDetail]: ped line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 23/04/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: none offered];[Corrective Actions: process reiterated with operator by group leader and team leader ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114023</SourceId>
+        <SourceName>8473</SourceName>
+        <Content>[Domain]: Risk[Content]: less cab side rubber came off trolley when passing [InjuryNature]: None [LocationDetail]: X9 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 2-Medium [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 28/10/2013 13:23:41 [DateIncidentOccurred]: 17/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: re-design loading fixture ];[Corrective Actions: One off incident, no further action.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113348</SourceId>
+        <SourceName>7790</SourceName>
+        <Content>[Domain]: Risk[Content]: Cab roof are left suspended during breaks. Employees are walking under suspended load when making way to canteen. [InjuryNature]: None [LocationDetail]: Cab Trim roof fitting area. [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 09/07/2013 [DateIncidentOccurred]: 08/07/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Barrier off area to restrict access. Loads MUST not be left suspended so that employees can walk under them.];[Corrective Actions: group leader and operator instructed to leave roofs at low level until point of fitting, area to be cross hatched (awaiting materials) also looking at suitable location for barrier.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112992</SourceId>
+        <SourceName>7433</SourceName>
+        <Content>[Domain]: Risk[Content]: objects placed in front cab bolt mounts preventing the cab being decked - impossible for it to be accidental, musy have been deliberate - from Med Line operator? [InjuryNature]: None [LocationDetail]: Cab Drop [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 22/06/2013 [DateIncidentOccurred]: 10/05/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: liaise with KP and inspect cab mounts on Med Line];[Corrective Actions: KP aware check in place to make sure cab mounts are free from any rubbish];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116922</SourceId>
+        <SourceName>11386</SourceName>
+        <Content>[Domain]: Risk[Content]: cab windscreen gets smashed but the line isn't stopped - operators expected to work in the glass filled cab with half a smashed windscreen hanging like a guillotine - worse still GLs start knocking the rest of the screen out while we are still working in cab - bits caught me in the face [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 15/07/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: stop the line and clean or remove the cab];[Corrective Actions: ALL operators are told to keep clear of cab when this occurs and move onto their next cab to build, i do not expect any operators to work on cab whilst it is being made good! i will monitor this is future];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>115615</SourceId>
+        <SourceName>10066</SourceName>
+        <Content>[Domain]: Risk[Content]: Operator is having to step up onto the cab steps when removing straps. [InjuryNature]: None [LocationDetail]: Pedestal line zone 1 [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 2-Medium [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: SMAT/Inspections - Resulting UA or UC [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/02/2014 [DateIncidentOccurred]: 16/01/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: Put into place a rotation system.];[Corrective Actions: Rotation of operators in place .];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110579</SourceId>
+        <SourceName>5017</SourceName>
+        <Content>[Domain]: Risk[Content]: Having to lift cab mounts on by hand due to no stock on line ( truck broke down this time). [InjuryNature]:  [LocationDetail]: Pedestal Line [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/05/2012 [DateIncidentOccurred]: 30/04/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>113853</SourceId>
+        <SourceName>8299</SourceName>
+        <Content>[Domain]: Risk[Content]: cab mount boxes need rebalancing - as stock goes down rack falls off end and hits floor [InjuryNature]: None [LocationDetail]: med line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 02/10/2013 [DateIncidentOccurred]: 10/09/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: repair boxes that carry stock (cab mounts)];[Corrective Actions: boxes now repaired.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>112820</SourceId>
+        <SourceName>7261</SourceName>
+        <Content>[Domain]: Risk[Content]: non cab-line employees walking through no pedestrian access area [InjuryNature]: None [LocationDetail]: Cab Line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 09/05/2013 09:41:38 [DateIncidentOccurred]: 30/04/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: TBT on use of walkways, pedestrian restrictions etc];[Corrective Actions: TBT issued in April - area supervisor to monitor];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>114953</SourceId>
+        <SourceName>9403</SourceName>
+        <Content>[Domain]: Risk[Content]: buggy drivers cutting through cab storage area [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 25/11/2013 [DateIncidentOccurred]: 29/10/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: All buggy drivers instructed to use correct routes];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111908</SourceId>
+        <SourceName>6346</SourceName>
+        <Content>[Domain]: Risk[Content]: FLT removed skid too early causing cab to spin [InjuryNature]:  [LocationDetail]: Cab Lift [BodyPart]:  [InjuryCause]:  [IncidentPriority]:  [IncidentStatus]: Closed [RootCause]:  [RoutineWork]: False [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/02/2013 [DateIncidentOccurred]: 24/01/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: already reported on 1573];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>116244</SourceId>
+        <SourceName>10703</SourceName>
+        <Content>[Domain]: Risk[Content]: FLTs continuously speeding - even when reversing - when bringing hoods to cab sub-assembly [InjuryNature]: None [LocationDetail]: Y4-Y20 [BodyPart]: None [InjuryCause]: None [IncidentPriority]:  [IncidentStatus]:  [RootCause]: None [RoutineWork]:  [ShiftType]:  [Title]: Unsafe Act/Condition form [ClosedByOperator]:  [ContractorName]:  [DateClosed]:  [DateIncidentOccurred]: 08/05/2014 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: stick to internal speed limit of 5mph];[Corrective Actions: Instucter Sam Gibson to talk to the two drivers moving hoods in that area and GSI driver.
+
+Not enough information to identify the exact driver.];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>115325</SourceId>
+        <SourceName>9776</SourceName>
+        <Content>[Domain]: Risk[Content]: bucket hanging from roof above cab line [InjuryNature]: None [LocationDetail]: cab line [BodyPart]: None [InjuryCause]: None [IncidentPriority]: 1-Low [IncidentStatus]: Closed [RootCause]: None [RoutineWork]: True [ShiftType]: Day [Title]: Unsafe Act/Condition form [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 26/11/2013 13:36:09 [DateIncidentOccurred]: 25/11/2013 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: remove it - it could fall];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>39</OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110433</SourceId>
+        <SourceName>4871</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Contusion/Crush/Concusion [LocationDetail]:  [BodyPart]: Head [InjuryCause]: Hand Tools [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Precautions-Attention [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/03/2012 [DateIncidentOccurred]: 16/03/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110528</SourceId>
+        <SourceName>4966</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Contusion/Crush/Concusion [LocationDetail]: Buggy driver [BodyPart]: Hands [InjuryCause]: Handling [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Attitude-Behaviour [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/05/2012 [DateIncidentOccurred]: 17/04/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111515</SourceId>
+        <SourceName>5953</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]: Area U18 [BodyPart]: Leg [InjuryCause]: Slip, Trips &amp; Falls [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Personal Conditions [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/11/2012 [DateIncidentOccurred]: 29/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110448</SourceId>
+        <SourceName>4886</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]:  [BodyPart]: Hands [InjuryCause]: Stepping On / Striking Against [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Precautions-Attention [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 23/03/2012 [DateIncidentOccurred]: 21/03/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110620</SourceId>
+        <SourceName>5058</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Foreign Bodies [LocationDetail]:  [BodyPart]: Hands [InjuryCause]: Lifting Objects [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Tools-Equipments [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 21/05/2012 [DateIncidentOccurred]: 10/05/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110427</SourceId>
+        <SourceName>4865</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Contusion/Crush/Concusion [LocationDetail]:  [BodyPart]: Arm [InjuryCause]: Handling [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Attitude-Behaviour [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 20/03/2012 [DateIncidentOccurred]: 15/03/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111431</SourceId>
+        <SourceName>5869</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Contusion/Crush/Concusion [LocationDetail]: Canteen by change machine [BodyPart]: Leg [InjuryCause]: Slip, Trips &amp; Falls [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Procedures-Systems [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 06/11/2012 [DateIncidentOccurred]: 16/10/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110143</SourceId>
+        <SourceName>4580</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]:  [BodyPart]: Leg [InjuryCause]: Hand Tools [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Tools-Equipments [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 04/04/2012 [DateIncidentOccurred]: 24/01/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110753</SourceId>
+        <SourceName>5191</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]:  [BodyPart]: Hands [InjuryCause]: Handling [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Attitude-Behaviour [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 03/07/2012 [DateIncidentOccurred]: 13/06/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110331</SourceId>
+        <SourceName>4769</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]:  [BodyPart]: Leg [InjuryCause]: Slip, Trips &amp; Falls [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Management [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 17/07/2012 [DateIncidentOccurred]: 20/02/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>110908</SourceId>
+        <SourceName>5346</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Contusion/Crush/Concusion [LocationDetail]:  [BodyPart]: Head [InjuryCause]: Hand Tools [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Tools-Equipments [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 30/08/2012 [DateIncidentOccurred]: 23/07/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+    <MatchedSource>
+        <SourceId>111018</SourceId>
+        <SourceName>5456</SourceName>
+        <Content>[Domain]: Risk[Content]:  [InjuryNature]: Abrasion/Cuts/Lacerations [LocationDetail]: Maintenance Workshop [BodyPart]: Hands [InjuryCause]: Hand Tools [IncidentPriority]: 3-High [IncidentStatus]: Closed [RootCause]: Attitude-Behaviour [RoutineWork]: False [ShiftType]: Day [Title]: Accident Report [ClosedByOperator]: False [ContractorName]:  [DateClosed]: 15/10/2012 [DateIncidentOccurred]: 13/09/2012 [Miscellaneous]: --- [SolutionDescription]: [Recommendation: ];[Corrective Actions: ];[Countermeasures: None]</Content>
+        <OverallMatchValue>
+        </OverallMatchValue>
+    </MatchedSource>
+</MatchedSources>

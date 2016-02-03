@@ -59,7 +59,7 @@
 		</div>
 		<div id="multiselectionbuttons">
 			<img alt="home" style="position:relative; TOP:2px;  height: 45%" src="Theme/images/numbers-4-filled-icon.png" /> 
-			Summary
+			Preview and Submit
 		</div>
 	</div>
 

@@ -67,9 +67,9 @@
 
 	<div id="topbar2Sub">
 		<div id="multiselectionbuttonsSub">
+			<a href="javascript:doLoad('CreateIdeas_PastRisks.aspx');">Ideas from previous risks</a>
 			<a id="pressed" href="">Ideas from new risk</a>
 			<a href="javascript:doLoad('CreateIdeas_Superheroes.aspx');">Ideas from Superheroes</a>
-			<a href="javascript:doLoad('CreateIdeas_PastRisks.aspx');">Ideas from previous risks</a>
 		</div>
 	</div>
 		

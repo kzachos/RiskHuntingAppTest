@@ -437,6 +437,18 @@ a {
     background-color: White;
     z-index: 999;
 }
+.loadingLarge
+{
+    font-family: Arial;
+    font-size: 10pt;
+    border: 5px solid #67CFF5;
+    width: 500px;
+    height: 800px;
+    display: none;
+    position: fixed;
+    background-color: White;
+    z-index: 999;
+}
 .txtbox
 {
     border-top-left-radius: 8px;
@@ -639,7 +651,7 @@ fieldset {
 .pageitembutton li:first-child, .pageitembutton li.form:first-child {
 	border-top: 0;
 }
-.menu, .radiobutton, .select, li.button, li.button2, li.button3, li.buttonGrey, li.bigfield, li.smallfield {
+.menu, .radiobutton, .select, li.button, li.button2, li.button3, li.buttonGrey, li.buttonLightGrey, li.bigfield, li.smallfield {
 	position: relative;
 	list-style-type: none;
 	display: block;
@@ -663,19 +675,19 @@ fieldset {
 	border-top: 1px solid #878787;
 	width: auto;
 }
-.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
+.pageitem li:first-child:hover, .pageitem li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, li.buttonLightGrey:first-child input, .bigfield:first-child input {
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-top-right-radius: 8px;
 }
-.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, .bigfield:first-child input {
+.pageitembutton li:first-child:hover, .pageitembutton li:first-child a, .radiobutton:first-child input, .select:first-child select, li.button:first-child input, li.button2:first-child input, li.button3:first-child input, li.buttonGrey:first-child input, li.buttonLightGrey:first-child input, .bigfield:first-child input {
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-top-right-radius: 8px;
 }
-.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
+.pageitem li:last-child:hover, .pageitem li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, li.buttonLightGrey:last-child input, .bigfield:last-child input {
 	-webkit-border-bottom-left-radius: 8px;
 	-webkit-border-bottom-right-radius: 8px;
 }
-.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, .bigfield:last-child input {
+.pageitembutton li:last-child:hover, .pageitembutton li:last-child a, .radiobutton:last-child input, .select:last-child select, li.button:last-child input, li.button2:last-child input, li.button3:last-child input, li.buttonGrey:last-child input, li.buttonLightGrey:last-child input, .bigfield:last-child input {
 	-webkit-border-bottom-left-radius: 8px;
 	-webkit-border-bottom-right-radius: 8px;
 }
@@ -1501,6 +1513,24 @@ select {
   border: solid 1px #787878;
   background-color: #787878;
 }
+.buttonLightGrey input {
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  padding: 7px;
+  font-family: Lucida Sans, Tahoma, sans-serif;
+  font-size:18px;
+  font-weight:600;
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  color: #787878;
+  border-radius: 4px 4px 4px 4px;
+  border: solid 1px #EEEEEE;
+  background-color: #EEEEEE;
+}
+
 .textbox textarea {
 	padding: 0;
 	margin-top: 5px;
@@ -1550,6 +1580,25 @@ select {
 	-webkit-border-bottom-right-radius: 8px;
 }
 #progress{-webkit-border-radius:10px;background-color:black;color:white;font-size:18px;font-weight:bold;height:150px;left:60px;line-height:80px;margin:0 auto;position:absolute;text-align:center;top:150px;width:200px;z-index:5000}
+
+#progress2 {
+	-webkit-border-radius:10px;
+	border-style: solid;
+    border-color: black;
+    border-width:1px;
+	background-color:#E3F7FC;
+	color:black;
+	font-size:15px;
+	font-weight:bold;
+	height:300px;
+	left:60px;
+	line-height:30px;
+	margin:0 auto;
+	position:absolute;
+	text-align:center;
+	top:350px;
+	width:550px;
+	z-index:5000}
 
 /* quadbutton */
 #quadbutton{

@@ -3,6 +3,21 @@
   <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">A web service that performs natural language discovery based on the Expansion and Disambiguation Discovery Engine (EDDiE) Algorithm. Query matching is in 2 steps: (i) XQuery text-searching functions to discover an initial set of case descriptions that satisfy global search constraints (CoarseGrainedMatching); (ii) traditional vector-space model IR, enhanced with WordNet, to further refine and assess the quality of the candidate case set (FineGrainedMatching).</wsdl:documentation>
   <types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CheckExistCase">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="facetType" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="caseID" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckExistCaseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CheckExistCaseResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="RemoveCase">
         <xs:complexType>
           <xs:sequence>
@@ -199,6 +214,12 @@
       <xs:element name="string" nillable="true" type="xs:string" />
     </xs:schema>
   </types>
+  <message name="CheckExistCaseSoapIn">
+    <part name="parameters" element="tns:CheckExistCase" />
+  </message>
+  <message name="CheckExistCaseSoapOut">
+    <part name="parameters" element="tns:CheckExistCaseResponse" />
+  </message>
   <message name="RemoveCaseSoapIn">
     <part name="parameters" element="tns:RemoveCase" />
   </message>
@@ -289,6 +310,13 @@
   <message name="StoreXmlDocumentSoapOut">
     <part name="parameters" element="tns:StoreXmlDocumentResponse" />
   </message>
+  <message name="CheckExistCaseHttpGetIn">
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="CheckExistCaseHttpGetOut">
+    <part name="Body" element="tns:string" />
+  </message>
   <message name="RemoveCaseHttpGetIn">
     <part name="facetType" type="s:string" />
     <part name="caseID" type="s:string" />
@@ -374,6 +402,13 @@
     <part name="sourceId" type="s:string" />
   </message>
   <message name="StoreXmlDocumentHttpGetOut" />
+  <message name="CheckExistCaseHttpPostIn">
+    <part name="facetType" type="s:string" />
+    <part name="caseID" type="s:string" />
+  </message>
+  <message name="CheckExistCaseHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
   <message name="RemoveCaseHttpPostIn">
     <part name="facetType" type="s:string" />
     <part name="caseID" type="s:string" />
@@ -460,6 +495,11 @@
   </message>
   <message name="StoreXmlDocumentHttpPostOut" />
   <portType name="EDDiE_x0020_Web_x0020_ServiceSoap">
+    <operation name="CheckExistCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be checked in the database if it exists&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  string that is either true or false </wsdl:documentation>
+      <input message="tns:CheckExistCaseSoapIn" />
+      <output message="tns:CheckExistCaseSoapOut" />
+    </operation>
     <operation name="RemoveCase">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be removed from the database&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
       <input message="tns:RemoveCaseSoapIn" />
@@ -537,6 +577,11 @@
     </operation>
   </portType>
   <portType name="EDDiE_x0020_Web_x0020_ServiceHttpGet">
+    <operation name="CheckExistCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be checked in the database if it exists&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  string that is either true or false </wsdl:documentation>
+      <input message="tns:CheckExistCaseHttpGetIn" />
+      <output message="tns:CheckExistCaseHttpGetOut" />
+    </operation>
     <operation name="RemoveCase">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be removed from the database&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
       <input message="tns:RemoveCaseHttpGetIn" />
@@ -614,6 +659,11 @@
     </operation>
   </portType>
   <portType name="EDDiE_x0020_Web_x0020_ServiceHttpPost">
+    <operation name="CheckExistCase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be checked in the database if it exists&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  string that is either true or false </wsdl:documentation>
+      <input message="tns:CheckExistCaseHttpPostIn" />
+      <output message="tns:CheckExistCaseHttpPostOut" />
+    </operation>
     <operation name="RemoveCase">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;Input&lt;/b&gt;: the type of facet AND the case id that should be removed from the database&lt;br&gt;&lt;b&gt;Output&lt;/b&gt;:  none </wsdl:documentation>
       <input message="tns:RemoveCaseHttpPostIn" />
@@ -692,6 +742,15 @@
   </portType>
   <binding name="EDDiE_x0020_Web_x0020_ServiceSoap" type="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CheckExistCase">
+      <soap:operation soapAction="http://tempuri.org/CheckExistCase" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="RemoveCase">
       <soap:operation soapAction="http://tempuri.org/RemoveCase" style="document" />
       <input>
@@ -830,6 +889,15 @@
   </binding>
   <binding name="EDDiE_x0020_Web_x0020_ServiceSoap12" type="tns:EDDiE_x0020_Web_x0020_ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CheckExistCase">
+      <soap12:operation soapAction="http://tempuri.org/CheckExistCase" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
     <operation name="RemoveCase">
       <soap12:operation soapAction="http://tempuri.org/RemoveCase" style="document" />
       <input>
@@ -968,6 +1036,15 @@
   </binding>
   <binding name="EDDiE_x0020_Web_x0020_ServiceHttpGet" type="tns:EDDiE_x0020_Web_x0020_ServiceHttpGet">
     <http:binding verb="GET" />
+    <operation name="CheckExistCase">
+      <http:operation location="/CheckExistCase" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="RemoveCase">
       <http:operation location="/RemoveCase" />
       <input>
@@ -1104,6 +1181,15 @@
   </binding>
   <binding name="EDDiE_x0020_Web_x0020_ServiceHttpPost" type="tns:EDDiE_x0020_Web_x0020_ServiceHttpPost">
     <http:binding verb="POST" />
+    <operation name="CheckExistCase">
+      <http:operation location="/CheckExistCase" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
     <operation name="RemoveCase">
       <http:operation location="/RemoveCase" />
       <input>

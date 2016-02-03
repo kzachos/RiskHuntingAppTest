@@ -20,7 +20,7 @@
 	});
 
 	$('form').live("submit", function () {
-        ShowProgress();
+        ShowProgressSearch();
     });
 
 	window.setTimeout(function () {
@@ -33,6 +33,8 @@
 	        $(this).remove();
 	    });
 	}, 3000);
+
+
 </script>
 <!--[if gte IE 9]>
   <style type="text/css">
@@ -43,7 +45,6 @@
 <![endif]-->
 </head>
 <body>
-
 	<div id="topbar2">
 		<div id="leftnav">
     		<a href="javascript:doLoad('Default.aspx');" ><img alt="home" src="Theme/images/home.png" />
@@ -67,13 +68,15 @@
 
 	<div id="topbar2Sub">
 		<div id="multiselectionbuttonsSub">
+			<a id="pressed" href="">Ideas from previous risks</a>
 			<a href="javascript:doLoad('CreateIdeas_SameRisk.aspx');">Ideas from new risk</a>
 			<a href="javascript:doLoad('CreateIdeas_Superheroes.aspx');">Ideas from Superheroes</a>
-			<a id="pressed" href="">Ideas from previous risks</a>
+
 		</div>
 	</div>
 		
 	<span id="loading"></span>
+
 	<div id="content">
 		<form id="form1" runat="server">
 	

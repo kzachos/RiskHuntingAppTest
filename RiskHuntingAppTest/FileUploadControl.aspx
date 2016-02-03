@@ -78,7 +78,7 @@
 			<div id="previewDiv" runat="server">
 			    <span class="maintitle">Image Preview</span><br>
 			    <p>
-			        <asp:Image ID="Image1" runat="server" Height="500px" Width="500px" />
+			        <asp:Image ID="Image1" runat="server" Height="40%"  />
 			    </p>
 		    </div>
 			<ul class="pageitembutton">

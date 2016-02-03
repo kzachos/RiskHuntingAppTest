@@ -422,7 +422,7 @@ namespace RiskHuntingAppTest
 //			ss.Filename = ss.SourceType + risk.Id + ".docx";
 			ss.Filename = risk.SimilarCasesFound?"Found":String.Empty;
 			ss.LaunchDate = now.ToString();
-			ss.SourceSpecificationLastEdited = now.ToString();
+			ss.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification fspecProblem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacetFacetSpecification();
 			fspecProblem.FacetSpecificationLanguage = "Text";
@@ -458,7 +458,7 @@ namespace RiskHuntingAppTest
 			problem.FacetSpecificationLanguage = "Text";
 			problem.Author = risk.Author;
 			problem.LaunchDate = now.ToString();
-			problem.SourceSpecificationLastEdited = now.ToString();
+			problem.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
 			XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData();
 			fsd.Content = risk.Content;
@@ -500,7 +500,7 @@ namespace RiskHuntingAppTest
 			solution.FacetSpecificationLanguage = "Text";
 			solution.Author = risk.Author;
 			solution.LaunchDate = now.ToString();
-			solution.SourceSpecificationLastEdited = now.ToString();
+			solution.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
 			XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData fsd = new XmlProc.SolutionSerialized.LanguageSpecificSpecificationFacetSpecificationData();
 
@@ -706,7 +706,7 @@ namespace RiskHuntingAppTest
 		{
 			int id = 0;
 			int found = -1;
-			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
 			if (doc.Descendants ("rl").Count () > 0) {
 				foreach (XElement xe in doc.Descendants("rl")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
@@ -724,7 +724,7 @@ namespace RiskHuntingAppTest
 		{
 			int id = 0;
 			int found = -1;
-			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
 			if (doc.Descendants ("bp").Count () > 0) {
 				foreach (XElement xe in doc.Descendants("bp")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
@@ -738,13 +738,13 @@ namespace RiskHuntingAppTest
 
 		}
 
-		public static int GetHtmlSelectIdForInjuryCategory (string searchValue)
+		public static int GetHtmlSelectIdForTypeOfInjury (string searchValue)
 		{
 			int id = 0;
 			int found = -1;
-			var doc = XDocument.Load(Path.Combine (xmlFilesPath, "Parameters.xml"), LoadOptions.None); 
-			if (doc.Descendants ("ic").Count () > 0) {
-				foreach (XElement xe in doc.Descendants("ic")) {
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("TypeOfIncident").Count () > 0) {
+				foreach (XElement xe in doc.Descendants("TypeOfIncident")) {
 					if (xe.Element ("n").Value.Equals (searchValue)) {
 						found = id;
 
@@ -755,6 +755,24 @@ namespace RiskHuntingAppTest
 			return found;
 
 		}
+
+		public static int GetHtmlSelectIdForIncidentCategory (string searchValue)
+		{
+			int id = 0;
+			int found = -1;
+			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
+			if (doc.Descendants ("IncidentCategory").Count () > 0) {
+				foreach (XElement xe in doc.Descendants("IncidentCategory")) {
+					if (xe.Element ("n").Value.Equals (searchValue)) {
+						found = id;
+
+					} else
+						id++;
+				}
+			}
+			return found;
+
+		} 
 
 		public enum ImageFormat
 		{

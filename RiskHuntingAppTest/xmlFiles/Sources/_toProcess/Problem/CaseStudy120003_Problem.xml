@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageSpecificSpecification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FacetType>Problem</FacetType>
+  <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
+  <Author>sdfdfsdf</Author>
+  <LaunchDate>11/05/2015 10:42:20</LaunchDate>
+  <SourceSpecificationLastEdited>23/04/2015</SourceSpecificationLastEdited>
+  <FacetSpecificationData>
+    <Content>the accident is happening even without me</Content>
+    <InjuryNature>Abrasions/Cuts/Laceration</InjuryNature>
+    <LocationDetail>Pedestal Line</LocationDetail>
+    <BodyPart>Whole body</BodyPart>
+    <InjuryCause />
+    <IncidentPriority />
+    <IncidentStatus />
+    <RootCause />
+    <RoutineWork />
+    <ShiftType />
+    <Title />
+    <ClosedByOperator />
+    <ContractorName />
+    <DateClosed />
+    <DateIncidentOccurred>23/04/2015 00:00:00</DateIncidentOccurred>
+    <Miscellaneous>xmlFiles/Sources/Risk/Images/120003/120003.jpg</Miscellaneous>
+    <MatchingDetails />
+  </FacetSpecificationData>
+</LanguageSpecificSpecification>
