@@ -1,19 +1,13 @@
 <?xml version="1.0"?>
 <Parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <IncidentCategory>
-    <n>Accident</n>
-  </IncidentCategory>
-  <IncidentCategory>
-    <n>Near Miss</n>
-  </IncidentCategory>
-  <IncidentCategory>
     <n>Unsafe Act</n>
   </IncidentCategory>
   <IncidentCategory>
     <n>Unsafe Condition</n>
   </IncidentCategory>
   <IncidentCategory>
-    <n>Other</n>
+    <n>Near Miss</n>
   </IncidentCategory>
   <rl>
     <n>Pedestal Line</n>

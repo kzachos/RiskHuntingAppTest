@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using System.Collections.Specialized;
 
 
 namespace RiskHuntingAppTest
@@ -69,8 +70,20 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Init(object sender, EventArgs e)
 		{
-			alert_message_success.Visible = false;
-			alert_message_error.Visible = false;
+			if (DetermineFrom ().Equals ("resolved")) {
+				alert_message_success.Visible = true;
+				successMessage.InnerText = "The risk has been marked as RESOLVED";
+				alert_message_error.Visible = false;
+			} 
+			else if (DetermineFrom ().Equals ("unresolved")) {
+				alert_message_success.Visible = true;
+				successMessage.InnerText = "The risk has been marked as NOT RESOLVED";
+				alert_message_error.Visible = false;
+			} 
+			else {
+				alert_message_success.Visible = false;
+				alert_message_error.Visible = false;
+			}
 			Util.AccessLog(Util.ScreenType.Summary);
 			if (Sessions.RiskState != String.Empty)
 				this.sourceId = Sessions.RiskState;
@@ -90,6 +103,19 @@ namespace RiskHuntingAppTest
 
 
 		}
+
+		private string DetermineFrom()
+		{
+			string c = String.Empty;
+			if (Request.QueryString["pb"] != null)
+			{
+				c = Request.QueryString["pb"];
+				NameValueCollection filtered = new NameValueCollection(Request.QueryString);
+				filtered.Remove("pb");			
+			}
+			return c;
+		}
+
 
 		#region Initializing
 	
@@ -128,6 +154,15 @@ namespace RiskHuntingAppTest
 			sourceDiv.InnerHtml += LiStartTagLabel +
 				GenerateContentHtml ("Date of Incident", this.currentRisk.DateIncidentOccurred.ToShortDateString()) +
 				LiEndTag;
+
+			if (!this.currentRisk.IncidentStatus.Equals (String.Empty)) {
+				resolvedCaseLabel.Text = "Case Marked as Resolved";
+				Resolved.Text = "PRESS HERE TO SEE THE IDEAS THAT RESOLVED THIS RISK";
+			}
+			else {
+				resolvedCaseLabel.Text = "Has it been Resolved?";
+				Resolved.Text = "PRESS HERE TO MARK CASE AS RESOLVED BY SELECTING ONE OR MORE IDEAS";
+			}
 
 //			RiskName.Text = this.currentRisk.Name;
 //			RiskDescription.Text = this.currentRisk.Content;
@@ -401,13 +436,21 @@ namespace RiskHuntingAppTest
 			Session.RemoveAll ();
 			Response.Redirect ("DescribeRisk.aspx");
 		}
+
+		public virtual void resolvedClicked (object sender, EventArgs args)
+		{
+			Util.AccessLog(Util.ScreenType.Summary, Util.FeatureType.Summary_MarkAsResolvedButton);
+
+			Response.Redirect ("MarkAsResolvedRisk.aspx");
+		}
+
 			
 
 		private void SendEmail(bool submission)
 		{
 			string from = "creativecareconsultancy@gmail.com"; //Replace this with your own correct Gmail Address
 
-			string to = "kzachos@gmail.com, lloyd.coulson@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
+			string to = "kzachos@gmail.com, robert.van-der-putten@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
 //			string to = "kzachos@gmail.com, derek.read@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
 
 			MailMessage mail = new MailMessage();

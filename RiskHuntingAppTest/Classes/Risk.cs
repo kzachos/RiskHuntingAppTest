@@ -14,8 +14,8 @@ namespace RiskHuntingAppTest
 //		SimilarRisksFound,
 //		[Description("Actions Formulated")]
 //		ActionsFormulated,
-//		[Description("Risk Resolved")]
-//		RiskResolved
+		[Description("Risk Resolved")]
+		RiskResolved
 	}
 
 	public enum RiskResolutionType {
@@ -40,6 +40,7 @@ namespace RiskHuntingAppTest
 		public DateTime LaunchDate { get; set; }
 		public DateTime LastEdited { get; set; }
 		public string Author { get; set; }
+		public string AuthorFIN { get; set; }
 
 		public string Content { get; set; }
 		public string InjuryNature { get; set; }
@@ -78,7 +79,11 @@ namespace RiskHuntingAppTest
 			Name = ss.SourceName;
 			LaunchDate = Util.ConvertDateTime (ss.LaunchDate);
 			LastEdited = Util.ConvertDateTime (ss.LaunchDate);
-			Author = ss.Facet [0].Author;
+			var author = ss.Facet [0].Author.Split('|');
+			if (author.Length == 2) {
+				Author = author[0];
+				AuthorFIN = author[1];
+			}
 
 			switch (ss.SourceType)
 			{
@@ -91,9 +96,9 @@ namespace RiskHuntingAppTest
 //			case "ActionsFormulated":
 //				State = RiskQueryState.ActionsFormulated;
 //				break;
-//			case "RiskResolved":
-//				State = RiskQueryState.RiskResolved;
-//				break;
+			case "RiskResolved":
+				State = RiskQueryState.RiskResolved;
+				break;
 			}
 
 
@@ -105,8 +110,9 @@ namespace RiskHuntingAppTest
 			BodyPart = !pf.BodyPart.Equals (String.Empty) ? pf.BodyPart : String.Empty;
 			DateIncidentOccurred = Util.ConvertDateTime (p.SourceSpecificationLastEdited);
 			InjuryNature = !pf.InjuryNature.Equals (String.Empty) ? pf.InjuryNature : String.Empty;
+			ContractorName = !pf.ContractorName.Equals (String.Empty) ? pf.ContractorName : String.Empty;
 			ImageUri = !pf.Miscellaneous.Equals(String.Empty) ? pf.Miscellaneous : String.Empty;
-
+			IncidentStatus = !pf.IncidentStatus.Equals (String.Empty) ? pf.IncidentStatus : String.Empty;
 
 			Recommendations = new ArrayList ();
 			Actions = new List<Action> ();

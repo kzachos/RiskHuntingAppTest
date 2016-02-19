@@ -129,7 +129,28 @@ window.setTimeout(function() {
 
 
 		<div id="errorMsg" runat="server"></div>	
-		<span class="maintitle">Select an incident category</span>
+		<span class="maintitle">Reported by</span>
+		<span class="maintitlesmall">(required)</span>
+		<ul class="pageitem">
+			<li class="label">
+				<cc1:WatermarkedTextBox id="RiskAuthor" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="30" cssclass="txtbox" ></cc1:WatermarkedTextBox>
+			</li>
+		</ul>
+		<span class="maintitle">FIN</span>
+		<span class="maintitlesmall">(required)</span>
+		<ul class="pageitem">
+			<li class="label">
+				<cc1:WatermarkedTextBox id="RiskAuthorFIN" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="30" cssclass="txtbox" ></cc1:WatermarkedTextBox>
+			</li>
+		</ul>
+		<span class="maintitle">Description</span>
+		<span class="maintitlesmall">(required)</span>
+		<ul class="pageitem">
+			<li class="label">
+				<cc1:WatermarkedTextBox ID="RiskDescription" Font-Size="Larger" runat="server" TextMode="Multiline" Width="100%" cssclass="txtbox" onkeyup="AutoExpand(this)" Rows="3"></cc1:WatermarkedTextBox>
+			</li>
+		</ul>
+		<span class="maintitle">Incident category</span>
 		<ul class="pageitem">
 			<li class="select">
 			    <select id="RiskName" name="RiskName" runat="server">
@@ -137,45 +158,50 @@ window.setTimeout(function() {
 			    <span class="arrow"></span> 
 			</li>
 		</ul>
-		<span class="maintitle">Please describe the risk</span>
-		<span class="maintitlesmall">(required)</span>
+		<span class="maintitle">Name of the person involved</span>
 		<ul class="pageitem">
 			<li class="label">
-				<cc1:WatermarkedTextBox ID="RiskDescription" Font-Size="Larger" runat="server" TextMode="Multiline" Width="100%" cssclass="txtbox" onkeyup="AutoExpand(this)" Rows="3"></cc1:WatermarkedTextBox>
+				<cc1:WatermarkedTextBox id="RiskPersonInvolved" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="30" cssclass="txtbox" ></cc1:WatermarkedTextBox>
 			</li>
 		</ul>
-		<span class="maintitle">Enter the name and FIN number of the person reporting the risk</span>
-		<span class="maintitlesmall">(required)</span>
-		<ul class="pageitem">
-			<li class="label">
-				<cc1:WatermarkedTextBox id="RiskAuthor" Font-Size="Larger" runat="server" TextMode="MultiLine" Width="100%" Height="30" cssclass="txtbox" ></cc1:WatermarkedTextBox>
-			</li>
-		</ul>
-		<span class="maintitle">Where did it happen?</span>
+		<span class="maintitle">Department</span>
 		<ul class="pageitem">
 			<li class="select">
-			    <select id="RiskLocation" name="RiskLocation" runat="server">
+			    <select id="RiskDepartment" name="RiskDepartment" runat="server">
 			    </select>
 			    <span class="arrow"></span> 
 			</li>
 		</ul>
-		<span class="maintitle">Which main body part is at risk?</span>
+		<span class="maintitle">Location</span>
+		<UL class="pageitem">
+			<LI class="select">
+				<SELECT name="LocationLetter" id="LocationLetter" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
+			<LI class="select">
+				<SELECT name="LocationNumber" id="LocationNumber" size="1" runat="server">
+				</SELECT>
+				<SPAN class="arrow"></SPAN>
+			</LI>
+		</UL>
+<!---		<span class="maintitle">Which main body part is at risk?</span>
 		<ul class="pageitem">
 			<li class="select">
 			    <select id="RiskBodyParts" name="RiskBodyParts" runat="server">
 			    </select>
 			    <span class="arrow"></span> 
 			</li>
-		</ul>
-		<span class="maintitle">What is the type of (potential) injury?</span>
+		</ul>-->
+		<span class="maintitle">Type of (potential) injury</span>
 		<ul class="pageitem">
 			<li class="select">
 			    <select id="RiskInjury" name="RiskInjury" runat="server">
 			    </select>
 			    <span class="arrow"></span> 
 			</li>
-		</ul>
-		<span class="maintitle">When did it happen?</span>
+		</ul> 
+		<span class="maintitle">When it happen</span>
 		<UL class="pageitem">
 			<LI class="select">
 				<SELECT name="DateIncidentOccurredDay" id="DateIncidentOccurredDay" size="1" runat="server">
@@ -194,21 +220,21 @@ window.setTimeout(function() {
 				<SPAN class="arrow"></SPAN>
 			</LI>
 		</UL>
-		<span class="maintitle">Have you got a picture?</span>
+		<span class="maintitle">Upload a picture</span>
 		<ul class="pageitembutton">
 			<li class="buttonLightGrey">
 				<asp:button id="imageButton" runat="server" text="PRESS HERE TO ADD, UPDATE OR DELETE AN IMAGE" onclick="imageClicked"></asp:button>
 			</li>
 				
 		</ul>
-		<ul class="pageitemborder">
+<!---		<ul class="pageitemborder">
 			<li class="menu">
 				<a href="javascript:doLoad('FileUploadControl.aspx');">
 					<span class="name">Press here to add, update or delete an image</span>
 					<span class="arrow"></span>
 				</a>
 			</li>
-		</ul>
+		</ul>-->
 
 		<ul class="pageitembutton">
 			<li class="button">

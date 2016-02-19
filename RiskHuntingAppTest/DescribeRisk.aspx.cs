@@ -41,8 +41,10 @@ namespace RiskHuntingAppTest
 		protected const string DESC_WATERMARK = "[Enter a description of the risk using two or three sentences]";
 		protected const string NAME_WATERMARK = "[Enter a name for the risk]";
 		protected const string AUTHOR_WATERMARK = "[Enter the name of person reporting the risk]";
+		protected const string AUTHORFIN_WATERMARK = "[Enter the FIN number of person reporting the risk]";
 		protected const string LOCATION_WATERMARK = "[Enter the risk location]";
 		protected const string BODYPARTS_WATERMARK = "[Enter the body parts that are at risk, e.g. feet]";
+		protected const string PERSONINVOLVED_WATERMARK = "[Enter the name of the person involved]";
 
 		protected const string ERROR_MESSAGE_REQUIRED = "One or more fields are empty - please fill out the required fields to continue.";
 
@@ -213,23 +215,63 @@ namespace RiskHuntingAppTest
 //			RiskName.WatermarkText = NAME_WATERMARK;
 			RiskDescription.WatermarkText = DESC_WATERMARK;
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
+			RiskAuthorFIN.WatermarkText = AUTHORFIN_WATERMARK;
+			RiskPersonInvolved.WatermarkText = PERSONINVOLVED_WATERMARK;
 			//			RiskLocation.WatermarkText = LOCATION_WATERMARK;
 			//			RiskBodyParts.WatermarkText = BODYPARTS_WATERMARK;
+		}
+			
+		private ArrayList _Alphabet;
+		protected ArrayList Alphabet
+		{
+			get
+			{
+				if (_Alphabet == null)
+				{
+					_Alphabet = new ArrayList();
+					for (int i = 65; i < 91; i++)
+					{
+						_Alphabet.Add(Convert.ToChar(i));
+					}
+					_Alphabet.Add("AA");
+					_Alphabet.Add("BB");
+				}
+				return _Alphabet;
+			}
+		}
+
+		private ArrayList _Numbers;
+		protected ArrayList Numbers
+		{
+			get
+			{
+				if (_Numbers == null)
+				{
+					_Numbers = new ArrayList();
+					for (int i = 1; i < 25; i++)
+					{
+						_Numbers.Add(i);
+					}
+				}
+				return _Numbers;
+			}
 		}
 
 		private void InitParametersDropDown()
 		{
 			var doc = XDocument.Load(Path.Combine (resourcesPath, "Parameters.xml"), LoadOptions.None); 
 			RiskName.Items.Clear();
-			RiskLocation.Items.Clear();
+			RiskDepartment.Items.Clear();
 			RiskBodyParts.Items.Clear();
 			RiskInjury.Items.Clear();
+			LocationLetter.Items.Clear();
+			LocationNumber.Items.Clear();
 			if (doc.Descendants("IncidentCategory").Count() > 0)
 				foreach (XElement xe in doc.Descendants("IncidentCategory"))
 					RiskName.Items.Add(new ListItem(xe.Element("n").Value));    
 			if (doc.Descendants("rl").Count() > 0)
 				foreach (XElement xe in doc.Descendants("rl"))
-					RiskLocation.Items.Add(new ListItem(xe.Element("n").Value));    
+					RiskDepartment.Items.Add(new ListItem(xe.Element("n").Value));    
 			//			else
 			//				RiskLocation.Items.Add(new ListItem("None")); 
 			if (doc.Descendants("bp").Count() > 0)
@@ -238,7 +280,14 @@ namespace RiskHuntingAppTest
 
 			if (doc.Descendants("TypeOfIncident").Count() > 0)
 				foreach (XElement xe in doc.Descendants("TypeOfIncident"))
-					RiskInjury.Items.Add(new ListItem(xe.Element("n").Value));    
+					RiskInjury.Items.Add(new ListItem(xe.Element("n").Value)); 
+
+			foreach (var a in Alphabet) {
+				LocationLetter.Items.Add(new ListItem(a.ToString()));
+			}
+			foreach (var n in Numbers) {
+				LocationNumber.Items.Add(new ListItem(n.ToString()));
+			}
 		}
 
 		private void PopulateDateDropDown()
@@ -497,14 +546,17 @@ namespace RiskHuntingAppTest
 
 			risk.Content = CheckTextBoxContent(RiskDescription, DESC_WATERMARK);
 			risk.Author = CheckTextBoxContent (RiskAuthor, AUTHOR_WATERMARK);
+			risk.AuthorFIN = CheckTextBoxContent (RiskAuthorFIN, AUTHORFIN_WATERMARK);
 //			risk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
 			risk.Name = RiskName.Value;
 			//			risk.InjuryNature = CheckTextBoxContent(RiskDanger, DANGER_WATERMARK);
 			risk.InjuryNature = String.Empty;
-			risk.LocationDetail = RiskLocation.Value; 
+			risk.LocationDetail = RiskDepartment.Value + "|" + LocationLetter.Value + LocationNumber.Value; 
 			risk.BodyPart = RiskBodyParts.Value;
 			risk.InjuryNature = RiskInjury.Value;
+			risk.ContractorName = CheckTextBoxContent (RiskPersonInvolved, PERSONINVOLVED_WATERMARK);
 			risk.ImageUri = String.Empty;
+			risk.IncidentStatus = String.Empty;
 
 			risk.Recommendations = new ArrayList ();
 			risk.Countermeasures = String.Empty;
@@ -538,11 +590,13 @@ namespace RiskHuntingAppTest
 //			this.currentRisk.Name = CheckTextBoxContent(RiskName, NAME_WATERMARK);
 			this.currentRisk.Name = RiskName.Value;
 			this.currentRisk.Author = CheckTextBoxContent(RiskAuthor, AUTHOR_WATERMARK);
+			this.currentRisk.AuthorFIN = CheckTextBoxContent(RiskAuthorFIN, AUTHORFIN_WATERMARK);
 			//			risk.InjuryNature = CheckTextBoxContent(RiskDanger, DANGER_WATERMARK);
 			this.currentRisk.InjuryNature = String.Empty;
-			this.currentRisk.LocationDetail = RiskLocation.Value;
+			this.currentRisk.LocationDetail = RiskDepartment.Value + "|" + LocationLetter.Value + LocationNumber.Value; 
 			this.currentRisk.BodyPart = RiskBodyParts.Value;
 			this.currentRisk.InjuryNature = RiskInjury.Value;
+			this.currentRisk.ContractorName = CheckTextBoxContent (RiskPersonInvolved, PERSONINVOLVED_WATERMARK);
 			if (search)
 				this.currentRisk.SimilarCasesFound = true;
 			else
@@ -678,10 +732,16 @@ namespace RiskHuntingAppTest
 			RiskDescription.WatermarkText = DESC_WATERMARK;
 			RiskAuthor.Text = String.Empty;
 			RiskAuthor.WatermarkText = AUTHOR_WATERMARK;
+			RiskAuthorFIN.Text = String.Empty;
+			RiskAuthorFIN.WatermarkText = AUTHORFIN_WATERMARK;
+			RiskPersonInvolved.Text = String.Empty;
+			RiskPersonInvolved.WatermarkText = PERSONINVOLVED_WATERMARK;
 			InitParametersDropDown ();
 			PopulateDateDropDown ();
 			RiskName.SelectedIndex = -1;
-			RiskLocation.SelectedIndex = -1;
+			RiskDepartment.SelectedIndex = -1;
+			LocationLetter.SelectedIndex = -1;
+			LocationNumber.SelectedIndex = -1;
 			RiskBodyParts.SelectedIndex = -1;
 			RiskInjury.SelectedIndex = -1;
 		}
@@ -883,7 +943,7 @@ namespace RiskHuntingAppTest
 		{
 			string content = String.Empty;
 			content += "[InjuryNature]: " + RiskInjury.Value;
-			content += " [LocationDetail]: " + RiskLocation.Value;
+			content += " [LocationDetail]: " + RiskDepartment.Value + "|" + LocationLetter.Value + LocationNumber.Value; 
 			content += " [Content]: " + RiskDescription.Text;
 			content += " [BodyPart]: " + RiskBodyParts.Value;
 			return content;
@@ -971,12 +1031,31 @@ namespace RiskHuntingAppTest
 				XmlProc.ProblemSerialized.LanguageSpecificSpecification problem = XmlProc.ObjectXMLSerializer<XmlProc.ProblemSerialized.LanguageSpecificSpecification>.Load(location);
 				XmlProc.ProblemSerialized.LanguageSpecificSpecificationFacetSpecificationData problemFacet = problem.FacetSpecificationData;
 				RiskDescription.Text = problemFacet.Content;
-				RiskAuthor.Text = problem.Author;
+				var author = problem.Author.Split('|');
+				if (author.Length == 2) {
+					RiskAuthor.Text = author[0];
+					RiskAuthorFIN.Text = author[1];
+				}
 
+				var riskLocation = problemFacet.LocationDetail.Split('|');
+				if (riskLocation.Length == 2) {
+					var id1 = Util.GetHtmlSelectIdForDepartment (riskLocation[0]);
+					if (id1 > -1)
+						RiskDepartment.SelectedIndex = id1;
 
-				var id1 = Util.GetHtmlSelectIdForLocation (problemFacet.LocationDetail);
-				if (id1 > -1)
-					RiskLocation.SelectedIndex = id1;
+					Regex re = new Regex(@"([a-zA-Z]+)(\d+)");
+					Match result = re.Match(riskLocation[1]);
+
+					string alphaPart = result.Groups[1].Value;
+					string numberPart = result.Groups[2].Value;
+
+					var id1a = Util.GetHtmlSelectIdForLocation (alphaPart, Alphabet);
+					if (id1a > -1)
+						LocationLetter.SelectedIndex = id1a;
+					var id1b = Util.GetHtmlSelectIdForLocation (numberPart, Numbers);
+					if (id1b > -1)
+						LocationNumber.SelectedIndex = id1b;
+				}
 
 				var id2 = Util.GetHtmlSelectIdForBodyPart (problemFacet.BodyPart);
 				//				Console.WriteLine ("id2: " + id2);
@@ -994,6 +1073,7 @@ namespace RiskHuntingAppTest
 					DateIncidentOccurredMonth.Value = date.ToString ("MMMM", CultureInfo.InvariantCulture);
 					DateIncidentOccurredYear.Value = date.Year.ToString ();
 				}
+				RiskPersonInvolved.Text = problemFacet.ContractorName;
 
 			}
 			else if (componentType.Equals("Solution"))

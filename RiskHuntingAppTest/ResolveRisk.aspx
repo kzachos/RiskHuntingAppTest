@@ -10,10 +10,23 @@
  <link href="Theme/css/style.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/mozillaStyle.css" rel="stylesheet" media="screen" type="text/css" />
  <link href="Theme/css/ieStyle.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href="Theme/css/box.css" rel="stylesheet" media="screen" type="text/css" />
  <script src="Theme/javascript/functions.js" type="text/javascript"></script>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
-var todaysDate=new Date()
+
+window.setTimeout(function () {
+    $("#alert_message_success").fadeTo(500, 0).slideUp(500, function () {
+        $(this).remove();
+    });
+}, 3000);
+window.setTimeout(function () {
+    $("#alert_message_error").fadeTo(500, 0).slideUp(500, function () {
+        $(this).remove();
+    });
+}, 3000);
+
 </script>
 	<title>Risk Hunting App</title>
 <!--[if gte IE 9]>
@@ -51,6 +64,17 @@ var todaysDate=new Date()
 	<div id="content">
 		<form id="form1" runat="server">
 	
+			<div id="alert_message_success" runat="server">
+				<div class="alert-box success">
+					<div id="successMessage" style="display: inline" runat="server"></div>
+				</div>
+			</div>
+			<div id="alert_message_error" runat="server">
+				<div class="alert-box error">
+					<div id="errorMessage" style="display: inline" runat="server"></div>
+				</div>
+			</div>
+
 			<ul class="pageitem">
 				<div id="divIdeas" runat="server">
 

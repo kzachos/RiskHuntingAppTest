@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.UI;
 using System.IO;
+using System.Collections.Specialized;
 
 namespace RiskHuntingAppTest
 {
@@ -27,6 +28,14 @@ namespace RiskHuntingAppTest
 
 		protected void Page_Load(object sender, EventArgs e)
 		{			
+			alert_message_success.Visible = false;
+			alert_message_error.Visible = false;
+
+			if (DetermineFrom ().Equals ("sameAddedIdeaSuccess")) { // coming from add idea to confirm that a new idea was added successfully
+				alert_message_success.Visible = true;
+				successMessage.InnerText = "The idea has been added successfully!";
+				alert_message_error.Visible = false;
+			}
 			if (Sessions.PersonaState != String.Empty) 
 				Session.Remove (Sessions.personaState);
 			if (Sessions.PersonasState != null) 
@@ -52,6 +61,18 @@ namespace RiskHuntingAppTest
 				Console.WriteLine ("Page_Init - Page.IsPostBack");
 			}
 
+		}
+			
+		private string DetermineFrom()
+		{
+			string c = String.Empty;
+			if (Request.QueryString["pb"] != null)
+			{
+				c = Request.QueryString["pb"];
+				NameValueCollection filtered = new NameValueCollection(Request.QueryString);
+				filtered.Remove("pb");			
+			}
+			return c;
 		}
 
 		void GenerateIdeaList ()

@@ -105,6 +105,12 @@
 
 	<br><br>
 
+	<span class="maintitle"><asp:Label id="resolvedCaseLabel" runat="server"></asp:Label></span>
+	<ul class="pageitembutton">
+		<li class="buttonLightGrey">
+			<asp:button id="Resolved" runat="server" onclick="resolvedClicked" onClientclick="needToConfirm = false;"></asp:button>
+		</li>
+	</ul>
 
 	<ul class="pageitem">
 		<li class="textbox">

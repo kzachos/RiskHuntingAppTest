@@ -249,6 +249,12 @@
     <Compile Include="AddAction.aspx.designer.cs">
       <DependentUpon>AddAction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MarkAsResolvedRisk.aspx.cs">
+      <DependentUpon>MarkAsResolvedRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarkAsResolvedRisk.aspx.designer.cs">
+      <DependentUpon>MarkAsResolvedRisk.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
@@ -337,6 +343,7 @@
     <Content Include="ErrorHandling\404.html" />
     <Content Include="ErrorHandling\503.html" />
     <Content Include="ErrorHandling\maintenance.html" />
+    <Content Include="MarkAsResolvedRisk.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibraries\XmlProc\XmlProc.csproj">

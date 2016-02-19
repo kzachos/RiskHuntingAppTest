@@ -87,8 +87,8 @@ namespace XmlProc
                     this.authorField = value;
                 }
             }
-
-            /// <remarks/>
+				
+			/// <remarks/>
             public string LaunchDate
             {
                 get

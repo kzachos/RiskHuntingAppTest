@@ -122,7 +122,7 @@ namespace RiskHuntingAppTest
 						//							}
 						//						}
 						//						else
-						url += "pb=same";
+						url += "pb=sameAddedIdeaSuccess";
 					}
 					url = url.Replace ("@", "?");
 					Response.Redirect (url);

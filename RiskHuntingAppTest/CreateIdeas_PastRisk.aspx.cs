@@ -66,6 +66,11 @@ namespace RiskHuntingAppTest
 				CreativityPromptsFeed = Sessions.CreativityPromptsPastRiskState;
 				if (DetermineFrom().Equals(String.Empty))
 					CreativityPromptsFeed.Shuffle ();
+				else if (DetermineFrom ().Equals ("sameAddedIdeaSuccess")) {
+					alert_message_success.Visible = true;
+					successMessage.InnerText = "The idea has been added successfully!";
+					alert_message_error.Visible = false;
+				} 
 				PopulateData ();
 			} else {
 //				if (Session ["CURRENT_PAST_RISK_DESC"] != null)
@@ -112,6 +117,7 @@ namespace RiskHuntingAppTest
 			}
 			return c;
 		}
+
 
 		#region Creativity Prompts
 

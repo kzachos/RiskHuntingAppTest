@@ -110,7 +110,8 @@ namespace RiskHuntingAppTest
 			ResolveRisk,
 			Summary,
 			AddIdea,
-			EditIdea
+			EditIdea,
+			MarkRiskAsResolved
 		}
 
 		public enum FeatureType
@@ -128,7 +129,9 @@ namespace RiskHuntingAppTest
 			EditIdea_DeleteIdeaButton,
 			Summary_SubmitCaseButton,
 			Summary_GenerateReportButton,
-			Summary_CreateNewRiskButton
+			Summary_CreateNewRiskButton,
+			Summary_MarkAsResolvedButton,
+			MarkAsResolved_SubmitButton
 		}
 
 		public static void AccessLog(ScreenType screen)
@@ -434,7 +437,7 @@ namespace RiskHuntingAppTest
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet problem = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
 			problem.FacetType = "Problem";
-			problem.Author = risk.Author;
+			problem.Author = risk.Author + "|" + risk.AuthorFIN;
 			problem.FacetSpecification = fspecProblem;
 
 			XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet solution = new XmlProc.SourceSpecificationSerialized.SourceSpecificationFacet();
@@ -456,7 +459,7 @@ namespace RiskHuntingAppTest
 			DateTime now = DateTime.Now;
 			problem.FacetType = "Problem";
 			problem.FacetSpecificationLanguage = "Text";
-			problem.Author = risk.Author;
+			problem.Author = risk.Author + "|" + risk.AuthorFIN;
 			problem.LaunchDate = now.ToString();
 			problem.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
@@ -473,13 +476,13 @@ namespace RiskHuntingAppTest
 			fsd.BodyPart = risk.BodyPart;
 			fsd.InjuryCause = String.Empty;
 			fsd.IncidentPriority = String.Empty;
-			fsd.IncidentStatus = String.Empty;
+			fsd.IncidentStatus = risk.IncidentStatus;
 			fsd.RootCause = String.Empty;
 			fsd.RoutineWork = String.Empty;
 			fsd.ShiftType = String.Empty;
 			fsd.Title = String.Empty;
 			fsd.ClosedByOperator = String.Empty;
-			fsd.ContractorName = String.Empty;
+			fsd.ContractorName = risk.ContractorName;
 			fsd.DateClosed = String.Empty;
 			fsd.DateIncidentOccurred = risk.DateIncidentOccurred.ToString();
 			fsd.Miscellaneous = risk.ImageUri;
@@ -498,7 +501,7 @@ namespace RiskHuntingAppTest
 			DateTime now = DateTime.Now;
 			solution.FacetType = "Solution";
 			solution.FacetSpecificationLanguage = "Text";
-			solution.Author = risk.Author;
+			solution.Author = risk.Author + "|" + risk.AuthorFIN;
 			solution.LaunchDate = now.ToString();
 			solution.SourceSpecificationLastEdited = risk.DateIncidentOccurred.ToShortDateString();
 
@@ -633,6 +636,9 @@ namespace RiskHuntingAppTest
 			if (text.StartsWith("having"))
 				formattedText = text.Replace ("having", "have");
 				
+			if (text.StartsWith("evening out"))
+				formattedText = text.Replace ("evening out", "even out");
+
 			return formattedText;
 		}
 
@@ -702,7 +708,7 @@ namespace RiskHuntingAppTest
 				return String.Empty;
 		}
 
-		public static int GetHtmlSelectIdForLocation (string searchValue)
+		public static int GetHtmlSelectIdForDepartment (string searchValue)
 		{
 			int id = 0;
 			int found = -1;
@@ -712,6 +718,23 @@ namespace RiskHuntingAppTest
 					if (xe.Element ("n").Value.Equals (searchValue)) {
 						found = id;
 						
+					} else
+						id++;
+				}
+			}
+			return found;
+
+		}
+
+		public static int GetHtmlSelectIdForLocation (string searchValue, ArrayList toSearch)
+		{
+			int id = 0;
+			int found = -1;
+			if (toSearch.Count > 0) {
+				foreach (var xe in toSearch) {
+					if (xe.ToString().Equals (searchValue)) {
+						found = id;
+
 					} else
 						id++;
 				}

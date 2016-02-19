@@ -25,11 +25,15 @@ namespace RiskHuntingAppTest
 
 		protected World.Code.WebControls.WatermarkedTextBox RiskAuthor;
 
-		protected System.Web.UI.HtmlControls.HtmlSelect RiskLocation;
+		protected World.Code.WebControls.WatermarkedTextBox RiskAuthorFIN;
+
+		protected System.Web.UI.HtmlControls.HtmlSelect RiskDepartment;
 
 		protected System.Web.UI.HtmlControls.HtmlSelect RiskBodyParts;  
 
 		protected System.Web.UI.HtmlControls.HtmlSelect RiskInjury;
+
+		protected World.Code.WebControls.WatermarkedTextBox RiskPersonInvolved;
 
 		protected System.Web.UI.WebControls.Button submit;
 
@@ -54,6 +58,10 @@ namespace RiskHuntingAppTest
 		protected System.Web.UI.HtmlControls.HtmlSelect DateIncidentOccurredDay;
 
 		protected System.Web.UI.HtmlControls.HtmlSelect DateIncidentOccurredMonth;
+
+		protected System.Web.UI.HtmlControls.HtmlSelect LocationLetter;
+
+		protected System.Web.UI.HtmlControls.HtmlSelect LocationNumber;
 
 		protected System.Web.UI.HtmlControls.HtmlSelect DateIncidentOccurredYear;
 
