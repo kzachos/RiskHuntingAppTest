@@ -201,7 +201,7 @@ window.setTimeout(function() {
 			    <span class="arrow"></span> 
 			</li>
 		</ul> 
-		<span class="maintitle">When it happen</span>
+		<span class="maintitle">Date of incident</span>
 		<UL class="pageitem">
 			<LI class="select">
 				<SELECT name="DateIncidentOccurredDay" id="DateIncidentOccurredDay" size="1" runat="server">

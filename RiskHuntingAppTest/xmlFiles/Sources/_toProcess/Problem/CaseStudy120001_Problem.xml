@@ -2,26 +2,26 @@
 <LanguageSpecificSpecification xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <FacetType>Problem</FacetType>
   <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
-  <Author>sdffs|sdfsdf</Author>
-  <LaunchDate>19/02/2016 23:31:19</LaunchDate>
-  <SourceSpecificationLastEdited>19/02/2016</SourceSpecificationLastEdited>
+  <Author>John Smith|123456</Author>
+  <LaunchDate>22/02/2016 16:19:59</LaunchDate>
+  <SourceSpecificationLastEdited>09/04/2013</SourceSpecificationLastEdited>
   <FacetSpecificationData>
-    <Content>sdfds</Content>
-    <InjuryNature>Abrasions/Cuts/Laceration</InjuryNature>
-    <LocationDetail>Pedestal Line|A1</LocationDetail>
+    <Content>The worker lay down on a duckboard in order to move under a tractor to check for possible oil leaks, but the duckboard shifted as the worker sat down and the worker fell and received a superficial cut to the head</Content>
+    <InjuryNature>Contusion/Crush/Concussion</InjuryNature>
+    <LocationDetail>After Paint (APM or Medical Line)|BB11</LocationDetail>
     <BodyPart>Whole body</BodyPart>
     <InjuryCause />
     <IncidentPriority />
-    <IncidentStatus>zcxzxczx</IncidentStatus>
+    <IncidentStatus> quality department checked parts to spec and found that floor ducting measurements were out of spec. the company are dealing with this and we are waiting for good parts. That will prevent any force having to be used to fit lower hood.</IncidentStatus>
     <RootCause />
     <RoutineWork />
     <ShiftType />
     <Title />
     <ClosedByOperator />
-    <ContractorName />
+    <ContractorName>Konstantinos Zachos</ContractorName>
     <DateClosed />
-    <DateIncidentOccurred>19/02/2016 00:00:00</DateIncidentOccurred>
-    <Miscellaneous />
+    <DateIncidentOccurred>09/04/2013 00:00:00</DateIncidentOccurred>
+    <Miscellaneous>xmlFiles/Sources/Risk/Images/120001/120001.png</Miscellaneous>
     <MatchingDetails />
   </FacetSpecificationData>
 </LanguageSpecificSpecification>

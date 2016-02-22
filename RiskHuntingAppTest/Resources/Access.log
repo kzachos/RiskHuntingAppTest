@@ -3415,3 +3415,138 @@
 19/02/2016 23:31:17, 120001, MarkRiskAsResolved, {IP: 127.0.0.1, COUNTRY: }
 19/02/2016 23:31:19, 120001, MarkRiskAsResolved, MarkAsResolved_SubmitButton, {IP: 127.0.0.1, COUNTRY: }
 19/02/2016 23:31:19, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:34:04, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:36:14, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:36:15, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:36:17, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:36:18, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:23, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:26, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:28, 120001, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:28, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:31, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:33, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:39, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:39, 120001, Summary, Summary_MarkAsResolvedButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:39, 120001, MarkRiskAsResolved, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:42, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:47, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:37:47, 120001, Summary, Summary_SubmitCaseButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:38:55, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:04, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:05, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:06, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:07, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:08, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:11, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:11, 120001, Summary, Summary_SubmitCaseButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:11, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:27, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:28, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:29, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:30, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:30, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:33, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 14:39:33, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:31, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:34, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:35, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:36, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:37, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:37, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:39, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:30:39, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:45:36, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:45:39, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:25, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:27, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:28, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:40, 120001, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:40, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:41, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:42, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:44, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:46:44, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:03, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:12, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:13, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:18, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:19, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:19, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:21, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:47:21, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:48:43, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:48:43, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:50:46, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:52:54, 120001, DescribeRisk, DescribeRisk_CreateIdeasButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:52:54, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:53:06, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:54:51, 120001, EditIdea, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:54:54, 120001, EditIdea, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:54:54, 120001, EditIdea, EditIdea_UpdateIdeaButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:54:54, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:01, 120001, EditIdea, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:03, 120001, EditIdea, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:03, 120001, EditIdea, EditIdea_UpdateIdeaButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:03, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:10, 120001, AddIdea, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:12, 120001, AddIdea, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:12, 120001, AddIdea, AddIdea_AddIdeaButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:13, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:15, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:20, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:20, 120001, Summary, Summary_MarkAsResolvedButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:21, 120001, MarkRiskAsResolved, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:55:28, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:09, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:09, 120001, Summary, Summary_MarkAsResolvedButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:09, 120001, MarkRiskAsResolved, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:11, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:14, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:14, 120001, Summary, Summary_MarkAsResolvedButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:14, 120001, MarkRiskAsResolved, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:19, 120001, MarkRiskAsResolved, MarkAsResolved_SubmitButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:19, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:21, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 15:59:21, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:00:25, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:00:25, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:02:08, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:02:08, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:03:47, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:03:47, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:04:31, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:04:31, 120001, Summary, Summary_MarkAsResolvedButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:04:31, 120001, MarkRiskAsResolved, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:04:37, 120001, MarkRiskAsResolved, MarkAsResolved_SubmitButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:04:38, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:04:40, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:04:40, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:15:22, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:16:25, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:16:26, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:16:27, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:16:28, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:16:29, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:16:30, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:16:31, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:18:03, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:18:04, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:19:54, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:19:54, 120001, Summary, Summary_MarkAsResolvedButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:19:55, 120001, MarkRiskAsResolved, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:19:59, 120001, MarkRiskAsResolved, MarkAsResolved_SubmitButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:19:59, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:20:01, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:20:01, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:24:54, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:24:55, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 16:30:10, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:13:42, no_ID, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:13:44, no_ID, History, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:13:45, 120001, DescribeRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:13:46, 120001, CreateIdea_PastRisks, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:13:47, 120001, ResolveRisk, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:13:49, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:14:06, 120001, Summary, {IP: 127.0.0.1, COUNTRY: }
+22/02/2016 18:14:06, 120001, Summary, Summary_GenerateReportButton, {IP: 127.0.0.1, COUNTRY: }

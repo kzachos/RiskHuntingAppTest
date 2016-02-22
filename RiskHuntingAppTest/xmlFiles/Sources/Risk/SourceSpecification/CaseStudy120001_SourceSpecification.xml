@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SourceSpecification xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceId>120001</SourceId>
-  <SourceName>Unsafe Act</SourceName>
+  <SourceName>Unsafe Condition</SourceName>
   <SourceType>RiskResolved</SourceType>
   <Domain>Risk</Domain>
   <Filename />
-  <LaunchDate>19/02/2016 23:31:19</LaunchDate>
-  <SourceSpecificationLastEdited>19/02/2016</SourceSpecificationLastEdited>
+  <LaunchDate>22/02/2016 16:19:59</LaunchDate>
+  <SourceSpecificationLastEdited>09/04/2013</SourceSpecificationLastEdited>
   <Facet>
     <FacetType>Problem</FacetType>
-    <Author>sdffs|sdfsdf</Author>
+    <Author>John Smith|123456</Author>
     <FacetSpecification>
       <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
       <FacetSpecificationLink>CaseStudy120001_Problem.xml</FacetSpecificationLink>
@@ -17,7 +17,7 @@
   </Facet>
   <Facet>
     <FacetType>Solution</FacetType>
-    <Author>sdffs</Author>
+    <Author>John Smith</Author>
     <FacetSpecification>
       <FacetSpecificationLanguage>Text</FacetSpecificationLanguage>
       <FacetSpecificationLink>CaseStudy120001_Solution.xml</FacetSpecificationLink>

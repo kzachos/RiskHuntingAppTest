@@ -128,31 +128,47 @@ namespace RiskHuntingAppTest
 
 			sourceDiv.InnerHtml = String.Empty;
 			sourceDiv.InnerHtml += LiStartTagLabel +
+				GenerateContentHtml ("Reported by", this.currentRisk.Author) +
+				LiEndTag;
+
+			sourceDiv.InnerHtml += LiStartTagLabel +
+				GenerateContentHtml ("FIN", this.currentRisk.AuthorFIN) +
+				LiEndTag;
+
+			sourceDiv.InnerHtml += LiStartTagLabel +
+				GenerateContentHtml ("Description", this.currentRisk.Content) +
+				LiEndTag;
+
+			sourceDiv.InnerHtml += LiStartTagLabel +
 				GenerateContentHtml ("Incident Category", this.currentRisk.Name) +
 				LiEndTag;
 
 			sourceDiv.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("Risk Description", this.currentRisk.Content) +
+				GenerateContentHtml ("Name of the person involved", this.currentRisk.ContractorName) +
+				LiEndTag;
+
+			var locationDetail = this.currentRisk.LocationDetail.Split('|');
+			var dept = String.Empty;
+			var loc = String.Empty;
+			if (locationDetail.Length == 2) {
+				dept = locationDetail[0];
+				loc = locationDetail[1];
+			}
+
+			sourceDiv.InnerHtml += LiStartTagLabel +
+				GenerateContentHtml ("Department", dept) +
 				LiEndTag;
 
 			sourceDiv.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("Author", this.currentRisk.Author) +
+				GenerateContentHtml ("Location", loc) +
 				LiEndTag;
 
 			sourceDiv.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("Risk Location", this.currentRisk.LocationDetail) +
+				GenerateContentHtml ("Type of (potential) injury", this.currentRisk.InjuryNature) +
 				LiEndTag;
 
 			sourceDiv.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("Body Part at Risk", this.currentRisk.BodyPart) +
-				LiEndTag;
-
-			sourceDiv.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("Injury Category", this.currentRisk.InjuryNature) +
-				LiEndTag;
-
-			sourceDiv.InnerHtml += LiStartTagLabel +
-				GenerateContentHtml ("Date of Incident", this.currentRisk.DateIncidentOccurred.ToShortDateString()) +
+				GenerateContentHtml ("Date of incident", this.currentRisk.DateIncidentOccurred.ToShortDateString()) +
 				LiEndTag;
 
 			if (!this.currentRisk.IncidentStatus.Equals (String.Empty)) {
@@ -450,8 +466,8 @@ namespace RiskHuntingAppTest
 		{
 			string from = "creativecareconsultancy@gmail.com"; //Replace this with your own correct Gmail Address
 
-			string to = "kzachos@gmail.com, robert.van-der-putten@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
-//			string to = "kzachos@gmail.com, derek.read@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
+//			string to = "kzachos@gmail.com, robert.van-der-putten@cnhind.com"; //Replace this with the Email Address to whom you want to send the mail
+			string to = "kzachos@gmail.com"; //Replace this with the Email Address to whom you want to send the mail
 
 			MailMessage mail = new MailMessage();
 			mail.To.Add(to);
@@ -459,13 +475,22 @@ namespace RiskHuntingAppTest
 			mail.Subject = submission?"new risk submitted":"risk report generated";
 			mail.SubjectEncoding = System.Text.Encoding.UTF8;
 			var initialText = submission ? "A new risk has been submitted: <p>" : "A risk report has been generated: <p>";
-			mail.Body = "Incident Category: " + this.currentRisk.Name + "<p>"
-				+ "Risk Description: " + this.currentRisk.Content + "<p>"
-				+ "Author: " + this.currentRisk.Author + "<p>"
-				+ "Risk Location: " + this.currentRisk.LocationDetail + "<p>"
-				+ "Body Part at Risk: " + this.currentRisk.BodyPart + "<p>"
-				+ "Injury Category: " + this.currentRisk.InjuryNature + "<p>"
-				+ "Date of Incident: " + this.currentRisk.DateIncidentOccurred.ToShortDateString() + "<p>"
+			var locationDetail = this.currentRisk.LocationDetail.Split('|');
+			var dept = String.Empty;
+			var loc = String.Empty;
+			if (locationDetail.Length == 2) {
+				dept = locationDetail[0];
+				loc = locationDetail[1];
+			}
+			mail.Body = "Reported by: " + this.currentRisk.Author + "<p>"
+				+ "FIN: " + this.currentRisk.AuthorFIN + "<p>"
+				+ "Description: " + this.currentRisk.Content + "<p>"
+				+ "Incident Category: " + this.currentRisk.Name + "<p>"
+				+ "Name of the person involved: " + this.currentRisk.ContractorName + "<p>"
+				+ "Department: " + dept + "<p>"
+				+ "Location: " + loc + "<p>"
+				+ "Type of (potential) injury: " + this.currentRisk.InjuryNature + "<p>"
+				+ "Date of incident: " + this.currentRisk.DateIncidentOccurred.ToShortDateString() + "<p>"
 				+ "Recommendation(s): ";
 			if (this.currentRisk.Recommendations.Count > 0) {
 				for (int i = 0; i < this.currentRisk.Recommendations.Count; i++) {
@@ -623,10 +648,24 @@ namespace RiskHuntingAppTest
 			AcroFields form = pdfStamper.AcroFields;
 
 			form.SetField ("Name", this.currentRisk.Author);
-			form.SetField ("TimeDate", this.currentRisk.DateIncidentOccurred.ToShortDateString ());
-			form.SetField ("DeptMBU", this.currentRisk.LocationDetail);
+			form.SetField ("FinNum", this.currentRisk.AuthorFIN);
+			form.SetField ("TimeDate", DateTime.Now.ToShortDateString ());
 			form.SetField ("InjuryType", this.currentRisk.InjuryNature);
 			form.SetField ("Description", this.currentRisk.Content);
+			form.SetField ("DateOfIncident", this.currentRisk.DateIncidentOccurred.ToShortDateString ());
+			form.SetField ("NamePersonInvolved", this.currentRisk.ContractorName);
+			var location = this.currentRisk.LocationDetail.Split('|');
+			if (location.Length == 2) {
+				form.SetField ("DeptMBU", location[0]);
+				form.SetField ("Location", location[1]);
+			}
+			if (!this.currentRisk.IncidentStatus.Equals (String.Empty)) {
+				form.SetField ("ResolvedBool", "Yes, with the following resolution(s):");
+				form.SetField ("RiskResolvedText", this.currentRisk.IncidentStatus);						
+			}
+			else
+				form.SetField ("ResolvedBool", "No");
+	
 			string rec = String.Empty;
 			if (this.currentRisk.Recommendations.Count > 0) {
 				for (int i = 0; i < this.currentRisk.Recommendations.Count; i++) {

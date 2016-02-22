@@ -33,7 +33,7 @@ namespace RiskHuntingAppTest
 
 		public const string PIN = "1234";
 
-		public const string PDF_TEMPLATE = "OHSREP12_Template.pdf";
+		public const string PDF_TEMPLATE = "CNH_RiskTemplate_v2.0.pdf";
 		public const string PDF_OUTPUT = "Risk.pdf";
 	}
 }
